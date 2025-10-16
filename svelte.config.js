@@ -5,18 +5,12 @@ const dev = process.env.NODE_ENV === 'development';
 
 export default {
   preprocess: preprocess(),
-
   kit: {
     adapter: adapter({
-      fallback: 'index.html',
+      fallback: 'index.html' 
     }),
-
     paths: {
-      base: dev ? '' : '/pzn-company-profile',
-    },
-
-    prerender: {
-      entries: ['*'],
-    },
-  },
+      base: dev ? '' : '/pzn-company-profile' 
+    }
+  }
 };
