@@ -1,19 +1,23 @@
 import adapter from '@sveltejs/adapter-static';
-import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import preprocess from 'svelte-preprocess';
+
+const dev = process.env.NODE_ENV === 'development';
 
 export default {
-  preprocess: vitePreprocess(),
+  preprocess: preprocess(),
 
   kit: {
     adapter: adapter({
-		fallback: 'index.html'
-	}),
+      fallback: 'index.html'
+    }),
+
     paths: {
-      base: ''
+      base: dev ? '' : '/pzn-company-profile'
     },
-    alias: {
-      $components: 'src/components',
-      $lib: 'src/lib'
+
+  
+    prerender: {
+      entries: ['*'] 
     }
   }
 };
