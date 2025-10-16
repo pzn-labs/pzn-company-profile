@@ -8,16 +8,15 @@ export default {
 
   kit: {
     adapter: adapter({
-      fallback: 'index.html'
+      fallback: 'index.html',
     }),
 
     paths: {
-      base: dev ? '' : '/pzn-company-profile'
+      base: dev ? '' : '/pzn-company-profile',
     },
 
-  
     prerender: {
-      entries: ['*'] 
-    }
-  }
+      entries: ['*'],
+    },
+  },
 };
