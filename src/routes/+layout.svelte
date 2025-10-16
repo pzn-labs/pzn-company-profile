@@ -1,12 +1,13 @@
 <script lang="ts">
 	import "../app.css";
 	import { onMount } from "svelte";
-  
+	import { base } from '$app/paths'; // <-- base path untuk GitHub Pages
+
 	// svelte-ignore export_let_unused
-		export let children;
+	export let children;
 	let mobileMenuOpen = false;
 	let scrolled = false;
-  
+
 	onMount(() => {
 	  const handleScroll = () => {
 		scrolled = window.scrollY > 20;
@@ -14,24 +15,24 @@
 	  window.addEventListener("scroll", handleScroll);
 	  return () => window.removeEventListener("scroll", handleScroll);
 	});
-  
+
 	function toggleMobileMenu() {
 	  mobileMenuOpen = !mobileMenuOpen;
 	}
-  
+
 	function closeMobileMenu() {
 	  mobileMenuOpen = false;
 	}
-  </script>
-  
-  <!-- NAVBAR -->
-  <nav
+</script>
+
+<!-- NAVBAR -->
+<nav
 	class="fixed inset-x-0 top-0 z-50 bg-white dark:bg-gray-900 shadow-md transition-all duration-300"
 	aria-label="Main Navigation"
-  >
+>
 	<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
 	  <!-- LOGO -->
-	  <a href="/" class="flex items-center gap-3 group">
+	  <a href={base + "/"} class="flex items-center gap-3 group">
 		<img
 		  src="https://www.programmerzamannow.com/img/pzn.png"
 		  alt="PZN Logo"
@@ -41,7 +42,7 @@
 		  Programmer Zaman Now
 		</span>
 	  </a>
-  
+
 	  <!-- DESKTOP MENU -->
 	  <div class="hidden lg:flex items-center gap-10">
 		{#each [
@@ -51,7 +52,7 @@
 		  { name: "Sosial Media", href: "/sosial-media" }
 		] as link}
 		  <a
-			href={link.href}
+			href={base + link.href}
 			class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white relative group transition-colors"
 		  >
 			{link.name}
@@ -61,21 +62,21 @@
 		  </a>
 		{/each}
 	  </div>
-  
+
 	  <!-- DESKTOP CTA -->
 	  <div class="hidden lg:flex items-center gap-4">
 		<a
-		  href="/login"
+		  href={base + "/login"}
 		  class="text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white"
 		  >Masuk</a
 		>
 		<a
-		  href="/kelas"
+		  href={base + "/kelas"}
 		  class="rounded-lg bg-black dark:bg-white text-white dark:text-black px-4 py-2 text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition-all"
 		  >Daftar Kelas</a
 		>
 	  </div>
-  
+
 	  <!-- MOBILE MENU BUTTON -->
 	  <button
 		on:click={toggleMobileMenu}
@@ -94,7 +95,7 @@
 		{/if}
 	  </button>
 	</div>
-  
+
 	<!-- MOBILE MENU -->
 	{#if mobileMenuOpen}
 	  <div
@@ -102,9 +103,9 @@
 		on:click={closeMobileMenu}
 		aria-hidden="true"
 	  ></div>
-  
-	  <!-- svelte-ignore a11y_interactive_supports_focus -->
+
 	  <!-- svelte-ignore a11y_click_events_have_key_events -->
+	  <!-- svelte-ignore a11y_interactive_supports_focus -->
 	  <div
 		class="fixed right-0 top-0 z-50 h-full w-72 bg-white dark:bg-gray-900 shadow-lg transform transition-transform duration-300 ease-in-out"
 		on:click|stopPropagation
@@ -126,7 +127,7 @@
 			</svg>
 		  </button>
 		</div>
-  
+
 		<div class="p-4 space-y-2 overflow-auto">
 		  {#each [
 			{ name: "Beranda", href: "/" },
@@ -135,7 +136,7 @@
 			{ name: "Sosial Media", href: "/sosial-media" }
 		  ] as link}
 			<a
-			  href={link.href}
+			  href={base + link.href}
 			  on:click={closeMobileMenu}
 			  class="block px-4 py-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
 			>
@@ -143,16 +144,16 @@
 			</a>
 		  {/each}
 		</div>
-  
+
 		<div class="mt-auto p-4 border-t border-gray-100 dark:border-gray-800 space-y-3">
 		  <a
-			href="/login"
+			href={base + "/login"}
 			on:click={closeMobileMenu}
 			class="block text-center rounded-md border border-gray-300 dark:border-gray-600 px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition"
 			>Masuk</a
 		  >
 		  <a
-			href="/kelas"
+			href={base + "/kelas"}
 			on:click={closeMobileMenu}
 			class="block text-center rounded-md bg-black dark:bg-white text-white dark:text-black px-4 py-2 text-sm font-medium hover:bg-gray-800 dark:hover:bg-gray-200 transition"
 			>Daftar Kelas</a
@@ -160,16 +161,15 @@
 		</div>
 	  </div>
 	{/if}
-  </nav>
-  
-  <!-- PAGE CONTENT -->
-  <main class="mt-8">
+</nav>
+
+<!-- PAGE CONTENT -->
+<main class="mt-8">
 	<slot />
-  </main>
-  
-  <style>
+</main>
+
+<style>
 	:global(body) {
 	  scroll-behavior: smooth;
 	}
-  </style>
-  
+</style>

@@ -45,7 +45,7 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="relative bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 py-24 sm:py-16 lg:py-24 rounded-b-4xl">
+<section class="relative bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 py-24 sm:py-24 lg:py-24 rounded-b-4xl">
     <div class="mx-auto max-w-7xl px-6 sm:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-8">
   
       <!-- KIRI: TEKS -->
