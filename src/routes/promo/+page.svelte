@@ -8,11 +8,11 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900">
+<section class="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-b-4xl">
 	<div class="mx-auto max-w-7xl px-6 py-24 sm:py-24 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
 			<h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
-				Promo Spesial PZN
+				Promo Spesial Programmer Zaman Now
 			</h1>
 			<p class="mt-6 text-lg leading-8 text-gray-300 dark:text-gray-600">
 				Dapatkan diskon hingga 70% untuk semua kelas programming. Penawaran terbatas, jangan sampai kehabisan!
@@ -23,190 +23,121 @@
 
 
 <!-- Paket Promo -->
-<section class="py-24 sm:py-24">
-	<div class="mx-auto max-w-7xl px-6 lg:px-8">
-		<div class="mx-auto max-w-2xl text-center">
-			<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-				Pilih Paket yang Tepat untuk Anda
-			</h2>
-			<p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-				Semua paket sudah termasuk akses lifetime, sertifikat, dan support mentor.
+<section class="py-24 sm:py-24 bg-white dark:bg-gray-900">
+	<div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+	  <div class="max-w-2xl mx-auto">
+		<h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+		  Pilih Paket yang Tepat untuk Anda
+		</h2>
+		<p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+		  Semua paket sudah termasuk akses lifetime, sertifikat, dan support mentor.
+		</p>
+	  </div>
+  
+	  <div class="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+		<!-- Paket Basic -->
+		<div
+		  class="flex flex-col justify-between rounded-3xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 hover:shadow-xl transition duration-300"
+		>
+		  <div>
+			<h3 class="text-xl font-semibold text-gray-900 dark:text-white">Basic</h3>
+			<p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+			  Cocok untuk pemula yang ingin belajar programming dari dasar.
 			</p>
+			<div class="mt-6 flex items-baseline justify-center gap-x-2">
+			  <span class="text-4xl font-bold text-gray-900 dark:text-white">Rp 199K</span>
+			  <span class="text-sm text-gray-500 dark:text-gray-400 line-through">Rp 599K</span>
+			</div>
+		  </div>
+		  <ul class="mt-8 space-y-3 text-sm text-gray-600 dark:text-gray-300 text-left">
+			<li class="flex gap-x-3">
+			  ✅ 1 Kelas Pilihan
+			</li>
+			<li class="flex gap-x-3">
+			  ✅ Akses Lifetime
+			</li>
+			<li class="flex gap-x-3">
+			  ✅ Sertifikat
+			</li>
+			<li class="flex gap-x-3">
+			  ✅ Support 30 Hari
+			</li>
+		  </ul>
+		  <a
+			href="/"
+			class="mt-8 block rounded-xl bg-gray-900 dark:bg-white px-4 py-3 text-center text-sm font-semibold text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 transition"
+		  >
+			Daftar Sekarang
+		  </a>
 		</div>
-		
-		<div class="mx-auto mt-16 grid max-w-lg grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
-			<!-- Paket Basic -->
-			<div class="flex flex-col justify-between rounded-3xl bg-white dark:bg-gray-800 p-8 ring-1 ring-gray-200 dark:ring-gray-700 xl:p-10">
-				<div class="flex items-center justify-between gap-x-4">
-					<h3 class="text-lg font-semibold leading-8 text-gray-900 dark:text-gray-900">Basic</h3>
-					<span class="inline-flex items-center rounded-full bg-gray-50 px-2.5 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 dark:bg-gray-800 dark:text-gray-400 dark:ring-gray-500/20">
-						Populer
-					</span>
-				</div>
-				<p class="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-300">
-					Cocok untuk pemula yang ingin belajar programming dari dasar.
-				</p>
-				<p class="mt-6 flex items-baseline gap-x-1">
-					<span class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white ">Rp 199K</span>
-					<span class="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-300 line-through">Rp 599K</span>
-				</p>
-				<a
-					href="/"
-					class="mt-8 block rounded-md bg-gray-900 dark:bg-white px-3 py-2 text-center text-sm font-semibold leading-6 text-white dark:text-gray-900 shadow-sm hover:bg-gray-800 dark:hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 dark:focus-visible:outline-white"
-				>
-					Daftar Sekarang
-				</a>
-				<ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
-					<li class="flex gap-x-3">
-						<svg class="h-6 w-5 flex-none text-gray-900 dark:text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-						</svg>
-						1 Kelas Pilihan
-					</li>
-					<li class="flex gap-x-3">
-						<svg class="h-6 w-5 flex-none text-gray-900 dark:text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-						</svg>
-						Akses Lifetime
-					</li>
-					<li class="flex gap-x-3">
-						<svg class="h-6 w-5 flex-none text-gray-900 dark:text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-						</svg>
-						Sertifikat
-					</li>
-					<li class="flex gap-x-3">
-						<svg class="h-6 w-5 flex-none text-gray-900 dark:text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-						</svg>
-						Support 30 Hari
-					</li>
-				</ul>
+  
+		<!-- Paket Pro -->
+		<div
+		  class="relative flex flex-col justify-between rounded-3xl border-2 border-gray-900 dark:border-white bg-white dark:bg-gray-800 p-8 shadow-lg scale-105"
+		>
+		  <span
+			class="absolute -top-4 left-1/2 -translate-x-1/2 inline-block rounded-full bg-gray-900 dark:bg-white px-4 py-1 text-xs font-semibold text-white dark:text-gray-900"
+		  >
+			Terpopuler
+		  </span>
+		  <div>
+			<h3 class="text-xl font-semibold text-gray-900 dark:text-white">Pro</h3>
+			<p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+			  Paket lengkap untuk developer yang ingin menguasai full stack development.
+			</p>
+			<div class="mt-6 flex items-baseline justify-center gap-x-2">
+			  <span class="text-4xl font-bold text-gray-900 dark:text-white">Rp 499K</span>
+			  <span class="text-sm text-gray-500 dark:text-gray-400 line-through">Rp 1.999K</span>
 			</div>
-
-			<!-- Paket Pro -->
-			<div class="flex flex-col justify-between rounded-3xl bg-white dark:bg-gray-800 p-8 ring-2 ring-indigo-600 xl:p-10 relative">
-				<div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-					<span class="inline-flex items-center rounded-full bg-gray-900 dark:bg-white px-4 py-1 text-sm font-medium text-white dark:text-gray-900">
-						Terpopuler
-					</span>
-				</div>
-				<div class="flex items-center justify-between gap-x-4">
-					<h3 class="text-lg font-semibold leading-8 text-gray-900 dark:text-white ">Pro</h3>
-					<span class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-700 px-2.5 py-1 text-xs font-medium text-gray-700 dark:text-gray-300 ring-1 ring-inset ring-gray-300 dark:ring-gray-600">
-						Best Value
-					</span>
-				</div>
-				<p class="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-300">
-					Paket lengkap untuk developer yang serius ingin menguasai full stack development.
-				</p>
-				<p class="mt-6 flex items-baseline gap-x-1">
-					<span class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white ">Rp 499K</span>
-					<span class="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-300 line-through">Rp 1.999K</span>
-				</p>
-				<a
-					href="/"
-					class="mt-8 block rounded-md bg-gray-900 dark:bg-white px-3 py-2 text-center text-sm font-semibold leading-6 text-white dark:text-gray-900 shadow-sm hover:bg-gray-800 dark:hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 dark:focus-visible:outline-white"
-				>
-					Daftar Sekarang
-				</a>
-				<ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
-					<li class="flex gap-x-3">
-						<svg class="h-6 w-5 flex-none text-gray-900 dark:text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-						</svg>
-						5 Kelas Pilihan
-					</li>
-					<li class="flex gap-x-3">
-						<svg class="h-6 w-5 flex-none text-gray-900 dark:text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-						</svg>
-						Akses Lifetime
-					</li>
-					<li class="flex gap-x-3">
-						<svg class="h-6 w-5 flex-none text-gray-900 dark:text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-						</svg>
-						Sertifikat + Portfolio
-					</li>
-					<li class="flex gap-x-3">
-						<svg class="h-6 w-5 flex-none text-gray-900 dark:text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-						</svg>
-						Support 90 Hari
-					</li>
-					<li class="flex gap-x-3">
-						<svg class="h-6 w-5 flex-none text-gray-900 dark:text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-						</svg>
-						Live Mentoring
-					</li>
-				</ul>
-			</div>
-
-			<!-- Paket Enterprise -->
-			<div class="flex flex-col justify-between rounded-3xl bg-white dark:bg-gray-800 p-8 ring-1 ring-gray-200 dark:ring-gray-700 xl:p-10">
-				<div class="flex items-center justify-between gap-x-4">
-					<h3 class="text-lg font-semibold leading-8 text-gray-900 dark:text-white ">Enterprise</h3>
-					<span class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-700 px-2.5 py-1 text-xs font-medium text-gray-700 dark:text-gray-300 ring-1 ring-inset ring-gray-300 dark:ring-gray-600">
-						Premium
-					</span>
-				</div>
-				<p class="mt-4 text-sm leading-6 text-gray-600 dark:text-gray-300">
-					Paket terbaik untuk tim atau perusahaan yang ingin upskill karyawan secara menyeluruh.
-				</p>
-				<p class="mt-6 flex items-baseline gap-x-1">
-					<span class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white ">Rp 999K</span>
-					<span class="text-sm font-semibold leading-6 text-gray-600 dark:text-gray-300 line-through">Rp 4.999K</span>
-				</p>
-				<a
-					href="/"
-					class="mt-8 block rounded-md bg-gray-900 dark:bg-white px-3 py-2 text-center text-sm font-semibold leading-6 text-white dark:text-gray-900 shadow-sm hover:bg-gray-800 dark:hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 dark:focus-visible:outline-white"
-				>
-					Daftar Sekarang
-				</a>
-				<ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600 dark:text-gray-300">
-					<li class="flex gap-x-3">
-						<svg class="h-6 w-5 flex-none text-gray-900 dark:text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-						</svg>
-						Semua Kelas (20+)
-					</li>
-					<li class="flex gap-x-3">
-						<svg class="h-6 w-5 flex-none text-gray-900 dark:text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-						</svg>
-						Akses Lifetime
-					</li>
-					<li class="flex gap-x-3">
-						<svg class="h-6 w-5 flex-none text-gray-900 dark:text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-						</svg>
-						Sertifikat + Portfolio
-					</li>
-					<li class="flex gap-x-3">
-						<svg class="h-6 w-5 flex-none text-gray-900 dark:text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-						</svg>
-						Support 1 Tahun
-					</li>
-					<li class="flex gap-x-3">
-						<svg class="h-6 w-5 flex-none text-gray-900 dark:text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-						</svg>
-						Private Mentoring
-					</li>
-					<li class="flex gap-x-3">
-						<svg class="h-6 w-5 flex-none text-gray-900 dark:text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-							<path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-						</svg>
-						Job Placement Support
-					</li>
-				</ul>
-			</div>
+		  </div>
+		  <ul class="mt-8 space-y-3 text-sm text-gray-600 dark:text-gray-300 text-left">
+			<li>✅ 5 Kelas Pilihan</li>
+			<li>✅ Akses Lifetime</li>
+			<li>✅ Sertifikat + Portfolio</li>
+			<li>✅ Support 90 Hari</li>
+			<li>✅ Live Mentoring</li>
+		  </ul>
+		  <a
+			href="/"
+			class="mt-8 block rounded-xl bg-gray-900 dark:bg-white px-4 py-3 text-center text-sm font-semibold text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 transition"
+		  >
+			Daftar Sekarang
+		  </a>
 		</div>
+  
+		<!-- Paket Enterprise -->
+		<div
+		  class="flex flex-col justify-between rounded-3xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 hover:shadow-xl transition duration-300"
+		>
+		  <div>
+			<h3 class="text-xl font-semibold text-gray-900 dark:text-white">Enterprise</h3>
+			<p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+			  Paket terbaik untuk tim atau perusahaan yang ingin upskill karyawan secara menyeluruh.
+			</p>
+			<div class="mt-6 flex items-baseline justify-center gap-x-2">
+			  <span class="text-4xl font-bold text-gray-900 dark:text-white">Rp 999K</span>
+			  <span class="text-sm text-gray-500 dark:text-gray-400 line-through">Rp 4.999K</span>
+			</div>
+		  </div>
+		  <ul class="mt-8 space-y-3 text-sm text-gray-600 dark:text-gray-300 text-left">
+			<li>✅ Semua Kelas (10+)</li>
+			<li>✅ Akses Lifetime</li>
+			<li>✅ Sertifikat + Portfolio</li>
+			<li>✅ Support 1 Tahun</li>
+			<li>✅ Private Mentoring</li>
+			<li>✅ Job Placement Support</li>
+		  </ul>
+		  <a
+			href="/"
+			class="mt-8 block rounded-xl bg-gray-900 dark:bg-white px-4 py-3 text-center text-sm font-semibold text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 transition"
+		  >
+			Daftar Sekarang
+		  </a>
+		</div>
+	  </div>
 	</div>
-</section>
+  </section>
+  
 
 <!-- CTA Final -->
 <section class="bg-white dark:bg-gray-100">
@@ -218,20 +149,25 @@
             <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-700 dark:text-gray-600">
               Promo ini terbatas dan akan berakhir segera. Daftar sekarang dan dapatkan diskon hingga 70%!
             </p>
-            <div class="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-4">
-              <a
-                href="/"
-                class="rounded-md bg-gray-900 px-8 py-4 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 transition"
-              >
-                Daftar Sekarang - Diskon 70%
-              </a>
-              <a
-                href="/sosial-media"
-                class="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-900 hover:underline"
-              >
-                Butuh Bantuan? <span aria-hidden="true">→</span>
-              </a>
-            </div>
+			<div class="mt-10 flex flex-wrap justify-center items-center gap-x-6 gap-y-4">
+				<!-- Tombol utama -->
+				<a
+				  href="/"
+				  class="inline-block rounded-xl bg-gray-900 text-white px-8 py-4 text-sm font-semibold shadow-md transition-all duration-300 hover:scale-105 hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+				>
+				  Daftar Sekarang — Diskon 70%
+				</a>
+			  
+				<!-- Tombol sekunder -->
+				<a
+				  href="/sosial-media"
+				  class="inline-block text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
+				>
+				  Butuh Bantuan?
+				  <span aria-hidden="true" class="ml-1">→</span>
+				</a>
+			  </div>
+			  
           </div>
           
     </div>

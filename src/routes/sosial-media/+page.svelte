@@ -63,7 +63,6 @@
 							</svg>
 							Subscribe Channel
 						</a>
-						<span class="text-sm text-gray-500 dark:text-gray-400">500K+ subscribers</span>
 					</div>
 				</div>
 			</div>
@@ -102,7 +101,6 @@
                             </svg>
                             Follow Instagram
                         </a>
-                        <span class="text-sm text-gray-500 dark:text-gray-400">200K+ followers</span>
                     </div>
                 </div>
             </div>
@@ -136,7 +134,6 @@
 							</svg>
 							Follow TikTok
 						</a>
-						<span class="text-sm text-gray-500 dark:text-gray-400">300K+ followers</span>
 					</div>
 				</div>
 			</div>
@@ -170,7 +167,6 @@
 							</svg>
 							Join Discord
 						</a>
-						<span class="text-sm text-gray-500 dark:text-gray-400">50K+ members</span>
 					</div>
 				</div>
 			</div>
