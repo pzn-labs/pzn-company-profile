@@ -1,3 +1,4 @@
+Anda bilang:
 <script lang="ts">
     import { onMount, onDestroy } from "svelte";
     import "../app.css";
@@ -20,64 +21,76 @@
     import mobile from "$lib/assets/mobile.png"
     import uiux from "$lib/assets/uiux.png"
     import { base } from "$app/paths";
-  
-    let currentIndex = 0;
-    let heroImage: HTMLImageElement;
-  
-    const images = [html, laravel, mysql, golang, java, nodejs, vue, php, docker, spring, react, mongo];
-  
-    // Fungsi pindah gambar dengan fade
-    const showNext = () => {
-      if (!heroImage) return;
-      heroImage.classList.add("opacity-0");
-      setTimeout(() => {
-        currentIndex = (currentIndex + 1) % images.length;
-        heroImage.src = images[currentIndex];
-        heroImage.classList.remove("opacity-0");
-      }, 150);
-    };
-  
-    let interval: NodeJS.Timer;
-  
-    onMount(() => {
-      heroImage = document.getElementById("hero-image")! as HTMLImageElement;
-  
-      // Jalankan otomatis tiap 3 detik
-      interval = setInterval(showNext, 1500);
-    });
-  
-    onDestroy(() => {
-      clearInterval(interval); // bersihkan interval saat komponen hilang
-    });
+    import pznLogo from "$lib/assets/logo-pzn.png"
 
-    let activeClass: string | null = null;
+  // Array gambar
+  const images = [
+    html,
+    laravel,
+    mysql,
+    golang,
+    java,
+    nodejs,
+    vue,
+    php,
+    docker,
+    spring,
+    react,
+    mongo
+  ];
 
-const classes = [
-  {
-    id: "golang",
-    name: "Kelas Golang",
-    img: golang,
-    desc: "Pelajari bahasa pemrograman Go dari dasar hingga mahir, dengan proyek nyata dan praktik industri."
-  },
-  {
-    id: "java",
-    name: "Kelas Java",
-    img: java,
-    desc: "Kuasai Java untuk pengembangan aplikasi modern, OOP, dan framework populer seperti Spring Boot."
-  },
-  {
-    id: "nodejs",
-    name: "Kelas Node.js",
-    img: nodejs,
-    desc: "Bangun aplikasi backend cepat dan scalable menggunakan Node.js dan Express dengan praktik terbaik."
-  }
-];
+  let currentIndex = 0;
+  let currentImage = images[currentIndex];
+  let isFading = false;
+  let interval: NodeJS.Timer;
 
-const toggleClass = (id: string) => {
-  activeClass = activeClass === id ? null : id;
-};
+  // Ganti gambar dengan efek fade
+  const showNext = () => {
+    isFading = true;
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      currentImage = images[currentIndex];
+      isFading = false;
+    }, 300); // durasi transisi fade
+  };
 
-const categories = [
+  onMount(() => {
+    interval = setInterval(showNext, 1500); // ⏱ Ganti setiap 1.5 detik
+  });
+
+  onDestroy(() => {
+    clearInterval(interval);
+  });
+
+  // Fix for missing activeClass
+  let activeClass: string | null = null;
+
+  const classes = [
+    {
+      id: "golang",
+      name: "Kelas Golang",
+      img: golang,
+      desc: "Pelajari bahasa pemrograman Go dari dasar hingga mahir, dengan proyek nyata dan praktik industri."
+    },
+    {
+      id: "java",
+      name: "Kelas Java",
+      img: java,
+      desc: "Kuasai Java untuk pengembangan aplikasi modern, OOP, dan framework populer seperti Spring Boot."
+    },
+    {
+      id: "nodejs",
+      name: "Kelas Node.js",
+      img: nodejs,
+      desc: "Bangun aplikasi backend cepat dan scalable menggunakan Node.js dan Express dengan praktik terbaik."
+    }
+  ];
+
+  const toggleClass = (id: string) => {
+    activeClass = activeClass === id ? null : id;
+  };
+
+  const categories = [
     {
       name: "Web Development",
       image: app,
@@ -102,61 +115,67 @@ const categories = [
   ];
 
   let selected = categories[0];
+</script>
 
-  </script>
+<!--  HERO SECTION -->
+<section class="relative bg-gray-900 overflow-hidden py-24 rounded-b-4xl">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
+    
+    <!-- 🩶 KIRI: TEKS (monokrom) -->
+    <div class="space-y-6 text-center lg:text-left">
+      <span class="inline-block text-sm font-semibold text-gray-900 bg-gray-100 px-4 py-2 rounded-full">
+        Ngoding Dulu, Jadi Sultan Nanti!
+      </span>
 
-<svelte:head>
-	<title>Programmer Zaman Now</title>
-	<meta
-		name="description"
-		content="Ikuti Programmer Zaman Now di berbagai platform sosial media untuk update terbaru, tips programming, dan konten edukatif."
-	/>
-</svelte:head>
-
-<!-- Hero Section -->
-<section class="relative bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 py-24 sm:py-24 lg:py-24 rounded-b-4xl">
-  <div class="mx-auto max-w-7xl px-6 sm:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-8">
-
-    <!-- KIRI: TEKS -->
-    <div class="space-y-6 text-center lg:text-left order-2 lg:order-1">
-      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight max-w-2xl mx-auto lg:mx-0">
-        Programmer Zaman Now
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
+        Waktunya Bawa Karier IT Anda ke Level Dunia <br class="hidden sm:block" />
       </h1>
-      <p class="mt-4 text-base sm:text-lg leading-relaxed text-gray-300 dark:text-gray-600 max-w-2xl mx-auto lg:mx-0">
-        Belajar programming dari dasar hingga mahir bersama Programmer Zaman Now. 
-        Dapatkan skill yang dibutuhkan industri dan siap berkarir di dunia teknologi.
+
+      <p class="text-lg text-gray-400 dark:text-gray-400 max-w-xl mx-auto lg:mx-0">
+        Programmer Zaman Now membantu Anda mengembangkan skill terdepan,
+        teknologi terbaru, dan kemampuan praktis.
       </p>
 
-      <!-- Tombol -->
-      <div class="mt-6 flex flex-wrap justify-center lg:justify-start gap-3">
+      <!--  Tombol CTA (monokrom elegan) -->
+      <div class="pt-4">
         <a
-          href={base + "/kelas"}
-          class="px-6 py-3 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-semibold text-sm shadow-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+          href="{base}/kelas"
+          class="inline-flex items-center gap-2 px-4 py-2 bg-white text-gray-900 font-semibold rounded-xl shadow-lg hover:bg-gray-200 transition-all"
         >
-          Lihat Kelas
-        </a>
-        <a
-          href={base + "/promo"}
-          class="px-6 py-3 rounded-md bg-transparent border border-white/30 dark:border-gray-700 text-white dark:text-gray-200 font-semibold text-sm hover:bg-white/10 dark:hover:bg-gray-800 transition"
-        >
-          Lihat Promo &rarr;
+          Mulai Sekarang
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"
+            />
+          </svg>
         </a>
       </div>
     </div>
 
-    <!-- KANAN: HERO IMAGE OTOMATIS -->
-    <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl">
-      <!-- svelte-ignore a11y_img_redundant_alt -->
+    <!-- 🎨 KANAN: GAMBAR SLIDESHOW (tetap berwarna penuh) -->
+    <div class="relative w-full aspect-video overflow-hidden rounded-3xl shadow-2xl">  
       <img
-          id="hero-image"
-          src={images[currentIndex]}
-          alt="Hero image Programmer Zaman Now"
-          class="w-full h-auto object-contain transition-opacity duration-100 opacity-100"
+        src={currentImage}
+        alt="Hero Slideshow"
+        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
+        class:opacity-0={isFading}
       />
     </div>
-
   </div>
 </section>
+
+
+
+
 
 <!-- Fitur Utama -->
 <section class="py-20 sm:py-16 bg-white dark:bg-gray-900">
@@ -220,6 +239,46 @@ const categories = [
     </div>
     
 	</div>
+</section>
+
+<!-- overlay logo -->
+<section class="bg-gray-100 dark:bg-gray-900 py-4 overflow-hidden">
+  <div class="mx-auto max-w-5xl px-6">
+    <!-- 🔹 Wrapper animasi -->
+    <div class="relative flex overflow-hidden">
+      <!-- 🔹 Konten bergerak -->
+      <div class="flex items-center gap-4 animate-marquee">
+        {#each Array(14) as _}
+          <div class="flex items-center gap-2 flex-shrink-0">
+            <img
+              src="{pznLogo}"
+              alt="PZN Logo"
+              class="w-7 h-7 object-contain"
+            />
+            <h2 class="text-base font-semibold text-gray-900 dark:text-white whitespace-nowrap leading-none">
+              Programmer Zaman Now
+            </h2>
+          </div>
+        {/each}
+      </div>
+
+      <!-- 🔹 Duplikasi konten agar loop halus tanpa jeda -->
+      <div class="flex items-center gap-4 animate-marquee" aria-hidden="true">
+        {#each Array(14) as _}
+          <div class="flex items-center gap-2 flex-shrink-0">
+            <img
+              src="{pznLogo}"
+              alt="PZN Logo"
+              class="w-12 h-12 object-contain"
+            />
+            <h2 class="text-2xl font-semibold text-gray-900 dark:text-white whitespace-nowrap leading-none">
+              Programmer Zaman Now
+            </h2>
+          </div>
+        {/each}
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="py-20 sm:py-16 bg-white dark:bg-gray-900">
@@ -435,5 +494,23 @@ const categories = [
 		</p>
 	</div>
 </footer>
+
+
+<style>
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    display: flex;
+    white-space: nowrap;
+    animation: marquee 25s linear infinite;
+  }
+</style>
 
 

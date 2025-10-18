@@ -12,19 +12,33 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-b-4xl">
-	<div class="mx-auto max-w-7xl px-6 py-24 sm:py-24 lg:px-8">
-		<div class="mx-auto max-w-2xl text-center">
-			<h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
-				Promo Spesial Programmer Zaman Now
-			</h1>
-			<p class="mt-6 text-lg leading-8 text-gray-300 dark:text-gray-600">
-				Dapatkan diskon hingga 70% untuk semua kelas programming. Penawaran terbatas, jangan
-				sampai kehabisan!
-			</p>
+<section class="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-b-4xl overflow-hidden">
+	<div class="mx-auto max-w-7xl px-6 py-24 sm:py-24 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
+	  
+	  <!-- 🔹 Kiri: Teks -->
+	  <div class="text-center lg:text-left space-y-6">
+		<h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
+		  Promo Spesial <br class="hidden sm:block" /> Programmer Zaman Now
+		</h1>
+		<p class="mt-4 text-lg leading-8 text-gray-300 dark:text-gray-600 max-w-xl mx-auto lg:mx-0">
+		  Dapatkan diskon hingga <span class="font-semibold text-indigo-400 dark:text-indigo-600">70%</span> untuk semua kelas programming.
+		  Penawaran terbatas — buruan sebelum kehabisan!
+		</p>
+	  </div>
+  
+	  <!-- 🔹 Kanan: Gambar -->
+	  <div class="flex justify-center">
+		<div class="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-gray-800 dark:border-gray-200">
+		  <img
+			src="https://i.pinimg.com/736x/75/75/04/7575044bbe8c3b30ea177b4db889c7d6.jpg"
+			alt="Promo Programmer Zaman Now"
+			class="w-full h-full object-cover"
+		  />
 		</div>
+	  </div>
 	</div>
-</section>
+  </section>
+  
 
 <!-- Paket Promo -->
 <section class="py-24 sm:py-24 bg-white dark:bg-gray-900">

@@ -141,19 +141,33 @@
 	<meta name="description" content="Pilih kelas programming yang sesuai dengan kebutuhan Anda. Dari pemula hingga mahir, semua tersedia di PZN." />
   </svelte:head>
   
-  <!-- Hero Section -->
-  <section class="relative bg-gray-900 text-gray-100 rounded-b-4xl overflow-hidden">
-	<div class="mx-auto max-w-7xl px-6 py-32 sm:py-32 lg:px-8">
-	  <div class="mx-auto max-w-2xl text-center">
-		<h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
-		  <span class="bg-clip-text text-white dark:text-gray-900">Kelas Programmer Zaman Now</span>
+<!-- Hero Section -->
+<section class="relative bg-gray-900 text-gray-100 rounded-b-4xl overflow-hidden py-24">
+	<div class="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
+	  
+	  <!-- 🔹 Kiri: Teks -->
+	  <div class="space-y-6 text-center lg:text-left">
+		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
+		  Kelas <span class="text-white">Programmer Zaman Now</span>
 		</h1>
-		<p class="mt-6 text-lg leading-8 text-gray-300 sm:text-xl sm:leading-9">
-		  Tingkatkan skill programming Anda dengan kelas-kelas berkualitas tinggi yang dirancang khusus untuk kebutuhan industri.
+		<p class="text-lg text-gray-400 max-w-xl mx-auto lg:mx-0">
+		  Tingkatkan kemampuan coding Anda dengan kelas eksklusif, praktis, dan sesuai kebutuhan industri teknologi modern.
 		</p>
+	  </div>
+  
+	  <!-- 🔹 Kanan: Gambar Lingkaran -->
+	  <div class="relative flex justify-center">
+		<div class="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-gray-800">
+		  <img
+			src="https://i.pinimg.com/1200x/c2/04/07/c20407664f8f8a5610dd33652626d250.jpg"
+			alt="Programmer Zaman Now Class"
+			class="w-full h-full object-cover"
+		  />
+		</div>
 	  </div>
 	</div>
   </section>
+  
   
   <!-- Daftar Kelas -->
   <section class="py-24 sm:py-24">
