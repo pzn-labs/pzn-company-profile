@@ -1,28 +1,28 @@
 <script lang="ts">
-	import "../../app.css"
-</script>
-
-<svelte:head>
-	<title>Sosial Media - Programmer Zaman Now</title>
-	<meta name="description" content="Ikuti Programmer Zaman Now di berbagai platform sosial media untuk update terbaru, tips programming, dan konten edukatif." />
-</svelte:head>
-
-<!-- Hero Section -->
-<section class="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-b-4xl">
-	<div class="mx-auto max-w-7xl px-6 py-24 sm:py-24 lg:px-8">
-		<div class="mx-auto max-w-2xl text-center">
-			<h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
-				Ikuti Kami di Sosial Media
-			</h1>
-			<p class="mt-6 text-lg leading-8 text-gray-300 dark:text-gray-600">
-				Dapatkan update terbaru, tips programming, dan konten edukatif dari Programmer Zaman Now di berbagai platform.
-			</p>
-		</div>
-	</div>
-</section>
-
-<!-- Platform Sosial Media -->
-<section class="py-24 sm:py-32">
+	import { base } from "$app/paths";
+	import "../../app.css";
+	import pznLogo from "$lib/assets/logo-pzn.png"
+  </script>
+  
+  <svelte:head>
+	  <title>Sosial Media - Programmer Zaman Now</title>
+	  <meta name="description" content="Ikuti Programmer Zaman Now di berbagai platform sosial media untuk update terbaru, tips programming, dan konten edukatif." />
+  </svelte:head>
+  
+  <!-- Hero Section -->
+  <section class="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-b-4xl">
+	  <div class="mx-auto max-w-7xl px-6 py-24 sm:py-24 lg:px-8 text-center">
+		  <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
+			  Ikuti Kami di Sosial Media
+		  </h1>
+		  <p class="mt-6 text-lg leading-8 text-gray-300 dark:text-gray-600">
+			  Dapatkan update terbaru, tips programming, dan konten edukatif dari Programmer Zaman Now di berbagai platform.
+		  </p>
+	  </div>
+  </section>
+  
+<!-- 🌐 Platform Sosial Media -->
+<section class="py-24 sm:py-32 bg-white dark:bg-gray-900">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 		<div class="mx-auto max-w-2xl text-center">
 			<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
@@ -32,163 +32,111 @@
 				Bergabunglah dengan komunitas developer terbesar di Indonesia dan dapatkan insight berharga setiap hari.
 			</p>
 		</div>
-		
+
+		<!-- 🔹 Grid Sosial Media -->
 		<div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-2">
-			<!-- YouTube -->
-			<div class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg ring-1 ring-gray-900/5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-				<div class="p-8">
-					<div class="flex items-center gap-4 mb-6">
-						<div class="flex h-16 w-16 items-center justify-center rounded-full bg-gray-900 dark:bg-white">
-							<svg class="h-8 w-8 text-white dark:text-gray-900" fill="currentColor" viewBox="0 0 24 24">
-								<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-							</svg>
+			{#each [
+				{
+					name: "YouTube",
+					icon: `<path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4L15.8 12l-6.3 3.6z"/>`,
+					bg: "bg-red-600",
+					subs: "500K+ Subscribers",
+					url: "https://youtube.com/@programmerzamannow",
+					desc: "Tutorial programming lengkap, tips karir, dan review teknologi terbaru. Subscribe untuk tidak ketinggalan video baru setiap minggu!"
+				},
+				{
+					name: "Instagram",
+					icon: `<path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zM12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6a3 3 0 0 1 0-6zm5.5-2.5a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3z"/>`,
+					bg: "bg-pink-600",
+					subs: "200K+ Followers",
+					url: "https://instagram.com/programmerzamannow",
+					desc: "Tips coding harian, behind the scenes, dan konten visual menarik tentang dunia programming. Follow untuk daily inspiration!"
+				},
+
+				{
+					name: "TikTok",
+					icon: `<path d="M12.5 2h2.9a5.7 5.7 0 0 0 4.2 4v2.7a8.4 8.4 0 0 1-4.2-1.2v7a6.3 6.3 0 1 1-6.3-6.3 5.9 5.9 0 0 1 1 .1v2.9a2.9 2.9 0 1 0 2.4 2.8z"/>`,
+					bg: "bg-black",
+					subs: "300K+ Followers",				
+					url: "https://tiktok.com/@programmerzamannow",
+					desc: "Konten programming singkat dan engaging! Tips coding, life hacks developer, dan trend teknologi dalam format video pendek."
+				},
+				{
+					name: "Discord",
+					icon: `<path d="M20.317 4.37a19.8 19.8 0 0 0-4.885-1.515.074.074 0 0 0-.078.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.462 0 12.39 12.39 0 0 0-.617-1.25.077.077 0 0 0-.078-.037A19.79 19.79 0 0 0 3.68 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.06a.082.082 0 0 0 .031.055 19.9 19.9 0 0 0 5.993 3.02.078.078 0 0 0 .084-.027c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.105c-.652-.247-1.27-.55-1.857-.908a.078.078 0 0 1-.008-.126c.125-.094.25-.192.368-.291a.074.074 0 0 1 .077-.01c3.9 1.8 8.18 1.8 12.062 0a.074.074 0 0 1 .078.009c.118.1.243.198.369.292a.078.078 0 0 1-.006.126 12.3 12.3 0 0 1-1.858.907.076.076 0 0 0-.04.106c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.9 19.9 0 0 0 5.994-3.02.077.077 0 0 0 .031-.054c.5-5.177-.838-9.674-3.548-13.664a.06.06 0 0 0-.03-.028ZM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419s.956-2.42 2.157-2.42c1.21 0 2.176 1.096 2.157 2.42 0 1.334-.956 2.42-2.157 2.42Zm7.963 0c-1.183 0-2.157-1.085-2.157-2.419s.956-2.42 2.157-2.42c1.21 0 2.176 1.096 2.157 2.42 0 1.334-.947 2.42-2.157 2.42Z"/>`,
+					bg: "bg-indigo-600",
+					subs: "50K+ Members",
+					url: "https://discord.gg/programmerzamannow",
+					desc: "Komunitas developer Indonesia terbesar! Diskusi real-time, sharing project, dan networking dengan sesama developer."
+				}
+			] as socmed}
+				<div class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg ring-1 ring-gray-900/5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+					<div class="p-8">
+						<div class="flex items-center gap-4 mb-6">
+							<div class="flex h-16 w-16 items-center justify-center rounded-full {socmed.bg}">
+								<svg class="h-8 w-8 text-white dark:text-gray-900" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+									{@html socmed.icon}
+								</svg>
+							</div>
+							<div>
+								<h3 class="text-xl font-semibold text-gray-900 dark:text-white">{socmed.name}</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-400">{socmed.subs}</p>
+							</div>
 						</div>
-						<div>
-							<h3 class="text-xl font-semibold text-gray-900 dark:text-white">YouTube</h3>
-							<p class="text-sm text-gray-600 dark:text-gray-400">500K+ Subscribers</p>
-						</div>
-					</div>
-					<p class="text-gray-600 dark:text-gray-300 mb-6">
-						Tutorial programming lengkap, tips karir, dan review teknologi terbaru. Subscribe untuk tidak ketinggalan video baru setiap minggu!
-					</p>
-					<div class="flex items-center justify-between">
-						<a
-							href="https://youtube.com/@programmerzamannow"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="inline-flex items-center gap-2 rounded-md bg-gray-900 dark:bg-white px-4 py-2 text-sm font-semibold text-white dark:text-gray-900 shadow-sm hover:bg-gray-800 dark:hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 dark:focus-visible:outline-white"
-						>
-							<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-								<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-							</svg>
-							Subscribe Channel
+						<p class="text-gray-600 dark:text-gray-300 mb-6">{socmed.desc}</p>
+						<a href={socmed.url} target="_blank" class="inline-flex items-center gap-2 rounded-md {socmed.bg} px-4 py-2 text-sm font-semibold text-white dark:text-gray-900 shadow-sm hover:opacity-90">
+							Kunjungi {socmed.name}
 						</a>
 					</div>
 				</div>
-			</div>
-
-			<!-- Instagram -->
-            <div class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg ring-1 ring-gray-900/5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div class="p-8">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-black dark:bg-white">
-                            <!-- Modern Instagram Outline Icon -->
-                            <svg class="h-8 w-8 text-white dark:text-gray-900" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Instagram</h3>
-                            <p class="text-sm text-gray-600 dark:text-gray-400">200K+ Followers</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600 dark:text-gray-300 mb-6">
-                        Tips coding harian, behind the scenes, dan konten visual menarik tentang dunia programming. Follow untuk daily inspiration!
-                    </p>
-                    <div class="flex items-center justify-between">
-                        <a
-                            href="https://instagram.com/programmerzamannow"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="inline-flex items-center gap-2 rounded-md bg-black dark:bg-white px-4 py-2 text-sm font-semibold text-white dark:text-gray-900 shadow-sm hover:bg-gray-800 dark:hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black dark:focus-visible:outline-white"
-                        >
-                            <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-                            </svg>
-                            Follow Instagram
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-			<!-- TikTok -->
-			<div class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg ring-1 ring-gray-900/5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-				<div class="p-8">
-					<div class="flex items-center gap-4 mb-6">
-						<div class="flex h-16 w-16 items-center justify-center rounded-full bg-black">
-							<svg class="h-8 w-8 text-white dark:text-gray-900" fill="currentColor" viewBox="0 0 24 24">
-								<path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-							</svg>
-						</div>
-						<div>
-							<h3 class="text-xl font-semibold text-gray-900 dark:text-white">TikTok</h3>
-							<p class="text-sm text-gray-600 dark:text-gray-400">300K+ Followers</p>
-						</div>
-					</div>
-					<p class="text-gray-600 dark:text-gray-300 mb-6">
-						Konten programming singkat dan engaging! Tips coding, life hacks developer, dan trend teknologi dalam format video pendek.
-					</p>
-					<div class="flex items-center justify-between">
-						<a
-							href="https://tiktok.com/@programmerzamannow"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="inline-flex items-center gap-2 rounded-md bg-black px-4 py-2 text-sm font-semibold text-white dark:text-gray-900 shadow-sm hover:bg-gray-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-						>
-							<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-								<path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-							</svg>
-							Follow TikTok
-						</a>
-					</div>
-				</div>
-			</div>
-
-			<!-- Discord -->
-			<div class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg ring-1 ring-gray-900/5 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-				<div class="p-8">
-					<div class="flex items-center gap-4 mb-6">
-						<div class="flex h-16 w-16 items-center justify-center rounded-full bg-gray-900 dark:bg-white">
-							<svg class="h-8 w-8 text-white dark:text-gray-900" fill="currentColor" viewBox="0 0 24 24">
-								<path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-							</svg>
-						</div>
-						<div>
-							<h3 class="text-xl font-semibold text-gray-900 dark:text-white ">Discord</h3>
-							<p class="text-sm text-gray-600 dark:text-gray-400">50K+ Members</p>
-						</div>
-					</div>
-					<p class="text-gray-600 dark:text-gray-300 mb-6">
-						Komunitas developer Indonesia terbesar! Diskusi real-time, sharing project, dan networking dengan sesama developer.
-					</p>
-					<div class="flex items-center justify-between">
-						<a
-							href="https://discord.gg/programmerzamannow"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="inline-flex items-center gap-2 rounded-md bg-gray-900 dark:bg-white px-4 py-2 text-sm font-semibold text-white dark:text-gray-900 shadow-sm hover:bg-gray-800 dark:hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 dark:focus-visible:outline-white"
-						>
-							<svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-								<path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
-							</svg>
-							Join Discord
-						</a>
-					</div>
-				</div>
-			</div>
+			{/each}
 		</div>
 	</div>
 </section>
 
-<!-- Contact Info -->
-<section class="py-16 sm:py-8  bg-white">
-	<div class="mx-auto max-w-7xl px-6 lg:px-8">
-		<div class="mx-auto max-w-3xl text-center border dark:border-white rounded-2xl p-8">
-			<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-				Butuh Bantuan?
-			</h2>
-			<p class="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-				Tim support kami siap membantu Anda 24/7. Hubungi kami melalui platform yang paling nyaman untuk Anda.
-			</p>
-		</div>          
+  
+<!-- CTA Section -->
+<section class="relative overflow-hidden py-24 bg-white dark:bg-gray-900">
+	<div class="absolute inset-0 opacity-10 bg-[url('https://www.toptal.com/designers/subtlepatterns/patterns/dots.png')]"></div>
+  
+	<div class="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
+	  <div class="max-w-3xl mx-auto bg-gray-900 backdrop-blur-xl border border-white/10 dark:border-gray-700 rounded-3xl p-12 shadow-2xl">
+  
+		<!-- 🟣 Logo PZN (berwarna) -->
+		<div class="flex justify-center mb-6">
+		  <img src="{pznLogo}" alt="Logo Programmer Zaman Now" class="h-16 w-auto drop-shadow-xl">
+		</div>
+  
+		<!-- Judul -->
+		<h2 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+		  Siap Tingkatkan Skill Anda?
+		</h2>
+  
+		<!-- Deskripsi -->
+		<p class="mt-6 text-lg leading-8 text-gray-300 dark:text-gray-200">
+		  Mulailah perjalanan belajar Anda hari ini dan kuasai teknologi terkini bersama mentor profesional dari 
+		  <span class="font-semibold text-white">Programmer Zaman Now</span>.
+		</p>
+  
+		<!-- Tombol CTA (monokrom style) -->
+		<div class="mt-10">
+		  <a href="{base}/kelas" class="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-100 text-gray-900 font-semibold px-8 py-4 shadow-lg hover:bg-gray-200 transition-all duration-300">
+			<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+			  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+			</svg>
+			Lihat Semua Kelas
+		  </a>
+		</div>
+  
+	  </div>
 	</div>
-</section>
-
-<footer class="bg-gray-900 text-gray-300 border-t border-gray-800 rounded-t-4xl mt-16">
+  </section>
+  
+  
+  
+  
+  <!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-300 border-t border-gray-800 rounded-t-4xl">
 	<div class="mx-auto max-w-7xl px-6 py-16 lg:px-8 grid gap-12 md:grid-cols-3 items-start">
 		<!-- 🟣 Kolom 1: Logo & Deskripsi -->
 		<div class="space-y-5">
@@ -220,7 +168,7 @@
 				] as link}
 					<li>
 						<a
-							href={link.href}
+							href={base + link.href}
 							class="text-sm text-gray-400 hover:text-white transition-colors duration-200"
 							>{link.name}</a
 						>
@@ -231,47 +179,46 @@
 
 		<!-- 🟣 Kolom 3: Sosial Media -->
 		<div class="space-y-5">
-            <h4 class="text-base font-semibold text-white">Ikuti Kami</h4>
-            <div class="flex gap-5">
-                {#each [
-                    {
-                        href: "https://youtube.com",
-                        icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
-                        label: "YouTube"
-                    },
-                    {
-                        href: "https://instagram.com",
-                        icon: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
-                        label: "Instagram"
-                    },
-                    {
-                        href: "https://t.me",
-                        icon: "https://cdn-icons-png.flaticon.com/512/2111/2111646.png",
-                        label: "Telegram"
-                    },
-                    {
-                        href: "https://facebook.com",
-                        icon: "https://cdn-icons-png.flaticon.com/512/733/733547.png",
-                        label: "Facebook"
-                    }
-                ] as social}
-                    <a
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={social.label}
-                        class="group"
-                    >
-                        <img
-                            src={social.icon}
-                            alt={social.label}
-                            class="h-6 w-6 opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300"
-                        />
-                    </a>
-                {/each}
-            </div>
-        </div>
-        
+			<h4 class="text-base font-semibold text-white">Ikuti Kami</h4>
+			<div class="flex gap-5">
+				{#each [
+					{
+						href: "https://youtube.com",
+						icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
+						label: "YouTube"
+					},
+					{
+						href: "https://instagram.com",
+						icon: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
+						label: "Instagram"
+					},
+					{
+						href: "https://t.me",
+						icon: "https://cdn-icons-png.flaticon.com/512/2111/2111646.png",
+						label: "Telegram"
+					},
+					{
+						href: "https://facebook.com",
+						icon: "https://cdn-icons-png.flaticon.com/512/733/733547.png",
+						label: "Facebook"
+					}
+				] as social}
+					<a
+						href={social.href}
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label={social.label}
+						class="group"
+					>
+						<img
+							src={social.icon}
+							alt={social.label}
+							class="h-6 w-6 opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300"
+						/>
+					</a>
+				{/each}
+			</div>
+		</div>
 	</div>
 
 	<!-- 🟣 Garis Pemisah + Copyright -->
@@ -281,3 +228,4 @@
 		</p>
 	</div>
 </footer>
+  

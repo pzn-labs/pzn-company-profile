@@ -1,6 +1,7 @@
 <script lang="ts">
     import { onMount, onDestroy } from "svelte";
     import "../app.css";
+    
   
     import golang from "$lib/assets/golang.jpg"
     import html from "$lib/assets/html.jpg"
@@ -18,6 +19,7 @@
     import app from "$lib/assets/application.png"
     import mobile from "$lib/assets/mobile.png"
     import uiux from "$lib/assets/uiux.png"
+    import { base } from "$app/paths";
   
     let currentIndex = 0;
     let heroImage: HTMLImageElement;
@@ -113,48 +115,48 @@ const categories = [
 
 <!-- Hero Section -->
 <section class="relative bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 py-24 sm:py-24 lg:py-24 rounded-b-4xl">
-    <div class="mx-auto max-w-7xl px-6 sm:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-8">
-  
-      <!-- KIRI: TEKS -->
-      <div class="space-y-6 text-center lg:text-left order-2 lg:order-1">
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight max-w-2xl mx-auto lg:mx-0">
-          Programmer Zaman Now
-        </h1>
-        <p class="mt-4 text-base sm:text-lg leading-relaxed text-gray-300 dark:text-gray-600 max-w-2xl mx-auto lg:mx-0">
-          Belajar programming dari dasar hingga mahir bersama Programmer Zaman Now. 
-          Dapatkan skill yang dibutuhkan industri dan siap berkarir di dunia teknologi.
-        </p>
-  
-        <!-- Tombol -->
-        <div class="mt-6 flex flex-wrap justify-center lg:justify-start gap-3">
-          <a
-            href="/kelas"
-            class="px-6 py-3 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-semibold text-sm shadow-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition"
-          >
-            Lihat Kelas
-          </a>
-          <a
-            href="/promo"
-            class="px-6 py-3 rounded-md bg-transparent border border-white/30 dark:border-gray-700 text-white dark:text-gray-200 font-semibold text-sm hover:bg-white/10 dark:hover:bg-gray-800 transition"
-          >
-            Lihat Promo &rarr;
-          </a>
-        </div>
+  <div class="mx-auto max-w-7xl px-6 sm:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-8">
+
+    <!-- KIRI: TEKS -->
+    <div class="space-y-6 text-center lg:text-left order-2 lg:order-1">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight max-w-2xl mx-auto lg:mx-0">
+        Programmer Zaman Now
+      </h1>
+      <p class="mt-4 text-base sm:text-lg leading-relaxed text-gray-300 dark:text-gray-600 max-w-2xl mx-auto lg:mx-0">
+        Belajar programming dari dasar hingga mahir bersama Programmer Zaman Now. 
+        Dapatkan skill yang dibutuhkan industri dan siap berkarir di dunia teknologi.
+      </p>
+
+      <!-- Tombol -->
+      <div class="mt-6 flex flex-wrap justify-center lg:justify-start gap-3">
+        <a
+          href={base + "/kelas"}
+          class="px-6 py-3 rounded-md bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-semibold text-sm shadow-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+        >
+          Lihat Kelas
+        </a>
+        <a
+          href={base + "/promo"}
+          class="px-6 py-3 rounded-md bg-transparent border border-white/30 dark:border-gray-700 text-white dark:text-gray-200 font-semibold text-sm hover:bg-white/10 dark:hover:bg-gray-800 transition"
+        >
+          Lihat Promo &rarr;
+        </a>
       </div>
-  
-      <!-- KANAN: HERO IMAGE OTOMATIS -->
-      <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl">
-        <!-- svelte-ignore a11y_img_redundant_alt -->
-        <img
-            id="hero-image"
-            src={images[currentIndex]}
-            alt="Hero image Programmer Zaman Now"
-            class="w-full h-auto object-contain transition-opacity duration-100 opacity-100"
-        />
-      </div>
-  
     </div>
-  </section>
+
+    <!-- KANAN: HERO IMAGE OTOMATIS -->
+    <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl">
+      <!-- svelte-ignore a11y_img_redundant_alt -->
+      <img
+          id="hero-image"
+          src={images[currentIndex]}
+          alt="Hero image Programmer Zaman Now"
+          class="w-full h-auto object-contain transition-opacity duration-100 opacity-100"
+      />
+    </div>
+
+  </div>
+</section>
 
 <!-- Fitur Utama -->
 <section class="py-20 sm:py-16 bg-white dark:bg-gray-900">
@@ -246,8 +248,11 @@ const categories = [
               alt={kelas.title}
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
+
+            <!-- Overlay -->
             <div
-              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center text-center p-6"
+              class="absolute inset-0 bg-black/60 transition-opacity duration-500 flex flex-col items-center justify-center text-center p-6 
+                     opacity-100 sm:opacity-0 sm:group-hover:opacity-100"
             >
               <h3 class="text-white text-2xl font-bold mb-3">{kelas.title}</h3>
               <p class="text-gray-200 text-sm">{kelas.desc}</p>
@@ -257,37 +262,33 @@ const categories = [
       </div>
 
       <!-- 🔹 KANAN (1 gambar besar) -->
-<div class="col-span-2 lg:col-span-2">
-  <div
-    class="relative group cursor-pointer overflow-hidden rounded-2xl shadow-lg
-           aspect-[16/9] lg:aspect-[16/9]" 
-  >
-    <img
-      src={nodejs}
-      alt="Belajar Node.js"
-      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-    />
-    <div
-      class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500
-             flex flex-col items-center justify-center text-center p-6"
-    >
-      <h3 class="text-white text-2xl font-bold mb-3">Belajar Node.js</h3>
-      <p class="text-gray-200 text-sm">
-        Bangun aplikasi web cepat dengan JavaScript di sisi server.
-      </p>
-    </div>
-  </div>
-</div>
-
-      
+      <div class="col-span-2 lg:col-span-2">
+        <div class="relative group cursor-pointer overflow-hidden rounded-2xl shadow-lg aspect-[16/9]">
+          <img
+            src={nodejs}
+            alt="Belajar Node.js"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+          <div
+            class="absolute inset-0 bg-black/60 transition-opacity duration-500 flex flex-col items-center justify-center text-center p-6
+                   opacity-100 sm:opacity-0 sm:group-hover:opacity-100"
+          >
+            <h3 class="text-white text-2xl font-bold mb-3">Belajar Node.js</h3>
+            <p class="text-gray-200 text-sm">
+              Bangun aplikasi web cepat dengan JavaScript di sisi server.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+
 <!-- pilihan kategori-->
 <section class="bg-white dark:bg-gray-900 py-20">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <!--  Judul -->
+    <!-- 🔹 Judul -->
     <div class="text-center mb-10">
       <h2 class="text-3xl font-bold text-gray-900 dark:text-white">
         Pilihan Program Belajar di Programmer Zaman Now
@@ -297,7 +298,7 @@ const categories = [
       </p>
     </div>
 
-    <!--  Tabs -->
+    <!-- 🔹 Tabs -->
     <div class="flex flex-wrap justify-center gap-4 mb-10">
       {#each categories as cat}
         <button
@@ -313,11 +314,11 @@ const categories = [
       {/each}
     </div>
 
-    <!--  Konten -->
+    <!-- 🔹 Konten -->
     <div
       class="bg-gray-100 dark:bg-gray-800 rounded-2xl p-8 lg:p-10 flex flex-col lg:flex-row items-center gap-10 text-gray-900 dark:text-gray-100 shadow-xl transition-all duration-500"
     >
-      <!--  Gambar -->
+      <!-- 🖼️ Gambar -->
       <div class="flex-shrink-0 w-full lg:w-1/2 flex justify-center">
         <img
           src={selected.image}
@@ -326,12 +327,12 @@ const categories = [
         />
       </div>
 
-      <!--  Teks -->
+      <!-- 🧾 Teks -->
       <div class="w-full lg:w-1/2 space-y-5 text-center lg:text-left transition-all duration-500">
         <h3 class="text-2xl lg:text-3xl font-bold leading-tight">{selected.title}</h3>
         <p class="text-gray-800 dark:text-gray-300 leading-relaxed">{selected.description}</p>
         <a
-          href="#"
+          href={base + "/kelas"}
           class="inline-block mt-4 px-6 py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-700 dark:bg-gray-100 dark:text-gray-900 dark:hover:bg-gray-200 transition"
         >
           Daftar Sekarang →
@@ -340,10 +341,6 @@ const categories = [
     </div>
   </div>
 </section>
-
-
-
-
 
 <!-- FOOTER -->
 <footer class="bg-gray-900 text-gray-300 border-t border-gray-800 rounded-t-4xl">
@@ -378,7 +375,7 @@ const categories = [
 				] as link}
 					<li>
 						<a
-							href={link.href}
+							href={base + link.href}
 							class="text-sm text-gray-400 hover:text-white transition-colors duration-200"
 							>{link.name}</a
 						>
@@ -389,47 +386,46 @@ const categories = [
 
 		<!-- 🟣 Kolom 3: Sosial Media -->
 		<div class="space-y-5">
-            <h4 class="text-base font-semibold text-white">Ikuti Kami</h4>
-            <div class="flex gap-5">
-                {#each [
-                    {
-                        href: "https://youtube.com",
-                        icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
-                        label: "YouTube"
-                    },
-                    {
-                        href: "https://instagram.com",
-                        icon: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
-                        label: "Instagram"
-                    },
-                    {
-                        href: "https://t.me",
-                        icon: "https://cdn-icons-png.flaticon.com/512/2111/2111646.png",
-                        label: "Telegram"
-                    },
-                    {
-                        href: "https://facebook.com",
-                        icon: "https://cdn-icons-png.flaticon.com/512/733/733547.png",
-                        label: "Facebook"
-                    }
-                ] as social}
-                    <a
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={social.label}
-                        class="group"
-                    >
-                        <img
-                            src={social.icon}
-                            alt={social.label}
-                            class="h-6 w-6 opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300"
-                        />
-                    </a>
-                {/each}
-            </div>
-        </div>
-        
+			<h4 class="text-base font-semibold text-white">Ikuti Kami</h4>
+			<div class="flex gap-5">
+				{#each [
+					{
+						href: "https://youtube.com",
+						icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
+						label: "YouTube"
+					},
+					{
+						href: "https://instagram.com",
+						icon: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
+						label: "Instagram"
+					},
+					{
+						href: "https://t.me",
+						icon: "https://cdn-icons-png.flaticon.com/512/2111/2111646.png",
+						label: "Telegram"
+					},
+					{
+						href: "https://facebook.com",
+						icon: "https://cdn-icons-png.flaticon.com/512/733/733547.png",
+						label: "Facebook"
+					}
+				] as social}
+					<a
+						href={social.href}
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label={social.label}
+						class="group"
+					>
+						<img
+							src={social.icon}
+							alt={social.label}
+							class="h-6 w-6 opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300"
+						/>
+					</a>
+				{/each}
+			</div>
+		</div>
 	</div>
 
 	<!-- 🟣 Garis Pemisah + Copyright -->

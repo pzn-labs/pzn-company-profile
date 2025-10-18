@@ -3,8 +3,6 @@
 	import { onMount } from "svelte";
 	import { base } from '$app/paths';
 
-	// svelte-ignore export_let_unused
-export let children; 
 	let mobileMenuOpen = false;
 	let scrolled = false;
 
@@ -18,21 +16,27 @@ export let children;
 
 	function toggleMobileMenu() {
 	  mobileMenuOpen = !mobileMenuOpen;
-	  if (mobileMenuOpen) document.body.style.overflow = "hidden";
-	  else document.body.style.overflow = "auto";
+	  document.body.style.overflow = mobileMenuOpen ? "hidden" : "auto";
 	}
 
 	function closeMobileMenu() {
 	  mobileMenuOpen = false;
 	  document.body.style.overflow = "auto";
 	}
-
-	function handleOverlayKeydown(event: KeyboardEvent) {
-		if (event.key === "Enter" || event.key === " ") {
-			closeMobileMenu();
-		}
-	}
 </script>
+
+<svelte:head>
+	<title>Programmer Zaman Now</title>
+	<meta
+		name="description"
+		content="Ikuti Programmer Zaman Now di berbagai platform sosial media untuk update terbaru, tips programming, dan konten edukatif."
+	/>
+
+	<!-- 🧩 Logo PZN sebagai favicon -->
+	<link rel="icon" type="image/png" href="https://www.programmerzamannow.com/img/pzn.png" />
+	<link rel="apple-touch-icon" href="https://www.programmerzamannow.com/img/pzn.png" />
+	<meta name="theme-color" content="#4F46E5" />
+</svelte:head>
 
 <nav class="fixed inset-x-0 top-0 z-50 bg-white dark:bg-gray-900 shadow-md transition-all duration-300">
 	<div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-8 lg:px-10">
@@ -52,7 +56,7 @@ export let children;
 		<div class="hidden lg:flex items-center gap-12">
 			{#each [
 				{ name: "Beranda", href: "/" },
-				{ name: "Kelas", href: "/kelas" },
+				{ name: "Kelas Online", href: "/kelas" },
 				{ name: "Promo", href: "/promo" },
 				{ name: "Sosial Media", href: "/sosial-media" }
 			] as link}
@@ -87,6 +91,8 @@ export let children;
 
 	<!-- MOBILE MENU -->
 	{#if mobileMenuOpen}
+		<!-- svelte-ignore a11y_click_events_have_key_events -->
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div class="fixed inset-0 z-30" on:click={closeMobileMenu}></div>
 
 		<div
@@ -100,7 +106,7 @@ export let children;
 				<nav class="flex flex-col space-y-3 text-left">
 					{#each [
 						{ name: "Beranda", href: "/" },
-						{ name: "Kelas", href: "/kelas" },
+						{ name: "Kelas Online", href: "/kelas" },
 						{ name: "Promo", href: "/promo" },
 						{ name: "Sosial Media", href: "/sosial-media" }
 					] as link}
@@ -119,19 +125,17 @@ export let children;
 				</nav>
 			</div>
 
-			<!-- 🔻 Footer -->
+			<!-- Footer -->
 			<footer
 				class="border-t border-gray-200 dark:border-gray-800 mt-4 py-5 text-center text-base text-gray-500 dark:text-gray-400"
 			>
 				<p>
-					&copy; {new Date().getFullYear()}
-					<strong>Programmer Zaman Now</strong>. All rights reserved.
+					&copy; {new Date().getFullYear()} <strong>Programmer Zaman Now</strong>. All rights reserved.
 				</p>
 			</footer>
 		</div>
 	{/if}
 </nav>
-
 
 <main class="mt-8">
 	<slot />
