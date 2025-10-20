@@ -12,12 +12,35 @@
 	import spring from "$lib/assets/spring.jpg"
 	import react from "$lib/assets/reactjs.jpg"
 	import mongo from "$lib/assets/mongodb.jpg"
-  import { base } from "$app/paths";
+	import kotlin from "$lib/assets/kotlin.jpg"
+	import git from "$lib/assets/git.jpg"
+	import postgre from "$lib/assets/postgre.jpg"
+	import redis from "$lib/assets/redis.jpg"
+	import dart from "$lib/assets/dart.jpg"
+	import typescript from "$lib/assets/typescript.jpg"
+	import elastic from "$lib/assets/elasticsearch.jpg"
+	import jenkins from "$lib/assets/jenkins.jpg"
+	import android from "$lib/assets/android.jpg"
+	import openapi from "$lib/assets/openapi.jpg"
+	import restfull from "$lib/assets/restfulapi.jpg"
+	import http from "$lib/assets/http.jpg"
+	import phyton from "$lib/assets/python.jpg"
+	import svelte from "$lib/assets/svelte.jpg"
+	import bootstrap from "$lib/assets/bootstrap.jpg"
+	import rust from "$lib/assets/rust.png"
+	import bun from "$lib/assets/bun.png"
+	import k6 from "$lib/assets/k6.jpg"
+	import nestjs from "$lib/assets/nestjs.jpg"
+	import rabbit from "$lib/assets/rabbitmq.jpg"
+	import kafka from "$lib/assets/kafka.jpg"
+  	import { base } from "$app/paths";
+	import { slide, fade } from "svelte/transition";
+
   
   const allClasses = [
   { 
     name: "Golang", 
-    category: "Pemrograman", 
+    category: ["Pemrogramman", "Go-Lang"],
     image: golang, 
     description: "Pelajari bahasa Go untuk membangun aplikasi backend yang cepat dan efisien. Cocok untuk microservices dan sistem berskala besar.",
     price: 129000,
@@ -25,7 +48,7 @@
   },
   { 
     name: "Java Dasar", 
-    category: "Pemrograman", 
+    category: ["Pemrogramman", "Java"], 
     image: java, 
     description: "Dasar-dasar Java untuk pemula hingga menengah. Termasuk pemrograman berorientasi objek dan praktik membuat aplikasi sederhana.",
     price: 149000,
@@ -33,7 +56,7 @@
   },
   { 
     name: "Node.js", 
-    category: "Web", 
+    category: ["Backend", "Node.js"], 
     image: nodejs, 
     description: "Bangun server dan API menggunakan Node.js. Pelajari juga ekosistem NPM dan praktik asynchronous programming.",
     price: 139000,
@@ -41,15 +64,15 @@
   },
   { 
     name: "Laravel", 
-    category: "Framework", 
-    image: laravel, 
+    category: ["Backend", "PHP"],
+	image: laravel, 
     description: "Framework PHP populer untuk membangun web aplikasi. Termasuk routing, middleware, dan integrasi database MySQL.",
     price: 159000,
     originalPrice: 699000
   },
   { 
     name: "MySQL", 
-    category: "Database", 
+    category: ["Database", "MySQL"],
     image: mysql, 
     description: "Pelajari database relasional MySQL dari dasar hingga mahir. Termasuk query, indexing, dan optimisasi performa database.",
     price: 119000,
@@ -57,7 +80,7 @@
   },
   { 
     name: "Docker Basics", 
-    category: "DevOps", 
+    category: ["DevOps", "Docker"], 
     image: docker, 
     description: "Dasar-dasar Docker untuk containerization aplikasi. Pelajari pembuatan Dockerfile, image, dan deployment di container.",
     price: 129000,
@@ -111,41 +134,255 @@
     price: 129000,
     originalPrice: 499000
   },
+  { 
+    name: "Kotlin", 
+    category: "Pemogramman", 
+    image: kotlin, 
+    description: "Belajar pemrograman Kotlin dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "Git", 
+    category: "Web", 
+    image: git, 
+    description: "Belajar Git mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "Postgre", 
+    category: "Database", 
+    image: postgre, 
+    description: "Belajar database postgre dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "Redis", 
+    category: "Database", 
+    image: redis, 
+    description: "Belajar database redis dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "Dart", 
+    category: "Pemrogramman", 
+    image: dart, 
+    description: "Belajar pemrogramman dart dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "Typescript", 
+    category: "Pemrogramman", 
+    image: typescript, 
+    description: "Belajar pemrogramman typescript dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "Elasticsearch", 
+    category: "Database", 
+    image: elastic, 
+    description: "Belajar database elasticseacrh dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "Jenkins", 
+    category: "DevOps", 
+    image: jenkins, 
+    description: "Belajar jenkins mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "Android", 
+    category: ["Mobile", "Android"],
+    image: android, 
+    description: "Belajar android mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "OpenApi",
+    category: "API", 
+    image: openapi, 
+    description: "Belajar OpenAPI mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "RestFullAPI",
+    category: "API", 
+    image: restfull, 
+    description: "Belajar RestFull API mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "HTTP",
+    category: ["API", "HTTP"],
+    image: http, 
+    description: "Belajar http mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "Phyton",
+    category: ["Database", "Phyton"],
+    image: phyton, 
+    description: "Belajar pemrogramman phyton mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "Svelte",
+    category: "Framework", 
+    image: svelte, 
+    description: "Belajar framework svelte mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "Bootstrap",
+    category: "Framework", 
+    image: bootstrap, 
+    description: "Belajar framework bootstrap mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "Rust",
+    category: "Pemrogramman", 
+    image: rust, 
+    description: "Belajar pemrogramman rust mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "Bun",
+    category: "Web", 
+    image: bun, 
+    description: "Belajar pemrogramman bun mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "K6 Performance Testing",
+    category: "Web", 
+    image: k6, 
+    description: "Belajar K6 performance testing mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "NestJS",
+    category: "Web", 
+    image: nestjs, 
+    description: "Belajar nestjs mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "RabbitMQ",
+    category: "Database", 
+    image: rabbit, 
+    description: "Belajar rabbitMQ mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
+  { 
+    name: "Apache Kafka",
+    category: "Web", 
+    image: kafka, 
+    description: "Belajar Apache Kafka mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
+    price: 129000,
+    originalPrice: 499000
+  },
 ];
 
+const categories = [
+  "Semua",
+  "Pemrograman",
+  "Web",
+  "API",
+  "Mobile",
+  "Android",
+  "Database",
+  "SQL",
+  "Framework",
+  "DevOps",
+  "Docker",
+  "Git",
+  "Java",
+  "Design Patterns",
+  "Spring Boot",
+  "JavaScript",
+  "Go-Lang",
+  "PHP",
+  "Kotlin",
+  "MySQL",
+  "Dart",
+  "Gratis",
+  "PostgreSQL",
+  "Jenkins",
+  "Automation Server",
+  "CI/CD",
+  "HTML",
+  "MongoDB",
+  "Redis",
+  "Elasticsearch",
+  "CSS",
+  "TypeScript",
+  "Message Broker",
+  "Kafka",
+  "RabbitMQ",
+  "NestJS",
+  "Bun",
+  "QA",
+  "K6",
+  "Performance Testing",
+  "Rust",
+  "React.js",
+  "Vue.js",
+];
 
   
-	const categories = [
-	  "Semua",
-	  "Pemrograman",
-	  "Web",
-	  "API",
-	  "Mobile",
-	  "Framework",
-	  "Database",
-	  "DevOps",
-	]
-  
-	let selectedCategory: string = "Semua";
+let selectedCategory: string = "Semua";
+	let showAll = false;
 	let searchQuery = "";
-  
+
+	//  tombol “lihat semua”
+	const visibleCount = 6;
+
 	$: filteredClasses = allClasses.filter((kelas) => {
-	  const matchCategory = selectedCategory === "Semua" || kelas.category === selectedCategory;
-	  const matchSearch = kelas.name.toLowerCase().includes(searchQuery.toLowerCase());
-	  return matchCategory && matchSearch;
-	});
+  const matchCategory =
+    selectedCategory === "Semua" ||
+    (kelas.category && kelas.category.includes(selectedCategory));
+    
+  const matchSearch = kelas.name
+    .toLowerCase()
+    .includes(searchQuery.toLowerCase());
+    
+  return matchCategory && matchSearch;
+});
+
   </script>
   
   <svelte:head>
 	<title>Kelas Online - Programmer Zaman Now</title>
 	<meta name="description" content="Pilih kelas programming yang sesuai dengan kebutuhan Anda. Dari pemula hingga mahir, semua tersedia di PZN." />
   </svelte:head>
-  
+
+
 <!-- Hero Section -->
-<section class="relative bg-gray-900 text-gray-100 rounded-b-4xl overflow-hidden py-24">
+<section class="relative bg-gray-950 text-gray-100l overflow-hidden py-24">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
 	  
-	  <!-- 🔹 Kiri: Teks -->
+	  <!-- Kiri: Teks -->
 	  <div class="space-y-6 text-center lg:text-left">
 		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
 		  Kelas <span class="text-white">Programmer Zaman Now</span>
@@ -155,7 +392,7 @@
 		</p>
 	  </div>
   
-	  <!-- 🔹 Kanan: Gambar Lingkaran -->
+	  <!-- Kanan: Gambar Lingkaran -->
 	  <div class="relative flex justify-center">
 		<div class="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-gray-800">
 		  <img
@@ -166,33 +403,60 @@
 		</div>
 	  </div>
 	</div>
-  </section>
+</section>
   
-  
-  <!-- Daftar Kelas -->
-  <section class="py-24 sm:py-24">
+<!-- Daftar Kelas -->
+<section class="py-24 bg-black text-gray-100">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 	  <!-- Deskripsi -->
 	  <div class="mx-auto max-w-3xl text-center mb-12">
-		<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">Pilihan Kelas Terbaik</h2>
-		<p class="mt-4 text-lg leading-8 text-gray-600 dark:text-gray-300">
+		<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Pilihan Kelas Terbaik</h2>
+		<p class="mt-4 text-lg leading-8 text-gray-400">
 		  Tingkatkan kemampuan programming dengan kelas pilihan dari <strong>Programmer Zaman Now</strong>.
 		</p>
 	  </div>
   
 	  <!-- Menu Kategori -->
-	  <div class="flex flex-wrap justify-center gap-4 mb-8">
-		{#each categories as category}
+	  <div class="text-center mb-8">
+		<!-- Daftar Kategori -->
+		<div
+		  class="flex flex-wrap justify-center gap-3 mb-6 transition-all duration-500 overflow-hidden"
+		  style="max-height: {showAll ? '1000px' : '120px'}"
+		>
+		  {#each (showAll ? categories : categories.slice(0, 8)) as category (category)}
+			<div in:fade={{ duration: 200 }} out:fade={{ duration: 150 }}>
+			  <button
+				class="px-5 py-2.5 rounded-full text-sm font-medium border transition-all duration-300
+				{selectedCategory === category 
+				  ? 'bg-white text-gray-900' 
+				  : 'bg-gray-900 text-gray-300 border-gray-700 hover:bg-gray-700'}"
+				on:click={() => selectedCategory = category}
+			  >
+				{category}
+			  </button>
+			</div>
+		  {/each}
+		</div>
+	  
+		<!-- Tombol Lihat Semua -->
+		{#if categories.length > 8}
 		  <button
-			class="px-5 py-2 rounded-full text-sm font-semibold transition
-			{selectedCategory === category 
-			  ? 'bg-gray-900 text-white dark:bg-white dark:text-gray-900' 
-			  : 'bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'}"
-			on:click={() => selectedCategory = category}
+			class="group inline-flex items-center gap-2 mt-2 px-4 py-2 rounded-full text-sm font-semibold text-gray-900 
+				   bg-white hover:bg-gray-200 transition-all duration-300"
+			on:click={() => showAll = !showAll}
 		  >
-			{category}
+			<span>{showAll ? "Sembunyikan Kategori" : "Lihat Semua Kategori"}</span>
+			<svg
+			  class="w-4 h-4 transform transition-transform duration-300 {showAll ? 'rotate-180' : ''}"
+			  fill="none"
+			  stroke="currentColor"
+			  stroke-width="2"
+			  viewBox="0 0 24 24"
+			>
+			  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+			</svg>
 		  </button>
-		{/each}
+		{/if}
 	  </div>
   
 	  <!-- Search Input -->
@@ -201,7 +465,7 @@
 		  type="text"
 		  placeholder="Cari kelas..."
 		  bind:value={searchQuery}
-		  class="w-full rounded-2xl border border-gray-300 dark:border-gray-100 bg-gray-50 dark:bg-gray-800 px-5 py-3 pl-12 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-600 shadow-sm"
+		  class="w-full rounded-2xl border border-gray-600 bg-gray-900 px-5 py-3 pl-12 text-white focus:outline-none focus:ring-2 focus:ring-gray-200 shadow-sm"
 		/>
 		<svg
 		  xmlns="http://www.w3.org/2000/svg"
@@ -217,8 +481,8 @@
 	  <!-- Grid Kelas -->
 	  <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
 		{#each filteredClasses as kelas}
-		  <div class="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg ring-1 ring-gray-900/5 hover:shadow-xl transition-shadow">
-			<div class="aspect-[16/9] overflow-hidden rounded-t-2xl bg-gray-100 dark:bg-gray-700">
+		  <div class="group relative bg-gray-900 rounded-2xl shadow-lg ring-1 ring-gray-400 hover:shadow-xl transition-shadow">
+			<div class="aspect-[16/9] overflow-hidden rounded-t-2xl bg-gray-700">
 			  <img
 				src={kelas.image}
 				alt={kelas.name}
@@ -226,29 +490,25 @@
 			  />
 			</div>
 			<div class="p-6">
-			  <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">{kelas.name}</h3>
-			  <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">{kelas.description}</p>
+			  <h3 class="text-lg font-semibold text-white mb-2">{kelas.name}</h3>
+			  <p class="text-gray-400 text-sm mb-4">{kelas.description}</p>
 			  <div class="flex items-center justify-between mt-4">
 				<div class="flex items-center gap-2">
-					<div class="flex -space-x-2">
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 rounded-full bg-gray-300 dark:bg-gray-700 p-1 text-gray-600 dark:text-gray-300 ring-2 ring-white dark:ring-gray-800" fill="currentColor" viewBox="0 0 24 24">
-						  <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v1.2h19.2v-1.2c0-3.2-6.4-4.8-9.6-4.8z"/>
-						</svg>
-						<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 rounded-full bg-gray-300 dark:bg-gray-700 p-1 text-gray-600 dark:text-gray-300 ring-2 ring-white dark:ring-gray-800" fill="currentColor" viewBox="0 0 24 24">
-						  <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v1.2h19.2v-1.2c0-3.2-6.4-4.8-9.6-4.8z"/>
-						</svg>
-					  </div>
-				  <span class="text-sm text-gray-500 dark:text-gray-400">1,234 siswa</span>
+				  <div class="flex -space-x-2">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 rounded-full bg-gray-700 p-1 text-gray-300 ring-2 ring-gray-800" fill="currentColor" viewBox="0 0 24 24">
+					  <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v1.2h19.2v-1.2c0-3.2-6.4-4.8-9.6-4.8z"/>
+					</svg>
+				  </div>
+				  <span class="text-sm text-gray-400">1,234 siswa</span>
 				</div>
 				<div class="text-right">
-					<div class="text-lg font-bold text-gray-900 dark:text-white">Rp {kelas.price.toLocaleString('id-ID')}</div>
-					{#if kelas.originalPrice && kelas.originalPrice > kelas.price}
-					  <div class="text-sm text-gray-500 dark:text-gray-400 line-through">Rp {kelas.originalPrice.toLocaleString('id-ID')}</div>
-					{/if}
-				  </div>
-				  
+				  <div class="text-lg font-bold text-white">Rp {kelas.price.toLocaleString('id-ID')}</div>
+				  {#if kelas.originalPrice && kelas.originalPrice > kelas.price}
+					<div class="text-sm text-gray-500 line-through">Rp {kelas.originalPrice.toLocaleString('id-ID')}</div>
+				  {/if}
+				</div>
 			  </div>
-			  <button class="w-full mt-4 rounded-md bg-gray-900 dark:bg-white px-4 py-2 text-sm font-semibold text-white dark:text-gray-900 shadow-sm hover:bg-gray-800 dark:hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900 dark:focus-visible:outline-white">
+			  <button class="w-full mt-4 rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
 				Lihat Detail
 			  </button>
 			</div>
@@ -256,38 +516,28 @@
 		{/each}
   
 		{#if filteredClasses.length === 0}
-		  <p class="col-span-full text-center text-gray-500 dark:text-gray-400 mt-8">Tidak ada kelas yang sesuai.</p>
+		  <p class="col-span-full text-center text-gray-500 mt-8">Tidak ada kelas yang sesuai.</p>
 		{/if}
 	  </div>
 	</div>
-  </section>
+</section>
   
 <!-- CTA Section -->
-<section class="bg-white dark:bg-gray-900">
-	<div class="px-6 py-24 sm:px-6 sm:py-16 lg:px-8">
-		<div
-			class="mx-auto max-w-3xl text-center border border-gray-200 dark:border-gray-700 rounded-3xl p-12 shadow-xl bg-white dark:bg-gray-800"
-		>
-			<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+<section class="bg-black text-white py-24">
+	<div class="px-6 sm:px-6 lg:px-8">
+		<div class="mx-auto max-w-3xl text-center border border-gray-700 rounded-3xl p-12 shadow-xl bg-gray-900">
+			<h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
 				Tidak Menemukan Kelas yang Cocok?
 			</h2>
-
-			<p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-700 dark:text-gray-300">
+			<p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
 				Hubungi tim kami untuk konsultasi kelas yang sesuai dengan kebutuhan dan level skill Anda.
 			</p>
-
 			<div class="mt-10 flex flex-wrap justify-center gap-6">
-				<a
-					href={base + '/promo'}
-					class="rounded-full bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:from-gray-800 hover:via-gray-700 hover:to-gray-600 transition"
-				>
+				<a href={base + '/promo'} class="rounded-full bg-indigo-600 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:bg-indigo-700 transition">
 					Lihat Promo
 				</a>
-				<a
-					href={base + '/sosial-media'}
-					class="rounded-full px-8 py-4 text-lg font-semibold text-gray-900 dark:text-white border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition"
-				>
-					Konsultasi Gratis <span aria-hidden="true">→</span>
+				<a href={base + '/sosial-media'} class="rounded-full px-8 py-4 text-lg font-semibold text-white border border-gray-600 hover:bg-gray-700 transition">
+					Konsultasi Gratis →
 				</a>
 			</div>
 		</div>
@@ -295,21 +545,14 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-300 border-t border-gray-800 rounded-t-4xl">
+<footer class="bg-gray-950 text-gray-400 border-t border-gray-800">
 	<div class="mx-auto max-w-7xl px-6 py-16 lg:px-8 grid gap-12 md:grid-cols-3 items-start">
-		<!-- 🟣 Kolom 1: Logo & Deskripsi -->
 		<div class="space-y-5">
 			<div class="flex items-center gap-3">
 				<a href={base + '/'}>
-					<img
-						src="https://www.programmerzamannow.com/img/pzn.png"
-						alt="PZN Logo"
-						class="h-10 w-auto transition-transform hover:scale-105 duration-300"
-					/>
+					<img src="https://www.programmerzamannow.com/img/pzn.png" alt="PZN Logo" class="h-10 w-auto transition-transform hover:scale-105 duration-300" />
 				</a>
-				<span class="text-lg font-semibold text-white tracking-tight">
-					Programmer Zaman Now
-				</span>
+				<span class="text-lg font-semibold text-white tracking-tight">Programmer Zaman Now</span>
 			</div>
 			<p class="text-sm text-gray-400 leading-relaxed max-w-sm">
 				Belajar programming dari dasar hingga mahir bersama mentor berpengalaman.
@@ -317,7 +560,6 @@
 			</p>
 		</div>
 
-		<!-- 🟣 Kolom 2: Navigasi -->
 		<div class="space-y-5">
 			<h4 class="text-base font-semibold text-white">Navigasi</h4>
 			<ul class="grid grid-cols-2 sm:grid-cols-1 gap-2">
@@ -328,64 +570,34 @@
 					{ name: "Sosial Media", href: "/sosial-media" }
 				] as link}
 					<li>
-						<a
-							href={base + link.href}
-							class="text-sm text-gray-400 hover:text-white transition-colors duration-200"
-							>{link.name}</a
-						>
+						<a href={base + link.href} class="text-sm text-gray-400 hover:text-white transition-colors duration-200">{link.name}</a>
 					</li>
 				{/each}
 			</ul>
 		</div>
 
-		<!-- 🟣 Kolom 3: Sosial Media -->
 		<div class="space-y-5">
 			<h4 class="text-base font-semibold text-white">Ikuti Kami</h4>
 			<div class="flex gap-5">
 				{#each [
-					{
-						href: "https://youtube.com",
-						icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png",
-						label: "YouTube"
-					},
-					{
-						href: "https://instagram.com",
-						icon: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
-						label: "Instagram"
-					},
-					{
-						href: "https://t.me",
-						icon: "https://cdn-icons-png.flaticon.com/512/2111/2111646.png",
-						label: "Telegram"
-					},
-					{
-						href: "https://facebook.com",
-						icon: "https://cdn-icons-png.flaticon.com/512/733/733547.png",
-						label: "Facebook"
-					}
+					{ href: "https://youtube.com", icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png" },
+					{ href: "https://instagram.com", icon: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png" },
+					{ href: "https://t.me", icon: "https://cdn-icons-png.flaticon.com/512/2111/2111646.png" },
+					{ href: "https://facebook.com", icon: "https://cdn-icons-png.flaticon.com/512/733/733547.png" }
 				] as social}
-					<a
-						href={social.href}
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label={social.label}
-						class="group"
-					>
-						<img
-							src={social.icon}
-							alt={social.label}
-							class="h-6 w-6 opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300"
-						/>
+					<a href={social.href} target="_blank" rel="noopener noreferrer" class="group">
+						<img src={social.icon} alt="social" class="h-6 w-6 opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300" />
 					</a>
 				{/each}
 			</div>
 		</div>
 	</div>
 
-	<!-- 🟣 Garis Pemisah + Copyright -->
 	<div class="border-t border-gray-800 py-6 text-center">
 		<p class="text-sm text-gray-500">
 			© {new Date().getFullYear()} <span class="font-medium text-white">Programmer Zaman Now</span>.
 		</p>
 	</div>
 </footer>
+
+

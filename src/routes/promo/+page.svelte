@@ -12,7 +12,7 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-b-4xl overflow-hidden">
+<section class="bg-gray-950 text-white overflow-hidden">
 	<div class="mx-auto max-w-7xl px-6 py-24 sm:py-24 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
 	  
 	  <!-- 🔹 Kiri: Teks -->
@@ -20,15 +20,15 @@
 		<h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
 		  Promo Spesial <br class="hidden sm:block" /> Programmer Zaman Now
 		</h1>
-		<p class="mt-4 text-lg leading-8 text-gray-300 dark:text-gray-600 max-w-xl mx-auto lg:mx-0">
-		  Dapatkan diskon hingga <span class="font-semibold text-indigo-400 dark:text-indigo-600">70%</span> untuk semua kelas programming.
+		<p class="mt-4 text-lg leading-8 text-gray-400 max-w-xl mx-auto lg:mx-0">
+		  Dapatkan diskon hingga <span class="font-semibold text-indigo-400">70%</span> untuk semua kelas programming.
 		  Penawaran terbatas — buruan sebelum kehabisan!
 		</p>
 	  </div>
   
 	  <!-- 🔹 Kanan: Gambar -->
 	  <div class="flex justify-center">
-		<div class="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-gray-800 dark:border-gray-200">
+		<div class="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-gray-700">
 		  <img
 			src="https://i.pinimg.com/736x/75/75/04/7575044bbe8c3b30ea177b4db889c7d6.jpg"
 			alt="Promo Programmer Zaman Now"
@@ -37,17 +37,16 @@
 		</div>
 	  </div>
 	</div>
-  </section>
-  
+</section>
 
 <!-- Paket Promo -->
-<section class="py-24 sm:py-24 bg-white dark:bg-gray-900">
+<section class="py-24 bg-black">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
 		<div class="max-w-2xl mx-auto">
-			<h2 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">
+			<h2 class="text-3xl sm:text-4xl font-bold text-white">
 				Pilih Paket yang Tepat untuk Anda
 			</h2>
-			<p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+			<p class="mt-4 text-lg text-gray-400">
 				Semua paket sudah termasuk akses lifetime, sertifikat, dan support mentor.
 			</p>
 		</div>
@@ -55,19 +54,19 @@
 		<div class="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
 			<!-- Paket Basic -->
 			<div
-				class="flex flex-col justify-between rounded-3xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 hover:shadow-xl transition duration-300"
+				class="flex flex-col justify-between rounded-3xl border border-gray-700 bg-gray-800 p-8 hover:shadow-xl transition duration-300"
 			>
 				<div>
-					<h3 class="text-xl font-semibold text-gray-900 dark:text-white">Basic</h3>
-					<p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+					<h3 class="text-xl font-semibold text-white">Basic</h3>
+					<p class="mt-3 text-sm text-gray-400">
 						Cocok untuk pemula yang ingin belajar programming dari dasar.
 					</p>
 					<div class="mt-6 flex items-baseline justify-center gap-x-2">
-						<span class="text-4xl font-bold text-gray-900 dark:text-white">Rp 199K</span>
-						<span class="text-sm text-gray-500 dark:text-gray-400 line-through">Rp 599K</span>
+						<span class="text-4xl font-bold text-white">Rp 199K</span>
+						<span class="text-sm text-gray-500 line-through">Rp 599K</span>
 					</div>
 				</div>
-				<ul class="mt-8 space-y-3 text-sm text-gray-600 dark:text-gray-300 text-left">
+				<ul class="mt-8 space-y-3 text-sm text-gray-400 text-left">
 					<li>✅ 1 Kelas Pilihan</li>
 					<li>✅ Akses Lifetime</li>
 					<li>✅ Sertifikat</li>
@@ -75,7 +74,7 @@
 				</ul>
 				<a
 					href={`${base}/promo`}
-					class="mt-8 block rounded-xl bg-gray-900 dark:bg-white px-4 py-3 text-center text-sm font-semibold text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 transition"
+					class="mt-8 block rounded-xl bg-indigo-600 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-indigo-500 transition"
 				>
 					Daftar Sekarang
 				</a>
@@ -83,23 +82,23 @@
 
 			<!-- Paket Pro -->
 			<div
-				class="relative flex flex-col justify-between rounded-3xl border-2 border-gray-900 dark:border-white bg-white dark:bg-gray-800 p-8 shadow-lg scale-105"
+				class="relative flex flex-col justify-between rounded-3xl border-2 border-indigo-500 bg-gray-800 p-8 shadow-lg scale-105"
 			>
 				<span
-					class="absolute -top-4 left-1/2 -translate-x-1/2 inline-block rounded-full bg-gray-900 dark:bg-white px-4 py-1 text-xs font-semibold text-white dark:text-gray-900"
+					class="absolute -top-4 left-1/2 -translate-x-1/2 inline-block rounded-full bg-indigo-600 px-4 py-1 text-xs font-semibold text-white"
 					>Terpopuler</span
 				>
 				<div>
-					<h3 class="text-xl font-semibold text-gray-900 dark:text-white">Pro</h3>
-					<p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+					<h3 class="text-xl font-semibold text-white">Pro</h3>
+					<p class="mt-3 text-sm text-gray-400">
 						Paket lengkap untuk developer yang ingin menguasai full stack development.
 					</p>
 					<div class="mt-6 flex items-baseline justify-center gap-x-2">
-						<span class="text-4xl font-bold text-gray-900 dark:text-white">Rp 499K</span>
-						<span class="text-sm text-gray-500 dark:text-gray-400 line-through">Rp 1.999K</span>
+						<span class="text-4xl font-bold text-white">Rp 499K</span>
+						<span class="text-sm text-gray-500 line-through">Rp 1.999K</span>
 					</div>
 				</div>
-				<ul class="mt-8 space-y-3 text-sm text-gray-600 dark:text-gray-300 text-left">
+				<ul class="mt-8 space-y-3 text-sm text-gray-400 text-left">
 					<li>✅ 5 Kelas Pilihan</li>
 					<li>✅ Akses Lifetime</li>
 					<li>✅ Sertifikat + Portfolio</li>
@@ -108,7 +107,7 @@
 				</ul>
 				<a
 					href={`${base}/promo`}
-					class="mt-8 block rounded-xl bg-gray-900 dark:bg-white px-4 py-3 text-center text-sm font-semibold text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 transition"
+					class="mt-8 block rounded-xl bg-indigo-600 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-indigo-500 transition"
 				>
 					Daftar Sekarang
 				</a>
@@ -116,19 +115,19 @@
 
 			<!-- Paket Enterprise -->
 			<div
-				class="flex flex-col justify-between rounded-3xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 hover:shadow-xl transition duration-300"
+				class="flex flex-col justify-between rounded-3xl border border-gray-700 bg-gray-800 p-8 hover:shadow-xl transition duration-300"
 			>
 				<div>
-					<h3 class="text-xl font-semibold text-gray-900 dark:text-white">Enterprise</h3>
-					<p class="mt-3 text-sm text-gray-600 dark:text-gray-300">
+					<h3 class="text-xl font-semibold text-white">Enterprise</h3>
+					<p class="mt-3 text-sm text-gray-400">
 						Paket terbaik untuk tim atau perusahaan yang ingin upskill karyawan secara menyeluruh.
 					</p>
 					<div class="mt-6 flex items-baseline justify-center gap-x-2">
-						<span class="text-4xl font-bold text-gray-900 dark:text-white">Rp 999K</span>
-						<span class="text-sm text-gray-500 dark:text-gray-400 line-through">Rp 4.999K</span>
+						<span class="text-4xl font-bold text-white">Rp 999K</span>
+						<span class="text-sm text-gray-500 line-through">Rp 4.999K</span>
 					</div>
 				</div>
-				<ul class="mt-8 space-y-3 text-sm text-gray-600 dark:text-gray-300 text-left">
+				<ul class="mt-8 space-y-3 text-sm text-gray-400 text-left">
 					<li>✅ Semua Kelas (10+)</li>
 					<li>✅ Akses Lifetime</li>
 					<li>✅ Sertifikat + Portfolio</li>
@@ -138,7 +137,7 @@
 				</ul>
 				<a
 					href={`${base}/promo`}
-					class="mt-8 block rounded-xl bg-gray-900 dark:bg-white px-4 py-3 text-center text-sm font-semibold text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 transition"
+					class="mt-8 block rounded-xl bg-indigo-600 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-indigo-500 transition"
 				>
 					Daftar Sekarang
 				</a>
@@ -148,13 +147,13 @@
 </section>
 
 <!-- CTA Final -->
-<section class="bg-white dark:bg-gray-100">
+<section class="bg-black">
 	<div class="px-6 py-24 sm:px-6 sm:py-24 lg:px-8">
-		<div class="mx-auto max-w-3xl text-center border dark:border-white rounded-2xl p-8">
-			<h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+		<div class="bg-gray-900 mx-auto max-w-3xl text-center border border-gray-700 rounded-2xl p-8">
+			<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
 				Jangan Sampai Kehabisan!
 			</h2>
-			<p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-700 dark:text-gray-600">
+			<p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-400">
 				Promo ini terbatas dan akan berakhir segera. Daftar sekarang dan dapatkan diskon hingga
 				70%!
 			</p>
@@ -162,12 +161,12 @@
 			<div class="mt-10 flex flex-wrap justify-center items-center gap-x-6 gap-y-4">
 				<a
 					href={`${base}/promo`}
-					class="inline-block rounded-xl bg-gray-900 text-white px-8 py-4 text-sm font-semibold shadow-md transition-all duration-300 hover:scale-105 hover:bg-gray-800"
+					class="inline-block rounded-xl bg-indigo-600 text-white px-8 py-4 text-sm font-semibold shadow-md transition-all duration-300 hover:scale-105 hover:bg-indigo-500"
 					>Daftar Sekarang — Diskon 70%</a
 				>
 				<a
 					href={`${base}/sosial-media`}
-					class="inline-block text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
+					class="inline-block text-sm font-medium text-gray-400 hover:text-white transition-colors duration-300"
 				>
 					Butuh Bantuan? <span aria-hidden="true" class="ml-1">→</span>
 				</a>
@@ -177,7 +176,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-gray-900 text-gray-300 border-t border-gray-800 rounded-t-4xl">
+<footer class="bg-gray-950 text-gray-400 border-t border-gray-800">
 	<div class="mx-auto max-w-7xl px-6 py-16 lg:px-8 grid gap-12 md:grid-cols-3 items-start">
 		<!-- Kolom 1 -->
 		<div class="space-y-5">
@@ -268,3 +267,4 @@
 		</p>
 	</div>
 </footer>
+

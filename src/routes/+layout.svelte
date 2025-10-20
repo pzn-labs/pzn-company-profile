@@ -130,7 +130,7 @@
 				class="border-t border-gray-200 dark:border-gray-800 mt-4 py-5 text-center text-base text-gray-500 dark:text-gray-400"
 			>
 				<p>
-					&copy; {new Date().getFullYear()} <strong>Programmer Zaman Now</strong>. All rights reserved.
+					&copy; {new Date().getFullYear()} <strong>Programmer Zaman Now</strong>.
 				</p>
 			</footer>
 		</div>
