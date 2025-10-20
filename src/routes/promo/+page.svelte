@@ -15,18 +15,29 @@
 <section class="relative bg-gray-950 text-white overflow-hidden">
 	<div class="mx-auto max-w-7xl px-6 lg:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
   
-	  <!-- 🔹 Kiri: Teks -->
-	  <div class="text-center lg:text-left space-y-6">
+	  <!--  Gambar  -->
+	  <div class="flex justify-center lg:justify-end relative order-1 lg:order-2">
+		<div class="relative w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl">
+		  <img
+			src="https://i.pinimg.com/736x/75/75/04/7575044bbe8c3b30ea177b4db889c7d6.jpg"
+			alt="Promo Programmer Zaman Now"
+			class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+		  />
+		</div>
+	  </div>
+  
+	  <!--  Teks -->
+	  <div class="text-center lg:text-left space-y-6 order-2 lg:order-1">
 		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-		  Promo <span class="text-blue-400">Spesial</span><br class="hidden sm:block" />
+		  Promo Spesial<br class="hidden sm:block" />
 		  Programmer Zaman Now
 		</h1>
-		<p class="text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+		<p class="text-lg text-gray-200 max-w-xl mx-auto lg:mx-0 leading-relaxed">
 		  Dapatkan diskon hingga <span class="font-semibold text-blue-400">70%</span> untuk semua kelas programming.
 		  Tingkatkan skill Anda dengan materi eksklusif dan update industri terkini.
 		</p>
   
-		<!-- 🔹 Tombol CTA -->
+		<!-- Tombol CTA -->
 		<div class="mt-6">
 		  <a
 			href="{base}/kelas"
@@ -36,24 +47,8 @@
 		  </a>
 		</div>
 	  </div>
-  
-	  <!-- 🔹 Kanan: Gambar -->
-	  <div class="flex justify-center lg:justify-end relative">
-		<div class="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] rounded-full overflow-hidden border-4 border-gray-800">
-		  <img
-			src="https://i.pinimg.com/736x/75/75/04/7575044bbe8c3b30ea177b4db889c7d6.jpg"
-			alt="Promo Programmer Zaman Now"
-			class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-		  />
-		</div>
-  
-		<!-- Efek cahaya lembut -->
-		<div class="absolute -inset-10 blur-3xl opacity-30 bg-blue-500/30 rounded-full -z-10"></div>
-	  </div>
 	</div>
   </section>
-  
-  
 
 <!-- Paket Promo -->
 <section class="py-24 bg-black">
@@ -74,7 +69,7 @@
 			>
 				<div>
 					<h3 class="text-xl font-semibold text-white">Basic</h3>
-					<p class="mt-3 text-sm text-gray-400">
+					<p class="mt-3 text-sm text-gray-200">
 						Cocok untuk pemula yang ingin belajar programming dari dasar.
 					</p>
 					<div class="mt-6 flex items-baseline justify-center gap-x-2">
@@ -82,7 +77,7 @@
 						<span class="text-sm text-gray-500 line-through">Rp 599K</span>
 					</div>
 				</div>
-				<ul class="mt-8 space-y-3 text-sm text-gray-400 text-left">
+				<ul class="mt-8 space-y-3 text-sm text-gray-200 text-left">
 					<li>✅ 1 Kelas Pilihan</li>
 					<li>✅ Akses Lifetime</li>
 					<li>✅ Sertifikat</li>
@@ -106,7 +101,7 @@
 				>
 				<div>
 					<h3 class="text-xl font-semibold text-white">Pro</h3>
-					<p class="mt-3 text-sm text-gray-400">
+					<p class="mt-3 text-sm text-gray-200">
 						Paket lengkap untuk developer yang ingin menguasai full stack development.
 					</p>
 					<div class="mt-6 flex items-baseline justify-center gap-x-2">
@@ -114,7 +109,7 @@
 						<span class="text-sm text-gray-500 line-through">Rp 1.999K</span>
 					</div>
 				</div>
-				<ul class="mt-8 space-y-3 text-sm text-gray-400 text-left">
+				<ul class="mt-8 space-y-3 text-sm text-gray-200 text-left">
 					<li>✅ 5 Kelas Pilihan</li>
 					<li>✅ Akses Lifetime</li>
 					<li>✅ Sertifikat + Portfolio</li>
@@ -135,7 +130,7 @@
 			>
 				<div>
 					<h3 class="text-xl font-semibold text-white">Enterprise</h3>
-					<p class="mt-3 text-sm text-gray-400">
+					<p class="mt-3 text-sm text-gray-200">
 						Paket terbaik untuk tim atau perusahaan yang ingin upskill karyawan secara menyeluruh.
 					</p>
 					<div class="mt-6 flex items-baseline justify-center gap-x-2">
@@ -143,7 +138,7 @@
 						<span class="text-sm text-gray-500 line-through">Rp 4.999K</span>
 					</div>
 				</div>
-				<ul class="mt-8 space-y-3 text-sm text-gray-400 text-left">
+				<ul class="mt-8 space-y-3 text-sm text-gray-200 text-left">
 					<li>✅ Semua Kelas (10+)</li>
 					<li>✅ Akses Lifetime</li>
 					<li>✅ Sertifikat + Portfolio</li>

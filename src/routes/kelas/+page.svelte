@@ -381,13 +381,24 @@ let selectedCategory: string = "Semua";
 <!-- Hero Section -->
 <section class="relative bg-gray-950 text-white overflow-hidden">
 	<div class="mx-auto max-w-7xl px-6 lg:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
-    
-	  <!--  Teks di Kiri -->
-	  <div class="flex-4 space-y-6 text-center md:text-left">
+  
+	  <!--  Gambar -->
+	  <div class="order-1 lg:order-2 flex justify-center md:justify-end relative mb-10 lg:mb-0">
+		<div class="relative w-40 h-40 sm:w-56 sm:h-56 md:w-[22rem] md:h-[22rem] lg:w-[26rem] lg:h-[26rem] rounded-full overflow-hidden border border-blue-500/40">
+		  <img
+			src="https://i.pinimg.com/1200x/c2/04/07/c20407664f8f8a5610dd33652626d250.jpg"
+			alt="Programmer Zaman Now Class"
+			class="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-700 ease-out"
+		  />
+		</div>
+	  </div>
+  
+	  <!-- Teks -->
+	  <div class="order-2 lg:order-1 text-center lg:text-left space-y-6">
 		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
-		  Kelas <span class="text-blue-400">Programmer Zaman Now</span>
+		  Kelas Programmer Zaman Now
 		</h1>
-		<p class="text-lg text-gray-400 max-w-xl">
+		<p class="text-lg text-gray-200 max-w-xl mx-auto lg:mx-0">
 		  Tingkatkan kemampuan coding Anda dengan kelas eksklusif, praktis, dan sesuai kebutuhan industri teknologi modern.
 		</p>
 		<div class="pt-4">
@@ -397,19 +408,9 @@ let selectedCategory: string = "Semua";
 		</div>
 	  </div>
   
-	  <!-- Gambar di Kanan -->
-	  <div class="flex-1 flex justify-center md:justify-end relative">
-		<div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] rounded-full overflow-hidden border border-blue-500/40">
-		  <img
-			src="https://i.pinimg.com/1200x/c2/04/07/c20407664f8f8a5610dd33652626d250.jpg"
-			alt="Programmer Zaman Now Class"
-			class="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-700 ease-out"
-		  />
-		</div>
-	  </div>
-  
 	</div>
   </section>
+  
   
 <!-- Daftar Kelas -->
 <section class="py-24 bg-black text-gray-100">
@@ -417,7 +418,7 @@ let selectedCategory: string = "Semua";
 	  <!-- Deskripsi -->
 	  <div class="mx-auto max-w-3xl text-center mb-12">
 		<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Pilihan Kelas Terbaik</h2>
-		<p class="mt-4 text-lg leading-8 text-gray-400">
+		<p class="mt-4 text-lg leading-8 text-gray-200">
 		  Tingkatkan kemampuan programming dengan kelas pilihan dari <strong class="text-blue-400">Programmer Zaman Now</strong>.
 		</p>
 	  </div>
@@ -497,7 +498,7 @@ let selectedCategory: string = "Semua";
 			</div>
 			<div class="p-6">
 			  <h3 class="text-lg font-semibold text-white mb-2">{kelas.name}</h3>
-			  <p class="text-gray-400 text-sm mb-4">{kelas.description}</p>
+			  <p class="text-gray-200 text-sm mb-4">{kelas.description}</p>
 			  <div class="flex items-center justify-between mt-4">
 				<div class="flex items-center gap-2">
 				  <div class="flex -space-x-2">

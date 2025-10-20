@@ -8,17 +8,28 @@
 	  <title>Sosial Media - Programmer Zaman Now</title>
 	  <meta name="description" content="Ikuti Programmer Zaman Now di berbagai platform sosial media untuk update terbaru, tips programming, dan konten edukatif." />
   </svelte:head>
-  
+
 <!-- Hero Section -->
 <section class="relative bg-gray-950 text-white overflow-hidden">
 	<div class="mx-auto max-w-7xl px-6 lg:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
 	  
-	  <!--  Teks di Kiri -->
-	  <div class="flex-1 text-center md:text-left space-y-6">
+	  <!--  Gambar di atas saat mobile, di kanan saat desktop -->
+	  <div class="flex-1 flex justify-center lg:justify-end relative order-1 lg:order-2">
+		<div class="relative w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-[26rem] lg:h-[26rem] rounded-full overflow-hidden border border-blue-500/40 shadow-[0_0_40px_#3b82f6]/30">
+		  <img
+			src="https://i.pinimg.com/736x/c4/3e/d8/c43ed885734d3c096da487320dc15694.jpg"
+			alt="Sosial Media Programmer Zaman Now"
+			class="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-700 ease-out"
+		  />
+		</div>
+	  </div>
+  
+	  <!--  Teks di bawah saat mobile, di kiri saat desktop -->
+	  <div class="flex-1 text-center lg:text-left space-y-6 order-2 lg:order-1">
 		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
-		  Ikuti Kami di <span class="text-blue-400">Sosial Media</span>
+		  Ikuti Kami di Sosial Media
 		</h1>
-		<p class="text-lg leading-relaxed text-gray-400 max-w-xl">
+		<p class="text-lg leading-relaxed text-gray-200 max-w-xl mx-auto lg:mx-0">
 		  Dapatkan update terbaru, tips programming, dan konten edukatif dari 
 		  <span class="font-semibold text-blue-400">Programmer Zaman Now</span> di berbagai platform sosial media kami.
 		</p>
@@ -29,31 +40,17 @@
 		</div>
 	  </div>
   
-	  <!--  Gambar di Kanan -->
-	  <div class="flex-1 flex justify-center md:justify-end relative">
-		<div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] rounded-full overflow-hidden border border-blue-500/40">
-		  <img
-			src="https://i.pinimg.com/736x/c4/3e/d8/c43ed885734d3c096da487320dc15694.jpg"
-			alt="Sosial Media Programmer Zaman Now"
-			class="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-700 ease-out"
-		  />
-		</div>
-	  </div>
-  
 	</div>
   </section>
   
-  
-  
-  
   <!-- Platform Sosial Media -->
-  <section class="py-24 sm:py-32 bg-black">
+  <section class="py-16 sm:py-16 bg-black">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 	  <div class="mx-auto max-w-2xl text-center">
 		<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
 		  Temukan Kami di Platform Favorit Anda
 		</h2>
-		<p class="mt-6 text-lg leading-8 text-gray-400">
+		<p class="mt-6 text-lg leading-8 text-gray-200">
 		  Bergabunglah dengan komunitas developer terbesar di Indonesia dan dapatkan insight berharga setiap hari.
 		</p>
 	  </div>
@@ -108,7 +105,7 @@
 				  <p class="text-sm text-gray-400">{socmed.subs}</p>
 				</div>
 			  </div>
-			  <p class="text-gray-400 mb-6">{socmed.desc}</p>
+			  <p class="text-gray-200 mb-6">{socmed.desc}</p>
 			  <a href={socmed.url} target="_blank"
 				class="inline-flex items-center gap-2 rounded-md {socmed.bg} px-4 py-2 text-sm font-semibold text-white shadow-sm hover:opacity-90">
 				Kunjungi {socmed.name}
@@ -121,7 +118,7 @@
   </section>
   
   <!-- CTA Section -->
-  <section class="relative overflow-hidden py-24 bg-black">
+  <section class="relative overflow-hidden py-16 bg-black">
 	<div class="absolute inset-0 opacity-10 bg-[url('https://www.toptal.com/designers/subtlepatterns/patterns/dots.png')]"></div>
 	<div class="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
 	  <div class="max-w-3xl mx-auto bg-gray-900 border border-gray-600 rounded-3xl p-12 shadow-2xl">
