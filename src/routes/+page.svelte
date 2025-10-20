@@ -158,6 +158,8 @@ Anda bilang:
   ];
 
   let selected = categories[0];
+
+  
 </script>
 
 <!--  HERO SECTION -->

@@ -383,8 +383,8 @@ let selectedCategory: string = "Semua";
 	<div class="mx-auto max-w-7xl px-6 lg:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
   
 	  <!--  Gambar -->
-	  <div class="order-1 lg:order-2 flex justify-center md:justify-end relative mb-10 lg:mb-0">
-		<div class="relative w-40 h-40 sm:w-56 sm:h-56 md:w-[22rem] md:h-[22rem] lg:w-[26rem] lg:h-[26rem] rounded-full overflow-hidden border border-blue-500/40">
+	  <div class="flex justify-center lg:justify-end relative order-1 lg:order-2">
+		<div class="relative w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl">
 		  <img
 			src="https://i.pinimg.com/1200x/c2/04/07/c20407664f8f8a5610dd33652626d250.jpg"
 			alt="Programmer Zaman Now Class"
@@ -394,8 +394,8 @@ let selectedCategory: string = "Semua";
 	  </div>
   
 	  <!-- Teks -->
-	  <div class="order-2 lg:order-1 text-center lg:text-left space-y-6">
-		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
+	  <div class="text-center lg:text-left space-y-6 order-2 lg:order-1">
+		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
 		  Kelas Programmer Zaman Now
 		</h1>
 		<p class="text-lg text-gray-200 max-w-xl mx-auto lg:mx-0">
