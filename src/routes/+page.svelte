@@ -160,11 +160,11 @@ Anda bilang:
   let selected = categories[0];
 </script>
 
-<!-- 🌑 HERO SECTION -->
+<!--  HERO SECTION -->
 <section class="relative bg-gray-950 overflow-hidden py-24 text-white">
   <div class="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
     
-    <!-- 🩶 KIRI: TEKS -->
+    <!--  KIRI: TEKS -->
     <div class="space-y-6 text-center lg:text-left">
       <span class="inline-block text-sm font-semibold text-gray-900 bg-white px-4 py-2 rounded-full">
         Ngoding Dulu, Jadi Sultan Nanti!
@@ -193,7 +193,7 @@ Anda bilang:
       </div>
     </div>
 
-    <!-- 🎨 KANAN: GAMBAR -->
+    <!--  KANAN: GAMBAR -->
     <div class="relative w-full aspect-video overflow-hidden rounded-3xl shadow-2xl">  
       <img
         src={currentImage}
@@ -205,7 +205,7 @@ Anda bilang:
   </div>
 </section>
 
-<!-- 🌑 FITUR UTAMA -->
+<!--  FITUR UTAMA -->
 <section class="py-20 sm:py-16 bg-black text-white">
   <div class="mx-auto max-w-7xl px-6 lg:px-24">
     <div class="mx-auto max-w-2xl text-center">
@@ -245,9 +245,9 @@ Anda bilang:
   </div>
 </section>
 
-<!-- 🌑 OVERLAY LOGO -->
-<section class="bg-gray-950 py-4 overflow-hidden">
-  <div class="mx-auto max-w-5xl px-6">
+<!--  OVERLAY LOGO -->
+<section class="bg-gray-900 py-4 overflow-hidden">
+  <div class="mx-auto max-w-5xl">
     <div class="relative flex overflow-hidden">
       <div class="flex items-center gap-4 animate-marquee">
         {#each Array(14) as _}
@@ -273,7 +273,7 @@ Anda bilang:
   </div>
 </section>
 
-<!-- 🌑 PILIHAN KATEGORI -->
+<!--  PILIHAN KATEGORI -->
 <section class="bg-black py-20 text-white">
   <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
     <h2 class="text-3xl font-bold mb-4">Pilihan Program Belajar</h2>
@@ -288,7 +288,7 @@ Anda bilang:
           class={`px-5 py-2 rounded-full transition shadow-md ${
             selected.name === cat.name
               ? 'bg-white text-gray-900 hover:bg-gray-200'
-              : 'bg-gray-800 text-gray-200 hover:bg-gray-700'
+              : 'bg-gray-900 text-gray-200 hover:bg-gray-700'
           }`}
         >
           {cat.name}
@@ -296,22 +296,35 @@ Anda bilang:
       {/each}
     </div>
 
-    <div class="bg-white rounded-2xl p-8 flex flex-col lg:flex-row items-center gap-10 shadow-xl">
-      <div class="flex-shrink-0 w-full lg:w-1/2 flex justify-center">
-        <img src={selected.image} alt={selected.name} class="rounded-2xl w-3/4 lg:w-4/5 h-auto object-cover" />
-      </div>
-      <div class="w-full lg:w-1/2 space-y-5 text-center lg:text-left">
-        <h3 class="text-2xl text-gray-900 font-bold">{selected.title}</h3>
-        <p class="text-gray-900">{selected.description}</p>
-        <a href={base + "/kelas"} class="inline-block mt-4 px-6 py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-200 transition">
-          Daftar Sekarang →
-        </a>
-      </div>
-    </div>
+    <div
+  class="bg-gray-800 rounded-2xl p-6 sm:p-8 flex flex-row items-center justify-center gap-6 sm:gap-10 shadow-xl border border-gray-800">
+  
+  <!--  Gambar kiri -->
+  <div class="flex-shrink-0 w-1/3 sm:w-1/2 flex justify-center">
+    <img
+      src={selected.image}
+      alt={selected.name}
+      class="w-full sm:w-4/5 h-auto object-cover transition-transform duration-500 hover:scale-105"
+    />
+  </div>
+
+  <!--  Deskripsi kanan -->
+  <div class="w-2/3 sm:w-1/2 space-y-4 text-left">
+    <h3 class="text-xl sm:text-2xl text-white font-bold">{selected.title}</h3>
+    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">{selected.description}</p>
+    <a
+      href={base + "/kelas"}
+      class="inline-block mt-3 px-5 py-2 bg-indigo-500 hover:bg-indigo-400 text-white font-semibold rounded-full shadow-md transition"
+    >
+      Daftar Sekarang →
+    </a>
+  </div>
+</div>
+
   </div>
 </section>
 
-<!-- 🌑 FOOTER -->
+<!--  FOOTER -->
 <footer class="bg-gray-950 text-gray-400 border-t border-gray-800">
   <div class="mx-auto max-w-7xl px-6 py-16 grid gap-12 md:grid-cols-3">
     <!-- Logo -->

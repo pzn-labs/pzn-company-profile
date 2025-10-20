@@ -32,14 +32,14 @@
 		content="Ikuti Programmer Zaman Now di berbagai platform sosial media untuk update terbaru, tips programming, dan konten edukatif."
 	/>
 
-	<!-- 🧩 Logo PZN sebagai favicon -->
 	<link rel="icon" type="image/png" href="https://www.programmerzamannow.com/img/pzn.png" />
 	<link rel="apple-touch-icon" href="https://www.programmerzamannow.com/img/pzn.png" />
-	<meta name="theme-color" content="#4F46E5" />
+	<meta name="theme-color" content="#0f172a" />
 </svelte:head>
 
-<nav class="fixed inset-x-0 top-0 z-50 bg-white dark:bg-gray-900 shadow-md transition-all duration-300">
-	<div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-8 lg:px-10">
+<!--  NAVBAR DARK MODE -->
+<nav class="fixed inset-x-0 top-0 z-50 bg-gray-900 shadow-md transition-all duration-300">
+	<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-8 lg:px-10">
 		<!-- Logo -->
 		<a href={base + "/"} class="flex items-center gap-4 group">
 			<img
@@ -47,7 +47,7 @@
 				alt="PZN Logo"
 				class="h-10 w-auto transition-transform duration-300 group-hover:scale-110"
 			/>
-			<span class="font-semibold text-gray-900 dark:text-white text-xl tracking-tight">
+			<span class="font-semibold text-white text-xl tracking-tight">
 				Programmer Zaman Now
 			</span>
 		</a>
@@ -62,10 +62,10 @@
 			] as link}
 				<a
 					href={base + link.href}
-					class="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white relative group transition-colors"
+					class="text-lg font-medium text-gray-300 hover:text-white relative group transition-colors"
 				>
 					{link.name}
-					<span class="absolute left-0 bottom-0 w-0 h-[2px] bg-black dark:bg-white transition-all duration-300 group-hover:w-full"></span>
+					<span class="absolute left-0 bottom-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
 				</a>
 			{/each}
 		</div>
@@ -73,7 +73,7 @@
 		<!-- Mobile Menu Button -->
 		<button
 			on:click={toggleMobileMenu}
-			class="lg:hidden p-3 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+			class="lg:hidden p-3 rounded-md text-gray-300 hover:bg-gray-800 transition"
 			aria-label="Toggle menu"
 			aria-expanded={mobileMenuOpen}
 		>
@@ -90,19 +90,18 @@
 	</div>
 
 	<!-- MOBILE MENU -->
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	{#if mobileMenuOpen}
 		<!-- svelte-ignore a11y_click_events_have_key_events -->
-		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div class="fixed inset-0 z-30" on:click={closeMobileMenu}></div>
 
 		<div
-			class="absolute inset-x-0 top-full z-40 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-md animate-slideDown"
+			class="absolute inset-x-0 top-full z-40 bg-gray-900 border-t border-gray-800 shadow-md animate-slideDown"
 			role="dialog"
 			aria-modal="true"
 			tabindex="-1"
 		>
 			<div class="p-8 space-y-3">
-				<!-- Link Menu -->
 				<nav class="flex flex-col space-y-3 text-left">
 					{#each [
 						{ name: "Beranda", href: "/" },
@@ -113,11 +112,7 @@
 						<a
 							href={base + link.href}
 							on:click={closeMobileMenu}
-							class="block rounded-lg py-3 px-4 text-lg text-gray-700 dark:text-gray-300 
-								   hover:bg-gray-100 dark:hover:bg-gray-800 
-								   hover:text-black dark:hover:text-white
-								   transition-all duration-200 ease-out
-								   hover:translate-x-1"
+							class="block rounded-lg py-3 px-4 text-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-all duration-200 ease-out hover:translate-x-1"
 						>
 							{link.name}
 						</a>
@@ -126,23 +121,21 @@
 			</div>
 
 			<!-- Footer -->
-			<footer
-				class="border-t border-gray-200 dark:border-gray-800 mt-4 py-5 text-center text-base text-gray-500 dark:text-gray-400"
-			>
-				<p>
-					&copy; {new Date().getFullYear()} <strong>Programmer Zaman Now</strong>.
-				</p>
+			<footer class="border-t border-gray-800 mt-4 py-5 text-center text-base text-gray-500">
+				<p>&copy; {new Date().getFullYear()} <strong>Programmer Zaman Now</strong>.</p>
 			</footer>
 		</div>
 	{/if}
 </nav>
 
-<main class="mt-8">
+<main class="mt-8 bg-gray-950 min-h-screen text-gray-200">
 	<slot />
 </main>
 
 <style>
 	:global(body) {
+		background-color: #0f172a;
+		color: #e5e7eb;
 		scroll-behavior: smooth;
 	}
 

@@ -85,7 +85,7 @@
 		}
 
 		] as socmed}
-		  <div class="group relative bg-gray-800 rounded-2xl shadow-lg ring-1 ring-gray-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+		  <div class="group relative bg-gray-800 rounded-2xl shadow-lg ring-1 ring-gray-600 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
 			<div class="p-8">
 			  <div class="flex items-center gap-4 mb-6">
 				<div class="flex h-16 w-16 items-center justify-center rounded-full {socmed.bg}">
@@ -114,11 +114,11 @@
   <section class="relative overflow-hidden py-24 bg-black">
 	<div class="absolute inset-0 opacity-10 bg-[url('https://www.toptal.com/designers/subtlepatterns/patterns/dots.png')]"></div>
 	<div class="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
-	  <div class="max-w-3xl mx-auto bg-gray-800 border border-gray-700 rounded-3xl p-12 shadow-2xl">
+	  <div class="max-w-3xl mx-auto bg-gray-900 border border-gray-600 rounded-3xl p-12 shadow-2xl">
 		<div class="flex justify-center mb-6">
 		  <img src="{pznLogo}" alt="Logo Programmer Zaman Now" class="h-16 w-auto drop-shadow-xl" />
 		</div>
-		<h2 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+		<h2 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">
 		  Siap Tingkatkan Skill Anda?
 		</h2>
 		<p class="mt-6 text-lg leading-8 text-gray-300">
