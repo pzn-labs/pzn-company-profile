@@ -12,32 +12,48 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="bg-gray-950 text-white overflow-hidden">
-	<div class="mx-auto max-w-7xl px-6 py-24 sm:py-24 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
-	  
+<section class="relative bg-gray-950 text-white overflow-hidden">
+	<div class="mx-auto max-w-7xl px-6 lg:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
+  
 	  <!-- 🔹 Kiri: Teks -->
 	  <div class="text-center lg:text-left space-y-6">
-		<h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
-		  Promo Spesial <br class="hidden sm:block" /> Programmer Zaman Now
+		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+		  Promo <span class="text-blue-400">Spesial</span><br class="hidden sm:block" />
+		  Programmer Zaman Now
 		</h1>
-		<p class="mt-4 text-lg leading-8 text-gray-400 max-w-xl mx-auto lg:mx-0">
-		  Dapatkan diskon hingga <span class="font-semibold text-indigo-400">70%</span> untuk semua kelas programming.
-		  Penawaran terbatas — buruan sebelum kehabisan!
+		<p class="text-lg text-gray-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+		  Dapatkan diskon hingga <span class="font-semibold text-blue-400">70%</span> untuk semua kelas programming.
+		  Tingkatkan skill Anda dengan materi eksklusif dan update industri terkini.
 		</p>
+  
+		<!-- 🔹 Tombol CTA -->
+		<div class="mt-6">
+		  <a
+			href="{base}/kelas"
+			class="inline-block px-8 py-3 rounded-full text-base font-semibold bg-blue-500 hover:bg-blue-600 text-white transition-all duration-300 shadow-lg shadow-blue-500/30"
+		  >
+			Daftar Sekarang →
+		  </a>
+		</div>
 	  </div>
   
 	  <!-- 🔹 Kanan: Gambar -->
-	  <div class="flex justify-center">
-		<div class="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-gray-700">
+	  <div class="flex justify-center lg:justify-end relative">
+		<div class="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[28rem] md:h-[28rem] rounded-full overflow-hidden border-4 border-gray-800">
 		  <img
 			src="https://i.pinimg.com/736x/75/75/04/7575044bbe8c3b30ea177b4db889c7d6.jpg"
 			alt="Promo Programmer Zaman Now"
-			class="w-full h-full object-cover"
+			class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
 		  />
 		</div>
+  
+		<!-- Efek cahaya lembut -->
+		<div class="absolute -inset-10 blur-3xl opacity-30 bg-blue-500/30 rounded-full -z-10"></div>
 	  </div>
 	</div>
-</section>
+  </section>
+  
+  
 
 <!-- Paket Promo -->
 <section class="py-24 bg-black">
@@ -74,7 +90,7 @@
 				</ul>
 				<a
 					href={`${base}/promo`}
-					class="mt-8 block rounded-xl bg-indigo-600 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-indigo-500 transition"
+					class="mt-8 block rounded-xl bg-blue-600 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-blue-500 transition"
 				>
 					Daftar Sekarang
 				</a>
@@ -82,10 +98,10 @@
 
 			<!-- Paket Pro -->
 			<div
-				class="relative flex flex-col justify-between rounded-3xl border-2 border-indigo-500 bg-gray-800 p-8 shadow-lg scale-105"
+				class="relative flex flex-col justify-between rounded-3xl border-2 border-blue-500 bg-gray-800 p-8 shadow-lg scale-105"
 			>
 				<span
-					class="absolute -top-4 left-1/2 -translate-x-1/2 inline-block rounded-full bg-indigo-600 px-4 py-1 text-xs font-semibold text-white"
+					class="absolute -top-4 left-1/2 -translate-x-1/2 inline-block rounded-full bg-blue-600 px-4 py-1 text-xs font-semibold text-white"
 					>Terpopuler</span
 				>
 				<div>
@@ -107,7 +123,7 @@
 				</ul>
 				<a
 					href={`${base}/promo`}
-					class="mt-8 block rounded-xl bg-indigo-600 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-indigo-500 transition"
+					class="mt-8 block rounded-xl bg-blue-600 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-blue-500 transition"
 				>
 					Daftar Sekarang
 				</a>
@@ -137,7 +153,7 @@
 				</ul>
 				<a
 					href={`${base}/promo`}
-					class="mt-8 block rounded-xl bg-indigo-600 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-indigo-500 transition"
+					class="mt-8 block rounded-xl bg-blue-600 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-blue-500 transition"
 				>
 					Daftar Sekarang
 				</a>
@@ -161,7 +177,7 @@
 			<div class="mt-10 flex flex-wrap justify-center items-center gap-x-6 gap-y-4">
 				<a
 					href={`${base}/promo`}
-					class="inline-block rounded-xl bg-indigo-600 text-white px-8 py-4 text-sm font-semibold shadow-md transition-all duration-300 hover:scale-105 hover:bg-indigo-500"
+					class="inline-block rounded-xl bg-blue-600 text-white px-8 py-4 text-sm font-semibold shadow-md transition-all duration-300 hover:scale-105 hover:bg-blue-500"
 					>Daftar Sekarang — Diskon 70%</a
 				>
 				<a

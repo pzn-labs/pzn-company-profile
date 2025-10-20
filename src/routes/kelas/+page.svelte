@@ -379,31 +379,37 @@ let selectedCategory: string = "Semua";
 
 
 <!-- Hero Section -->
-<section class="relative bg-gray-950 text-gray-100l overflow-hidden py-24">
-	<div class="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
-	  
-	  <!-- Kiri: Teks -->
-	  <div class="space-y-6 text-center lg:text-left">
+<section class="relative bg-gray-950 text-white overflow-hidden">
+	<div class="mx-auto max-w-7xl px-6 lg:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
+    
+	  <!--  Teks di Kiri -->
+	  <div class="flex-4 space-y-6 text-center md:text-left">
 		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
-		  Kelas <span class="text-white">Programmer Zaman Now</span>
+		  Kelas <span class="text-blue-400">Programmer Zaman Now</span>
 		</h1>
-		<p class="text-lg text-gray-400 max-w-xl mx-auto lg:mx-0">
+		<p class="text-lg text-gray-400 max-w-xl">
 		  Tingkatkan kemampuan coding Anda dengan kelas eksklusif, praktis, dan sesuai kebutuhan industri teknologi modern.
 		</p>
+		<div class="pt-4">
+		  <a href="{base}/kelas" class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-blue-500/30">
+			Mulai Belajar
+		  </a>
+		</div>
 	  </div>
   
-	  <!-- Kanan: Gambar Lingkaran -->
-	  <div class="relative flex justify-center">
-		<div class="w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-gray-800">
+	  <!-- Gambar di Kanan -->
+	  <div class="flex-1 flex justify-center md:justify-end relative">
+		<div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] rounded-full overflow-hidden border border-blue-500/40">
 		  <img
 			src="https://i.pinimg.com/1200x/c2/04/07/c20407664f8f8a5610dd33652626d250.jpg"
 			alt="Programmer Zaman Now Class"
-			class="w-full h-full object-cover"
+			class="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-700 ease-out"
 		  />
 		</div>
 	  </div>
+  
 	</div>
-</section>
+  </section>
   
 <!-- Daftar Kelas -->
 <section class="py-24 bg-black text-gray-100">
@@ -412,7 +418,7 @@ let selectedCategory: string = "Semua";
 	  <div class="mx-auto max-w-3xl text-center mb-12">
 		<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Pilihan Kelas Terbaik</h2>
 		<p class="mt-4 text-lg leading-8 text-gray-400">
-		  Tingkatkan kemampuan programming dengan kelas pilihan dari <strong>Programmer Zaman Now</strong>.
+		  Tingkatkan kemampuan programming dengan kelas pilihan dari <strong class="text-blue-400">Programmer Zaman Now</strong>.
 		</p>
 	  </div>
   
@@ -533,7 +539,7 @@ let selectedCategory: string = "Semua";
 				Hubungi tim kami untuk konsultasi kelas yang sesuai dengan kebutuhan dan level skill Anda.
 			</p>
 			<div class="mt-10 flex flex-wrap justify-center gap-6">
-				<a href={base + '/promo'} class="rounded-full bg-indigo-600 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:bg-indigo-700 transition">
+				<a href={base + '/promo'} class="rounded-full bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:bg-blue-700 transition">
 					Lihat Promo
 				</a>
 				<a href={base + '/sosial-media'} class="rounded-full px-8 py-4 text-lg font-semibold text-white border border-gray-600 hover:bg-gray-700 transition">

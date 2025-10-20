@@ -10,31 +10,41 @@
   </svelte:head>
   
 <!-- Hero Section -->
-<section class="bg-gray-950 text-white overflow-hidden">
-	<div class="mx-auto max-w-7xl px-6 py-24 sm:py-24 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
-	  <!-- 🔹 Kiri: Teks -->
-	  <div class="text-center lg:text-left space-y-6">
-		<h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
-		  Ikuti Kami di Sosial Media
+<section class="relative bg-gray-950 text-white overflow-hidden">
+	<div class="mx-auto max-w-7xl px-6 lg:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
+	  
+	  <!--  Teks di Kiri -->
+	  <div class="flex-1 text-center md:text-left space-y-6">
+		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
+		  Ikuti Kami di <span class="text-blue-400">Sosial Media</span>
 		</h1>
-		<p class="mt-4 text-lg leading-8 text-gray-400 max-w-xl mx-auto lg:mx-0">
-		  Dapatkan update terbaru, tips programming, dan konten edukatif dari
-		  <span class="font-semibold text-indigo-400">Programmer Zaman Now</span> di berbagai platform sosial media kami.
+		<p class="text-lg leading-relaxed text-gray-400 max-w-xl">
+		  Dapatkan update terbaru, tips programming, dan konten edukatif dari 
+		  <span class="font-semibold text-blue-400">Programmer Zaman Now</span> di berbagai platform sosial media kami.
 		</p>
+		<div class="pt-4">
+		  <a href="{base}/sosial-media" class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-blue-500/30">
+			Lihat Platform Kami
+		  </a>
+		</div>
 	  </div>
   
-	  <!-- 🔹 Kanan: Gambar Lingkaran -->
-	  <div class="flex justify-center">
-		<div class="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-gray-700">
+	  <!--  Gambar di Kanan -->
+	  <div class="flex-1 flex justify-center md:justify-end relative">
+		<div class="relative w-64 h-64 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] rounded-full overflow-hidden border border-blue-500/40">
 		  <img
 			src="https://i.pinimg.com/736x/c4/3e/d8/c43ed885734d3c096da487320dc15694.jpg"
 			alt="Sosial Media Programmer Zaman Now"
-			class="w-full h-full object-cover"
+			class="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-700 ease-out"
 		  />
 		</div>
 	  </div>
+  
 	</div>
   </section>
+  
+  
+  
   
   <!-- Platform Sosial Media -->
   <section class="py-24 sm:py-32 bg-black">

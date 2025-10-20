@@ -314,7 +314,7 @@ Anda bilang:
     <p class="text-gray-300 text-sm sm:text-base leading-relaxed">{selected.description}</p>
     <a
       href={base + "/kelas"}
-      class="inline-block mt-3 px-5 py-2 bg-indigo-500 hover:bg-indigo-400 text-white font-semibold rounded-full shadow-md transition"
+      class="inline-block mt-3 px-5 py-2 bg-blue-500 hover:bg-blue-400 text-white font-semibold rounded-full shadow-md transition"
     >
       Daftar Sekarang →
     </a>
