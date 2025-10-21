@@ -175,7 +175,7 @@
 			<h2 class="text-4xl sm:text-5xl font-bold text-white tracking-tight">
 				Pilih Paket Belajar Anda
 			</h2>
-			<p class="mt-4 text-lg text-gray-400">
+			<p class="mt-4 text-lg text-gray-200">
 				Akses seumur hidup, sertifikat resmi, dan bimbingan langsung dari mentor berpengalaman.
 			</p>
 		</div>
@@ -193,7 +193,7 @@
 					>
 						<div class="space-y-1">
 							<h3 class="text-xl font-semibold tracking-tight">{paket.name}</h3>
-							<p class="text-sm text-gray-400">{paket.desc}</p>
+							<p class="text-sm text-gray-200">{paket.desc}</p>
 						</div>
 
 						<svg

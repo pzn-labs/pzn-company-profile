@@ -528,7 +528,7 @@ let selectedCategory: string = "Semua";
 	  </div>
 	</div>
 </section>
-  >
+
 
 <!-- FOOTER -->
 <footer class="bg-gray-950 text-gray-400 border-t border-gray-800">

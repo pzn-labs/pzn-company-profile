@@ -169,12 +169,12 @@
     class="fixed bottom-4 left-0 right-0 z-40 flex justify-center px-3 sm:px-6"
   >
     <div
-      class="relative w-full max-w-7xl flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 rounded-xl bg-white/95 px-4 sm:px-6 py-3 sm:py-4 shadow-lg ring-1 ring-gray-200 dark:bg-gray-900/90 dark:ring-gray-700 backdrop-blur-md transition-all text-center sm:text-left"
+      class="relative w-full max-w-7xl flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 rounded-xl bg-white/95 px-4 sm:px-6 py-3 sm:py-4 shadow-lg ring-1 ring-gray-200 backdrop-blur-md transition-all text-center sm:text-left"
     >
       <!--  Isi Banner -->
       <p class="text-xs sm:text-sm text-gray-900 leading-snug">
         <strong class="font-semibold text-blue-600">PROMO AKHIR OKTOBER</strong> — Gunakan kode
-        <strong class="text-gray-800 dark:text-gray-200 bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded-md">
+        <strong class="text-gray-800 bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded-md">
           PZN2025
         </strong>
       </p>
