@@ -97,7 +97,7 @@
   };
 
   onMount(() => {
-    interval = setInterval(showNext, 1500); // ⏱ Ganti setiap 1.5 detik
+    interval = setInterval(showNext, 1000); // ⏱ Ganti setiap 1.5 detik
   });
 
   onDestroy(() => {
@@ -161,30 +161,33 @@
   
 </script>
 
-<!--  HERO SECTION -->
+<!-- HERO SECTION -->
 <section class="relative bg-gray-950 overflow-hidden py-24 text-white">
   <div class="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
     
-    <!--  KIRI: TEKS -->
+    <!-- 🔹 KIRI: TEKS -->
     <div class="space-y-6 text-center lg:text-left">
+      <!-- Tagline -->
       <span class="inline-block text-sm font-semibold text-gray-900 bg-white px-4 py-2 rounded-full">
         Ngoding Dulu, Jadi Sultan Nanti!
       </span>
 
-      <h1 class="text-5xl sm:text-5xl lg:text-7xl font-bold leading-tight">
+      <!-- Judul Hero -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
         Boost Your IT Skill!
       </h1>
 
-      <p class="text-lg text-gray-200 max-w-xl mx-auto lg:mx-0">
+      <!-- Deskripsi -->
+      <p class="text-lg sm:text-xl text-gray-200 max-w-xl mx-auto lg:mx-0">
         Programmer Zaman Now membantu Anda mengembangkan skill terdepan,
         teknologi terbaru, dan kemampuan praktis.
       </p>
 
       <!-- Tombol CTA -->
-      <div class="pt-4">
+      <div class="pt-6">
         <a
           href="{base}/kelas"
-          class="inline-flex items-center gap-2 px-4 py-2 bg-white text-gray-900 font-semibold rounded-xl shadow-lg hover:bg-gray-200 transition-all"
+          class="inline-flex items-center gap-3 px-6 py-3 bg-white text-gray-900 font-semibold rounded-xl shadow-lg hover:bg-gray-200 transition-all"
         >
           Mulai Sekarang
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -194,56 +197,62 @@
       </div>
     </div>
 
-    <!--  KANAN: GAMBAR -->
-    <div class="relative w-full aspect-video overflow-hidden rounded-3xl shadow-2xl">  
+    <!-- 🔹 KANAN: GAMBAR HERO -->
+    <div class="relative w-full aspect-video overflow-hidden rounded-3xl shadow-2xl">
       <img
         src={currentImage}
         alt="Hero Slideshow"
         class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
-        class:opacity-0={isFading}
       />
     </div>
+
   </div>
 </section>
 
-<!--  FITUR UTAMA -->
-<section class="py-20 sm:py-16 bg-black text-white">
+
+<!-- FITUR UTAMA -->
+<section class="py-20 sm:py-24 bg-black text-white">
   <div class="mx-auto max-w-7xl px-6 lg:px-24">
+    
+    <!-- Judul Section -->
     <div class="mx-auto max-w-2xl text-center">
-      <h2 class="text-3xl font-bold sm:text-4xl">Mengapa Pilih Programmer Zaman Now?</h2>
-      <p class="mt-6 text-lg text-gray-200">
-        Platform belajar programming terbaik dengan metode pembelajaran yang
-        efektif dan mentor berpengalaman.
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">
+        Mengapa Pilih Programmer Zaman Now?
+      </h2>
+      <p class="mt-6 text-lg sm:text-xl text-gray-200">
+        Platform belajar programming terbaik dengan metode pembelajaran efektif dan mentor berpengalaman.
       </p>
     </div>
 
     <!-- GRID FITUR -->
-    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none grid gap-24 lg:grid-cols-3">
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none grid gap-16 lg:grid-cols-3">
       {#each [
         {
           src: "https://cdn-icons-png.flaticon.com/512/906/906175.png",
           title: "Materi Kekinian",
-          desc: "Materi di sini selalu up to date sesuai dengan perkembangan teknologi saat ini. Sehingga peserta akan mendapatkan materi yang pasti selalu terbaru. Selain itu semua materi akan selalu di update secara berkala."
+          desc: "Materi selalu up to date sesuai perkembangan teknologi saat ini, dijamin selalu terbaru dan rutin di-update."
         },
         {
           src: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
           title: "Instruktur Berpengalaman",
-          desc: "Di sini, instruktur belajar nya adalah praktisi yang sangat berpengalaman di dunia industri. Sehingga peserta tidak hanya bisa belajar teknologi saja, namun bisa belajar best practice dan pengalaman dari instrukturnya."
+          desc: "Instruktur praktisi industri dengan pengalaman nyata, sehingga peserta mendapatkan best practice selain teori."
         },
         {
           src: roadmap,
           title: "Roadmap Jelas",
-          desc: "Di sini, semua diajarkan dari awal sampai akhir. Setiap kelas sudah di susun sesuai dengan Roadmap nya. Sehingga peserta tidak akan tersesat ketika belajar, cukup ikuti kelas yang diinginkan."
+          desc: "Setiap kelas tersusun sesuai roadmap, dari awal sampai akhir, agar peserta tidak bingung saat belajar."
         }
       ] as fitur (fitur.title)}
         <div class="flex flex-col items-center text-center">
           <img
             src={fitur.src}
             alt={fitur.title}
-            class="h-32 w-32 sm:h-48 sm:w-48 lg:h-64 lg:w-64 mb-6 rounded-xl transition-transform duration-300 hover:scale-110 object-cover"
+            class="h-32 w-32 sm:h-40 sm:w-40 lg:h-48 lg:w-48 mb-6 rounded-xl transition-transform duration-300 hover:scale-110 object-cover"
           />
-          <h3 class="text-xl font-semibold">{fitur.title}</h3>
-          <p class="mt-4 text-base text-gray-200">{fitur.desc}</p>
+          <h3 class="text-xl sm:text-2xl font-semibold">{fitur.title}</h3>
+          <p class="mt-4 text-base sm:text-lg text-gray-200 leading-relaxed">
+            {fitur.desc}
+          </p>
         </div>
       {/each}
     </div>
@@ -279,21 +288,26 @@
   </div>
 </section>
 
-<!--  PILIHAN KATEGORI -->
-<section class="bg-black py-20 text-white">
+<!-- PILIHAN KATEGORI -->
+<section class="bg-black py-24 text-white">
   <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-    <h2 class="text-3xl font-bold mb-4">Pilihan Program Belajar</h2>
-    <p class="text-gray-200 mb-10">
+    
+    <!-- Judul & Deskripsi -->
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+      Pilihan Program Belajar
+    </h2>
+    <p class="text-gray-200 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
       Dengan kurikulum terstruktur dan pengajar berpengalaman, kamu bisa belajar lebih fokus dan cepat mahir.
     </p>
 
+    <!-- Tombol Kategori -->
     <div class="flex flex-wrap justify-center gap-3 mb-10">
       {#each categories as cat}
         <button
           on:click={() => (selected = cat)}
-          class={`px-5 py-2 rounded-full transition shadow-md ${
+          class={`px-5 py-2 rounded-full transition shadow-md text-sm sm:text-base font-medium ${
             selected.name === cat.name
-              ? 'bg-white text-gray-900 hover:bg-gray-200'
+              ? 'bg-white text-gray-800 hover:bg-gray-200'
               : 'bg-gray-900 text-gray-200 hover:bg-gray-700'
           }`}
         >
@@ -302,32 +316,123 @@
       {/each}
     </div>
 
-    <div
-    class="bg-white rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 shadow-xl border border-gray-800"
-  >
-    <!-- Gambar (di atas saat mobile) -->
-    <div class="flex-shrink-0 w-full sm:w-1/2 flex justify-center mb-6 sm:mb-0">
-      <img
-        src={selected.image}
-        alt={selected.name}
-        class="w-4/5 sm:w-3/4 lg:w-2/3 h-auto object-cover rounded-xl transition-transform duration-500 hover:scale-105"
-      />
+    <!-- Card Kategori Terpilih -->
+    <!-- PILIHAN KATEGORI -->
+<section class="bg-black py-24 text-white">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+    
+    <!-- Judul & Deskripsi -->
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+      Pilihan Program Belajar
+    </h2>
+    <p class="text-gray-200 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
+      Dengan kurikulum terstruktur dan pengajar berpengalaman, kamu bisa belajar lebih fokus dan cepat mahir.
+    </p>
+
+    <!-- Tombol Kategori -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      {#each categories as cat}
+        <button
+          on:click={() => (selected = cat)}
+          class={`px-5 py-2 rounded-full transition shadow-md text-sm sm:text-base font-medium ${
+            selected.name === cat.name
+              ? 'bg-white text-gray-800 hover:bg-gray-200'
+              : 'bg-gray-900 text-gray-200 hover:bg-gray-700'
+          }`}
+        >
+          {cat.name}
+        </button>
+      {/each}
     </div>
-  
-    <!--  Deskripsi (di bawah saat mobile) -->
-    <div class="w-full sm:w-1/2 space-y-4 text-center sm:text-left">
-      <h3 class="text-xl sm:text-2xl text-gray-900 font-bold">{selected.title}</h3>
-      <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
-        {selected.description}
-      </p>
-      <a
-        href={base + "/kelas"}
-        class="inline-block mt-3 px-6 py-3 bg-blue-500 hover:bg-blue-400 text-white font-semibold rounded-full shadow-md transition"
-      >
-        Daftar Sekarang →
-      </a>
+
+    <!-- Card Kategori Terpilih -->
+    <div class="bg-black rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 shadow-xl border border-white/40">
+      
+          <!-- Gambar Kategori dengan Background -->
+      <div class="flex-shrink-0 w-full sm:w-1/2 flex justify-center mb-6 sm:mb-0">
+        <div class="bg-white rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg transition-transform duration-500 hover:scale-105">
+          <img
+            src={selected.image}
+            alt={selected.name}
+            class="w-full h-auto object-cover rounded-lg"
+          />
+        </div>
+      </div>
+
+    
+      <!-- Deskripsi Kategori -->
+      <div class="w-full sm:w-1/2 space-y-4 text-center sm:text-left">
+        <h3 class="text-xl sm:text-2xl font-bold text-whit2">
+          {selected.title}
+        </h3>
+        <p class="text-gray-200 text-sm sm:text-base leading-relaxed">
+          {selected.description}
+        </p>
+        <a
+          href={base + "/kelas"}
+          class="inline-block mt-4 px-6 py-3 bg-blue-500 hover:bg-blue-400 text-white font-semibold rounded-full shadow-md transition"
+        >
+          Daftar Sekarang →
+        </a>
+      </div>
+      
     </div>
   </div>
+</section>
+  </div>
+</section>
+
+
+<!-- Kelas Populer-->
+<section class="overflow-hidden bg-black py-24 sm:py-32 text-white">
+  <div class="mx-auto max-w-2xl px-8 lg:max-w-7xl lg:px-8">
+    <!-- Judul & Deskripsi -->
+    <div class="max-w-4xl">
+      <h1 class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-5xl">
+        Temukan kelas terbaik untuk meningkatkan skill-mu
+      </h1>
+      <p class="mt-6 text-lg text-gray-300">
+        Pilih dari kelas populer dengan materi lengkap dan kurikulum yang terstruktur agar belajar lebih fokus dan cepat mahir.
+      </p>
+    </div>
+
+    <!-- Grid Konten -->
+    <section class="mt-20 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16">
+      
+      <!-- Keterangan Kelas -->
+      <div class="lg:pr-8">
+        <h2 class="text-2xl font-semibold tracking-tight text-white">Tentang Kelas di Programmer Zaman Now</h2>
+        <p class="mt-6 text-base text-gray-300">
+          Kelas di ProgrammerZamanNow dirancang dengan materi lengkap dan terstruktur untuk membantu kamu menguasai skill programming secara efektif.
+        </p>
+        <p class="mt-8 text-base text-gray-300">
+          Setiap kelas bisa diakses secara fleksibel, kapan saja dan dari mana saja, sehingga belajar lebih nyaman dan sesuai ritme kamu.
+        </p>
+      </div>
+
+      <!-- Grid Gambar Kelas -->
+      <div class="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
+        <div class="-mx-4 grid grid-cols-2 gap-4 sm:-mx-6 sm:grid-cols-2 lg:mx-0 lg:grid-cols-2 xl:gap-8">
+          <!-- Kelas 1 -->
+          <div class="w-full max-w-xs mx-auto aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-white/40">
+            <img src="https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Blue.png" alt="Kelas 1" class="block w-full h-full object-cover" />
+          </div>
+          <!-- Kelas 2 -->
+          <div class="w-full max-w-xs mx-auto aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-white/40 lg:-mt-20">
+            <img src="https://images.seeklogo.com/logo-png/26/2/node-js-logo-png_seeklogo-269242.png" alt="Kelas 2" class="block w-full h-full object-cover" />
+          </div>
+          <!-- Kelas 3 -->
+          <div class="w-full max-w-xs mx-auto aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-white/40">
+            <img src="https://www.logo.wine/a/logo/React_(web_framework)/React_(web_framework)-Logo.wine.svg" alt="Kelas 3" class="block w-full h-full object-cover" />
+          </div>
+          <!-- Kelas 4 -->
+          <div class="w-full max-w-xs mx-auto aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-white/40 lg:-mt-20">
+            <img src="https://download.logo.wine/logo/Laravel/Laravel-Logo.wine.png" alt="Kelas 4" class="block w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+
+    </section>
   </div>
 </section>
 
