@@ -13,20 +13,20 @@
 <section class="relative bg-gray-950 text-white overflow-hidden">
 	<div class="mx-auto max-w-7xl px-6 lg:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
 	  
-	  <!--  Gambar di atas saat mobile, di kanan saat desktop -->
-	  <div class="flex-1 flex justify-center lg:justify-end relative order-1 lg:order-2">
-		<div class="relative w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-[26rem] lg:h-[26rem] rounded-full overflow-hidden border border-blue-500/40 shadow-[0_0_40px_#3b82f6]/30">
+	 <!--  Gambar  -->
+	 <div class="flex justify-center lg:justify-end relative order-1 lg:order-2">
+		<div class="relative w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl">
 		  <img
-			src="https://i.pinimg.com/736x/c4/3e/d8/c43ed885734d3c096da487320dc15694.jpg"
-			alt="Sosial Media Programmer Zaman Now"
-			class="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-700 ease-out"
+			src="https://i.pinimg.com/1200x/9b/6d/c4/9b6dc43703035493a95061b1d695f682.jpg"
+			alt="Promo Programmer Zaman Now"
+			class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
 		  />
 		</div>
 	  </div>
   
 	  <!--  Teks di bawah saat mobile, di kiri saat desktop -->
 	  <div class="flex-1 text-center lg:text-left space-y-6 order-2 lg:order-1">
-		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
+		<h1 class="text-5xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
 		  Ikuti Kami di Sosial Media
 		</h1>
 		<p class="text-lg leading-relaxed text-gray-200 max-w-xl mx-auto lg:mx-0">
@@ -34,7 +34,7 @@
 		  <span class="font-semibold text-blue-400">Programmer Zaman Now</span> di berbagai platform sosial media kami.
 		</p>
 		<div class="pt-4">
-		  <a href="{base}/sosial-media" class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-blue-500/30">
+		  <a href="{base}/sosial-media" class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-blue-500/30">
 			Lihat Platform Kami
 		  </a>
 		</div>
@@ -122,17 +122,17 @@
 	<div class="absolute inset-0 opacity-10 bg-[url('https://www.toptal.com/designers/subtlepatterns/patterns/dots.png')]"></div>
 	<div class="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
 	  <div class="max-w-3xl mx-auto bg-gray-900 border border-gray-600 rounded-3xl p-12 shadow-2xl">
-		<div class="flex justify-center mb-6">
+		<div class="flex justify-center mb-3">
 		  <img src="{pznLogo}" alt="Logo Programmer Zaman Now" class="h-16 w-auto drop-shadow-xl" />
 		</div>
-		<h2 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+		<h2 class="text-3xl font-bold tracking-tight text-white sm:text-3xl">
 		  Siap Tingkatkan Skill Anda?
 		</h2>
-		<p class="mt-6 text-lg leading-8 text-gray-300">
+		<p class="mt-3 text-lg leading-8 text-gray-300">
 		  Mulailah perjalanan belajar Anda hari ini dan kuasai teknologi terkini bersama mentor profesional dari
 		  <span class="font-semibold text-white">Programmer Zaman Now</span>.
 		</p>
-		<div class="mt-10">
+		<div class="mt-5">
 		  <a href="{base}/kelas"
 			class="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-100 text-gray-900 font-semibold px-8 py-4 shadow-lg hover:bg-gray-200 transition-all duration-300">
 			<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24"

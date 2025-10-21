@@ -1,7 +1,6 @@
 <script lang="ts">
 	import "../app.css";
 	import { onMount } from "svelte";
-	import { afterNavigate } from "$app/navigation";
 	import { base } from "$app/paths";
 	import { fly, fade } from "svelte/transition";
 
@@ -9,35 +8,29 @@
 	let scrolled = false;
 	let showBanner = false;
 
-	// 🔹 Fungsi menutup banner (sementara untuk halaman ini saja)
+	// 🔹 Tutup banner (tidak tampil lagi selama sesi browser)
 	function closeBanner() {
 		showBanner = false;
-		sessionStorage.setItem("bannerClosed", "true");
-	}
-
-	// 🔹 Banner akan muncul setiap kali halaman baru dimuat
-	function checkBanner() {
-		const bannerClosed = sessionStorage.getItem("bannerClosed");
-		showBanner = !bannerClosed;
+		sessionStorage.setItem("bannerShown", "true");
 	}
 
 	onMount(() => {
-		checkBanner();
+		// 🔹 Hanya tampil sekali saat pertama kali user buka website
+		const bannerShown = sessionStorage.getItem("bannerShown");
+		if (!bannerShown) {
+			showBanner = true;
+			sessionStorage.setItem("bannerShown", "true");
+		}
 
-		// Deteksi scroll
+		// 🔹 Deteksi scroll untuk ubah gaya navbar
 		const handleScroll = () => {
 			scrolled = window.scrollY > 20;
 		};
 		window.addEventListener("scroll", handleScroll);
 
-		// Bersihkan event listener
-		return () => window.removeEventListener("scroll", handleScroll);
-	});
-
-	// 🔹 Jalankan ulang logika banner setiap kali pindah halaman
-	afterNavigate(() => {
-		sessionStorage.removeItem("bannerClosed"); // reset agar muncul lagi
-		checkBanner();
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
 	});
 
 	// 🔹 Toggle menu mobile
@@ -53,6 +46,8 @@
 </script>
 
 
+
+
 <svelte:head>
 	<title>Programmer Zaman Now</title>
 	<meta
@@ -64,9 +59,9 @@
 	<meta name="theme-color" content="#0f172a" />
 </svelte:head>
 
-<!-- 🔹 NAVBAR -->
+<!--  NAVBAR -->
 <nav class="fixed inset-x-0 top-0 z-50 bg-gray-900 shadow-md transition-all duration-300">
-	<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-8 lg:px-10">
+	<div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-8 lg:px-8">
 		<!-- Logo -->
 		<a href={base + "/"} class="flex items-center gap-4 group">
 			<img
@@ -89,7 +84,7 @@
 			] as link}
 				<a
 					href={base + link.href}
-					class="text-lg font-medium text-gray-300 hover:text-white relative group transition-colors"
+					class="text-base font-medium text-white hover:text-white relative group transition-colors"
 				>
 					{link.name}
 					<span
@@ -102,7 +97,7 @@
 		<!-- Tombol Menu Mobile -->
 		<button
 			on:click={toggleMobileMenu}
-			class="lg:hidden p-3 rounded-md text-gray-300 hover:bg-gray-800 transition"
+			class="lg:hidden p-3 rounded-md text-white hover:bg-gray-800 transition"
 			aria-label="Toggle menu"
 			aria-expanded={mobileMenuOpen}
 		>
@@ -119,7 +114,7 @@
 	</div>
 </nav>
 
-<!-- 🔹 MENU MOBILE -->
+<!--  MENU MOBILE -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 {#if mobileMenuOpen}
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
@@ -142,7 +137,7 @@
 					<a
 						href={base + link.href}
 						on:click={closeMobileMenu}
-						class="block rounded-lg py-3 px-4 text-lg text-gray-300 hover:bg-gray-800 hover:text-white transition-all duration-200 ease-out hover:translate-x-1"
+						class="block rounded-lg py-3 px-4 text-base text-white hover:bg-gray-800 hover:text-white transition-all duration-200 ease-out hover:translate-x-1"
 					>
 						{link.name}
 					</a>
@@ -161,7 +156,7 @@
 	<slot />
 </main>
 
-<!--  BANNER PROMO (Rapi & Responsif untuk Mobile & Desktop) -->
+<!--  🔹 BANNER PROMO -->
 {#if showBanner}
   <div
     in:fade={{ duration: 400 }}
@@ -171,25 +166,25 @@
     <div
       class="relative w-full max-w-7xl flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 rounded-xl bg-white/95 px-4 sm:px-6 py-3 sm:py-4 shadow-lg ring-1 ring-gray-200 backdrop-blur-md transition-all text-center sm:text-left"
     >
-      <!--  Isi Banner -->
+      <!-- 🟢 Isi Banner -->
       <p class="text-xs sm:text-sm text-gray-900 leading-snug">
         <strong class="font-semibold text-blue-600">PROMO AKHIR OKTOBER</strong> — Gunakan kode
-        <strong class="text-gray-800 bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded-md">
+        <strong class="text-gray-800 bg-gray-100 px-1.5 py-0.5 rounded-md">
           PZN2025
         </strong>
       </p>
 
-      <!--  Tombol Tutup -->
+      <!-- ✖ Tombol Tutup -->
       <button
         on:click={closeBanner}
         type="button"
-        class="absolute right-2 top-2 sm:right-3 sm:top-1/2 sm:-translate-y-1/2 rounded-full p-1.5 sm:p-2 hover:bg-gray-100 dark:hover:bg-gray-800 transition"
+        class="absolute right-2 top-2 sm:right-3 sm:top-1/2 sm:-translate-y-1/2 rounded-full p-1.5 sm:p-2 hover:bg-gray-100 transition"
       >
         <span class="sr-only">Tutup</span>
         <svg
           viewBox="0 0 20 20"
           fill="currentColor"
-          class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-600 dark:text-gray-300"
+          class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-600"
         >
           <path
             fill-rule="evenodd"

@@ -33,7 +33,7 @@
 	import nestjs from "$lib/assets/nestjs.jpg"
 	import rabbit from "$lib/assets/rabbitmq.jpg"
 	import kafka from "$lib/assets/kafka.jpg"
-  	import { base } from "$app/paths";
+  import { base } from "$app/paths";
 	import { slide, fade } from "svelte/transition";
 
   
@@ -395,14 +395,14 @@ let selectedCategory: string = "Semua";
   
 	  <!-- Teks -->
 	  <div class="text-center lg:text-left space-y-6 order-2 lg:order-1">
-		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+		<h1 class="text-5xl sm:text-5xl lg:text-6xl font-bold leading-tight">
 		  Kelas Programmer Zaman Now
 		</h1>
 		<p class="text-lg text-gray-200 max-w-xl mx-auto lg:mx-0">
 		  Tingkatkan kemampuan coding Anda dengan kelas eksklusif, praktis, dan sesuai kebutuhan industri teknologi modern.
 		</p>
 		<div class="pt-4">
-		  <a href="{base}/kelas" class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-blue-500/30">
+		  <a href="{base}/kelas" class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-blue-500/30">
 			Mulai Belajar
 		  </a>
 		</div>

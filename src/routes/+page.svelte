@@ -171,8 +171,8 @@
         Ngoding Dulu, Jadi Sultan Nanti!
       </span>
 
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-        Waktunya Bawa Karier IT Anda ke Level Dunia
+      <h1 class="text-5xl sm:text-5xl lg:text-7xl font-bold leading-tight">
+        Boost Your IT Skill!
       </h1>
 
       <p class="text-lg text-gray-200 max-w-xl mx-auto lg:mx-0">
@@ -283,7 +283,7 @@
 <section class="bg-black py-20 text-white">
   <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
     <h2 class="text-3xl font-bold mb-4">Pilihan Program Belajar</h2>
-    <p class="text-gray-400 mb-10">
+    <p class="text-gray-200 mb-10">
       Dengan kurikulum terstruktur dan pengajar berpengalaman, kamu bisa belajar lebih fokus dan cepat mahir.
     </p>
 
@@ -303,9 +303,9 @@
     </div>
 
     <div
-    class="bg-gray-800 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 shadow-xl border border-gray-800"
+    class="bg-white rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 shadow-xl border border-gray-800"
   >
-    <!-- 🖼️ Gambar (di atas saat mobile) -->
+    <!-- Gambar (di atas saat mobile) -->
     <div class="flex-shrink-0 w-full sm:w-1/2 flex justify-center mb-6 sm:mb-0">
       <img
         src={selected.image}
@@ -314,10 +314,10 @@
       />
     </div>
   
-    <!-- 📘 Deskripsi (di bawah saat mobile) -->
+    <!--  Deskripsi (di bawah saat mobile) -->
     <div class="w-full sm:w-1/2 space-y-4 text-center sm:text-left">
-      <h3 class="text-xl sm:text-2xl text-white font-bold">{selected.title}</h3>
-      <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+      <h3 class="text-xl sm:text-2xl text-gray-900 font-bold">{selected.title}</h3>
+      <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
         {selected.description}
       </p>
       <a
@@ -328,9 +328,6 @@
       </a>
     </div>
   </div>
-  
-  
-
   </div>
 </section>
 

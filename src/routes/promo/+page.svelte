@@ -55,7 +55,7 @@
 	let timeLeft = 0;
 	let days = 0, hours = 0, minutes = 0, seconds = 0;
 
-	// 🔹 Tentukan tanggal berakhir promo
+	//  Tentukan tanggal berakhir promo
 	const endDate = new Date("2025-11-01T23:59:59").getTime();
 
 	onMount(() => {
@@ -102,7 +102,7 @@
   
 	  <!--  Teks -->
 	  <div class="text-center lg:text-left space-y-6 order-2 lg:order-1">
-		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+		<h1 class="text-5xl sm:text-5xl lg:text-6xl font-bold leading-tight">
 		  Promo Spesial<br class="hidden sm:block" />
 		  Programmer Zaman Now
 		</h1>
@@ -115,7 +115,7 @@
 		<div class="mt-6">
 		  <a
 			href="{base}/kelas"
-			class="inline-block px-8 py-3 rounded-full text-base font-semibold bg-blue-500 hover:bg-blue-600 text-white transition-all duration-300 shadow-lg shadow-blue-500/30"
+			class="inline-block px-8 py-3 rounded-xl text-base font-semibold bg-blue-500 hover:bg-blue-600 text-white transition-all duration-300 shadow-lg shadow-blue-500/30"
 		  >
 			Daftar Sekarang →
 		  </a>
@@ -157,7 +157,7 @@
 			</div>
 		</div>
 
-		<!-- 🧾 Kode Promo -->
+		<!--  Kode Promo -->
 		<div class="mb-0">
 			<p class="text-gray-300 text-sm mb-6">Gunakan kode promo di bawah ini:</p>
 			<div class="inline-block bg-white text-gray-900 font-semibold px-6 py-2 rounded-full tracking-widest shadow-md select-all">
@@ -229,14 +229,14 @@
 							</ul>
 
 							<!--  Kode Promo -->
-							<div class="mt-6 bg-gray-800/70 border border-gray-700 rounded-xl p-4 text-center">
+							<div class="mt-3 bg-gray-800/70 border border-gray-700 rounded-xl p-4 text-center">
 								<p class="text-sm text-gray-300 mb-2">Gunakan Kode Promo:</p>
 								<div class="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white font-semibold rounded-lg border border-gray-700 select-all">
 									<span>PZN2025</span>
 									<!-- svelte-ignore a11y_consider_explicit_label -->
 									<button
 										on:click={() => navigator.clipboard.writeText('PZN70OFF')}
-										class="text-gray-400 hover:text-white transition"
+										class="text-gray-200 hover:text-white transition"
 									>
 										<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16h8M8 12h8m-6 8h6a2 2 0 002-2V6a2 2 0 00-2-2h-6M6 8H5a2 2 0 00-2 2v10a2 2 0 002 2h6" />
@@ -245,12 +245,13 @@
 								</div>
 							</div>
 
-							<a
-								href={`${base}/promo`}
-								class="mt-6 inline-block rounded-xl bg-white text-gray-900 px-8 py-3 text-sm font-semibold hover:bg-gray-200 transition"
-							>
-								Daftar Sekarang
-							</a>
+								<a
+									href={`${base}/promo`}
+									class="mt-3 block w-full rounded-xl bg-white text-gray-900 px-8 py-3 text-sm text-center font-semibold hover:bg-gray-200 transition"
+								>
+									Daftar Sekarang
+								</a>
+
 						</div>
 					{/if}
 				</div>
