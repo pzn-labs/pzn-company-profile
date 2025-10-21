@@ -528,28 +528,7 @@ let selectedCategory: string = "Semua";
 	  </div>
 	</div>
 </section>
-  
-<!-- CTA Section -->
-<section class="bg-black text-white py-24">
-	<div class="px-6 sm:px-6 lg:px-8">
-		<div class="mx-auto max-w-3xl text-center border border-gray-700 rounded-3xl p-12 shadow-xl bg-gray-900">
-			<h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
-				Tidak Menemukan Kelas yang Cocok?
-			</h2>
-			<p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
-				Hubungi tim kami untuk konsultasi kelas yang sesuai dengan kebutuhan dan level skill Anda.
-			</p>
-			<div class="mt-10 flex flex-wrap justify-center gap-6">
-				<a href={base + '/promo'} class="rounded-full bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-lg hover:bg-blue-700 transition">
-					Lihat Promo
-				</a>
-				<a href={base + '/sosial-media'} class="rounded-full px-8 py-4 text-lg font-semibold text-white border border-gray-600 hover:bg-gray-700 transition">
-					Konsultasi Gratis →
-				</a>
-			</div>
-		</div>
-	</div>
-</section>
+  >
 
 <!-- FOOTER -->
 <footer class="bg-gray-950 text-gray-400 border-t border-gray-800">

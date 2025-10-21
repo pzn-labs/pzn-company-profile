@@ -1,4 +1,3 @@
-Anda bilang:
 <script lang="ts">
     import { onMount, onDestroy } from "svelte";
     import "../app.css";
@@ -224,28 +223,33 @@ Anda bilang:
         {
           src: "https://cdn-icons-png.flaticon.com/512/906/906175.png",
           title: "Materi Kekinian",
-          desc: "Materi selalu up to date sesuai perkembangan teknologi terkini, diperbarui secara berkala."
+          desc: "Materi di sini selalu up to date sesuai dengan perkembangan teknologi saat ini. Sehingga peserta akan mendapatkan materi yang pasti selalu terbaru. Selain itu semua materi akan selalu di update secara berkala."
         },
         {
           src: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
           title: "Instruktur Berpengalaman",
-          desc: "Instruktur adalah praktisi industri yang siap membagikan best practice dan pengalaman nyata."
+          desc: "Di sini, instruktur belajar nya adalah praktisi yang sangat berpengalaman di dunia industri. Sehingga peserta tidak hanya bisa belajar teknologi saja, namun bisa belajar best practice dan pengalaman dari instrukturnya."
         },
         {
           src: roadmap,
           title: "Roadmap Jelas",
-          desc: "Setiap kelas disusun berdasarkan roadmap terstruktur, dari dasar hingga mahir."
+          desc: "Di sini, semua diajarkan dari awal sampai akhir. Setiap kelas sudah di susun sesuai dengan Roadmap nya. Sehingga peserta tidak akan tersesat ketika belajar, cukup ikuti kelas yang diinginkan."
         }
       ] as fitur (fitur.title)}
         <div class="flex flex-col items-center text-center">
-          <img src={fitur.src} alt={fitur.title} class="h-64 w-64 mb-6 rounded-xl transition-transform duration-300 hover:scale-110 object-cover" />
+          <img
+            src={fitur.src}
+            alt={fitur.title}
+            class="h-32 w-32 sm:h-48 sm:w-48 lg:h-64 lg:w-64 mb-6 rounded-xl transition-transform duration-300 hover:scale-110 object-cover"
+          />
           <h3 class="text-xl font-semibold">{fitur.title}</h3>
-          <p class="mt-4 text-base text-gray-400">{fitur.desc}</p>
+          <p class="mt-4 text-base text-gray-200">{fitur.desc}</p>
         </div>
       {/each}
     </div>
   </div>
 </section>
+
 
 <!--  OVERLAY LOGO -->
 <section class="bg-gray-900 py-4 overflow-hidden">
@@ -299,29 +303,33 @@ Anda bilang:
     </div>
 
     <div
-  class="bg-gray-800 rounded-2xl p-6 sm:p-8 flex flex-row items-center justify-center gap-6 sm:gap-10 shadow-xl border border-gray-800">
+    class="bg-gray-800 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 shadow-xl border border-gray-800"
+  >
+    <!-- 🖼️ Gambar (di atas saat mobile) -->
+    <div class="flex-shrink-0 w-full sm:w-1/2 flex justify-center mb-6 sm:mb-0">
+      <img
+        src={selected.image}
+        alt={selected.name}
+        class="w-4/5 sm:w-3/4 lg:w-2/3 h-auto object-cover rounded-xl transition-transform duration-500 hover:scale-105"
+      />
+    </div>
   
-  <!--  Gambar kiri -->
-  <div class="flex-shrink-0 w-1/3 sm:w-1/2 flex justify-center">
-    <img
-      src={selected.image}
-      alt={selected.name}
-      class="w-full sm:w-4/5 h-auto object-cover transition-transform duration-500 hover:scale-105"
-    />
+    <!-- 📘 Deskripsi (di bawah saat mobile) -->
+    <div class="w-full sm:w-1/2 space-y-4 text-center sm:text-left">
+      <h3 class="text-xl sm:text-2xl text-white font-bold">{selected.title}</h3>
+      <p class="text-gray-300 text-sm sm:text-base leading-relaxed">
+        {selected.description}
+      </p>
+      <a
+        href={base + "/kelas"}
+        class="inline-block mt-3 px-6 py-3 bg-blue-500 hover:bg-blue-400 text-white font-semibold rounded-full shadow-md transition"
+      >
+        Daftar Sekarang →
+      </a>
+    </div>
   </div>
-
-  <!--  Deskripsi kanan -->
-  <div class="w-2/3 sm:w-1/2 space-y-4 text-left">
-    <h3 class="text-xl sm:text-2xl text-white font-bold">{selected.title}</h3>
-    <p class="text-gray-300 text-sm sm:text-base leading-relaxed">{selected.description}</p>
-    <a
-      href={base + "/kelas"}
-      class="inline-block mt-3 px-5 py-2 bg-blue-500 hover:bg-blue-400 text-white font-semibold rounded-full shadow-md transition"
-    >
-      Daftar Sekarang →
-    </a>
-  </div>
-</div>
+  
+  
 
   </div>
 </section>
