@@ -157,8 +157,6 @@
   ];
 
   let selected = categories[0];
-
-  
 </script>
 
 <!-- HERO SECTION -->
@@ -172,15 +170,14 @@
         Ngoding Dulu, Jadi Sultan Nanti!
       </span>
 
-      <!-- Judul Hero -->
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
-        Boost Your IT Skill!
+      <!-- Judul Hero (❗️diperbesar untuk mobile) -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-extrabold leading-tight tracking-tight">
+        Programmer Zaman Now
       </h1>
 
       <!-- Deskripsi -->
       <p class="text-lg sm:text-xl text-gray-200 max-w-xl mx-auto lg:mx-0">
-        Programmer Zaman Now membantu Anda mengembangkan skill terdepan,
-        teknologi terbaru, dan kemampuan praktis.
+        Tempat Belajar untuk Menjadi Software Development Expert yang Zaman Now Banget!.
       </p>
 
       <!-- Tombol CTA -->
@@ -208,6 +205,7 @@
 
   </div>
 </section>
+
 
 
 <!-- FITUR UTAMA -->
@@ -288,35 +286,6 @@
   </div>
 </section>
 
-<!-- PILIHAN KATEGORI -->
-<section class="bg-black py-24 text-white">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-    
-    <!-- Judul & Deskripsi -->
-    <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-      Pilihan Program Belajar
-    </h2>
-    <p class="text-gray-200 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
-      Dengan kurikulum terstruktur dan pengajar berpengalaman, kamu bisa belajar lebih fokus dan cepat mahir.
-    </p>
-
-    <!-- Tombol Kategori -->
-    <div class="flex flex-wrap justify-center gap-3 mb-10">
-      {#each categories as cat}
-        <button
-          on:click={() => (selected = cat)}
-          class={`px-5 py-2 rounded-full transition shadow-md text-sm sm:text-base font-medium ${
-            selected.name === cat.name
-              ? 'bg-white text-gray-800 hover:bg-gray-200'
-              : 'bg-gray-900 text-gray-200 hover:bg-gray-700'
-          }`}
-        >
-          {cat.name}
-        </button>
-      {/each}
-    </div>
-
-    <!-- Card Kategori Terpilih -->
     <!-- PILIHAN KATEGORI -->
 <section class="bg-black py-24 text-white">
   <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
@@ -379,64 +348,129 @@
     </div>
   </div>
 </section>
+
+<!-- ROADMAP SECTION -->
+<section class="bg-black text-white py-20 px-6">
+  <!-- Judul -->
+  <div class="max-w-6xl mx-auto text-center mb-16">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Roadmap Belajar Programmer Zaman Now</h2>
+    <p class="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
+      Mulai dari nol hingga menjadi programmer profesional.  
+      Ikuti jalur belajar yang terarah dan seru di setiap tahapnya.
+    </p>
   </div>
-</section>
 
+  <!-- Timeline -->
+  <div class="relative max-w-5xl mx-auto">
+    <!-- Garis Tengah (hanya muncul di desktop) -->
+    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-white"></div>
 
-<!-- Kelas Populer-->
-<section class="overflow-hidden bg-black py-24 sm:py-32 text-white">
-  <div class="mx-auto max-w-2xl px-8 lg:max-w-7xl lg:px-8">
-    <!-- Judul & Deskripsi -->
-    <div class="max-w-4xl">
-      <h1 class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-5xl">
-        Temukan kelas terbaik untuk meningkatkan skill-mu
-      </h1>
-      <p class="mt-6 text-lg text-gray-300">
-        Pilih dari kelas populer dengan materi lengkap dan kurikulum yang terstruktur agar belajar lebih fokus dan cepat mahir.
-      </p>
-    </div>
-
-    <!-- Grid Konten -->
-    <section class="mt-20 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-16">
-      
-      <!-- Keterangan Kelas -->
-      <div class="lg:pr-8">
-        <h2 class="text-2xl font-semibold tracking-tight text-white">Tentang Kelas di Programmer Zaman Now</h2>
-        <p class="mt-6 text-base text-gray-300">
-          Kelas di ProgrammerZamanNow dirancang dengan materi lengkap dan terstruktur untuk membantu kamu menguasai skill programming secara efektif.
-        </p>
-        <p class="mt-8 text-base text-gray-300">
-          Setiap kelas bisa diakses secara fleksibel, kapan saja dan dari mana saja, sehingga belajar lebih nyaman dan sesuai ritme kamu.
-        </p>
-      </div>
-
-      <!-- Grid Gambar Kelas -->
-      <div class="pt-16 lg:row-span-2 lg:-mr-16 xl:mr-auto">
-        <div class="-mx-4 grid grid-cols-2 gap-4 sm:-mx-6 sm:grid-cols-2 lg:mx-0 lg:grid-cols-2 xl:gap-8">
-          <!-- Kelas 1 -->
-          <div class="w-full max-w-xs mx-auto aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-white/40">
-            <img src="https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Blue.png" alt="Kelas 1" class="block w-full h-full object-cover" />
+    <div class="space-y-20 relative z-10">
+      <!-- Step -->
+      {#each [
+        {
+          id: 1,
+          title: 'Dasar Pemrograman',
+          desc: 'Pelajari logika, algoritma dasar, dan bahasa seperti JavaScript & Python untuk membangun fondasi yang kuat.',
+          img: 'https://i.pinimg.com/736x/97/f3/2d/97f32dd3dec3221cca5a193bc352c8f3.jpg',
+          reverse: false
+        },
+        {
+          id: 2,
+          title: 'Web Development',
+          desc: 'Kuasai HTML, CSS, dan JavaScript. Bangun website modern dengan Svelte, React, atau Vue.',
+          img: 'https://i.pinimg.com/736x/c8/23/2e/c8232e214cc8e4ce311949db592fb103.jpg',
+          reverse: true
+        },
+        {
+          id: 3,
+          title: 'Backend & Database',
+          desc: 'Pelajari REST API, autentikasi, dan manajemen data menggunakan Node.js, Bun, MySQL, atau MongoDB.',
+          img: 'https://i.pinimg.com/736x/0a/ac/f7/0aacf7f15eb464b8a53dacdaa46b00ae.jpg',
+          reverse: false
+        },
+        {
+          id: 4,
+          title: 'Deployment & Karier',
+          desc: 'Pelajari cara deploy ke Vercel, GitHub Pages, dan bangun portofolio profesional untuk karier software engineer.',
+          img: 'https://i.pinimg.com/736x/bc/5d/b7/bc5db7c3dbd17856fe0366afda42e871.jpg',
+          reverse: true
+        }
+      ] as step}
+        <div class="flex flex-col md:flex-row {step.reverse ? 'md:flex-row-reverse' : ''} items-center gap-8 md:gap-12 group">
+          <!-- Text -->
+          <div class="md:w-1/2 text-center md:text-{step.reverse ? 'left' : 'right'}">
+            <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-blue-400 transition-colors duration-300">
+              {step.id}. {step.title}
+            </h3>
+            <p class="text-gray-400">{step.desc}</p>
           </div>
-          <!-- Kelas 2 -->
-          <div class="w-full max-w-xs mx-auto aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-white/40 lg:-mt-20">
-            <img src="https://images.seeklogo.com/logo-png/26/2/node-js-logo-png_seeklogo-269242.png" alt="Kelas 2" class="block w-full h-full object-cover" />
-          </div>
-          <!-- Kelas 3 -->
-          <div class="w-full max-w-xs mx-auto aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-white/40">
-            <img src="https://www.logo.wine/a/logo/React_(web_framework)/React_(web_framework)-Logo.wine.svg" alt="Kelas 3" class="block w-full h-full object-cover" />
-          </div>
-          <!-- Kelas 4 -->
-          <div class="w-full max-w-xs mx-auto aspect-square overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-white/40 lg:-mt-20">
-            <img src="https://download.logo.wine/logo/Laravel/Laravel-Logo.wine.png" alt="Kelas 4" class="block w-full h-full object-cover" />
+
+          <!-- Titik Tengah (desktop only) -->
+          <div class="hidden md:flex items-center justify-center w-8 h-8 bg-white rounded-full shadow-lg border-4 border-red-500 group-hover:scale-110 transition-transform duration-300"></div>
+
+          <!-- Gambar -->
+          <div class="md:w-1/2 flex justify-center">
+            <img
+              src={step.img}
+              alt={step.title}
+              class="w-72 sm:w-80 h-auto rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300"
+            />
           </div>
         </div>
-      </div>
-
-    </section>
+      {/each}
+    </div>
   </div>
 </section>
 
-  <!-- FOOTER -->
+<!-- MARQUEE SECTION -->
+<section class="bg-black py-16 text-center text-white">
+  <!-- Judul & Deskripsi -->
+  <div class="mb-10 px-6">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-3">Kelas Programmer Zaman Now</h2>
+    <p class="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg mb-6">
+      Tingkatkan skill coding kamu bersama Programmer Zaman Now!  
+      Belajar pemrograman modern dari dasar hingga mahir dengan mentor berpengalaman dan materi yang selalu up-to-date.
+    </p>
+
+    <!-- Tombol Lihat Kelas -->
+    <a
+      href="{base}/kelas"
+      class="inline-block bg-white text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+    >
+      Lihat Kelas
+    </a>
+  </div>
+
+  <!-- Baris Atas ➡️ -->
+  <div class="overflow-hidden w-full mb-8 group">
+    <div class="scroll-right flex items-center gap-6 sm:gap-6 lg:gap-6 px-4 sm:px-6 lg:px-10 group-hover:[animation-play-state:paused]">
+      {#each [...images, ...images] as img, i (i)}
+        <img
+          src={img}
+          alt="logo"
+          class="h-20 sm:h-24 md:h-28 lg:h-36 w-auto object-contain hover:scale-110 transition-transform duration-300 cursor-pointer"
+        />
+      {/each}
+    </div>
+  </div>
+
+  <!-- Baris Bawah ⬅️ -->
+  <div class="overflow-hidden w-full group">
+    <div class="scroll-left flex items-center gap-6 sm:gap-6 lg:gap-6 px-4 sm:px-6 lg:px-10 group-hover:[animation-play-state:paused]">
+      {#each [...images.reverse(), ...images.reverse()] as img, i (i)}
+        <img
+          src={img}
+          alt="logo"
+          class="h-20 sm:h-24 md:h-28 lg:h-36 w-auto object-contain hover:scale-110 transition-transform duration-300 cursor-pointer"
+        />
+      {/each}
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
   <footer class="bg-gray-950 text-gray-400 border-t border-gray-800">
     <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8 grid gap-12 md:grid-cols-3 items-start">
       <!-- Kolom 1 -->
@@ -512,6 +546,36 @@
     display: flex;
     white-space: nowrap;
     animation: marquee 25s linear infinite;
+  }
+
+  /* Animasi scroll kanan */
+  .scroll-right {
+    animation: scrollRight 15s linear infinite;
+    animation-play-state: running;
+  }
+
+  /* Animasi scroll kiri */
+  .scroll-left {
+    animation: scrollLeft 15s linear infinite;
+    animation-play-state: running;
+  }
+
+  @keyframes scrollRight {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
   }
 </style>
 

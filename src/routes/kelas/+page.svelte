@@ -352,24 +352,30 @@ const categories = [
 
   
 let selectedCategory: string = "Semua";
-	let showAll = false;
-	let searchQuery = "";
+  let showAll = false;
+  let searchQuery = "";
+  let sortOrder: "asc" | "desc" = "asc";
 
-	//  tombol “lihat semua”
-	const visibleCount = 6;
+  // Gabungkan filter dan sorting jadi satu blok reaktif
+  $: filteredClasses = allClasses
+    .filter((kelas) => {
+      const matchCategory =
+        selectedCategory === "Semua" ||
+        (Array.isArray(kelas.category)
+          ? kelas.category.includes(selectedCategory)
+          : kelas.category === selectedCategory);
 
-	$: filteredClasses = allClasses.filter((kelas) => {
-  const matchCategory =
-    selectedCategory === "Semua" ||
-    (kelas.category && kelas.category.includes(selectedCategory));
-    
-  const matchSearch = kelas.name
-    .toLowerCase()
-    .includes(searchQuery.toLowerCase());
-    
-  return matchCategory && matchSearch;
-});
+      const matchSearch = kelas.name
+        .toLowerCase()
+        .includes(searchQuery.toLowerCase());
 
+      return matchCategory && matchSearch;
+    })
+    .sort((a, b) =>
+      sortOrder === "asc"
+        ? a.name.localeCompare(b.name)
+        : b.name.localeCompare(a.name)
+    );
   </script>
   
   <svelte:head>
@@ -377,118 +383,117 @@ let selectedCategory: string = "Semua";
 	<meta name="description" content="Pilih kelas programming yang sesuai dengan kebutuhan Anda. Dari pemula hingga mahir, semua tersedia di PZN." />
   </svelte:head>
 
-
-<!-- Hero Section -->
-<section class="relative bg-gray-950 text-white overflow-hidden">
-	<div class="mx-auto max-w-7xl px-6 lg:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
-  
-	  <!--  Gambar -->
-	  <div class="flex justify-center lg:justify-end relative order-1 lg:order-2">
-		<div class="relative w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl">
-		  <img
-			src="https://i.pinimg.com/1200x/c2/04/07/c20407664f8f8a5610dd33652626d250.jpg"
-			alt="Programmer Zaman Now Class"
-			class="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-700 ease-out"
-		  />
-		</div>
-	  </div>
-  
-	  <!-- Teks -->
-	  <div class="text-center lg:text-left space-y-6 order-2 lg:order-1">
-		<h1 class="text-5xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-		  Kelas Programmer Zaman Now
-		</h1>
-		<p class="text-lg text-gray-200 max-w-xl mx-auto lg:mx-0">
-		  Tingkatkan kemampuan coding Anda dengan kelas eksklusif, praktis, dan sesuai kebutuhan industri teknologi modern.
-		</p>
-		<div class="pt-4">
-		  <a href="{base}/kelas" class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-blue-500/30">
-			Mulai Belajar
-		  </a>
-		</div>
-	  </div>
-  
-	</div>
-  </section>
-  
-  
 <!-- Daftar Kelas -->
 <section class="py-24 bg-black text-gray-100">
 	<div class="mx-auto max-w-7xl px-6 lg:px-8">
 	  <!-- Deskripsi -->
-	  <div class="mx-auto max-w-3xl text-center mb-12">
+	  <div class="mx-auto text-left mb-12">
 		<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Pilihan Kelas Terbaik</h2>
 		<p class="mt-4 text-lg leading-8 text-gray-200">
 		  Tingkatkan kemampuan programming dengan kelas pilihan dari <strong class="text-blue-400">Programmer Zaman Now</strong>.
 		</p>
 	  </div>
   
-	  <!-- Menu Kategori -->
-	  <div class="text-center mb-8">
-		<!-- Daftar Kategori -->
-		<div
-		  class="flex flex-wrap justify-center gap-3 mb-6 transition-all duration-500 overflow-hidden"
-		  style="max-height: {showAll ? '1000px' : '120px'}"
-		>
-		  {#each (showAll ? categories : categories.slice(0, 8)) as category (category)}
-			<div in:fade={{ duration: 200 }} out:fade={{ duration: 150 }}>
-			  <button
-				class="px-5 py-2.5 rounded-full text-sm font-medium border transition-all duration-300
-				{selectedCategory === category 
-				  ? 'bg-white text-gray-900' 
-				  : 'bg-gray-900 text-gray-300 border-gray-700 hover:bg-gray-700'}"
-				on:click={() => selectedCategory = category}
-			  >
-				{category}
-			  </button>
-			</div>
-		  {/each}
-		</div>
-	  
-		<!-- Tombol Lihat Semua -->
-		{#if categories.length > 8}
-		  <button
-			class="group inline-flex items-center gap-2 mt-2 px-4 py-2 rounded-full text-sm font-semibold text-gray-900 
-				   bg-white hover:bg-gray-200 transition-all duration-300"
-			on:click={() => showAll = !showAll}
-		  >
-			<span>{showAll ? "Sembunyikan Kategori" : "Lihat Semua Kategori"}</span>
-			<svg
-			  class="w-4 h-4 transform transition-transform duration-300 {showAll ? 'rotate-180' : ''}"
-			  fill="none"
-			  stroke="currentColor"
-			  stroke-width="2"
-			  viewBox="0 0 24 24"
-			>
-			  <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-			</svg>
-		  </button>
-		{/if}
-	  </div>
+<!-- Menu Kategori -->
+<div class="text-center mb-10 ">
+  <!-- Daftar Kategori -->
+  <div
+    class="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5 mb-6 transition-all duration-500 overflow-hidden"
+    style="max-height: {showAll ? '1000px' : '140px'}"
+  >
+    {#each (showAll ? categories : categories.slice(0, 8)) as category (category)}
+      <div in:fade={{ duration: 200 }} out:fade={{ duration: 150 }}>
+        <button
+          class="px-4 sm:px-6 md:px-8 py-2 sm:py-2.5 md:py-3 rounded-xl sm:rounded-2xl 
+                 text-sm sm:text-base md:text-lg font-semibold border transition-all duration-300
+                 {selectedCategory === category 
+                   ? 'bg-white text-gray-900 border-white shadow-md' 
+                   : 'bg-gray-900 text-gray-200 border-gray-700 hover:bg-gray-700 hover:text-white'}"
+          on:click={() => selectedCategory = category}
+        >
+          {category}
+        </button>
+      </div>
+    {/each}
+  </div>
+
+  <!-- Tombol Lihat Semua -->
+  {#if categories.length > 8}
+    <button
+      class="group inline-flex items-center gap-2 sm:gap-3 mt-2 px-5 sm:px-6 md:px-8 py-2 sm:py-3 rounded-full 
+             text-sm sm:text-base md:text-lg font-semibold text-gray-900 bg-white hover:bg-gray-200 
+             shadow-md hover:shadow-lg transition-all duration-300"
+      on:click={() => showAll = !showAll}
+    >
+      <span>{showAll ? "Sembunyikan Kategori" : "Lihat Semua Kategori"}</span>
+      <svg
+        class="w-4 sm:w-5 h-4 sm:h-5 transform transition-transform duration-300 {showAll ? 'rotate-180' : ''}"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+  {/if}
+</div>
+
   
-	  <!-- Search Input -->
-	  <div class="relative mb-12 w-full max-w-md mx-auto">
-		<input
-		  type="text"
-		  placeholder="Cari kelas..."
-		  bind:value={searchQuery}
-		  class="w-full rounded-2xl border border-gray-600 bg-gray-900 px-5 py-3 pl-12 text-white focus:outline-none focus:ring-2 focus:ring-gray-200 shadow-sm"
-		/>
-		<svg
-		  xmlns="http://www.w3.org/2000/svg"
-		  class="absolute left-4 top-3.5 h-5 w-5 text-gray-400"
-		  fill="none"
-		  viewBox="0 0 24 24"
-		  stroke="currentColor"
-		>
-		  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 103.5 10.5a7.5 7.5 0 0013.15 6.15z" />
-		</svg>
-	  </div>
+    <!-- Search & Sort Bar -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-2 mb-12 w-full max-w-2xl mx-auto">
+      <!-- Search Input -->
+      <div class="relative w-full sm:w-3/4">
+        <input
+          type="text"
+          placeholder="Cari kelas..."
+          bind:value={searchQuery}
+          class="w-full rounded-2xl border border-gray-600 bg-gray-900 px-5 py-3 pl-12 text-white focus:outline-none focus:ring-2 focus:ring-gray-200 shadow-sm"
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute left-4 top-3.5 h-5 w-5 text-gray-400"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 103.5 10.5a7.5 7.5 0 0013.15 6.15z" />
+        </svg>
+      </div>
+      
+      <!-- Sort Dropdown -->
+      <div class="w-full sm:w-1/4 mt-0 sm:mt-0">
+        <label for="sortOrder" class="sr-only">Urutkan</label>
+        <div class="relative">
+          <select
+            id="sortOrder"
+            bind:value={sortOrder}
+            class="w-full appearance-none rounded-2xl border border-gray-700 bg-gray-900 px-5 py-3 text-gray-400 text-sm sm:text-base 
+                  focus:outline-none focus:ring-2 focus:ring-gray-300 shadow-sm transition-all duration-300"
+          >
+            <option value="asc">Urutkan : A - Z</option>
+            <option value="desc">Urutkan : Z - A</option>
+          </select>
+
+          <!-- Icon panah dropdown -->
+          <svg
+            class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
   
 	  <!-- Grid Kelas -->
 	  <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
 		{#each filteredClasses as kelas}
-		  <div class="group relative bg-gray-900 rounded-2xl shadow-lg ring-1 ring-gray-400 hover:shadow-xl transition-shadow">
+		  <div class="group relative bg-white rounded-2xl shadow-lg ring-1 ring-gray-400 hover:shadow-xl transition-shadow">
 			<div class="aspect-[16/9] overflow-hidden rounded-t-2xl bg-gray-700">
 			  <img
 				src={kelas.image}
@@ -497,8 +502,8 @@ let selectedCategory: string = "Semua";
 			  />
 			</div>
 			<div class="p-6">
-			  <h3 class="text-lg font-semibold text-white mb-2">{kelas.name}</h3>
-			  <p class="text-gray-200 text-sm mb-4">{kelas.description}</p>
+			  <h3 class="text-lg font-semibold text-gray-900 mb-2">{kelas.name}</h3>
+			  <p class="text-gray-600 text-sm mb-4">{kelas.description}</p>
 			  <div class="flex items-center justify-between mt-4">
 				<div class="flex items-center gap-2">
 				  <div class="flex -space-x-2">
@@ -506,16 +511,16 @@ let selectedCategory: string = "Semua";
 					  <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v1.2h19.2v-1.2c0-3.2-6.4-4.8-9.6-4.8z"/>
 					</svg>
 				  </div>
-				  <span class="text-sm text-gray-400">1,234 siswa</span>
+				  <span class="text-sm text-gray-600">1,234 siswa</span>
 				</div>
 				<div class="text-right">
-				  <div class="text-lg font-bold text-white">Rp {kelas.price.toLocaleString('id-ID')}</div>
+				  <div class="text-lg font-bold text-gray-900">Rp {kelas.price.toLocaleString('id-ID')}</div>
 				  {#if kelas.originalPrice && kelas.originalPrice > kelas.price}
-					<div class="text-sm text-gray-500 line-through">Rp {kelas.originalPrice.toLocaleString('id-ID')}</div>
+					<div class="text-sm text-red-500 line-through">Rp {kelas.originalPrice.toLocaleString('id-ID')}</div>
 				  {/if}
 				</div>
 			  </div>
-			  <button class="w-full mt-4 rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+			  <button class="w-full mt-4 rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
 				Lihat Detail
 			  </button>
 			</div>
