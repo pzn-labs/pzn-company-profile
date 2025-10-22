@@ -163,14 +163,23 @@
 <section class="relative bg-gray-950 overflow-hidden py-24 text-white">
   <div class="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
     
-    <!-- 🔹 KIRI: TEKS -->
+    <!--  KANAN: GAMBAR HERO -->
+    <div class="relative w-full aspect-video overflow-hidden rounded-3xl shadow-2xl">
+      <img
+        src={currentImage}
+        alt="Hero Slideshow"
+        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
+      />
+    </div>
+
+    <!--  KIRI: TEKS -->
     <div class="space-y-6 text-center lg:text-left">
       <!-- Tagline -->
       <span class="inline-block text-sm font-semibold text-gray-900 bg-white px-4 py-2 rounded-full">
         Ngoding Dulu, Jadi Sultan Nanti!
       </span>
 
-      <!-- Judul Hero (❗️diperbesar untuk mobile) -->
+      <!-- Judul Hero -->
       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-extrabold leading-tight tracking-tight">
         Programmer Zaman Now
       </h1>
@@ -193,20 +202,8 @@
         </a>
       </div>
     </div>
-
-    <!-- 🔹 KANAN: GAMBAR HERO -->
-    <div class="relative w-full aspect-video overflow-hidden rounded-3xl shadow-2xl">
-      <img
-        src={currentImage}
-        alt="Hero Slideshow"
-        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
-      />
-    </div>
-
   </div>
 </section>
-
-
 
 <!-- FITUR UTAMA -->
 <section class="py-20 sm:py-24 bg-black text-white">
@@ -286,9 +283,9 @@
   </div>
 </section>
 
-    <!-- PILIHAN KATEGORI -->
+<!-- PILIHAN KATEGORI -->
 <section class="bg-black py-24 text-white">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+  <div class="mx-auto max-w-3xl px-6 lg:px-8 text-center">
     
     <!-- Judul & Deskripsi -->
     <h2 class="text-3xl sm:text-4xl font-bold mb-4">
@@ -315,11 +312,11 @@
     </div>
 
     <!-- Card Kategori Terpilih -->
-    <div class="bg-black rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 shadow-xl border border-white/40">
+    <div class="bg-black rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 shadow-lg border border-white">
       
-          <!-- Gambar Kategori dengan Background -->
+      <!-- Gambar Kategori (lebih kecil) -->
       <div class="flex-shrink-0 w-full sm:w-1/2 flex justify-center mb-6 sm:mb-0">
-        <div class="bg-white rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg transition-transform duration-500 hover:scale-105">
+        <div class="bg-white rounded-xl p-3 sm:p-5 lg:p-6 shadow-lg transition-transform duration-500 hover:scale-105 max-w-[300px] sm:max-w-[340px]">
           <img
             src={selected.image}
             alt={selected.name}
@@ -328,10 +325,9 @@
         </div>
       </div>
 
-    
       <!-- Deskripsi Kategori -->
       <div class="w-full sm:w-1/2 space-y-4 text-center sm:text-left">
-        <h3 class="text-xl sm:text-2xl font-bold text-whit2">
+        <h3 class="text-xl sm:text-2xl font-bold text-white">
           {selected.title}
         </h3>
         <p class="text-gray-200 text-sm sm:text-base leading-relaxed">
@@ -344,17 +340,19 @@
           Daftar Sekarang →
         </a>
       </div>
-      
     </div>
   </div>
 </section>
 
+
 <!-- ROADMAP SECTION -->
-<section class="bg-black text-white py-20 px-6">
+<section class="bg-black text-white py-20 px-6 overflow-hidden">
   <!-- Judul -->
   <div class="max-w-6xl mx-auto text-center mb-16">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Roadmap Belajar Programmer Zaman Now</h2>
-    <p class="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+      Roadmap Belajar Programmer Zaman Now
+    </h2>
+    <p class="text-gray-200 max-w-2xl mx-auto text-base sm:text-lg">
       Mulai dari nol hingga menjadi programmer profesional.  
       Ikuti jalur belajar yang terarah dan seru di setiap tahapnya.
     </p>
@@ -362,11 +360,51 @@
 
   <!-- Timeline -->
   <div class="relative max-w-5xl mx-auto">
-    <!-- Garis Tengah (hanya muncul di desktop) -->
-    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-white"></div>
+    <!-- Garis Tengah (desktop only) -->
+    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-gray-700"></div>
 
-    <div class="space-y-20 relative z-10">
-      <!-- Step -->
+    <!-- MOBILE: scroll horizontal -->
+    <div class="flex md:hidden overflow-x-auto space-x-6 pb-6 scrollbar-hide px-2">
+      {#each [
+        {
+          id: 1,
+          title: 'Dasar Pemrograman',
+          desc: 'Pelajari logika, algoritma dasar, dan bahasa seperti JavaScript & Python untuk membangun fondasi yang kuat.',
+          img: 'https://i.pinimg.com/736x/97/f3/2d/97f32dd3dec3221cca5a193bc352c8f3.jpg'
+        },
+        {
+          id: 2,
+          title: 'Web Development',
+          desc: 'Kuasai HTML, CSS, dan JavaScript. Bangun website modern dengan Svelte, React, atau Vue.',
+          img: 'https://i.pinimg.com/736x/c8/23/2e/c8232e214cc8e4ce311949db592fb103.jpg'
+        },
+        {
+          id: 3,
+          title: 'Backend & Database',
+          desc: 'Pelajari REST API, autentikasi, dan manajemen data menggunakan Node.js, Bun, MySQL, atau MongoDB.',
+          img: 'https://i.pinimg.com/736x/0a/ac/f7/0aacf7f15eb464b8a53dacdaa46b00ae.jpg'
+        },
+        {
+          id: 4,
+          title: 'Deployment & Karier',
+          desc: 'Pelajari cara deploy ke Vercel, GitHub Pages, dan bangun portofolio profesional untuk karier software engineer.',
+          img: 'https://i.pinimg.com/736x/bc/5d/b7/bc5db7c3dbd17856fe0366afda42e871.jpg'
+        }
+      ] as step}
+        <div class="flex-shrink-0 w-80 bg-gray-900/80 rounded-2xl p-6 shadow-lg">
+          <img
+            src={step.img}
+            alt={step.title}
+            class="w-full h-48 object-cover rounded-xl mb-4 shadow-md"
+          />
+          <h3 class="text-xl font-bold mb-2">{step.id}. {step.title}</h3>
+          <p class="text-gray-300 text-lg">{step.desc}</p>
+        </div>
+      {/each}
+    </div>
+
+    <!-- DESKTOP: timeline dua sisi -->
+    <div class="hidden md:flex flex-col space-y-16 relative z-10"> <!-- space-y dari 24 -> 16 -->
       {#each [
         {
           id: 1,
@@ -397,25 +435,23 @@
           reverse: true
         }
       ] as step}
-        <div class="flex flex-col md:flex-row {step.reverse ? 'md:flex-row-reverse' : ''} items-center gap-8 md:gap-12 group">
-          <!-- Text -->
-          <div class="md:w-1/2 text-center md:text-{step.reverse ? 'left' : 'right'}">
-            <h3 class="text-2xl font-bold mb-2 text-white group-hover:text-blue-400 transition-colors duration-300">
-              {step.id}. {step.title}
-            </h3>
-            <p class="text-gray-400">{step.desc}</p>
-          </div>
-
-          <!-- Titik Tengah (desktop only) -->
-          <div class="hidden md:flex items-center justify-center w-8 h-8 bg-white rounded-full shadow-lg border-4 border-red-500 group-hover:scale-110 transition-transform duration-300"></div>
-
+        <div class="flex items-center justify-between gap-8 {step.reverse ? 'flex-row-reverse' : ''}">
           <!-- Gambar -->
-          <div class="md:w-1/2 flex justify-center">
+          <div class="w-5/12 flex justify-center">
             <img
               src={step.img}
               alt={step.title}
-              class="w-72 sm:w-80 h-auto rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300"
+              class="w-72 h-auto rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300"
             />
+          </div>
+
+          <!-- Titik Tengah -->
+          <div class="flex items-center justify-center w-8 h-8 bg-white rounded-full border-4 border-blue-500 shadow-md"></div>
+
+          <!-- Text -->
+          <div class="w-5/12 text-{step.reverse ? 'left' : 'right'}">
+            <h3 class="text-xl font-bold mb-2 text-white">{step.id}. {step.title}</h3>
+            <p class="text-gray-300 text-sm">{step.desc}</p>
           </div>
         </div>
       {/each}
@@ -428,7 +464,7 @@
   <!-- Judul & Deskripsi -->
   <div class="mb-10 px-6">
     <h2 class="text-3xl sm:text-4xl font-bold mb-3">Kelas Programmer Zaman Now</h2>
-    <p class="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg mb-6">
+    <p class="text-gray-200 max-w-2xl mx-auto text-base sm:text-lg mb-6">
       Tingkatkan skill coding kamu bersama Programmer Zaman Now!  
       Belajar pemrograman modern dari dasar hingga mahir dengan mentor berpengalaman dan materi yang selalu up-to-date.
     </p>
@@ -576,6 +612,15 @@
     100% {
       transform: translateX(-50%);
     }
+  }
+
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 </style>
 
