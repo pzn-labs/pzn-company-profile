@@ -1,6 +1,8 @@
 <script lang="ts">
     import { onMount, onDestroy } from "svelte";
     import "../app.css";
+    import { writable } from 'svelte/store';
+
     
   
     import golang from "$lib/assets/golang.jpg"
@@ -42,6 +44,8 @@
     import uiux from "$lib/assets/uiux.png"
     import { base } from "$app/paths";
     import pznLogo from "$lib/assets/logo-pzn.png"
+    
+    
 
   // Array gambar
   const images = [
@@ -79,6 +83,13 @@
     nestjs,
     rabbit,
     kafka,
+  ];
+
+  let steps = [
+    { id: 1, title: 'Dasar Pemrograman', desc: 'Pelajari logika, algoritma dasar, dan bahasa seperti JavaScript & Python untuk membangun fondasi yang kuat.', img: 'https://i.pinimg.com/736x/97/f3/2d/97f32dd3dec3221cca5a193bc352c8f3.jpg' },
+    { id: 2, title: 'Web Development', desc: 'Kuasai HTML, CSS, dan JavaScript. Bangun website modern dengan Svelte, React, atau Vue.', img: 'https://i.pinimg.com/736x/c8/23/2e/c8232e214cc8e4ce311949db592fb103.jpg' },
+    { id: 3, title: 'Backend & Database', desc: 'Pelajari REST API, autentikasi, dan manajemen data menggunakan Node.js, Bun, MySQL, atau MongoDB.', img: 'https://i.pinimg.com/736x/0a/ac/f7/0aacf7f15eb464b8a53dacdaa46b00ae.jpg' },
+    { id: 4, title: 'Deployment & Karier', desc: 'Pelajari cara deploy ke Vercel, GitHub Pages, dan bangun portofolio profesional untuk karier software engineer.', img: 'https://i.pinimg.com/736x/bc/5d/b7/bc5db7c3dbd17856fe0366afda42e871.jpg' }
   ];
 
   let currentIndex = 0;
@@ -160,7 +171,7 @@
 </script>
 
 <!-- HERO SECTION -->
-<section class="relative bg-gray-950 overflow-hidden py-24 text-white">
+<section class="relative bg-gray-950 overflow-hidden py-16 text-white">
   <div class="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
     
     <!--  KANAN: GAMBAR HERO -->
@@ -285,7 +296,7 @@
 
 <!-- PILIHAN KATEGORI -->
 <section class="bg-black py-24 text-white">
-  <div class="mx-auto max-w-3xl px-6 lg:px-8 text-center">
+  <div class="mx-auto max-w-2xl px-6 lg:px-8 text-center">
     
     <!-- Judul & Deskripsi -->
     <h2 class="text-3xl sm:text-4xl font-bold mb-4">
@@ -346,9 +357,9 @@
 
 
 <!-- ROADMAP SECTION -->
-<section class="bg-black text-white py-20 px-6 overflow-hidden">
+<section class="bg-black text-white py-8 px-6 overflow-hidden">
   <!-- Judul -->
-  <div class="max-w-6xl mx-auto text-center mb-16">
+  <div class="max-w-7xl mx-auto text-center mb-16">
     <h2 class="text-3xl sm:text-4xl font-bold mb-4">
       Roadmap Belajar Programmer Zaman Now
     </h2>
@@ -359,104 +370,47 @@
   </div>
 
   <!-- Timeline -->
-  <div class="relative max-w-5xl mx-auto">
-    <!-- Garis Tengah (desktop only) -->
-    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-[2px] bg-gray-700"></div>
-
-    <!-- MOBILE: scroll horizontal -->
-    <div class="flex md:hidden overflow-x-auto space-x-6 pb-6 scrollbar-hide px-2">
-      {#each [
-        {
-          id: 1,
-          title: 'Dasar Pemrograman',
-          desc: 'Pelajari logika, algoritma dasar, dan bahasa seperti JavaScript & Python untuk membangun fondasi yang kuat.',
-          img: 'https://i.pinimg.com/736x/97/f3/2d/97f32dd3dec3221cca5a193bc352c8f3.jpg'
-        },
-        {
-          id: 2,
-          title: 'Web Development',
-          desc: 'Kuasai HTML, CSS, dan JavaScript. Bangun website modern dengan Svelte, React, atau Vue.',
-          img: 'https://i.pinimg.com/736x/c8/23/2e/c8232e214cc8e4ce311949db592fb103.jpg'
-        },
-        {
-          id: 3,
-          title: 'Backend & Database',
-          desc: 'Pelajari REST API, autentikasi, dan manajemen data menggunakan Node.js, Bun, MySQL, atau MongoDB.',
-          img: 'https://i.pinimg.com/736x/0a/ac/f7/0aacf7f15eb464b8a53dacdaa46b00ae.jpg'
-        },
-        {
-          id: 4,
-          title: 'Deployment & Karier',
-          desc: 'Pelajari cara deploy ke Vercel, GitHub Pages, dan bangun portofolio profesional untuk karier software engineer.',
-          img: 'https://i.pinimg.com/736x/bc/5d/b7/bc5db7c3dbd17856fe0366afda42e871.jpg'
-        }
-      ] as step}
-        <div class="flex-shrink-0 w-80 bg-gray-900/80 rounded-2xl p-6 shadow-lg">
-          <img
-            src={step.img}
-            alt={step.title}
-            class="w-full h-48 object-cover rounded-xl mb-4 shadow-md"
-          />
-          <h3 class="text-xl font-bold mb-2">{step.id}. {step.title}</h3>
-          <p class="text-gray-300 text-lg">{step.desc}</p>
-        </div>
-      {/each}
-    </div>
-
-    <!-- DESKTOP: timeline dua sisi -->
-    <div class="hidden md:flex flex-col space-y-16 relative z-10"> <!-- space-y dari 24 -> 16 -->
-      {#each [
-        {
-          id: 1,
-          title: 'Dasar Pemrograman',
-          desc: 'Pelajari logika, algoritma dasar, dan bahasa seperti JavaScript & Python untuk membangun fondasi yang kuat.',
-          img: 'https://i.pinimg.com/736x/97/f3/2d/97f32dd3dec3221cca5a193bc352c8f3.jpg',
-          reverse: false
-        },
-        {
-          id: 2,
-          title: 'Web Development',
-          desc: 'Kuasai HTML, CSS, dan JavaScript. Bangun website modern dengan Svelte, React, atau Vue.',
-          img: 'https://i.pinimg.com/736x/c8/23/2e/c8232e214cc8e4ce311949db592fb103.jpg',
-          reverse: true
-        },
-        {
-          id: 3,
-          title: 'Backend & Database',
-          desc: 'Pelajari REST API, autentikasi, dan manajemen data menggunakan Node.js, Bun, MySQL, atau MongoDB.',
-          img: 'https://i.pinimg.com/736x/0a/ac/f7/0aacf7f15eb464b8a53dacdaa46b00ae.jpg',
-          reverse: false
-        },
-        {
-          id: 4,
-          title: 'Deployment & Karier',
-          desc: 'Pelajari cara deploy ke Vercel, GitHub Pages, dan bangun portofolio profesional untuk karier software engineer.',
-          img: 'https://i.pinimg.com/736x/bc/5d/b7/bc5db7c3dbd17856fe0366afda42e871.jpg',
-          reverse: true
-        }
-      ] as step}
-        <div class="flex items-center justify-between gap-8 {step.reverse ? 'flex-row-reverse' : ''}">
-          <!-- Gambar -->
-          <div class="w-5/12 flex justify-center">
-            <img
-              src={step.img}
-              alt={step.title}
-              class="w-72 h-auto rounded-2xl shadow-xl hover:scale-105 transition-transform duration-300"
-            />
-          </div>
-
-          <!-- Titik Tengah -->
-          <div class="flex items-center justify-center w-8 h-8 bg-white rounded-full border-4 border-blue-500 shadow-md"></div>
-
-          <!-- Text -->
-          <div class="w-5/12 text-{step.reverse ? 'left' : 'right'}">
-            <h3 class="text-xl font-bold mb-2 text-white">{step.id}. {step.title}</h3>
-            <p class="text-gray-300 text-sm">{step.desc}</p>
-          </div>
-        </div>
-      {/each}
-    </div>
+<div class="relative max-w-7xl mx-auto">
+  <div class="flex overflow-x-auto space-x-8 py-6 px-4 scrollbar-hide">
+    {#each [
+      {
+        id: 1,
+        title: 'Dasar Pemrograman',
+        desc: 'Pelajari logika, algoritma dasar, dan bahasa seperti JavaScript & Python untuk membangun fondasi yang kuat.',
+        img: 'https://i.pinimg.com/736x/97/f3/2d/97f32dd3dec3221cca5a193bc352c8f3.jpg'
+      },
+      {
+        id: 2,
+        title: 'Web Development',
+        desc: 'Kuasai HTML, CSS, dan JavaScript. Bangun website modern dengan Svelte, React, atau Vue.',
+        img: 'https://i.pinimg.com/736x/c8/23/2e/c8232e214cc8e4ce311949db592fb103.jpg'
+      },
+      {
+        id: 3,
+        title: 'Backend & Database',
+        desc: 'Pelajari REST API, autentikasi, dan manajemen data menggunakan Node.js, Bun, MySQL, atau MongoDB.',
+        img: 'https://i.pinimg.com/736x/0a/ac/f7/0aacf7f15eb464b8a53dacdaa46b00ae.jpg'
+      },
+      {
+        id: 4,
+        title: 'Deployment & Karier',
+        desc: 'Pelajari cara deploy ke Vercel, GitHub Pages, dan bangun portofolio profesional untuk karier software engineer.',
+        img: 'https://i.pinimg.com/736x/bc/5d/b7/bc5db7c3dbd17856fe0366afda42e871.jpg'
+      }
+    ] as step}
+      <div class="flex-shrink-0 w-80 bg-gray-900/80 rounded-2xl p-6 shadow-lg">
+        <img
+          src={step.img}
+          alt={step.title}
+          class="w-full h-48 object-cover rounded-xl mb-4 shadow-md"
+        />
+        <h3 class="text-2xl font-bold mb-2 text-white">{step.id}. {step.title}</h3>
+        <p class="text-gray-200 text-lg leading-relaxed">{step.desc}</p>
+      </div>
+    {/each}
   </div>
+</div>
+
 </section>
 
 <!-- MARQUEE SECTION -->
