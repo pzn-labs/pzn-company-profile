@@ -371,11 +371,7 @@
 
 <!-- MARQUEE SECTION -->
 <section class="relative bg-black py-16 text-center text-white overflow-hidden">
-  <!-- Gradien pinggir kiri & kanan -->
-  <div class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-20"></div>
-  <div class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-20"></div>
-
-  <!-- Judul & Deskripsi -->
+  <!-- Judul & Deskripsi (tanpa gradasi) -->
   <div class="mb-12 px-6 relative z-10">
     <h2 class="text-3xl sm:text-4xl font-bold mb-3">Kelas Programmer Zaman Now</h2>
     <p class="text-gray-200 max-w-2xl mx-auto text-base sm:text-lg mb-6">
@@ -392,10 +388,15 @@
     </a>
   </div>
 
-  <!-- Baris Atas ➡️ -->
-  <div class="overflow-hidden w-full mb-10 group relative z-10">
+  <!-- Baris Atas ➡️ (dengan gradasi di sisi gambar saja) -->
+  <div class="relative overflow-hidden w-full mb-10 group">
+    <!-- Gradien pinggir kiri & kanan -->
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10"></div>
+
+    <!-- Isi marquee -->
     <div
-      class="scroll-right flex items-center gap-8 sm:gap-10 lg:gap-14 px-4 sm:px-6 lg:px-10 group-hover:[animation-play-state:paused]"
+      class="scroll-right flex items-center gap-6 sm:gap-10 lg:gap-14 px-4 sm:px-6 lg:px-10 group-hover:[animation-play-state:paused]"
     >
       {#each [...images, ...images] as img, i (i)}
         <img
@@ -407,10 +408,15 @@
     </div>
   </div>
 
-  <!-- Baris Bawah ⬅️ -->
-  <div class="overflow-hidden w-full group relative z-10">
+  <!-- Baris Bawah ⬅️ (juga dengan gradasi di sisi gambar saja) -->
+  <div class="relative overflow-hidden w-full group">
+    <!-- Gradien pinggir kiri & kanan -->
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10"></div>
+
+    <!-- Isi marquee -->
     <div
-      class="scroll-left flex items-center gap-8 sm:gap-10 lg:gap-14 px-4 sm:px-6 lg:px-10 group-hover:[animation-play-state:paused]"
+      class="scroll-left flex items-center gap-6 sm:gap-10 lg:gap-14 px-4 sm:px-6 lg:px-10 group-hover:[animation-play-state:paused]"
     >
       {#each [...images.reverse(), ...images.reverse()] as img, i (i)}
         <img
