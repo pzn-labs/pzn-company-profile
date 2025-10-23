@@ -199,11 +199,11 @@
 </script>
 
 <!-- HERO SECTION -->
-<section class="relative bg-gray-950 text-white overflow-hidden py-20">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-14 px-6 lg:px-12">
+<section class="relative bg-gray-950 overflow-hidden py-16 text-white">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
     
-    <!-- GAMBAR HERO -->
-    <div class="relative w-full aspect-video rounded-3xl overflow-hidden shadow-2xl">
+    <!--  KANAN: GAMBAR HERO -->
+    <div class="relative w-full aspect-video overflow-hidden rounded-3xl shadow-2xl">
       <img
         src={currentImage}
         alt="Hero Slideshow"
@@ -211,21 +211,25 @@
       />
     </div>
 
-    <!-- TEKS HERO -->
+    <!--  KIRI: TEKS -->
     <div class="space-y-6 text-center lg:text-left">
+      <!-- Tagline -->
       <span class="inline-block text-sm font-semibold text-gray-900 bg-white px-4 py-2 rounded-full">
         Ngoding Dulu, Jadi Sultan Nanti!
       </span>
 
-      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+      <!-- Judul Hero -->
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-extrabold leading-tight tracking-tight">
         Programmer Zaman Now
       </h1>
 
+      <!-- Deskripsi -->
       <p class="text-lg sm:text-xl text-gray-200 max-w-xl mx-auto lg:mx-0">
-        Tempat Belajar untuk Menjadi Software Development Expert yang Zaman Now Banget!
+        Tempat Belajar untuk Menjadi Software Development Expert yang Zaman Now Banget!.
       </p>
 
-      <div class="pt-4">
+      <!-- Tombol CTA -->
+      <div class="pt-6">
         <a
           href="{base}/kelas"
           class="inline-flex items-center gap-3 px-6 py-3 bg-white text-gray-900 font-semibold rounded-xl shadow-lg hover:bg-gray-200 transition-all"
@@ -241,188 +245,231 @@
 </section>
 
 <!-- FITUR UTAMA -->
-<section class="py-24 bg-black text-white">
-  <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Mengapa Pilih Programmer Zaman Now?</h2>
-    <p class="text-gray-300 text-lg sm:text-xl max-w-2xl mx-auto mb-14">
-      Platform belajar programming terbaik dengan metode pembelajaran efektif dan mentor berpengalaman.
-    </p>
+<section class="py-20 sm:py-24 bg-black text-white">
+  <div class="mx-auto max-w-7xl px-6 lg:px-24">
+    
+    <!-- Judul Section -->
+    <div class="mx-auto max-w-2xl text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">
+        Mengapa Pilih Programmer Zaman Now?
+      </h2>
+      <p class="mt-6 text-lg sm:text-xl text-gray-200">
+        Platform belajar programming terbaik dengan metode pembelajaran efektif dan mentor berpengalaman.
+      </p>
+    </div>
 
-    <div class="grid gap-12 lg:grid-cols-3 max-w-6xl mx-auto">
+    <!-- GRID FITUR -->
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none grid gap-16 lg:grid-cols-3">
       {#each [
         {
           src: "https://cdn-icons-png.flaticon.com/512/906/906175.png",
           title: "Materi Kekinian",
-          desc: "Materi selalu up to date sesuai perkembangan teknologi saat ini, dijamin selalu terbaru dan rutin di-update."
+          desc: "Materi di sini selalu up to date sesuai dengan perkembangan teknologi saat ini. Sehingga peserta akan mendapatkan materi yang pasti selalu terbaru. Selain itu semua materi akan selalu di update secara berkala."
         },
         {
           src: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
           title: "Instruktur Berpengalaman",
-          desc: "Instruktur praktisi industri dengan pengalaman nyata, sehingga peserta mendapatkan best practice selain teori."
+          desc: "Di sini, instruktur belajar nya adalah praktisi yang sangat berpengalaman di dunia industri. Sehingga peserta tidak hanya bisa belajar teknologi saja, namun bisa belajar best practice dan pengalaman dari instrukturnya."
         },
         {
           src: roadmap,
           title: "Roadmap Jelas",
-          desc: "Setiap kelas tersusun sesuai roadmap, dari awal sampai akhir, agar peserta tidak bingung saat belajar."
+          desc: "Di sini, semua diajarkan dari awal sampai akhir. Setiap kelas sudah di susun sesuai dengan Roadmap nya. Sehingga peserta tidak akan tersesat ketika belajar, cukup ikuti kelas yang diinginkan."
         }
       ] as fitur (fitur.title)}
-        <div class="flex flex-col items-center text-center space-y-4">
-          <img src={fitur.src} alt={fitur.title}
-            class="h-36 w-36 sm:h-44 sm:w-44 rounded-xl transition-transform duration-300 hover:scale-110" />
+        <div class="flex flex-col items-center text-center">
+          <img
+            src={fitur.src}
+            alt={fitur.title}
+            class="h-32 w-32 sm:h-40 sm:w-40 lg:h-48 lg:w-48 mb-6 rounded-xl transition-transform duration-300 hover:scale-110 object-cover"
+          />
           <h3 class="text-xl sm:text-2xl font-semibold">{fitur.title}</h3>
-          <p class="text-gray-300 text-base leading-relaxed max-w-sm">{fitur.desc}</p>
+          <p class="mt-4 text-base sm:text-lg text-gray-200 leading-relaxed">
+            {fitur.desc}
+          </p>
         </div>
       {/each}
     </div>
   </div>
 </section>
 
-<!-- OVERLAY LOGO -->
-<section class="bg-black py-10">
-  <div class="max-w-5xl mx-auto relative flex overflow-hidden">
-    <div class="flex items-center gap-4 animate-marquee">
-      {#each Array(14) as _}
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <img src="{pznLogo}" alt="PZN Logo" class="w-7 h-7 object-contain" />
-          <h2 class="text-lg font-semibold text-white whitespace-nowrap">Programmer Zaman Now</h2>
-        </div>
-      {/each}
-    </div>
-    <div class="flex items-center gap-4 animate-marquee" aria-hidden="true">
-      {#each Array(14) as _}
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <img src="{pznLogo}" alt="PZN Logo" class="w-7 h-7 object-contain" />
-          <h2 class="text-lg font-semibold text-white whitespace-nowrap">Programmer Zaman Now</h2>
-        </div>
-      {/each}
+
+<!--  OVERLAY LOGO -->
+<section class="bg-black py-10 overflow-hidden relative">
+  <!-- Efek Gradasi Kiri -->
+  <div class="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-black via-black/60 to-transparent z-10 pointer-events-none"></div>
+
+  <!-- Efek Gradasi Kanan -->
+  <div class="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-black via-black/60 to-transparent z-10 pointer-events-none"></div>
+
+  <!-- Isi -->
+  <div class="mx-auto max-w-6xl relative">
+    <div class="relative flex overflow-hidden">
+      <!-- Marquee 1 -->
+      <div class="flex items-center gap-10 animate-marquee">
+        {#each Array(14) as _}
+          <div class="flex items-center gap-4 flex-shrink-0">
+            <img src="{pznLogo}" alt="PZN Logo" class="w-12 h-12 sm:w-14 sm:h-14 object-contain drop-shadow-lg" />
+            <h2 class="text-2xl sm:text-3xl font-bold text-white whitespace-nowrap tracking-wide">
+              Programmer Zaman Now
+            </h2>
+          </div>
+        {/each}
+      </div>
+
+      <!-- Marquee 2 (duplikat untuk looping) -->
+      <div class="flex items-center gap-10 animate-marquee" aria-hidden="true">
+        {#each Array(14) as _}
+          <div class="flex items-center gap-4 flex-shrink-0">
+            <img src="{pznLogo}" alt="PZN Logo" class="w-12 h-12 sm:w-14 sm:h-14 object-contain drop-shadow-lg" />
+            <h2 class="text-2xl sm:text-3xl font-bold text-white whitespace-nowrap tracking-wide">
+              Programmer Zaman Now
+            </h2>
+          </div>
+        {/each}
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ROADMAP -->
-<section class="bg-black text-white py-20 overflow-hidden">
-  <div class="max-w-6xl mx-auto px-6 text-center mb-10">
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3">Roadmap Belajar Programmer Zaman Now</h2>
-    <p class="text-gray-300 max-w-2xl mx-auto text-base leading-relaxed">
+<!-- ROADMAP SECTION -->
+<section class="relative bg-black text-white py-16 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 text-center mb-12">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+      Roadmap Belajar Programmer Zaman Now
+    </h2>
+    <p class="text-gray-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
       Jalur lengkap dari pemula hingga mahir. Pelajari langkah demi langkah dan jadilah programmer profesional.
     </p>
   </div>
 
+  <!-- WRAPPER -->
   <div class="relative max-w-7xl mx-auto px-4 sm:px-8">
-    <!-- LEFT -->
-    <button
-      on:click={() => scroll('left')}
-      class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 bg-blue-500 hover:bg-blue-700 p-3 rounded-full shadow-lg z-30"
-      aria-label="Geser Kiri">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-      </svg>
-    </button>
 
+    <!-- Scroll area (mobile scroll, desktop grid) -->
     <div
       bind:this={scrollContainer}
-      class="flex overflow-x-auto space-x-5 snap-x snap-mandatory scroll-smooth scrollbar-hide py-4">
+      class="flex md:grid md:grid-cols-4 md:gap-4 overflow-x-auto md:overflow-visible space-x-4 sm:space-x-6 md:space-x-0 snap-x snap-mandatory md:snap-none scroll-smooth scrollbar-hide py-4"
+      style="padding-inline: 1rem;"
+    >
       {#each steps as step}
         <div
-          class="flex-shrink-0 snap-center w-72 sm:w-80 bg-gradient-to-b from-gray-900 to-gray-950 border border-gray-800 rounded-2xl p-6
-                 transition-transform duration-300 hover:-translate-y-1 shadow-xl">
+          class="flex-shrink-0 md:flex-shrink md:w-auto snap-center md:snap-none w-72 sm:w-80 bg-gradient-to-b from-gray-900 to-gray-950 border border-gray-800 rounded-2xl p-5 sm:p-6
+                 transition-transform duration-300 hover:-translate-y-1 shadow-lg"
+        >
           <div class="overflow-hidden rounded-xl mb-4">
-            <img src={step.img} alt={step.title}
-              class="w-full h-44 sm:h-52 object-cover rounded-lg transition-transform duration-500 hover:scale-105" />
+            <img src={step.img} alt={step.title} class="w-full h-40 sm:h-48 object-cover rounded-lg transition-transform duration-500 hover:scale-105" />
           </div>
-          <h3 class="text-xl font-semibold mb-1">{step.id}. {step.title}</h3>
-          <p class="text-gray-300 text-sm leading-relaxed">{step.desc}</p>
+          <h3 class="text-lg sm:text-xl font-semibold mb-2">{step.id}. {step.title}</h3>
+          <p class="text-gray-300 text-sm sm:text-sm leading-relaxed">{step.desc}</p>
         </div>
       {/each}
     </div>
-
-    <!-- RIGHT -->
-    <button
-      on:click={() => scroll('right')}
-      class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 bg-blue-500 hover:bg-blue-700 p-3 rounded-full shadow-lg z-30"
-      aria-label="Geser Kanan">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-      </svg>
-    </button>
   </div>
 </section>
 
-<!-- MARQUEE KELAS -->
-<section class="bg-black py-20 text-center text-white">
-  <div class="mb-10 px-6">
+
+<!-- MARQUEE SECTION -->
+<section class="relative bg-black py-16 text-center text-white overflow-hidden">
+  <!-- Gradien pinggir kiri & kanan -->
+  <div class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-20"></div>
+  <div class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-20"></div>
+
+  <!-- Judul & Deskripsi -->
+  <div class="mb-12 px-6 relative z-10">
     <h2 class="text-3xl sm:text-4xl font-bold mb-3">Kelas Programmer Zaman Now</h2>
-    <p class="text-gray-300 max-w-2xl mx-auto text-base sm:text-lg mb-8">
+    <p class="text-gray-200 max-w-2xl mx-auto text-base sm:text-lg mb-6">
       Tingkatkan skill coding kamu bersama Programmer Zaman Now!  
-      Belajar pemrograman modern dari dasar hingga mahir dengan mentor berpengalaman.
+      Belajar pemrograman modern dari dasar hingga mahir dengan mentor berpengalaman dan materi yang selalu up-to-date.
     </p>
+
+    <!-- Tombol Lihat Kelas -->
     <a
       href="{base}/kelas"
-      class="inline-block bg-white text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+      class="inline-block bg-white text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+    >
       Lihat Kelas
     </a>
   </div>
 
-  <!-- BARIS ATAS -->
-  <div class="overflow-hidden mb-10 group">
-    <div class="scroll-right flex items-center gap-6 px-6 group-hover:[animation-play-state:paused]">
+  <!-- Baris Atas ➡️ -->
+  <div class="overflow-hidden w-full mb-10 group relative z-10">
+    <div
+      class="scroll-right flex items-center gap-8 sm:gap-10 lg:gap-14 px-4 sm:px-6 lg:px-10 group-hover:[animation-play-state:paused]"
+    >
       {#each [...images, ...images] as img, i (i)}
-        <img src={img} alt="logo" class="h-24 w-auto object-contain hover:scale-110 transition-transform duration-300 cursor-pointer" />
+        <img
+          src={img}
+          alt="logo"
+          class="h-20 sm:h-24 md:h-32 lg:h-44 w-auto object-contain hover:scale-110 transition-transform duration-300 cursor-pointer"
+        />
       {/each}
     </div>
   </div>
 
-  <!-- BARIS BAWAH -->
-  <div class="overflow-hidden group">
-    <div class="scroll-left flex items-center gap-6 px-6 group-hover:[animation-play-state:paused]">
+  <!-- Baris Bawah ⬅️ -->
+  <div class="overflow-hidden w-full group relative z-10">
+    <div
+      class="scroll-left flex items-center gap-8 sm:gap-10 lg:gap-14 px-4 sm:px-6 lg:px-10 group-hover:[animation-play-state:paused]"
+    >
       {#each [...images.reverse(), ...images.reverse()] as img, i (i)}
-        <img src={img} alt="logo" class="h-24 w-auto object-contain hover:scale-110 transition-transform duration-300 cursor-pointer" />
+        <img
+          src={img}
+          alt="logo"
+          class="h-20 sm:h-24 md:h-32 lg:h-44 w-auto object-contain hover:scale-110 transition-transform duration-300 cursor-pointer"
+        />
       {/each}
     </div>
   </div>
 </section>
 
-<!-- KATEGORI -->
-<section class="bg-black py-24 text-white">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Pilihan Program Belajar</h2>
+
+<!-- PILIHAN KATEGORI -->
+<section class="bg-black py-20 text-white">
+  <div class="mx-auto max-w-3xl px-6 text-center">
+
+    <!-- Judul & Deskripsi -->
+    <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+      Pilihan Program Belajar
+    </h2>
     <p class="text-gray-300 text-base sm:text-lg mb-12 max-w-2xl mx-auto">
       Dengan kurikulum terstruktur dan pengajar berpengalaman, kamu bisa belajar lebih fokus dan cepat mahir.
     </p>
 
-    <!-- PILIH KATEGORI -->
-    <div class="flex flex-wrap justify-center gap-3 mb-12">
+    <!-- Tombol Kategori -->
+    <div
+      class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-4 sticky top-0 bg-black py-2 z-10 backdrop-blur-md">
       {#each categories as cat}
         <button
           on:click={() => (selected = cat)}
-          class={`px-5 py-2 rounded-full transition shadow-md text-sm sm:text-base font-medium ${
+          class={`px-3 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium shadow-md transition-all duration-300 ${
             selected.name === cat.name
-              ? 'bg-white text-gray-800 hover:bg-gray-200'
-              : 'bg-gray-900 text-gray-200 hover:bg-gray-700'
+              ? 'bg-white text-gray-900 hover:bg-gray-200'
+              : 'bg-black text-gray-200 hover:border-blue-600 border border-gray-600'
           }`}>
           {cat.name}
         </button>
       {/each}
     </div>
 
-    <!-- CARD KATEGORI -->
-    <div class="bg-black rounded-2xl p-8 flex flex-col sm:flex-row items-center justify-center gap-8 shadow-xl">
-      <div class="flex-shrink-0 w-full sm:w-1/2 flex justify-center">
-        <div class="bg-white rounded-xl p-5 shadow-lg hover:scale-105 transition-transform duration-500 max-w-[320px]">
-          <img src={selected.image} alt={selected.name} class="w-full h-auto object-cover rounded-lg" />
-        </div>
-      </div>
-
-      <div class="w-full sm:w-1/2 space-y-4 text-center sm:text-left">
-        <h3 class="text-2xl font-bold">{selected.title}</h3>
-        <p class="text-gray-300 text-base leading-relaxed">{selected.description}</p>
+    <!-- Card Kategori Terpilih -->
+    <div
+      class="bg-gray-black rounded-2xl p-2 sm:p-10 shadow-2xl border border-gray-700 backdrop-blur-md transition-all duration-500">
+      <div class="space-y-5">
+        <h3 class="text-2xl sm:text-3xl font-semibold text-white">
+          {selected.title}
+        </h3>
+        <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
+          {selected.description}
+        </p>
         <a
           href={base + "/kelas"}
-          class="inline-block mt-4 px-6 py-3 bg-blue-500 hover:bg-blue-400 text-white font-semibold rounded-full shadow-md transition">
+          class="inline-block mt-4 px-6 py-3 bg-blue-500 hover:bg-blue-400 text-white font-semibold rounded-full shadow-lg transition-transform duration-300 hover:scale-105">
           Daftar Sekarang →
         </a>
       </div>
     </div>
+
   </div>
 </section>
 

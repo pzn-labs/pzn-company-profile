@@ -2,9 +2,8 @@
 	import { base } from "$app/paths";
 	import "../../app.css";
 	import { onMount } from "svelte";
-	import { fade } from "svelte/transition";
 
-	let openPaket: string | null = "Pro";
+	let openIndex = null;
 
 	const paketList = [
 		{
@@ -85,47 +84,56 @@
 	/>
 </svelte:head>
 
-<!-- Hero Section -->
-<section class="relative bg-gray-950 text-white overflow-hidden">
-	<div class="mx-auto max-w-7xl px-6 lg:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
+<!-- HERO SECTION -->
+<section class="relative bg-gray-950 text-white overflow-hidden py-24">
+	<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-16 px-6 lg:px-12">
   
-	  <!--  Gambar  -->
-	  <div class="flex justify-center lg:justify-end relative order-1 lg:order-2">
-		<div class="relative w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl">
-		  <img
-			src="https://i.pinimg.com/736x/75/75/04/7575044bbe8c3b30ea177b4db889c7d6.jpg"
-			alt="Promo Programmer Zaman Now"
-			class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-		  />
-		</div>
-	  </div>
-  
-	  <!--  Teks -->
-	  <div class="text-center lg:text-left space-y-6 order-2 lg:order-1">
-		<h1 class="text-5xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-		  Promo Spesial<br class="hidden sm:block" />
-		  Programmer Zaman Now
+	  <!-- TEKS -->
+	  <div class="order-2 lg:order-1 text-center lg:text-left space-y-6">
+		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white bg-clip-text">
+		  Promo Spesial<br class="hidden sm:block" />Programmer Zaman Now
 		</h1>
-		<p class="text-lg text-gray-200 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-		  Dapatkan diskon hingga <span class="font-semibold text-blue-400">70%</span> untuk semua kelas programming.
-		  Tingkatkan skill Anda dengan materi eksklusif dan update industri terkini.
+  
+		<p class="text-base sm:text-lg text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+		  Dapatkan diskon hingga <span class="font-semibold text-blue-400">70%</span> untuk semua kelas programming!
+		  Upgrade skill Anda dengan materi eksklusif dan update industri terkini.
 		</p>
   
-		<!-- Tombol CTA -->
-		<div class="mt-6">
+		<!-- CTA BUTTONS -->
+		<div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4 mt-6">
 		  <a
 			href="{base}/kelas"
-			class="inline-block px-8 py-3 rounded-xl text-base font-semibold bg-blue-500 hover:bg-blue-600 text-white transition-all duration-300 shadow-lg shadow-blue-500/30"
+			class="inline-block px-8 py-3 rounded-xl text-base font-semibold bg-white text-gray-900 hover:text-white hover:bg-gray-950 transition-all duration-300 border border-gray-700 hover:border-blue-500"
 		  >
 			Daftar Sekarang →
 		  </a>
+		  <a
+			href="{base}/promo"
+			class="inline-block px-8 py-3 rounded-xl text-base font-semibold border border-gray-700 hover:border-blue-500 text-gray-300 hover:text-white transition-all duration-300"
+		  >
+			Lihat Promo Lain
+		  </a>
 		</div>
 	  </div>
+  
+	  <!-- GAMBAR -->
+	  <div class="order-1 lg:order-2 flex justify-center lg:justify-end relative">
+		<div class="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[28rem] lg:h-[28rem] rounded-3xl overflow-hidden border border-gray-800 transition-transform duration-700 hover:scale-105">
+		  <img
+			src="https://i.pinimg.com/736x/75/75/04/7575044bbe8c3b30ea177b4db889c7d6.jpg"
+			alt="Promo Programmer Zaman Now"
+			class="w-full h-full object-cover"
+		  />
+		  <!-- Glow efek -->
+		  <div class="absolute inset-0"></div>
+		</div>
+	  </div>
+  
 	</div>
   </section>
+  
 
 <!-- Promo Section-->  
-
   <section class="relative overflow-hidden text-white">
 	<div class="absolute inset-0 bg-black"></div>
 
@@ -167,132 +175,65 @@
 	</div>
 </section>
 
-<!-- Paket Promo + CTA Final Horizontal -->
-<section class="relative py-28 bg-black text-white overflow-hidden">
-	<div class="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
-		<!-- Judul -->
-		<div class="max-w-2xl mx-auto mb-16">
-			<h2 class="text-4xl sm:text-5xl font-bold text-white tracking-tight">
-				Pilih Paket Belajar Anda
-			</h2>
-			<p class="mt-4 text-lg text-gray-200">
-				Akses seumur hidup, sertifikat resmi, dan bimbingan langsung dari mentor berpengalaman.
-			</p>
-		</div>
-
-		<!-- Accordion List -->
-		<div class="space-y-6 max-w-3xl mx-auto">
-			{#each paketList as paket}
-				<div
-					class="group rounded-2xl border border-gray-700 bg-gray-900/70 backdrop-blur-sm overflow-hidden shadow-md transition-all duration-300 hover:border-gray-600 hover:shadow-lg"
-				>
-					<!-- Header -->
-					<button
-						class="flex w-full justify-between items-center px-6 py-5 text-left"
-						on:click={() => (openPaket = openPaket === paket.id ? null : paket.id)}
-					>
-						<div class="space-y-1">
-							<h3 class="text-xl font-semibold tracking-tight">{paket.name}</h3>
-							<p class="text-sm text-gray-200">{paket.desc}</p>
-						</div>
-
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="h-6 w-6 transition-transform duration-300 text-gray-400 group-hover:text-white"
-							class:rotate-180={openPaket === paket.id}
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor"
-						>
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-						</svg>
-					</button>
-
-					<!-- Content -->
-					{#if openPaket === paket.id}
-						<div
-							in:fade={{ duration: 300 }}
-							out:fade={{ duration: 250 }}
-							class="px-6 pb-8 border-t border-gray-800 text-left space-y-4"
-						>
-							<p class="mt-2 text-sm text-gray-300 leading-relaxed">{paket.desc}</p>
-
-							<div class="flex items-baseline gap-x-2">
-								<span class="text-3xl font-bold text-white">{paket.price}</span>
-								<span class="text-sm text-gray-500 line-through">{paket.discount}</span>
-							</div>
-
-							<ul class="mt-4 space-y-2 text-sm text-gray-300">
-								{#each paket.benefits as item}
-									<li>• {item}</li>
-								{/each}
-							</ul>
-
-							<!--  Kode Promo -->
-							<div class="mt-3 bg-gray-800/70 border border-gray-700 rounded-xl p-4 text-center">
-								<p class="text-sm text-gray-300 mb-2">Gunakan Kode Promo:</p>
-								<div class="inline-flex items-center gap-2 px-4 py-2 bg-gray-900 text-white font-semibold rounded-lg border border-gray-700 select-all">
-									<span>PZN2025</span>
-									<!-- svelte-ignore a11y_consider_explicit_label -->
-									<button
-										on:click={() => navigator.clipboard.writeText('PZN70OFF')}
-										class="text-gray-200 hover:text-white transition"
-									>
-										<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16h8M8 12h8m-6 8h6a2 2 0 002-2V6a2 2 0 00-2-2h-6M6 8H5a2 2 0 00-2 2v10a2 2 0 002 2h6" />
-										</svg>
-									</button>
-								</div>
-							</div>
-
-								<a
-									href={`${base}/promo`}
-									class="mt-3 block w-full rounded-xl bg-white text-gray-900 px-8 py-3 text-sm text-center font-semibold hover:bg-gray-200 transition"
-								>
-									Daftar Sekarang
-								</a>
-
-						</div>
-					{/if}
-				</div>
-			{/each}
-		</div>
-
-		<!-- CTA Horizontal di bawah daftar paket -->
-		<div
-			class="mt-24 bg-black border border-gray-600 rounded-2xl shadow-xl flex flex-col lg:flex-row items-center justify-between px-10 py-12 text-center lg:text-left gap-10 transition-all duration-300 hover:border-gray-700"
-		>
-			<!--  Bagian Kiri -->
-			<div class="max-w-xl">
-				<h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
-					Jangan Sampai Kehabisan!
-				</h2>
-				<p class="text-gray-400 text-base leading-relaxed">
-					Promo ini terbatas dan akan berakhir segera. Gunakan kode promo
-					<span class="text-white font-semibold">PZN2025</span> untuk nikmati potongan harga hingga
-					<span class="text-white font-semibold">70%</span>.
-				</p>
-			</div>
-
-			<!--  Bagian Kanan -->
-			<div class="flex flex-col sm:flex-row items-center gap-4">
-				<a
-					href={`${base}/promo`}
-					class="inline-block rounded-xl bg-white text-gray-900 px-8 py-4 text-sm font-semibold shadow-md transition-all duration-300 hover:scale-105 hover:bg-gray-200"
-				>
-					Daftar Sekarang — Diskon 70%
-				</a>
-
-				<a
-					href={`${base}/sosial-media`}
-					class="inline-block text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300"
-				>
-					Butuh Bantuan? <span aria-hidden="true" class="ml-1">→</span>
-				</a>
-			</div>
-		</div>
+<!-- Paket Belajar -->
+<section class="relative bg-black text-white py-16 px-6">
+	<div class="max-w-7xl mx-auto text-center mb-16">
+	  <h2 class="text-4xl sm:text-5xl font-bold mb-4">Pilih Paket Belajar Anda</h2>
+	  <p class="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
+		Akses penuh seumur hidup, sertifikat resmi, dan bimbingan langsung dari mentor berpengalaman.
+	  </p>
 	</div>
-</section>
+  
+	<!-- Grid Paket -->
+	<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+	  {#each paketList as paket}
+		<div
+		  class="group relative rounded-2xl border border-gray-800 bg-gradient-to-b from-gray-900 to-gray-950 p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-gray-600"
+		>
+		  <div class="text-left">
+			<h3 class="text-2xl font-bold mb-2 group-hover:text-white transition">
+			  {paket.name}
+			</h3>
+			<p class="text-gray-400 text-sm mb-6 leading-relaxed">{paket.desc}</p>
+  
+			<div class="flex items-end gap-2 mb-6">
+			  <span class="text-3xl font-bold text-white">{paket.price}</span>
+			  <span class="text-sm text-gray-500 line-through">{paket.discount}</span>
+			</div>
+  
+			<ul class="space-y-2 mb-8 text-sm text-gray-300">
+			  {#each paket.benefits as item}
+				<li class="flex items-center gap-2">
+				  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+				  </svg>
+				  {item}
+				</li>
+			  {/each}
+			</ul>
+  
+			<!-- Promo Code -->
+			<div class="bg-gray-800/70 border border-gray-700 rounded-lg px-4 py-3 text-center mb-6">
+			  <p class="text-xs text-gray-400 mb-1">Gunakan Kode Promo:</p>
+			  <div class="flex justify-center items-center gap-2 bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 font-semibold text-sm">
+				<span>PZN2025</span>
+			  </div>
+			</div>
+  
+			<a
+			  href={`${base}/promo`}
+			  class="block w-full rounded-xl bg-white text-black text-center font-semibold py-3 hover:bg-gray-100 transition"
+			>
+			  Daftar Sekarang
+			</a>
+		  </div>
+		</div>
+	  {/each}
+	</div>
+  </section>
+  
+  
+  
 
 
   <!-- FOOTER -->
@@ -360,9 +301,6 @@
   </footer>
 
 <style>
-	button:focus {
-		outline: none;
-	}
 
 	@keyframes float {
 		0%, 100% { transform: translateY(0); }

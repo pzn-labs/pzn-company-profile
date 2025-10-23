@@ -45,7 +45,8 @@
     image: golang, 
     description: "Pelajari bahasa Go untuk membangun aplikasi backend yang cepat dan efisien. Cocok untuk microservices dan sistem berskala besar.",
     price: 129000,
-    originalPrice: 599000
+    originalPrice: 599000,
+    recommended: true
   },
   { 
     name: "Java Dasar", 
@@ -53,7 +54,8 @@
     image: java, 
     description: "Dasar-dasar Java untuk pemula hingga menengah. Termasuk pemrograman berorientasi objek dan praktik membuat aplikasi sederhana.",
     price: 149000,
-    originalPrice: 699000
+    originalPrice: 699000,
+    recommended: true
   },
   { 
     name: "Node.js", 
@@ -61,7 +63,8 @@
     image: nodejs, 
     description: "Bangun server dan API menggunakan Node.js. Pelajari juga ekosistem NPM dan praktik asynchronous programming.",
     price: 139000,
-    originalPrice: 599000
+    originalPrice: 599000,
+    recommended: true
   },
   { 
     name: "Laravel", 
@@ -69,7 +72,8 @@
 	image: laravel, 
     description: "Framework PHP populer untuk membangun web aplikasi. Termasuk routing, middleware, dan integrasi database MySQL.",
     price: 159000,
-    originalPrice: 699000
+    originalPrice: 699000,
+    recommended: true
   },
   { 
     name: "MySQL", 
@@ -101,7 +105,8 @@
     image: vue, 
     description: "Framework JavaScript progresif untuk membangun UI interaktif. Termasuk komponen, directive, dan state management.",
     price: 149000,
-    originalPrice: 599000
+    originalPrice: 599000,
+    recommended: true
   },
   { 
     name: "PHP", 
@@ -356,8 +361,14 @@ let searchQuery = "";
   let sortOrder = "asc";
   let selectedCategory = "Semua";
   let showAll = false;
+  let filterRecommendation = "all";
 
   $: filteredClasses = allClasses
+
+  .filter((c) => {
+      if (filterRecommendation === "recommended") return c.recommended === true;
+      return true;
+    })
     .filter((kelas) => {
       const matchCategory =
         selectedCategory === "Semua" ||
@@ -459,51 +470,79 @@ let searchQuery = "";
         {/if}
       </div>
   
-      <!-- Search & Sort Bar -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-2 mb-12 w-full max-w-2xl mx-auto">
-        <div in:fly={{ y: 10, duration: 300, delay: 100 }} out:fade={{ duration: 150 }} class="w-full sm:w-1/4">
-          <label for="sortOrder" class="sr-only">Urutkan</label>
-          <div class="relative">
-            <select
-              id="sortOrder"
-              bind:value={sortOrder}
-              class="w-full appearance-none rounded-2xl border border-gray-700 bg-black px-5 py-3 text-gray-200 text-sm sm:text-base 
-                    focus:outline-none focus:ring-2 focus:ring-gray-300 shadow-sm transition-all duration-300"
-            >
-              <option value="asc">Urutkan : A - Z</option>
-              <option value="desc">Urutkan : Z - A</option>
-            </select>
-            <svg
-              class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-200 pointer-events-none"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </div>
-        </div>
+      <!-- Search, Sort & Filter Bar -->
+<div class="flex flex-col sm:flex-row items-center justify-center gap-2 mb-12 w-full max-w-3xl mx-auto">
+  <!-- Urutkan -->
+  <div in:fly={{ y: 10, duration: 300, delay: 100 }} out:fade={{ duration: 150 }} class="w-full sm:w-1/4">
+    <label for="sortOrder" class="sr-only">Urutkan</label>
+    <div class="relative">
+      <select
+        id="sortOrder"
+        bind:value={sortOrder}
+        class="w-full appearance-none rounded-2xl border border-gray-700 bg-black px-5 py-3 text-gray-200 text-sm sm:text-base 
+               focus:outline-none focus:ring-2 focus:ring-gray-300 shadow-sm transition-all duration-300"
+      >
+        <option value="asc">Urutkan : A - Z</option>
+        <option value="desc">Urutkan : Z - A</option>
+      </select>
+      <svg
+        class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-200 pointer-events-none"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+  </div>
 
-        <div in:fly={{ y: 10, duration: 250 }} out:fade={{ duration: 150 }} class="relative w-full sm:w-3/4">
-          <input
-            type="text"
-            placeholder="Cari kelas..."
-            bind:value={searchQuery}
-            class="w-full rounded-2xl border border-gray-600 bg-black px-5 py-3 pl-12 text-white focus:outline-none focus:ring-2 focus:ring-gray-200 shadow-sm"
-          />
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="absolute left-4 top-3.5 h-5 w-5 text-gray-200"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 103.5 10.5a7.5 7.5 0 0013.15 6.15z" />
-          </svg>
-        </div>
-      </div>
-  
+  <!-- Filter Rekomendasi -->
+  <div in:fly={{ y: 10, duration: 280, delay: 150 }} out:fade={{ duration: 150 }} class="w-full sm:w-1/4">
+    <label for="recommendation" class="sr-only">Filter</label>
+    <div class="relative">
+      <select
+        id="recommendation"
+        bind:value={filterRecommendation}
+        class="w-full appearance-none rounded-2xl border border-gray-700 bg-black px-5 py-3 text-gray-200 text-sm sm:text-base 
+               focus:outline-none focus:ring-2 focus:ring-gray-300 shadow-sm transition-all duration-300"
+      >
+        <option value="all">Semua Kelas</option>
+        <option value="recommended">Rekomendasi</option>
+      </select>
+      <svg
+        class="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-200 pointer-events-none"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+  </div>
+
+  <!-- Pencarian -->
+  <div in:fly={{ y: 10, duration: 250 }} out:fade={{ duration: 150 }} class="relative w-full sm:w-2/4">
+    <input
+      type="text"
+      placeholder="Cari kelas..."
+      bind:value={searchQuery}
+      class="w-full rounded-2xl border border-gray-600 bg-black px-5 py-3 pl-12 text-white focus:outline-none focus:ring-2 focus:ring-gray-200 shadow-sm"
+    />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="absolute left-4 top-3.5 h-5 w-5 text-gray-200"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 103.5 10.5a7.5 7.5 0 0013.15 6.15z" />
+    </svg>
+  </div>
+</div>
+
+
       <!-- Grid Kelas -->
       <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {#each filteredClasses as kelas, i}

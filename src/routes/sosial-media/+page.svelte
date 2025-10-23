@@ -9,58 +9,27 @@
 	  <meta name="description" content="Ikuti Programmer Zaman Now di berbagai platform sosial media untuk update terbaru, tips programming, dan konten edukatif." />
   </svelte:head>
 
-<!-- Hero Section -->
-<section class="relative bg-gray-950 text-white overflow-hidden">
-	<div class="mx-auto max-w-7xl px-6 lg:px-12 py-24 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
+  
+<!-- PLATFORM SOSIAL MEDIA (ELEGAN + INTERAKTIF + GLOW EFFECT) -->
+<section class="py-24 bg-black text-white overflow-hidden">
+	<div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
 	  
-	 <!--  Gambar  -->
-	 <div class="flex justify-center lg:justify-end relative order-1 lg:order-2">
-		<div class="relative w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-[28rem] lg:h-[28rem] rounded-full overflow-hidden border-4 border-gray-800 shadow-2xl">
-		  <img
-			src="https://i.pinimg.com/1200x/9b/6d/c4/9b6dc43703035493a95061b1d695f682.jpg"
-			alt="Promo Programmer Zaman Now"
-			class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-		  />
-		</div>
-	  </div>
-  
-	  <!--  Teks di bawah saat mobile, di kiri saat desktop -->
-	  <div class="flex-1 text-center lg:text-left space-y-6 order-2 lg:order-1">
-		<h1 class="text-5xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
-		  Ikuti Kami di Sosial Media
-		</h1>
-		<p class="text-lg leading-relaxed text-gray-200 max-w-xl mx-auto lg:mx-0">
-		  Dapatkan update terbaru, tips programming, dan konten edukatif dari 
-		  <span class="font-semibold text-blue-400">Programmer Zaman Now</span> di berbagai platform sosial media kami.
-		</p>
-		<div class="pt-4">
-		  <a href="{base}/sosial-media" class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-blue-500/30">
-			Lihat Platform Kami
-		  </a>
-		</div>
-	  </div>
-  
-	</div>
-  </section>
-  
-  <!-- Platform Sosial Media -->
-  <section class="py-16 sm:py-16 bg-black">
-	<div class="mx-auto max-w-7xl px-6 lg:px-8">
-	  <div class="mx-auto max-w-2xl text-center">
-		<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+	  <!-- JUDUL -->
+	  <div class="max-w-2xl mx-auto mb-16">
+		<h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight bg-clip-text text-white">
 		  Temukan Kami di Platform Favorit Anda
 		</h2>
-		<p class="mt-6 text-lg leading-8 text-gray-200">
+		<p class="mt-6 text-lg leading-relaxed text-gray-300">
 		  Bergabunglah dengan komunitas developer terbesar di Indonesia dan dapatkan insight berharga setiap hari.
 		</p>
 	  </div>
   
-	  <!--  Grid Sosial Media -->
-	  <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-2">
+	  <!-- GRID SOSIAL MEDIA -->
+	  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
 		{#each [
 		  {
 			name: "YouTube",
-			icon: `<path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4L15.8 12l-6.3 3.6z"/>`,
+			icon: `<path d='M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4L15.8 12l-6.3 3.6z'/>`,
 			bg: "bg-red-600",
 			subs: "500K+ Subscribers",
 			url: "https://youtube.com/@programmerzamannow",
@@ -68,7 +37,7 @@
 		  },
 		  {
 			name: "Instagram",
-			icon: `<path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zM12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6a3 3 0 0 1 0-6zm5.5-2.5a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3z"/>`,
+			icon: `<path d='M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zM12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6a3 3 0 0 1 0-6zm5.5-2.5a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3z'/>`,
 			bg: "bg-pink-600",
 			subs: "200K+ Followers",
 			url: "https://instagram.com/programmerzamannow",
@@ -76,53 +45,63 @@
 		  },
 		  {
 			name: "TikTok",
-			icon: `<path d="M12.5 2h2.9a5.7 5.7 0 0 0 4.2 4v2.7a8.4 8.4 0 0 1-4.2-1.2v7a6.3 6.3 0 1 1-6.3-6.3 5.9 5.9 0 0 1 1 .1v2.9a2.9 2.9 0 1 0 2.4 2.8z"/>`,
-			bg: "bg-black",
+			icon: `<path d='M12.5 2h2.9a5.7 5.7 0 0 0 4.2 4v2.7a8.4 8.4 0 0 1-4.2-1.2v7a6.3 6.3 0 1 1-6.3-6.3 5.9 5.9 0 0 1 1 .1v2.9a2.9 2.9 0 1 0 2.4 2.8z'/>`,
+			bg: "bg-gray-950",
 			subs: "300K+ Followers",
 			url: "https://tiktok.com/@programmerzamannow",
 			desc: "Konten programming singkat dan engaging! Tips coding, life hacks developer, dan trend teknologi dalam format video pendek."
 		  },
 		  {
 			name: "Facebook",
-			icon: `<path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24h-1.918c-1.505 0-1.797.716-1.797 1.767v2.318h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z"/>`,
+			icon: `<path d='M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24h-1.918c-1.505 0-1.797.716-1.797 1.767v2.318h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z'/>`,
 			bg: "bg-blue-600",
 			subs: "120K+ Followers",
 			url: "https://facebook.com/programmerzamannow",
 			desc: "Ikuti update terbaru, live event, dan konten edukatif setiap hari di halaman Facebook Programmer Zaman Now."
-		}
-
-
+		  }
 		] as socmed}
-		  <div class="group relative bg-gray-900 rounded-2xl shadow-lg ring-1 ring-gray-600 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-			<div class="p-8">
-			  <div class="flex items-center gap-4 mb-6">
-				<div class="flex h-16 w-16 items-center justify-center rounded-full {socmed.bg}">
-				  <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-					{@html socmed.icon}
-				  </svg>
-				</div>
-				<div>
-				  <h3 class="text-xl font-semibold text-white">{socmed.name}</h3>
-				  <p class="text-sm text-gray-400">{socmed.subs}</p>
-				</div>
-			  </div>
-			  <p class="text-gray-200 mb-6">{socmed.desc}</p>
-			  <a href={socmed.url} target="_blank"
-				class="inline-flex items-center gap-2 rounded-md {socmed.bg} px-4 py-2 text-sm font-semibold text-white shadow-sm hover:opacity-90">
-				Kunjungi {socmed.name}
-			  </a>
+		
+		<!-- CARD -->
+		<div class="group relative bg-gray-900/60 backdrop-blur-sm rounded-3xl p-8 border border-gray-700 hover:border-gray-500 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl">
+		  
+		  <!-- Ikon + Nama -->
+		  <div class="flex items-center gap-4 mb-6">
+			<div class="relative flex h-16 w-16 items-center justify-center rounded-full {socmed.bg} transition-transform duration-500 group-hover:scale-110">
+			  <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+				{@html socmed.icon}
+			  </svg>
+			</div>
+			<div class="text-left">
+			  <h3 class="text-xl font-semibold">{socmed.name}</h3>
+			  <p class="text-sm text-gray-400">{socmed.subs}</p>
 			</div>
 		  </div>
+  
+		  <!-- Deskripsi -->
+		  <p class="text-gray-300 mb-6 leading-relaxed">
+			{socmed.desc}
+		  </p>
+  
+		  <!-- Tombol -->
+		  <a
+			href={socmed.url}
+			target="_blank"
+			class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border-1 border-gray-600 font-semibold text-white transition-all  duration-300 {socmed.bg} hover:opacity-90"
+		  >
+			Kunjungi {socmed.name} →
+		  </a>
+		</div>
 		{/each}
 	  </div>
 	</div>
   </section>
   
+  
   <!-- CTA Section -->
   <section class="relative overflow-hidden py-16 bg-black">
 	<div class="absolute inset-0 opacity-10 bg-[url('https://www.toptal.com/designers/subtlepatterns/patterns/dots.png')]"></div>
 	<div class="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
-	  <div class="max-w-3xl mx-auto bg-black border border-gray-600 rounded-3xl p-12 shadow-2xl">
+	  <div class="max-w-3xl mx-auto bg-black border border-gray-600 rounded-3xl p-8 shadow-2xl">
 		<div class="flex justify-center mb-3">
 		  <img src="{pznLogo}" alt="Logo Programmer Zaman Now" class="h-16 w-auto drop-shadow-xl" />
 		</div>
