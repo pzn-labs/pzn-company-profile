@@ -83,16 +83,17 @@
 			desc: "Konten programming singkat dan engaging! Tips coding, life hacks developer, dan trend teknologi dalam format video pendek."
 		  },
 		  {
-			name: "Discord",
-			icon: `<path d="M20.317 4.37a19.8 19.8 0 0 0-4.885-1.515.074.074 0 0 0-.078.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.462 0 12.39 12.39 0 0 0-.617-1.25.077.077 0 0 0-.078-.037A19.79 19.79 0 0 0 3.68 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.06a.082.082 0 0 0 .031.055 19.9 19.9 0 0 0 5.993 3.02.078.078 0 0 0 .084-.027c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.105c-.652-.247-1.27-.55-1.857-.908a.078.078 0 0 1-.008-.126c.125-.094.25-.192.368-.291a.074.074 0 0 1 .077-.01c3.9 1.8 8.18 1.8 12.062 0a.074.074 0 0 1 .078.009c.118.1.243.198.369.292a.078.078 0 0 1-.006.126 12.3 12.3 0 0 1-1.858.907.076.076 0 0 0-.04.106c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.9 19.9 0 0 0 5.994-3.02.077.077 0 0 0 .031-.054c.5-5.177-.838-9.674-3.548-13.664a.06.06 0 0 0-.03-.028ZM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419s.956-2.42 2.157-2.42c1.21 0 2.176 1.096 2.157 2.42 0 1.334-.956 2.42-2.157 2.42Zm7.963 0c-1.183 0-2.157-1.085-2.157-2.419s.956-2.42 2.157-2.42c1.21 0 2.176 1.096 2.157 2.42 0 1.334-.947 2.42-2.157 2.42Z"/>`,
-			bg: "bg-indigo-600",
-			subs: "50K+ Members",
-			url: "https://discord.gg/programmerzamannow",
-			desc: "Komunitas developer Indonesia terbesar! Diskusi real-time, sharing project, dan networking dengan sesama developer."
+			name: "Facebook",
+			icon: `<path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24h-1.918c-1.505 0-1.797.716-1.797 1.767v2.318h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z"/>`,
+			bg: "bg-blue-600",
+			subs: "120K+ Followers",
+			url: "https://facebook.com/programmerzamannow",
+			desc: "Ikuti update terbaru, live event, dan konten edukatif setiap hari di halaman Facebook Programmer Zaman Now."
 		}
 
+
 		] as socmed}
-		  <div class="group relative bg-gray-800 rounded-2xl shadow-lg ring-1 ring-gray-600 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+		  <div class="group relative bg-gray-900 rounded-2xl shadow-lg ring-1 ring-gray-600 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
 			<div class="p-8">
 			  <div class="flex items-center gap-4 mb-6">
 				<div class="flex h-16 w-16 items-center justify-center rounded-full {socmed.bg}">
@@ -121,7 +122,7 @@
   <section class="relative overflow-hidden py-16 bg-black">
 	<div class="absolute inset-0 opacity-10 bg-[url('https://www.toptal.com/designers/subtlepatterns/patterns/dots.png')]"></div>
 	<div class="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
-	  <div class="max-w-3xl mx-auto bg-gray-900 border border-gray-600 rounded-3xl p-12 shadow-2xl">
+	  <div class="max-w-3xl mx-auto bg-black border border-gray-600 rounded-3xl p-12 shadow-2xl">
 		<div class="flex justify-center mb-3">
 		  <img src="{pznLogo}" alt="Logo Programmer Zaman Now" class="h-16 w-auto drop-shadow-xl" />
 		</div>
@@ -188,19 +189,23 @@
 		  {#each [
 			{ href: "https://youtube.com", icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png", label: "YouTube" },
 			{ href: "https://instagram.com", icon: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png", label: "Instagram" },
-			{ href: "https://t.me", icon: "https://cdn-icons-png.flaticon.com/512/2111/2111646.png", label: "Telegram" },
+			{ href: "https://www.tiktok.com/@programmerzamannow", icon: "https://cdn-icons-png.flaticon.com/512/3046/3046121.png", label: "TikTok" },
 			{ href: "https://facebook.com", icon: "https://cdn-icons-png.flaticon.com/512/733/733547.png", label: "Facebook" }
 		  ] as social}
 			<a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} class="group">
-			  <img src={social.icon} alt={social.label}
-				class="h-6 w-6 opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300" />
+			  <img
+				src={social.icon}
+				alt={social.label}
+				class="h-6 w-6 opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300"
+			  />
 			</a>
 		  {/each}
 		</div>
 	  </div>
+	  
 	</div>
 	<div class="border-t border-gray-800 py-6 text-center">
-	  <p class="text-sm text-gray-500">
+	  <p class="text-sm text-gray-400">
 		© {new Date().getFullYear()} <span class="font-medium text-white">Programmer Zaman Now</span>.
 	  </p>
 	</div>

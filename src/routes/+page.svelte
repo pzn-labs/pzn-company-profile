@@ -43,12 +43,10 @@
     import mobile from "$lib/assets/mobile.png"
     import uiux from "$lib/assets/uiux.png"
     import { base } from "$app/paths";
-    import pznLogo from "$lib/assets/logo-pzn.png"
-    
-    
+    import pznLogo from "$lib/assets/logo-pzn.png";
 
-  // Array gambar
-  const images = [
+    // Array gambar
+    const images = [
     html,
     laravel,
     mysql,
@@ -85,13 +83,43 @@
     kafka,
   ];
 
-  let steps = [
-    { id: 1, title: 'Dasar Pemrograman', desc: 'Pelajari logika, algoritma dasar, dan bahasa seperti JavaScript & Python untuk membangun fondasi yang kuat.', img: 'https://i.pinimg.com/736x/97/f3/2d/97f32dd3dec3221cca5a193bc352c8f3.jpg' },
-    { id: 2, title: 'Web Development', desc: 'Kuasai HTML, CSS, dan JavaScript. Bangun website modern dengan Svelte, React, atau Vue.', img: 'https://i.pinimg.com/736x/c8/23/2e/c8232e214cc8e4ce311949db592fb103.jpg' },
-    { id: 3, title: 'Backend & Database', desc: 'Pelajari REST API, autentikasi, dan manajemen data menggunakan Node.js, Bun, MySQL, atau MongoDB.', img: 'https://i.pinimg.com/736x/0a/ac/f7/0aacf7f15eb464b8a53dacdaa46b00ae.jpg' },
-    { id: 4, title: 'Deployment & Karier', desc: 'Pelajari cara deploy ke Vercel, GitHub Pages, dan bangun portofolio profesional untuk karier software engineer.', img: 'https://i.pinimg.com/736x/bc/5d/b7/bc5db7c3dbd17856fe0366afda42e871.jpg' }
-  ];
+  let scrollContainer: HTMLDivElement | null = null;
 
+  const scroll = (direction: 'left' | 'right') => {
+    const amount = 320;
+    scrollContainer?.scrollBy({
+      left: direction === 'left' ? -amount : amount,
+      behavior: 'smooth'
+    });
+  };
+
+  const steps = [
+    {
+      id: 1,
+      title: 'Dasar Pemrograman',
+      desc: 'Kuasai logika, algoritma, dan dasar bahasa pemrograman seperti JavaScript atau Python sebelum masuk ke tahap lanjut.',
+      img: 'https://i.pinimg.com/736x/97/f3/2d/97f32dd3dec3221cca5a193bc352c8f3.jpg'
+    },
+    {
+      id: 2,
+      title: 'Web Development',
+      desc: 'Bangun website modern dengan HTML, CSS, JavaScript, dan framework seperti Svelte, React, atau Vue.',
+      img: 'https://i.pinimg.com/736x/c8/23/2e/c8232e214cc8e4ce311949db592fb103.jpg'
+    },
+    {
+      id: 3,
+      title: 'Backend & Database',
+      desc: 'Pelajari cara membangun REST API, autentikasi, dan manajemen data menggunakan Node.js, Bun, MySQL, atau MongoDB.',
+      img: 'https://i.pinimg.com/736x/0a/ac/f7/0aacf7f15eb464b8a53dacdaa46b00ae.jpg'
+    },
+    {
+      id: 4,
+      title: 'Deployment & Karier',
+      desc: 'Pelajari cara deploy project ke Vercel, GitHub Pages, dan bangun portofolio profesional untuk karier software engineer.',
+      img: 'https://i.pinimg.com/736x/bc/5d/b7/bc5db7c3dbd17856fe0366afda42e871.jpg'
+    }
+  ];
+  
   let currentIndex = 0;
   let currentImage = images[currentIndex];
   let isFading = false;
@@ -356,65 +384,70 @@
 </section>
 
 
-<!-- ROADMAP SECTION -->
-<section class="bg-black text-white py-8 px-6 overflow-hidden">
-  <!-- Judul -->
-  <div class="max-w-7xl mx-auto text-center mb-16">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+<section class="relative bg-black text-white py-8 overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6 text-center mb-14">
+    <h2 class="text-4xl sm:text-5xl font-extrabold mb-4 text-white">
       Roadmap Belajar Programmer Zaman Now
     </h2>
-    <p class="text-gray-200 max-w-2xl mx-auto text-base sm:text-lg">
-      Mulai dari nol hingga menjadi programmer profesional.  
-      Ikuti jalur belajar yang terarah dan seru di setiap tahapnya.
+    <p class="text-gray-200 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+      Jalur lengkap dari pemula hingga mahir. Pelajari langkah demi langkah dan jadilah programmer profesional.
     </p>
   </div>
 
-  <!-- Timeline -->
-<div class="relative max-w-7xl mx-auto">
-  <div class="flex overflow-x-auto space-x-8 py-6 px-4 scrollbar-hide">
-    {#each [
-      {
-        id: 1,
-        title: 'Dasar Pemrograman',
-        desc: 'Pelajari logika, algoritma dasar, dan bahasa seperti JavaScript & Python untuk membangun fondasi yang kuat.',
-        img: 'https://i.pinimg.com/736x/97/f3/2d/97f32dd3dec3221cca5a193bc352c8f3.jpg'
-      },
-      {
-        id: 2,
-        title: 'Web Development',
-        desc: 'Kuasai HTML, CSS, dan JavaScript. Bangun website modern dengan Svelte, React, atau Vue.',
-        img: 'https://i.pinimg.com/736x/c8/23/2e/c8232e214cc8e4ce311949db592fb103.jpg'
-      },
-      {
-        id: 3,
-        title: 'Backend & Database',
-        desc: 'Pelajari REST API, autentikasi, dan manajemen data menggunakan Node.js, Bun, MySQL, atau MongoDB.',
-        img: 'https://i.pinimg.com/736x/0a/ac/f7/0aacf7f15eb464b8a53dacdaa46b00ae.jpg'
-      },
-      {
-        id: 4,
-        title: 'Deployment & Karier',
-        desc: 'Pelajari cara deploy ke Vercel, GitHub Pages, dan bangun portofolio profesional untuk karier software engineer.',
-        img: 'https://i.pinimg.com/736x/bc/5d/b7/bc5db7c3dbd17856fe0366afda42e871.jpg'
-      }
-    ] as step}
-      <div class="flex-shrink-0 w-80 bg-gray-900/80 rounded-2xl p-6 shadow-lg">
-        <img
-          src={step.img}
-          alt={step.title}
-          class="w-full h-48 object-cover rounded-xl mb-4 shadow-md"
-        />
-        <h3 class="text-2xl font-bold mb-2 text-white">{step.id}. {step.title}</h3>
-        <p class="text-gray-200 text-lg leading-relaxed">{step.desc}</p>
-      </div>
-    {/each}
-  </div>
-</div>
+  <!-- Tombol Kiri -->
+  <button
+    on:click={() => scroll('left')}
+    class="hidden md:flex absolute left-8 top-1/2 -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 
+           backdrop-blur-sm p-3 rounded-full shadow-lg transition-all z-10"
+    aria-label="Geser Kiri"
+  >
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+    </svg>
+  </button>
 
+  <!-- Container Cards -->
+  <div class="relative max-w-7xl mx-auto px-8">
+    <div
+      bind:this={scrollContainer}
+      class="flex overflow-x-auto space-x-8 snap-x snap-mandatory scroll-smooth scrollbar-hide pb-8"
+    >
+      {#each steps as step}
+        <div
+          class="flex-shrink-0 snap-center w-80 bg-gradient-to-b from-gray-900 to-gray-950 border border-gray-800 rounded-3xl p-6 
+                  transition-all duration-500 transform hover:-translate-y-2"
+        >
+          <div class="overflow-hidden rounded-2xl mb-4">
+            <img
+              src={step.img}
+              alt={step.title}
+              class="w-full h-48 object-cover rounded-2xl transition-transform duration-700 hover:scale-105"
+            />
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-white">
+            {step.id}. {step.title}
+          </h3>
+          <p class="text-gray-300 text-sm leading-relaxed">{step.desc}</p>
+        </div>
+      {/each}
+    </div>
+  </div>
+
+  <!-- Tombol Kanan -->
+  <button
+    on:click={() => scroll('right')}
+    class="hidden md:flex absolute right-8 top-1/2 -translate-y-1/2 bg-gray-800/70 hover:bg-gray-700 
+           backdrop-blur-sm p-3 rounded-full shadow-lg transition-all z-10"
+    aria-label="Geser Kanan"
+  >
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+    </svg>
+  </button>
 </section>
 
 <!-- MARQUEE SECTION -->
-<section class="bg-black py-16 text-center text-white">
+<section class="bg-black py-8 text-center text-white">
   <!-- Judul & Deskripsi -->
   <div class="mb-10 px-6">
     <h2 class="text-3xl sm:text-4xl font-bold mb-3">Kelas Programmer Zaman Now</h2>
@@ -460,7 +493,7 @@
 </section>
 
 
-<!-- FOOTER -->
+  <!-- FOOTER -->
   <footer class="bg-gray-950 text-gray-400 border-t border-gray-800">
     <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8 grid gap-12 md:grid-cols-3 items-start">
       <!-- Kolom 1 -->
@@ -502,19 +535,23 @@
         {#each [
         { href: "https://youtube.com", icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png", label: "YouTube" },
         { href: "https://instagram.com", icon: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png", label: "Instagram" },
-        { href: "https://t.me", icon: "https://cdn-icons-png.flaticon.com/512/2111/2111646.png", label: "Telegram" },
+        { href: "https://www.tiktok.com/@programmerzamannow", icon: "https://cdn-icons-png.flaticon.com/512/3046/3046121.png", label: "TikTok" },
         { href: "https://facebook.com", icon: "https://cdn-icons-png.flaticon.com/512/733/733547.png", label: "Facebook" }
         ] as social}
         <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} class="group">
-          <img src={social.icon} alt={social.label}
-          class="h-6 w-6 opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300" />
+          <img
+          src={social.icon}
+          alt={social.label}
+          class="h-6 w-6 opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300"
+          />
         </a>
         {/each}
       </div>
       </div>
+      
     </div>
     <div class="border-t border-gray-800 py-6 text-center">
-      <p class="text-sm text-gray-500">
+      <p class="text-sm text-gray-400">
       © {new Date().getFullYear()} <span class="font-medium text-white">Programmer Zaman Now</span>.
       </p>
     </div>
