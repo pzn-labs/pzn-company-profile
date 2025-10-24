@@ -575,9 +575,8 @@ let searchQuery = "";
                   {/if}
                 </div>
               </div>
-              <button class="w-full mt-4 rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-600">
-                Lihat Detail
-              </button>
+              <a href="{base}/kelas/{kelas.name.toLowerCase().replace(/\s+/g, '-')}" class="block w-full mt-4 rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-gray-600 text-center">    Lihat Detail</a>
+            
             </div>
           </div>
         {/each}
