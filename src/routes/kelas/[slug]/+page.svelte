@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { fade, fly } from 'svelte/transition';
+	import { slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
     import { base } from '$app/paths';
 
@@ -65,6 +65,19 @@
 				'Semangat belajar tinggi 😎'
 			],
 			description: `Belajar Go-lang dari dasar hingga mahir, dipandu oleh mentor profesional dengan studi kasus nyata.`,
+			shortDescription: [
+				"Selamat datang di course Belajar Golang (Go) untuk Pemula. Di kelas ini, kamu akan mempelajari bahasa pemrograman Go dari dasar hingga mampu membangun aplikasi backend yang cepat, efisien, dan mudah dipelihara.",
+				"Pengenalan Go: memahami sejarah dan filosofi Go, alasan mengapa Go dikembangkan oleh Google, serta keunggulannya dibandingkan bahasa lain seperti Java atau Python.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal Go, mengatur GOPATH dan workspace, serta membuat program pertama menggunakan perintah go run dan go build.",
+				"Dasar Bahasa Go: mempelajari variabel, tipe data, konstanta, operator, percabangan, perulangan, dan fungsi dalam Go.",
+				"Struktur Data & Array: memahami penggunaan array, slice, map, dan struktur data lain yang sering digunakan dalam pemrograman Go.",
+				"Fungsi & Struct: belajar membuat fungsi, method, dan struct untuk membangun program modular dan terstruktur.",
+				"Concurrency dengan Goroutine & Channel: mempelajari konsep concurrency di Go dan cara menggunakan goroutine serta channel untuk menjalankan proses secara paralel.",
+				"Error Handling & Package: memahami cara menangani error, membuat package sendiri, dan mengatur struktur proyek Go dengan baik.",
+				"Project Akhir: Membangun RESTful API dengan Go — menerapkan seluruh konsep Go dalam proyek backend nyata menggunakan net/http.",
+				"Bonus: Tips optimasi performa aplikasi Go, pengenalan ke framework populer seperti Fiber dan Gin, serta praktik terbaik dalam deployment aplikasi Go di server produksi."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan Go', lectures: 8, duration: '2 jam 30 menit' },
 				{ title: 'Tipe Data dan Variabel', lectures: 10, duration: '3 jam' },
@@ -101,6 +114,19 @@
 				'Semangat belajar'
 			],
 			description: 'Pelajari JavaScript modern dari nol sampai bisa membuat website interaktif.',
+			shortDescription: [
+				"Selamat datang di course Belajar Java untuk Pemula. Di kelas ini, kamu akan mempelajari dasar-dasar bahasa pemrograman Java hingga mampu membangun aplikasi desktop, web, maupun backend dengan struktur yang rapi dan efisien.",
+				"Pengenalan Java: memahami sejarah, filosofi, dan alasan mengapa Java tetap menjadi salah satu bahasa pemrograman paling populer di dunia hingga saat ini.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal JDK (Java Development Kit), mengatur PATH environment, dan menggunakan IDE seperti IntelliJ IDEA atau Eclipse.",
+				"Dasar Bahasa Java: mempelajari tipe data, variabel, operator, percabangan, perulangan, dan fungsi untuk membangun logika program yang kuat.",
+				"Pemrograman Berorientasi Objek (OOP): memahami konsep class, object, inheritance, polymorphism, encapsulation, dan interface di Java.",
+				"Collection & Exception Handling: belajar menggunakan ArrayList, HashMap, dan cara menangani error dengan try-catch-finally secara efektif.",
+				"Input/Output & File Handling: mempelajari cara membaca dan menulis file, serta mengelola stream data di Java.",
+				"Database & JDBC: memahami cara menghubungkan Java dengan database menggunakan JDBC untuk melakukan operasi CRUD.",
+				"Project Akhir: Membangun Aplikasi Manajemen Data Mahasiswa — menerapkan seluruh konsep Java yang telah dipelajari dalam proyek nyata.",
+				"Bonus: Tips menulis kode Java yang bersih dan efisien, pengenalan ke Spring Framework, serta praktik terbaik dalam pengembangan aplikasi berbasis Java modern."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan JavaScript', lectures: 6, duration: '1 jam 40 menit' },
 				{ title: 'Fungsi dan Array', lectures: 9, duration: '2 jam' },
@@ -133,6 +159,19 @@
 			],
 			requirements: ['Dasar PHP dan HTML', 'XAMPP atau Laravel Sail terinstal'],
 			description: 'Bangun aplikasi web modern dengan framework Laravel versi terbaru.',
+			shortDescription: [
+				"Selamat datang di course Belajar Laravel untuk Pemula. Di kelas ini, kamu akan mempelajari bagaimana cara membangun aplikasi web modern dengan framework PHP paling populer — Laravel.",
+				"Pengenalan Laravel: memahami apa itu Laravel, sejarahnya, serta mengapa framework ini menjadi pilihan utama untuk pengembangan aplikasi web berbasis PHP.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal Laravel menggunakan Composer, mengatur environment (.env), dan menjalankan server lokal dengan Artisan.",
+				"Struktur Dasar Laravel: memahami struktur folder Laravel, cara kerja MVC (Model-View-Controller), dan alur request-response aplikasi.",
+				"Routing & Controller: mempelajari cara membuat route, menghubungkannya ke controller, serta menangani request dan response dengan efisien.",
+				"Blade Template Engine: belajar membangun tampilan dinamis menggunakan Blade, termasuk layouting, komponen, dan directive seperti @if, @foreach, dan @include.",
+				"Database & Eloquent ORM: memahami cara mengelola database, membuat migration, dan menggunakan Eloquent ORM untuk operasi CRUD dengan mudah.",
+				"Validasi & Middleware: mempelajari cara memvalidasi input pengguna dan mengamankan aplikasi dengan middleware seperti auth dan csrf.",
+				"Project Akhir: Membangun Aplikasi Manajemen Kursus Online — menerapkan seluruh konsep yang telah dipelajari untuk membuat aplikasi web nyata menggunakan Laravel.",
+				"Bonus: Tips deployment Laravel ke server produksi, optimasi performa, serta integrasi dengan API dan frontend modern seperti React atau Svelte."
+				],
+
 			courseContent: [
 				{ title: 'Instalasi & Konfigurasi', lectures: 5, duration: '1 jam' },
 				{ title: 'Routing dan Controller', lectures: 7, duration: '2 jam' },
@@ -161,6 +200,19 @@
 			],
 			requirements: ['Dasar JavaScript dan HTML', 'Node.js terinstal di komputer'],
 			description: 'Pelajari ReactJS dengan pendekatan praktis untuk membuat aplikasi modern.',
+			shortDescription: [
+				"Selamat datang di course Belajar React.js untuk Pemula. Di kelas ini, kamu akan mempelajari cara membangun antarmuka web interaktif dan modern menggunakan library JavaScript paling populer saat ini — React.js.",
+				"Pengenalan React.js: memahami apa itu React, sejarahnya, serta alasan mengapa React menjadi pilihan utama dalam pengembangan aplikasi web modern.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal Node.js, menggunakan create-react-app atau Vite untuk memulai project React dari nol.",
+				"Dasar-Dasar React: memahami konsep komponen, JSX, props, dan state untuk membangun tampilan yang dinamis dan reaktif.",
+				"Event Handling & Conditional Rendering: belajar cara menangani interaksi pengguna dan menampilkan elemen berdasarkan kondisi tertentu.",
+				"Hooks Dasar: mempelajari useState, useEffect, dan cara mengelola state serta efek samping di dalam komponen React.",
+				"Routing dengan React Router: belajar cara menambahkan navigasi antar halaman menggunakan React Router dan konsep Single Page Application (SPA).",
+				"Mengambil Data dari API: memahami cara fetch data dari API eksternal dan menampilkannya secara dinamis di antarmuka aplikasi.",
+				"Project Akhir: Membangun Aplikasi Web Lengkap dengan React.js — menerapkan semua konsep yang telah dipelajari untuk membuat proyek nyata yang responsif dan fungsional.",
+				"Bonus: Tips optimasi performa React, penggunaan Context API untuk manajemen state global, serta integrasi dengan Tailwind CSS untuk tampilan profesional."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan React', lectures: 6, duration: '1 jam 30 menit' },
 				{ title: 'Hooks & State', lectures: 10, duration: '3 jam' },
@@ -174,8 +226,8 @@
 			]
 		},
 		{
-			slug: 'python',
-			name: 'Belajar Python dari Dasar Hingga Mahir',
+			slug: 'phyton',
+			name: 'Belajar phyton dari Dasar untuk pemula Hingga Mahir',
 			image: python,
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
@@ -193,6 +245,19 @@
 			],
 			requirements: ['Tidak perlu pengalaman sebelumnya', 'Laptop & semangat belajar tinggi'],
 			description: 'Belajar Python dari nol dengan studi kasus praktis dan mudah dipahami.',
+			shortDescription: [
+				"Selamat datang di course Belajar Python untuk Pemula. Di kelas ini, kamu akan mempelajari dasar-dasar pemrograman menggunakan Python — bahasa yang populer, mudah dipelajari, dan banyak digunakan di berbagai bidang seperti web, data, dan AI.",
+				"Pengenalan Python: memahami apa itu Python, sejarahnya, serta alasan mengapa Python menjadi bahasa yang paling banyak digunakan di dunia pemrograman modern.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal Python, menggunakan terminal dan IDE seperti VS Code atau PyCharm, serta membuat project pertama dari nol.",
+				"Dasar-Dasar Python: memahami variabel, tipe data, operator, struktur kontrol (if, for, while), dan fungsi dasar untuk membangun logika program.",
+				"Struktur Data Python: mempelajari list, tuple, set, dan dictionary — serta bagaimana cara menggunakannya dalam pemrosesan data.",
+				"Pemrograman Modular: belajar membuat dan mengimpor modul, menggunakan pustaka standar Python, serta menulis kode yang bersih dan terorganisir.",
+				"Manipulasi File & Input/Output: memahami cara membaca dan menulis file, serta mengelola data dari berbagai sumber eksternal.",
+				"Pengenalan OOP di Python: belajar konsep Object-Oriented Programming seperti class, object, inheritance, dan encapsulation.",
+				"Project Akhir: Membangun Aplikasi CLI untuk Manajemen Data — menerapkan seluruh konsep yang telah dipelajari dalam proyek nyata berbasis Python.",
+				"Bonus: Tips belajar lanjutan ke topik seperti web development dengan Flask/Django, analisis data dengan Pandas, dan dasar-dasar machine learning."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan Python', lectures: 6, duration: '1 jam 45 menit' },
 				{ title: 'Tipe Data & Struktur Kontrol', lectures: 8, duration: '2 jam' },
@@ -222,6 +287,19 @@
 			requirements: ['Dasar HTML, CSS, dan JavaScript', 'Node.js & npm terinstal'],
 			description:
 				'Belajar framework modern Svelte dan SvelteKit untuk membangun website cepat dan ringan.',
+			shortDescription: [
+				"Selamat datang di course Belajar Svelte untuk Pemula. Di kelas ini, kamu akan mempelajari bagaimana cara membangun aplikasi web modern yang cepat dan reaktif menggunakan framework Svelte.",
+				"Pengenalan Svelte: memahami apa itu Svelte, sejarahnya, serta alasan mengapa Svelte menjadi pilihan populer dibanding framework lain seperti React atau Vue.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal Svelte, menggunakan Vite atau SvelteKit untuk memulai project pertama dari nol.",
+				"Dasar-Dasar Svelte: memahami konsep reaktivitas, binding data, props, dan event handling di dalam komponen Svelte.",
+				"Membuat Komponen UI: belajar membangun dan mengelola komponen yang reusable dengan struktur yang rapi dan efisien.",
+				"Routing & Layout: mempelajari penggunaan SvelteKit untuk navigasi antar halaman dan pembuatan layout dinamis.",
+				"Integrasi API & Data Dinamis: belajar mengambil data dari API eksternal dan menampilkannya secara reaktif di halaman Svelte.",
+				"State Management & Store: memahami cara menggunakan store (writable, readable, derived) untuk mengelola state aplikasi dengan mudah.",
+				"Project Akhir: Membangun Aplikasi Web Lengkap menggunakan SvelteKit — menerapkan seluruh konsep dalam proyek nyata dengan desain modern.",
+				"Bonus: Tips deployment aplikasi Svelte ke server produksi, optimasi performa, serta integrasi dengan Tailwind CSS untuk tampilan profesional."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan Svelte', lectures: 6, duration: '1 jam 20 menit' },
 				{ title: 'Reactivity & Props', lectures: 8, duration: '2 jam' },
@@ -235,7 +313,7 @@
 			]
 		},
         		{
-			slug: 'nodejs',
+			slug: 'node.js',
 			name: 'Belajar Backend Node.js dari Nol sampai Mahir',
 			image: nodejs,
 			instructor: 'Eko Kurniawan Khannedy',
@@ -254,6 +332,19 @@
 			],
 			requirements: ['Dasar JavaScript', 'Node.js terinstal di komputer'],
 			description: 'Bangun backend server modern dengan Node.js dan Express.js.',
+			shortDescription: [
+				"Selamat datang di course Belajar Node.js untuk Pemula. Di kelas ini, kamu akan mempelajari bagaimana cara membangun aplikasi backend modern menggunakan JavaScript di lingkungan server dengan Node.js.",
+				"Pengenalan Node.js: memahami apa itu Node.js, sejarahnya, serta alasan mengapa Node.js menjadi pilihan populer untuk pengembangan aplikasi backend dan real-time.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal Node.js, menggunakan npm atau bun untuk manajemen package, serta membuat project pertama dari nol.",
+				"Dasar-Dasar Node.js: memahami konsep event-driven, non-blocking I/O, dan cara kerja asynchronous pada runtime Node.js.",
+				"Membuat Server HTTP: belajar membangun server web sederhana tanpa framework, memahami request dan response, serta cara menangani routing manual.",
+				"Menggunakan Express.js: mempelajari framework Express untuk membuat RESTful API dengan routing, middleware, dan response handling yang efisien.",
+				"Mengelola Data: belajar menghubungkan Node.js dengan database seperti MongoDB atau MySQL untuk operasi CRUD.",
+				"Error Handling & Middleware: memahami cara menangani error, membuat middleware kustom, dan menjaga struktur aplikasi tetap modular.",
+				"Project Akhir: Membangun RESTful API untuk Sistem Kursus Online — menerapkan seluruh konsep untuk membuat backend lengkap menggunakan Node.js dan Express.",
+				"Bonus: Tips deployment Node.js ke server produksi, praktik terbaik dalam struktur folder, serta pengenalan ke TypeScript di lingkungan Node.js modern."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan Node.js', lectures: 5, duration: '1 jam 15 menit' },
 				{ title: 'Express Framework', lectures: 8, duration: '2 jam' },
@@ -282,6 +373,19 @@
 			],
 			requirements: ['Dasar HTML, CSS, JavaScript'],
 			description: 'Pelajari Vue.js dengan pendekatan interaktif untuk membangun SPA modern.',
+			shortDescription: [
+				"Selamat datang di course Belajar Vue.js untuk Pemula. Di kelas ini, kamu akan mempelajari cara membangun antarmuka pengguna (UI) modern dan interaktif menggunakan framework JavaScript progresif — Vue.js.",
+				"Pengenalan Vue.js: memahami apa itu Vue.js, sejarahnya, dan mengapa framework ini populer untuk membangun aplikasi frontend yang ringan dan efisien.",
+				"Instalasi & Setup Lingkungan: belajar cara menyiapkan proyek Vue.js menggunakan CDN, Vite, atau Vue CLI, serta mengenal struktur folder dan file utama.",
+				"Dasar-Dasar Vue: memahami konsep reaktifitas, data binding, directives (v-if, v-for, v-bind, v-model), dan event handling untuk membangun UI dinamis.",
+				"Komponen di Vue: mempelajari cara membuat, mengelola, dan berkomunikasi antar komponen menggunakan props dan event emit.",
+				"Computed & Watchers: memahami bagaimana cara mengelola data turunan dan memantau perubahan data dalam aplikasi Vue.",
+				"Routing & Navigasi: belajar menggunakan Vue Router untuk membuat navigasi antar halaman secara SPA (Single Page Application).",
+				"State Management: mengenal Pinia atau Vuex untuk mengelola state global pada aplikasi berskala besar.",
+				"Project Akhir: Membangun Aplikasi To-Do List Interaktif — menerapkan semua konsep yang telah dipelajari untuk membuat aplikasi Vue.js nyata dari awal.",
+				"Bonus: Tips menulis kode Vue yang efisien, penggunaan Composition API, serta integrasi dengan backend seperti Node.js atau Firebase."
+				],
+
 			courseContent: [
 				{ title: 'Dasar Vue', lectures: 6, duration: '1 jam 30 menit' },
 				{ title: 'Komponen & Props', lectures: 8, duration: '2 jam' },
@@ -310,6 +414,19 @@
 			],
 			requirements: ['Dasar HTML & CSS', 'XAMPP terinstal'],
 			description: 'Pelajari PHP modern untuk membangun website dinamis dan cepat.',
+			shortDescription: [
+				"Selamat datang di course Belajar PHP untuk Pemula. Di kelas ini, kamu akan mempelajari dasar-dasar pemrograman web menggunakan PHP, dari konsep fundamental hingga membangun aplikasi web dinamis yang terhubung dengan database.",
+				"Pengenalan PHP: memahami sejarah dan fungsi PHP dalam pengembangan web, serta bagaimana PHP bekerja di sisi server untuk menghasilkan halaman dinamis.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal PHP, web server (XAMPP atau Laragon), dan text editor untuk menulis kode PHP.",
+				"Sintaks Dasar PHP: mempelajari struktur dasar program PHP, variabel, tipe data, operator, dan kontrol alur seperti if, for, dan while.",
+				"Fungsi & Array: memahami cara membuat dan menggunakan fungsi, serta cara mengelola data menggunakan array (indexed, associative, dan multidimensional).",
+				"Form & Input Data: belajar cara menangani input dari pengguna melalui form HTML menggunakan metode GET dan POST, serta melakukan validasi data.",
+				"Koneksi ke Database: mempelajari cara menghubungkan PHP dengan MySQL menggunakan ekstensi MySQLi atau PDO, serta melakukan operasi CRUD (Create, Read, Update, Delete).",
+				"Session & Cookie: memahami konsep penyimpanan data sementara dan autentikasi pengguna menggunakan session dan cookie.",
+				"Project Akhir: Membangun Aplikasi CRUD Sederhana — menggabungkan semua konsep untuk membuat aplikasi manajemen data dengan PHP dan MySQL.",
+				"Bonus: Tips menulis kode PHP yang aman, efisien, serta pengenalan ke framework populer seperti Laravel untuk pengembangan lanjutan."
+				],
+
 			courseContent: [
 				{ title: 'Dasar PHP', lectures: 6, duration: '1 jam 30 menit' },
 				{ title: 'Database MySQL', lectures: 8, duration: '2 jam' },
@@ -338,6 +455,20 @@
 			],
 			requirements: ['Dasar logika pemrograman'],
 			description: 'Pelajari database MySQL dari dasar hingga query kompleks.',
+			shortDescription: [
+				"Selamat datang di course Belajar MySQL untuk Pemula. Di kelas ini, kamu akan mempelajari dasar-dasar sistem manajemen basis data relasional (RDBMS) menggunakan MySQL, dari instalasi hingga membuat query yang kompleks.",
+				"Pengenalan MySQL: memahami konsep database relasional, fungsi MySQL dalam aplikasi modern, serta perbedaan antara MySQL dan sistem database lainnya seperti PostgreSQL atau SQLite.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal MySQL di Windows, macOS, atau Linux, serta menggunakan MySQL Workbench dan command line client.",
+				"Dasar SQL: mempelajari perintah dasar seperti CREATE, INSERT, SELECT, UPDATE, dan DELETE untuk mengelola data dalam tabel.",
+				"Struktur Database: memahami cara mendesain tabel, menentukan primary key dan foreign key, serta membuat relasi antar tabel (one-to-many, many-to-many).",
+				"Query Lanjutan: belajar menggunakan klausa WHERE, JOIN, GROUP BY, HAVING, dan ORDER BY untuk mengambil data yang lebih kompleks dan efisien.",
+				"Index & Optimasi: memahami cara kerja index untuk meningkatkan performa query, serta teknik optimasi query menggunakan EXPLAIN.",
+				"Backup & Restore Data: belajar membuat backup database menggunakan perintah mysqldump dan cara melakukan restore data dengan aman.",
+				"Keamanan Database: mempelajari cara mengatur user, role, dan hak akses (privileges) untuk menjaga keamanan data.",
+				"Project Akhir: Membangun Sistem Manajemen Data Mahasiswa — menerapkan seluruh konsep yang telah dipelajari untuk membuat aplikasi CRUD lengkap dengan MySQL.",
+				"Bonus: Tips desain database yang efisien, normalisasi data, serta praktik terbaik dalam penggunaan MySQL untuk proyek skala kecil hingga besar."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan Database', lectures: 5, duration: '1 jam' },
 				{ title: 'Query Dasar', lectures: 8, duration: '2 jam' },
@@ -347,7 +478,7 @@
 			forWho: ['Backend Developer', 'Mahasiswa IT', 'Data Analyst pemula']
 		},
 		{
-			slug: 'docker',
+			slug: 'docker-basics',
 			name: 'Belajar Docker untuk Developer',
 			image: docker,
 			instructor: 'Eko Kurniawan Khannedy',
@@ -366,6 +497,19 @@
 			],
 			requirements: ['Dasar terminal/command line'],
 			description: 'Pelajari Docker dari dasar untuk efisiensi pengembangan dan deployment.',
+			shortDescription: [
+				"Selamat datang di course Belajar Docker untuk Pemula. Di kelas ini, kamu akan mempelajari cara mengemas, mendistribusikan, dan menjalankan aplikasi menggunakan container dengan Docker secara efisien dan terstandarisasi.",
+				"Pengenalan Docker: memahami apa itu containerization, perbedaan antara container dan virtual machine, serta manfaat Docker dalam pengembangan dan deployment aplikasi modern.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal Docker di berbagai sistem operasi (Windows, macOS, Linux) dan memahami komponen utama seperti Docker Engine dan Docker CLI.",
+				"Image & Container: mempelajari konsep dasar image, cara membuat dan menjalankan container, serta memahami perintah dasar seperti docker run, docker ps, dan docker stop.",
+				"Dockerfile & Build Image: belajar cara menulis Dockerfile untuk membuat custom image aplikasi, mengoptimalkan layer build, dan menggunakan tag versi dengan benar.",
+				"Docker Compose: memahami cara mengelola beberapa container sekaligus menggunakan docker-compose.yml untuk membangun lingkungan pengembangan yang kompleks.",
+				"Volume & Network: mempelajari cara mengatur penyimpanan data dengan volume dan menghubungkan container melalui jaringan Docker.",
+				"Deployment & Registry: belajar cara push/pull image ke Docker Hub atau private registry, serta menerapkan container di server produksi.",
+				"Project Akhir: Membangun Aplikasi Multi-Container — membuat aplikasi web lengkap dengan backend, frontend, dan database menggunakan Docker Compose.",
+				"Bonus: Tips optimasi ukuran image, keamanan Docker, serta praktik terbaik dalam workflow DevOps modern menggunakan container."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan Docker', lectures: 5, duration: '1 jam 10 menit' },
 				{ title: 'Docker Image & Container', lectures: 7, duration: '2 jam' },
@@ -394,6 +538,19 @@
 			],
 			requirements: ['Dasar TypeScript dan Node.js'],
 			description: 'Framework backend berbasis TypeScript yang powerful dan scalable.',
+			shortDescription: [
+				"Selamat datang di course Belajar NestJS untuk Pemula. Di kelas ini, kamu akan mempelajari cara membangun aplikasi backend yang scalable, modular, dan efisien menggunakan framework NestJS berbasis Node.js dan TypeScript.",
+				"Pengenalan NestJS: memahami apa itu NestJS, arsitektur modularnya, serta mengapa framework ini menjadi pilihan populer untuk membangun aplikasi backend modern.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal Nest CLI, membuat proyek baru, dan memahami struktur folder default yang digunakan oleh NestJS.",
+				"Dasar Controller & Routing: mempelajari cara membuat controller, mendefinisikan endpoint RESTful API, dan mengatur route menggunakan decorator @Controller dan @Get/@Post.",
+				"Service & Dependency Injection: memahami konsep service, provider, dan dependency injection untuk memisahkan logika bisnis dari controller.",
+				"Module & Arsitektur Aplikasi: belajar membangun aplikasi modular dengan module, serta mengatur struktur proyek besar agar tetap bersih dan mudah dikelola.",
+				"Database & ORM: mempelajari cara mengintegrasikan NestJS dengan database menggunakan TypeORM atau Prisma untuk operasi CRUD yang efisien.",
+				"Middleware, Guard, & Interceptor: memahami cara menambahkan autentikasi, validasi, logging, dan error handling dengan cara idiomatik di NestJS.",
+				"Project Akhir: Membangun RESTful API Lengkap — membuat API CRUD dengan autentikasi JWT, validasi, dan dokumentasi menggunakan Swagger.",
+				"Bonus: Tips deployment aplikasi NestJS ke server production, optimasi performa, serta praktik terbaik dalam pengembangan backend berbasis TypeScript."
+				],
+
 			courseContent: [
 				{ title: 'Dasar NestJS', lectures: 6, duration: '1 jam 30 menit' },
 				{ title: 'Controller & Service', lectures: 8, duration: '2 jam' },
@@ -422,6 +579,19 @@
 			],
 			requirements: ['Dasar JavaScript dan Node.js'],
 			description: 'Pelajari runtime Bun yang super cepat untuk membangun backend modern.',
+			shortDescription: [
+				"Selamat datang di course Belajar Bun untuk Pemula. Di kelas ini, kamu akan mempelajari cara menggunakan Bun — runtime JavaScript modern yang super cepat untuk membangun aplikasi web, API, dan tools dengan performa tinggi.",
+				"Pengenalan Bun: memahami apa itu Bun, perbedaannya dengan Node.js dan Deno, serta mengapa Bun menjadi pilihan populer untuk pengembangan JavaScript modern.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal Bun di berbagai sistem operasi, menjalankan perintah dasar, dan membuat proyek pertama menggunakan Bun init.",
+				"Dasar Penggunaan Bun: mempelajari cara menjalankan file JavaScript/TypeScript, menggunakan modul bawaan, dan memahami arsitektur Bun yang terintegrasi dengan bundler, transpiler, dan package manager.",
+				"Package Manager Bun: memahami cara kerja bun install, bun add, dan bun remove sebagai pengganti npm/yarn/pnpm dengan kecepatan yang jauh lebih tinggi.",
+				"Membangun REST API: belajar membuat server HTTP sederhana menggunakan Bun, mengatur routing, dan mengelola request/response dengan performa optimal.",
+				"Integrasi dengan Database: mempelajari cara menghubungkan Bun dengan database seperti SQLite, MySQL, atau PostgreSQL menggunakan ORM seperti Drizzle atau Prisma.",
+				"Testing & Benchmarking: memahami cara melakukan pengujian otomatis dengan Bun test serta membandingkan performa dengan Node.js.",
+				"Project Akhir: Membangun RESTful API Sederhana — menerapkan semua konsep yang telah dipelajari untuk membuat API CRUD dengan Bun dan TypeScript.",
+				"Bonus: Tips optimasi performa, deployment ke production, serta praktik terbaik dalam pengembangan backend modern menggunakan Bun."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan Bun', lectures: 5, duration: '1 jam' },
 				{ title: 'Routing & API', lectures: 7, duration: '2 jam' },
@@ -450,6 +620,20 @@
 			],
 			requirements: ['Mengerti dasar pemrograman'],
 			description: 'Pelajari Rust, bahasa modern yang cepat dan aman untuk sistem performa tinggi.',
+			shortDescription: [
+				"Selamat datang di course Belajar Rust untuk Pemula. Di kelas ini, kamu akan mempelajari bahasa pemrograman Rust dari dasar hingga mampu membuat aplikasi yang cepat, aman, dan efisien untuk kebutuhan modern.",
+				"Pengenalan Rust: memahami sejarah, filosofi, dan tujuan utama Rust sebagai bahasa pemrograman sistem yang berfokus pada kecepatan dan keamanan memori.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal Rust menggunakan rustup, mengonfigurasi cargo, serta menjalankan proyek pertama dengan perintah build dan run.",
+				"Dasar Bahasa Rust: mempelajari variabel, tipe data, fungsi, kontrol alur, dan modul dasar untuk memahami struktur program Rust.",
+				"Ownership & Borrowing: memahami konsep inti Rust yang memastikan keamanan memori tanpa garbage collector, termasuk aturan ownership, borrowing, dan lifetime.",
+				"Struct, Enum, & Pattern Matching: belajar membangun tipe data kompleks dan menggunakan pattern matching untuk menulis kode yang bersih dan ekspresif.",
+				"Error Handling: mempelajari cara menangani error dengan Result dan Option, serta perbedaan antara panic dan error yang dapat ditangani.",
+				"Collection & Iterator: memahami cara kerja vector, string, hashmap, serta memanfaatkan iterator dan closure untuk pemrosesan data yang efisien.",
+				"Concurrency di Rust: belajar membuat program paralel menggunakan thread, channel, dan async/await dengan keamanan data yang terjamin oleh compiler.",
+				"Project Akhir: Membangun CLI To-Do App — menerapkan seluruh konsep yang telah dipelajari untuk membuat aplikasi baris perintah sederhana menggunakan Rust.",
+				"Bonus: Tips menulis kode Rust yang idiomatik, performa tinggi, serta pengenalan ekosistem crates.io dan praktik terbaik dalam proyek nyata."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan Rust', lectures: 5, duration: '1 jam' },
 				{ title: 'Ownership & Borrowing', lectures: 7, duration: '2 jam' },
@@ -478,6 +662,20 @@
 			],
 			requirements: ['Dasar backend development'],
 			description: 'Pelajari Redis, database super cepat untuk caching dan queue system.',
+			shortDescription: [
+				"Selamat datang di course Belajar Redis untuk Pemula. Di kelas ini, kamu akan mempelajari dasar-dasar penggunaan Redis sebagai in-memory data store untuk caching, message broker, dan database berkecepatan tinggi.",
+				"Pengenalan Redis: memahami apa itu Redis, sejarah dan konsep in-memory database, serta keunggulannya dibandingkan database tradisional seperti MySQL atau PostgreSQL.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal Redis di berbagai sistem operasi, menjalankan server Redis, dan menggunakan Redis CLI untuk interaksi dasar.",
+				"Struktur Data Redis: mempelajari berbagai tipe data seperti String, List, Set, Sorted Set, dan Hash beserta cara penggunaannya dalam berbagai kasus nyata.",
+				"Operasi Dasar Redis: memahami perintah penting seperti GET, SET, DEL, EXPIRE, dan INCR untuk mengelola data dengan cepat dan efisien.",
+				"Caching dengan Redis: belajar cara menggunakan Redis untuk caching hasil query database atau API agar aplikasi berjalan lebih cepat dan responsif.",
+				"Pub/Sub dan Messaging: mempelajari fitur Publish/Subscribe Redis untuk komunikasi antar layanan dan implementasi message queue sederhana.",
+				"Persistence & Backup: memahami mekanisme penyimpanan data di Redis menggunakan RDB dan AOF, serta strategi backup dan recovery.",
+				"Monitoring & Optimasi: belajar cara memantau performa Redis, mengatur konfigurasi memory limit, eviction policy, serta teknik optimasi untuk skala besar.",
+				"Project Akhir: Membangun Sistem Caching Aplikasi Web — menerapkan semua konsep yang telah dipelajari untuk meningkatkan performa aplikasi dengan Redis.",
+				"Bonus: Tips dan praktik terbaik dalam desain arsitektur caching, keamanan Redis, serta integrasi dengan framework populer seperti Node.js dan Laravel."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan Redis', lectures: 5, duration: '1 jam' },
 				{ title: 'Struktur Data Redis', lectures: 7, duration: '2 jam' },
@@ -487,7 +685,7 @@
 			forWho: ['Backend Developer', 'DevOps', 'Fullstack Developer']
 		},
 		{
-			slug: 'kafka',
+			slug: 'apache-kafka',
 			name: 'Belajar Apache Kafka untuk Pemula',
 			image: kafka,
 			instructor: 'Eko Kurniawan Khannedy',
@@ -506,6 +704,19 @@
 			],
 			requirements: ['Dasar backend programming', 'Pemahaman konsep message queue'],
 			description: 'Pelajari Apache Kafka, sistem event streaming yang powerful dan scalable.',
+			shortDescription: [
+				"Selamat datang di course Belajar Apache Kafka untuk Pemula. Di kelas ini, kamu akan mempelajari konsep dasar dan implementasi Apache Kafka untuk membangun sistem pemrosesan data real-time yang scalable dan andal.",
+				"Pengenalan Apache Kafka: memahami apa itu Kafka, sejarah dan arsitekturnya, serta bagaimana Kafka digunakan dalam sistem event streaming modern.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal dan menjalankan Kafka serta Zookeeper di lokal, memahami broker, topic, dan partition.",
+				"Dasar Producing & Consuming Data: mempelajari cara mengirim (produce) dan menerima (consume) pesan menggunakan Kafka CLI maupun kode program sederhana.",
+				"Arsitektur Internal Kafka: memahami cara kerja log-based storage, offset, replication, dan mekanisme fault-tolerance untuk menjaga data tetap aman.",
+				"Kafka Topics & Partitions: belajar membuat, mengonfigurasi, dan mengelola topic serta memahami strategi partitioning untuk performa optimal.",
+				"Integrasi Kafka dengan Aplikasi: mempelajari cara mengintegrasikan Kafka dengan Node.js, Python, atau Java untuk mengalirkan data antar layanan.",
+				"Monitoring & Optimasi: memahami cara memantau performa cluster Kafka, mengatur throughput, dan menangani error atau bottleneck.",
+				"Project Akhir: Membangun Sistem Streaming Data Real-Time — menerapkan semua konsep yang telah dipelajari dalam proyek nyata menggunakan Apache Kafka.",
+				"Bonus: Tips dan praktik terbaik dalam desain arsitektur event-driven, pengelolaan topic, serta menjaga performa dan reliabilitas Kafka di lingkungan produksi."
+				],
+
 			courseContent: [
 				{ title: 'Dasar Kafka', lectures: 5, duration: '1 jam 15 menit' },
 				{ title: 'Producer & Consumer', lectures: 7, duration: '2 jam' },
@@ -515,7 +726,7 @@
 			forWho: ['Backend Engineer', 'System Architect', 'DevOps Engineer']
 		},
 		{
-			slug: 'postgresql',
+			slug: 'postgre',
 			name: 'Belajar PostgreSQL untuk Developer',
 			image: postgre,
 			instructor: 'Eko Kurniawan Khannedy',
@@ -534,6 +745,19 @@
 			],
 			requirements: ['Dasar SQL'],
 			description: 'Pelajari PostgreSQL, database open-source yang powerful dan stabil.',
+			shortDescription: [
+				"Selamat datang di course Belajar PostgreSQL untuk Pemula. Di kelas ini, kamu akan mempelajari cara kerja dan penggunaan PostgreSQL dari dasar hingga mampu membangun dan mengelola database relasional yang kuat, aman, dan efisien.",
+				"Pengenalan PostgreSQL: memahami sejarah, arsitektur, dan keunggulan PostgreSQL dibanding sistem database lain seperti MySQL atau SQLite.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal PostgreSQL di berbagai sistem operasi serta menggunakan psql dan pgAdmin sebagai alat administrasi.",
+				"Dasar SQL & Database: mempelajari konsep database, schema, tabel, kolom, dan tipe data yang digunakan dalam PostgreSQL.",
+				"Manipulasi Data (CRUD): belajar membuat, membaca, memperbarui, dan menghapus data menggunakan perintah SQL dasar seperti SELECT, INSERT, UPDATE, dan DELETE.",
+				"Relasi & Constraint: memahami konsep primary key, foreign key, dan constraint untuk menjaga integritas data dalam relasi antar tabel.",
+				"Fitur Lanjutan PostgreSQL: belajar tentang indexing, view, trigger, stored procedure, dan transaction untuk meningkatkan performa dan keandalan data.",
+				"Optimasi & Keamanan: memahami strategi indexing, query optimization, serta cara mengatur role, privilege, dan keamanan akses data.",
+				"Project Akhir: Membangun Sistem Manajemen Data — menerapkan seluruh konsep yang telah dipelajari dalam satu proyek nyata berbasis PostgreSQL.",
+				"Bonus: Tips dan praktik terbaik dalam desain database, normalisasi data, dan penggunaan fitur-fitur modern PostgreSQL untuk aplikasi produksi."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan PostgreSQL', lectures: 5, duration: '1 jam' },
 				{ title: 'Relasi & Query Lanjut', lectures: 8, duration: '2 jam' },
@@ -562,6 +786,19 @@
 			],
 			requirements: ['Dasar REST API dan database'],
 			description: 'Pelajari Elasticsearch untuk membangun fitur pencarian super cepat.',
+			shortDescription: [
+				"Selamat datang di course Belajar Elasticsearch untuk Pemula. Di kelas ini, kamu akan mempelajari cara kerja dan penggunaan Elasticsearch dari dasar hingga mampu membangun sistem pencarian yang cepat, efisien, dan scalable.",
+				"Pengenalan Elasticsearch: memahami konsep dasar search engine, arsitektur Elasticsearch, serta perbedaan dengan database relasional.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal Elasticsearch, Kibana, dan Logstash (ELK Stack) di lokal maupun server.",
+				"Dasar Query dan Index: mempelajari cara membuat index, menambahkan dokumen, serta melakukan pencarian dasar menggunakan Query DSL.",
+				"Mapping & Analisis Data: memahami cara kerja mapping, analyzer, tokenizer, dan bagaimana data teks diproses di Elasticsearch.",
+				"Aggregation & Filtering: belajar melakukan analisis data menggunakan agregasi, filter, dan pipeline untuk menghasilkan insight dari data besar.",
+				"Integrasi & API: mempelajari cara mengakses Elasticsearch melalui REST API, serta mengintegrasikannya dengan aplikasi Node.js atau Python.",
+				"Monitoring & Optimasi: memahami cara memantau performa cluster, mengelola shard & replica, serta mengoptimalkan pencarian untuk efisiensi tinggi.",
+				"Project Akhir: Membangun Sistem Pencarian Produk — menerapkan seluruh konsep yang telah dipelajari dalam satu proyek nyata berbasis Elasticsearch.",
+				"Bonus: Tips dan praktik terbaik dalam mendesain index, struktur data, dan query agar sistem pencarian tetap cepat dan scalable."
+				],
+
 			courseContent: [
 				{ title: 'Dasar Elasticsearch', lectures: 5, duration: '1 jam 10 menit' },
 				{ title: 'Index & Document', lectures: 7, duration: '2 jam' },
@@ -590,6 +827,18 @@
 			],
 			requirements: ['Dasar Java atau pemrograman OOP'],
 			description: 'Pelajari bahasa Kotlin untuk pengembangan Android modern.',
+			shortDescription: [
+				"Selamat datang di course Belajar Kotlin untuk Pemula. Di kelas ini, kamu akan mempelajari bahasa pemrograman Kotlin dari dasar hingga mampu membuat aplikasi modern dengan kode yang bersih, efisien, dan aman.",
+				"Pengenalan Kotlin: memahami sejarah dan filosofi Kotlin, keunggulannya dibanding Java, serta mengapa Kotlin menjadi bahasa resmi untuk pengembangan Android.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal Kotlin, menggunakan Kotlin Playground, IntelliJ IDEA, atau Android Studio sebagai lingkungan pengembangan.",
+				"Dasar Bahasa Kotlin: mempelajari variabel, tipe data, operator, kondisi, perulangan, dan fungsi untuk membangun logika dasar aplikasi.",
+				"Pemrograman Berorientasi Objek: memahami konsep class, object, inheritance, interface, dan encapsulation dalam konteks Kotlin.",
+				"Fitur Modern Kotlin: belajar tentang null safety, lambda expression, extension function, collection, dan coroutine untuk pemrograman asynchronous.",
+				"Error Handling & Testing: mempelajari cara menangani error menggunakan try-catch dan menulis unit test dasar untuk memastikan kualitas kode.",
+				"Project Akhir: Membangun Aplikasi Konsol dengan Kotlin — menerapkan seluruh konsep yang telah dipelajari dalam satu proyek nyata.",
+				"Bonus: Tips menulis kode Kotlin yang idiomatik, efisien, dan mudah dipelihara sesuai praktik terbaik industri modern."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan Kotlin', lectures: 5, duration: '1 jam' },
 				{ title: 'OOP di Kotlin', lectures: 8, duration: '2 jam' },
@@ -618,6 +867,18 @@
 			],
 			requirements: ['Kotlin atau Java dasar', 'Android Studio terinstal'],
 			description: 'Pelajari dasar pembuatan aplikasi Android dari nol hingga jadi.',
+			shortDescription: [
+				"Selamat datang di course Belajar Android untuk Pemula. Di kelas ini, kamu akan mempelajari dasar-dasar pengembangan aplikasi Android dari nol hingga mampu membuat aplikasi mobile sederhana menggunakan Android Studio.",
+				"Pengenalan Android: memahami apa itu sistem operasi Android, sejarah perkembangannya, serta arsitektur dasar yang digunakan pada perangkat mobile.",
+				"Instalasi & Setup Lingkungan: belajar cara menginstal Android Studio, mengonfigurasi emulator, dan memahami struktur proyek Android.",
+				"Dasar Bahasa Pemrograman: mempelajari penggunaan Kotlin atau Java dalam pengembangan Android, termasuk variabel, fungsi, dan class.",
+				"UI & Layout: memahami cara membuat tampilan aplikasi menggunakan XML, serta mengenal komponen seperti TextView, Button, ImageView, dan RecyclerView.",
+				"Activity & Intent: belajar cara berpindah antar halaman, mengirim data antar activity, serta memahami lifecycle dari sebuah activity.",
+				"Data & Storage: mempelajari cara menyimpan data menggunakan SharedPreferences, SQLite, dan Room Database.",
+				"Project Akhir: Membangun Aplikasi Catatan Sederhana — menerapkan semua konsep yang telah dipelajari dalam satu proyek nyata.",
+				"Bonus: Tips membuat aplikasi yang responsif, ringan, dan siap dipublikasikan ke Google Play Store."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan Android', lectures: 5, duration: '1 jam' },
 				{ title: 'UI & Layout', lectures: 8, duration: '2 jam' },
@@ -646,6 +907,18 @@
 			],
 			requirements: ['Tidak perlu pengalaman sebelumnya'],
 			description: 'Pelajari Git dan GitHub untuk manajemen kode dan kolaborasi tim.',
+			shortDescription: [
+				"Selamat datang di course Belajar Git untuk Pemula. Di kelas ini, kamu akan mempelajari dasar-dasar version control system menggunakan Git untuk mengelola kode, berkolaborasi dengan tim, dan melacak perubahan proyek dengan efisien.",
+				"Pengenalan Git: memahami apa itu sistem kontrol versi, manfaat Git dalam pengembangan perangkat lunak, serta perbedaan antara Git dan platform seperti GitHub atau GitLab.",
+				"Instalasi & Konfigurasi Awal: belajar cara menginstal Git di berbagai sistem operasi, melakukan konfigurasi username dan email, serta memahami konsep repository lokal.",
+				"Dasar Perintah Git: mempelajari command penting seperti git init, add, commit, log, diff, dan reset untuk mengelola versi kode.",
+				"Branching & Merging: memahami cara membuat branch, berpindah antar branch, dan menggabungkan kode menggunakan merge atau rebase dengan aman.",
+				"Kolaborasi dengan GitHub: belajar cara membuat repository remote, push dan pull kode, serta berkolaborasi melalui pull request dan code review.",
+				"Mengatasi Konflik: memahami cara mendeteksi dan menyelesaikan konflik merge yang sering terjadi dalam proyek tim.",
+				"Project Akhir: Membangun Workflow Kolaboratif — menerapkan branching strategy (feature, develop, main) dan pull request dalam proyek nyata.",
+				"Bonus: Tips menulis commit message yang baik, strategi branching populer (Git Flow & Trunk-Based Development), serta cara menggunakan Git secara efisien di tim profesional."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan Git', lectures: 5, duration: '1 jam' },
 				{ title: 'Branch & Merge', lectures: 7, duration: '2 jam' },
@@ -674,6 +947,18 @@
 			],
 			requirements: ['Dasar DevOps atau backend'],
 			description: 'Pelajari cara otomatisasi build dan deploy aplikasi dengan Jenkins.',
+			shortDescription: [
+				"Selamat datang di course Belajar Jenkins untuk Pemula. Di kelas ini, kamu akan mempelajari cara mengotomatisasi proses build, test, dan deployment aplikasi menggunakan Jenkins, salah satu tools CI/CD paling populer di dunia.",
+				"Pengenalan Jenkins: memahami apa itu Continuous Integration dan Continuous Deployment (CI/CD), manfaat otomatisasi pipeline, serta peran Jenkins dalam workflow pengembangan modern.",
+				"Instalasi & Setup Awal: belajar cara menginstal Jenkins di lokal atau server, mengonfigurasi plugin penting, dan memahami antarmuka dashboard Jenkins.",
+				"Membuat Project Pertama: mempelajari cara membuat job pertama, menjalankan build otomatis, dan melihat hasil build serta log output di Jenkins.",
+				"Pipeline As Code: memahami konsep Jenkinsfile, menulis pipeline deklaratif dengan tahap build, test, dan deploy, serta memanfaatkan Groovy script untuk otomasi lanjutan.",
+				"Integrasi dengan Git & Tools Lain: belajar cara menghubungkan Jenkins dengan GitHub, GitLab, Docker, dan layanan cloud untuk workflow modern.",
+				"Notifikasi & Monitoring: mengatur notifikasi build melalui email atau Slack, serta memonitor kesehatan sistem Jenkins.",
+				"Project Akhir: Membangun CI/CD Pipeline Lengkap — membuat pipeline otomatis untuk membangun dan mendeploy aplikasi Node.js atau Java ke server produksi.",
+				"Bonus: Tips mengoptimalkan performa Jenkins, mengelola agent build, serta praktik terbaik dalam keamanan pipeline CI/CD."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan CI/CD', lectures: 5, duration: '1 jam' },
 				{ title: 'Konfigurasi Jenkins', lectures: 7, duration: '2 jam' },
@@ -684,7 +969,7 @@
 		},
 		{
 			slug: 'http',
-			name: 'Belajar HTTP dan RESTful API',
+			name: 'Belajar HTTP',
 			image: http,
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.9,
@@ -702,6 +987,18 @@
 			],
 			requirements: ['Dasar pemrograman web'],
 			description: 'Pelajari dasar komunikasi HTTP dan cara membangun RESTful API.',
+			shortDescription: [
+				"Selamat datang di course Belajar HTTP untuk Pemula. Di kelas ini, kamu akan mempelajari dasar-dasar komunikasi antara client dan server melalui protokol HTTP yang menjadi fondasi utama dari web modern.",
+				"Pengenalan HTTP: memahami apa itu HyperText Transfer Protocol, bagaimana cara kerja request dan response, serta peran penting HTTP dalam pengembangan web dan API.",
+				"Struktur Request & Response: belajar tentang komponen utama seperti URL, method, header, body, dan status code yang digunakan dalam komunikasi web.",
+				"HTTP Method: mempelajari perbedaan dan penggunaan method seperti GET, POST, PUT, PATCH, dan DELETE dalam berbagai skenario pengembangan aplikasi.",
+				"Status Code: memahami arti dari berbagai kode status HTTP seperti 200 OK, 404 Not Found, dan 500 Internal Server Error, serta kapan menggunakannya.",
+				"Header & Cookies: mengenal fungsi header dalam mengirim metadata, serta bagaimana cookies digunakan untuk sesi, autentikasi, dan pelacakan pengguna.",
+				"HTTPS & Keamanan: belajar tentang perbedaan antara HTTP dan HTTPS, cara kerja SSL/TLS, serta pentingnya enkripsi dalam menjaga keamanan data.",
+				"Project Akhir: Menganalisis dan Membangun Client HTTP — membuat dan menguji berbagai request menggunakan Postman serta menerapkannya dalam aplikasi sederhana.",
+				"Bonus: Tips debugging request HTTP dan praktik terbaik dalam merancang komunikasi client-server yang efisien dan aman."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan HTTP', lectures: 5, duration: '1 jam' },
 				{ title: 'Method dan Status Code', lectures: 7, duration: '2 jam' },
@@ -712,7 +1009,7 @@
 		},
 		{
 			slug: 'openapi',
-			name: 'Belajar OpenAPI & Swagger',
+			name: 'Belajar OpenAPI',
 			image: openapi,
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
@@ -730,6 +1027,18 @@
 			],
 			requirements: ['Dasar REST API'],
 			description: 'Pelajari cara mendokumentasikan API profesional menggunakan OpenAPI & Swagger.',
+			shortDescription: [
+				"Selamat datang di course Belajar OpenAPI untuk Pemula. Di kelas ini, kamu akan mempelajari cara mendesain, mendokumentasikan, dan mengimplementasikan RESTful API secara profesional menggunakan standar OpenAPI (Swagger).",
+				"Pengenalan OpenAPI: memahami apa itu OpenAPI Specification, manfaatnya dalam pengembangan API modern, serta bagaimana ia membantu komunikasi antara tim backend dan frontend.",
+				"Dasar Dokumentasi API: belajar menulis definisi endpoint, parameter, dan response menggunakan format YAML atau JSON dengan struktur yang benar.",
+				"Swagger Editor & Swagger UI: memahami cara menggunakan Swagger Editor untuk membuat dokumentasi interaktif dan Swagger UI untuk menguji API secara langsung di browser.",
+				"Menulis Spesifikasi Lengkap: membuat definisi API lengkap dengan path, request body, schema, dan status response menggunakan komponen reusable.",
+				"Autogenerate Code & Validasi: mempelajari cara menghasilkan kode otomatis (server & client) dari file OpenAPI dan melakukan validasi terhadap implementasi API yang sudah dibuat.",
+				"Integrasi dengan Framework: belajar menggunakan OpenAPI bersama framework populer seperti Express.js, Fastify, atau Spring Boot untuk dokumentasi otomatis.",
+				"Project Akhir: Mendesain dan Mendokumentasikan Sistem Manajemen Kursus — membangun spesifikasi API lengkap beserta dokumentasi Swagger yang interaktif.",
+				"Bonus: Tips membuat dokumentasi API yang rapi, mudah dibaca, dan selalu sinkron dengan implementasi backend sebenarnya."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan OpenAPI', lectures: 5, duration: '1 jam' },
 				{ title: 'Menulis Spec YAML/JSON', lectures: 7, duration: '2 jam' },
@@ -758,6 +1067,18 @@
 			],
 			requirements: ['Dasar pemrograman'],
 			description: 'Pelajari bahasa Dart yang digunakan untuk pengembangan Flutter.',
+			shortDescription: [
+				"Selamat datang di course Belajar Dart untuk Pemula. Di kelas ini, kamu akan mempelajari bahasa pemrograman Dart dari dasar hingga siap digunakan untuk pengembangan aplikasi modern, terutama dengan Flutter.",
+				"Pengenalan Dart: memahami apa itu Dart, mengapa digunakan dalam pengembangan Flutter, serta keunggulannya dibanding bahasa pemrograman lain seperti JavaScript atau Kotlin.",
+				"Instalasi & Setup: belajar cara menginstal Dart SDK, menggunakan DartPad untuk latihan cepat, dan menyiapkan environment pengembangan di komputer kamu.",
+				"Dasar Bahasa Dart: mempelajari variabel, tipe data, operator, kontrol alur (if, for, while), dan cara menulis fungsi yang efisien.",
+				"Pemrograman Berorientasi Objek: memahami konsep class, object, inheritance, polymorphism, dan interface dalam konteks Dart.",
+				"Fitur Lanjutan: belajar tentang null safety, async/await, future, stream, dan error handling untuk membangun aplikasi yang stabil dan efisien.",
+				"Integrasi dengan Flutter: memahami bagaimana Dart digunakan dalam membangun UI dan logika aplikasi Flutter secara menyeluruh.",
+				"Project Akhir: Membangun Aplikasi To-Do List dengan Dart — mengimplementasikan semua konsep yang telah dipelajari dalam satu proyek nyata.",
+				"Bonus: Tips menulis kode Dart yang bersih, efisien, serta praktik terbaik untuk pengembangan aplikasi modern dengan Flutter."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan Dart', lectures: 5, duration: '1 jam' },
 				{ title: 'Class & Function', lectures: 7, duration: '2 jam' },
@@ -786,6 +1107,17 @@
 			],
 			requirements: ['Dasar HTML dan CSS'],
 			description: 'Pelajari Bootstrap 5 untuk membangun website responsif dengan cepat.',
+			shortDescription: [
+				"Selamat datang di course Belajar Bootstrap untuk Pemula. Di kelas ini, kamu akan mempelajari cara membuat website modern dengan cepat menggunakan framework CSS populer, Bootstrap.",
+				"Pengenalan Bootstrap: memahami apa itu Bootstrap, keunggulannya dibanding menulis CSS manual, serta cara kerja sistem grid yang menjadi dasar layout responsif.",
+				"Instalasi & Struktur Dasar: belajar cara menyiapkan proyek dengan Bootstrap, baik menggunakan CDN maupun instalasi lokal, serta memahami struktur file dan komponen dasarnya.",
+				"Komponen UI: mengenal berbagai komponen siap pakai seperti navbar, card, carousel, alert, modal, dan tombol interaktif untuk mempercepat proses desain website.",
+				"Sistem Grid & Layout: memahami konsep 12 kolom pada Bootstrap untuk membuat tampilan responsif di berbagai ukuran layar dengan mudah.",
+				"Kustomisasi & Utility Class: belajar menggunakan utility class untuk pengaturan cepat seperti margin, padding, warna, dan tipografi tanpa menulis CSS tambahan.",
+				"Project Akhir: Membangun Landing Page Modern dengan Bootstrap — menggabungkan semua komponen dan teknik untuk membuat tampilan profesional dan menarik.",
+				"Bonus: Tips dan trik dalam mengoptimalkan performa, serta cara mengintegrasikan Bootstrap dengan framework frontend seperti React atau Svelte."
+				],
+
 			courseContent: [
 				{ title: 'Dasar Bootstrap', lectures: 5, duration: '1 jam' },
 				{ title: 'Grid & Layout', lectures: 7, duration: '2 jam' },
@@ -814,6 +1146,17 @@
 			],
 			requirements: ['Dasar JavaScript'],
 			description: 'Pelajari TypeScript untuk meningkatkan kualitas dan keamanan kode JavaScript-mu.',
+			shortDescription: [
+				"Selamat datang di course Belajar TypeScript untuk Pemula. Di kelas ini, kamu akan mempelajari cara menulis kode JavaScript yang lebih aman, terstruktur, dan mudah dikelola menggunakan TypeScript.",
+				"Pengenalan TypeScript: memahami mengapa TypeScript dibuat, perbedaan utama antara JavaScript dan TypeScript, serta bagaimana TypeScript membantu mengurangi bug dalam proyek besar.",
+				"Dasar TypeScript: belajar tentang tipe data, interface, class, enum, union, dan generic yang membuat kode lebih konsisten dan dapat diprediksi.",
+				"Fitur Lanjutan: memahami konsep seperti type inference, utility types, dan modul agar bisa menulis kode yang lebih efisien dan scalable.",
+				"Integrasi TypeScript: mempelajari cara menggunakan TypeScript dalam proyek Node.js, React, dan Svelte, serta cara mengonfigurasi compiler (tsconfig.json).",
+				"Error Handling & Debugging: belajar teknik menemukan dan memperbaiki error dengan efektif menggunakan fitur bawaan TypeScript dan editor seperti VS Code.",
+				"Project Akhir: Membangun Aplikasi Todo List dengan TypeScript — menerapkan semua konsep yang telah dipelajari untuk membuat aplikasi yang modular dan maintainable.",
+				"Bonus: Tips menulis kode TypeScript profesional dan praktik terbaik dalam kolaborasi proyek tim modern."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan TypeScript', lectures: 5, duration: '1 jam' },
 				{ title: 'Type & Interface', lectures: 7, duration: '2 jam' },
@@ -823,7 +1166,7 @@
 			forWho: ['Frontend Developer', 'Backend Developer', 'Fullstack Developer']
 		},
 		{
-			slug: 'k6',
+			slug: 'k6-performance-testing',
 			name: 'Belajar Load Testing dengan K6',
 			image: k6,
 			instructor: 'Eko Kurniawan Khannedy',
@@ -842,6 +1185,17 @@
 			],
 			requirements: ['Dasar REST API'],
 			description: 'Pelajari cara melakukan load testing untuk API menggunakan K6.',
+			shortDescription: [
+				"Selamat datang di course Belajar Load Testing dengan k6 untuk Pemula. Di kelas ini, kamu akan mempelajari cara menguji performa aplikasi menggunakan k6, mulai dari dasar hingga penerapan dalam proyek nyata.",
+				"Pengenalan Load Testing: memahami konsep dasar load testing, stress testing, dan mengapa pengujian performa penting untuk aplikasi modern.",
+				"Instalasi dan Dasar k6: belajar cara menginstal k6 di berbagai platform, memahami struktur skrip, dan menjalankan pengujian sederhana.",
+				"Membuat Skrip k6 dengan JavaScript: menulis skrip k6 menggunakan JavaScript untuk menguji endpoint RESTful API, serta memahami konsep VU (Virtual Users) dan duration.",
+				"Analisis Hasil Testing: membahas cara membaca hasil pengujian k6, metrik penting seperti response time, throughput, dan error rate.",
+				"Integrasi k6 dengan CI/CD: belajar bagaimana mengintegrasikan k6 ke dalam pipeline CI/CD menggunakan GitHub Actions atau Jenkins untuk pengujian otomatis.",
+				"Project Akhir: Membangun dan Menguji API — membuat proyek kecil dengan backend sederhana, lalu mengujinya menggunakan k6 untuk memastikan performa optimal.",
+				"Materi akan terus diperbarui agar kamu selalu mengikuti perkembangan terbaru dalam dunia performance testing dan DevOps modern."
+				],
+
 			courseContent: [
 				{ title: 'Pengenalan K6', lectures: 5, duration: '1 jam' },
 				{ title: 'Menulis Script K6', lectures: 7, duration: '2 jam' },
@@ -870,6 +1224,17 @@
 			],
 			requirements: ['Dasar HTML'],
             description: 'Pelajari cara membuat struktur halaman web menggunakan HTML.',
+			shortDescription: [
+				"Selamat datang di course Belajar HTML, CSS, dan JavaScript untuk Pemula. Di kelas ini, kamu akan mempelajari dasar-dasar pembuatan website dari nol hingga menjadi tampilan interaktif yang menarik dan responsif.",
+				"Pengenalan Web Development: memahami bagaimana website bekerja, hubungan antara frontend dan backend, serta peran HTML, CSS, dan JavaScript dalam membangun halaman web.",
+				"HTML Dasar: belajar membuat struktur halaman menggunakan elemen-elemen penting seperti heading, paragraf, gambar, link, tabel, dan form.",
+				"CSS Dasar: memahami cara mempercantik tampilan dengan warna, font, layout, dan penggunaan Flexbox serta Grid untuk membuat desain yang responsif.",
+				"JavaScript Dasar: mempelajari konsep variabel, fungsi, event, dan manipulasi DOM untuk membuat website menjadi interaktif dan dinamis.",
+				"Project Akhir: Membangun Website Portfolio Pribadi — menerapkan semua konsep HTML, CSS, dan JavaScript untuk membuat website profesional yang bisa digunakan sebagai showcase kemampuanmu.",
+				"Bonus: Tips dan praktik terbaik dalam menulis kode bersih, efisien, dan mudah dikelola.",
+				"Materi akan terus diperbarui agar kamu selalu mengikuti tren terbaru dalam pengembangan web modern."
+				],
+
             courseContent: [
                 { title: 'Pengenalan HTML', lectures: 5, duration: '1 jam' },
                 { title: 'Tag dan Elemen HTML', lectures: 7, duration: '2 jam' },
@@ -898,6 +1263,17 @@
             ],
 			requirements: ['Dasar Java'],
             description: 'Pelajari cara membuat aplikasi backend menggunakan Spring Boot.',
+			shortDescription: [
+				"Selamat datang di course Belajar Spring Boot untuk Pemula. Di kelas ini, kamu akan mempelajari cara membangun aplikasi backend modern menggunakan Spring Boot, mulai dari dasar hingga penerapan di proyek nyata.",
+				"Pengenalan Spring Framework: memahami konsep dasar Spring, arsitektur, dan mengapa Spring Boot menjadi pilihan utama untuk pengembangan aplikasi Java modern.",
+				"Instalasi dan Konfigurasi: belajar cara menginstal Java, Maven, dan membuat project pertama menggunakan Spring Initializr, serta memahami struktur folder pada aplikasi Spring Boot.",
+				"Membuat RESTful API: membahas cara membuat endpoint RESTful menggunakan Spring Web, melakukan mapping request dengan controller, dan mengembalikan response JSON.",
+				"Database dan JPA: belajar cara menghubungkan Spring Boot dengan database menggunakan Spring Data JPA, membuat entity, repository, dan melakukan operasi CRUD.",
+				"Autentikasi dan Keamanan: memahami dasar Spring Security, cara membuat login berbasis JWT, serta mengamankan endpoint API.",
+				"Project Akhir: Membangun Aplikasi Manajemen Kursus — mengimplementasikan semua konsep dengan membangun sistem backend lengkap menggunakan Spring Boot.",
+				"Materi akan terus diperbarui mengikuti perkembangan Spring Boot versi terbaru agar kamu selalu up to date dengan teknologi Java backend modern."
+				],
+
             courseContent: [
                 { title: 'Pengenalan Spring Boot', lectures: 5, duration: '1 jam' },
                 { title: 'Membuat REST API dengan Spring Boot', lectures: 7, duration: '2 jam' },
@@ -926,6 +1302,17 @@
             ],
             requirements: ['Dasar Database', 'Dasar JavaScript atau Java'],
             description: 'Pelajari cara menggunakan MongoDB untuk membangun aplikasi backend yang scalable.',
+			shortDescription: [
+				"Selamat datang di course Belajar MongoDB untuk Pemula. Di kelas ini, kamu akan mempelajari dasar-dasar MongoDB hingga penerapan di proyek nyata, termasuk cara mengelola data secara efisien menggunakan NoSQL database.",
+				"Pengenalan MongoDB: memahami konsep dasar NoSQL, perbedaan antara database relasional dan non-relasional, serta keunggulan MongoDB dalam skala besar.",
+				"Instalasi dan Dasar Query: belajar cara menginstal MongoDB, menggunakan MongoDB Compass, serta menulis query dasar seperti insert, find, update, dan delete.",
+				"Struktur Data dan Relasi: membahas cara menyimpan data dalam bentuk dokumen (BSON), membuat relasi antar koleksi menggunakan referensi atau embedding, serta praktik desain skema yang efisien.",
+				"Aggregation dan Indexing: memahami pipeline agregasi untuk analisis data kompleks, serta cara meningkatkan performa query menggunakan indeks.",
+				"Integrasi dengan Node.js: menerapkan MongoDB dalam aplikasi backend menggunakan Mongoose ORM atau driver resmi MongoDB.",
+				"Project Akhir: Membangun Aplikasi Manajemen Data — mengimplementasikan CRUD, relasi, dan agregasi dalam satu proyek nyata berbasis MongoDB.",
+				"Materi akan terus diperbarui seiring perkembangan fitur MongoDB agar kamu selalu mengikuti teknologi database modern."
+				],
+
             courseContent: [
                 { title: 'Pengenalan MongoDB', lectures: 5, duration: '1 jam' },
                 { title: 'CRUD Operation di MongoDB', lectures: 7, duration: '2 jam' },
@@ -935,7 +1322,7 @@
             forWho: ['Backend Developer Pemula', 'Fullstack Developer', 'Siapa saja yang ingin belajar database NoSQL']
         },
         {
-            slug: 'restfull-api',
+            slug: 'restfullapi',
             name: 'Belajar RESTful API untuk Pemula',
             image: restfull, 
             instructor: 'Eko Kurniawan Khannedy',
@@ -954,6 +1341,16 @@
             ],
             requirements: ['Dasar HTTP', 'Dasar Backend Development'],
             description: 'Pelajari cara membuat dan mengelola RESTful API untuk aplikasi web dan mobile.',
+			shortDescription: [
+				"Selamat datang di course Belajar RESTful API untuk Pemula. Di kelas ini, kamu akan mempelajari cara membangun RESTful API dari dasar hingga siap digunakan di proyek nyata dengan pendekatan modern dan praktik terbaik.",
+				"Pengenalan RESTful API: memahami konsep dasar REST, arsitektur client-server, dan perbedaan antara REST, SOAP, dan GraphQL.",
+				"HTTP Method dan Status Code: membahas penggunaan method seperti GET, POST, PUT, dan DELETE, serta makna dari berbagai status code HTTP yang digunakan dalam API.",
+				"Membuat Endpoint CRUD: belajar membuat endpoint Create, Read, Update, dan Delete menggunakan framework backend modern seperti Express atau Bun.",
+				"Autentikasi dan Middleware: memahami bagaimana cara mengamankan API menggunakan token (JWT), serta cara membuat middleware untuk validasi dan logging.",
+				"Project Akhir: Membangun RESTful API untuk Aplikasi Kursus Online — menerapkan semua konsep dengan membangun API lengkap untuk sistem manajemen user, course, dan enrollment.",
+				"Materi akan terus diperbarui mengikuti tren industri backend terbaru agar kamu selalu up to date dengan teknologi API modern."
+				],
+
             courseContent: [
                 { title: 'Pengenalan RESTful API', lectures: 5, duration: '1 jam' },
                 { title: 'Membuat Endpoint CRUD', lectures: 7, duration: '2 jam' },
@@ -962,35 +1359,47 @@
             ],
             forWho: ['Backend Developer Pemula', 'Fullstack Developer', 'Siapa saja yang ingin belajar API']
         },
-        {
-            slug: 'rabbitmq',
-            name: 'Belajar RabbitMQ untuk Pemula',
-            image: rabbit,
-            instructor: 'Eko Kurniawan Khannedy',
-            rating: 4.7,
-            reviews: 280,
-            students: 1300,
-            lastUpdated: 'Oktober 2025',
-            language: 'Bahasa Indonesia',
-            price: 169000,
-            originalPrice: 429000,
-            whatYouWillLearn: [
-                'Pengenalan message broker dan RabbitMQ',
-                'Membuat queue dan exchange',
-                'Mengirim dan menerima pesan menggunakan producer dan consumer',
-                'Mengintegrasikan RabbitMQ dengan aplikasi backend'
-            ],
-            requirements: ['Dasar Backend Development', 'Dasar Java atau Node.js'],
-            description: 'Pelajari cara menggunakan RabbitMQ untuk komunikasi asinkron antar aplikasi.',
-            courseContent: [
-                { title: 'Pengenalan RabbitMQ', lectures: 5, duration: '1 jam' },
-                { title: 'Queue, Exchange, dan Binding', lectures: 7, duration: '2 jam' },
-                { title: 'Producer dan Consumer', lectures: 6, duration: '2 jam' },
-                { title: 'Project Akhir: Sistem Messaging Sederhana', lectures: 4, duration: '2 jam' }
-            ],
-            forWho: ['Backend Developer', 'DevOps', 'Siapa saja yang ingin belajar message broker']
-        }
+		{
+			slug: 'rabbitmq',
+			name: 'Belajar RabbitMQ untuk Pemula',
+			image: rabbit,
+			instructor: 'Eko Kurniawan Khannedy',
+			rating: 4.7,
+			reviews: 280,
+			students: 1300,
+			lastUpdated: 'Oktober 2025',
+			language: 'Bahasa Indonesia',
+			price: 169000,
+			originalPrice: 429000,
+			whatYouWillLearn: [
+				'Pengenalan message broker dan RabbitMQ',
+				'Membuat queue dan exchange',
+				'Mengirim dan menerima pesan menggunakan producer dan consumer',
+				'Mengintegrasikan RabbitMQ dengan aplikasi backend'
+			],
+			requirements: ['Dasar Backend Development', 'Dasar Java atau Node.js'],
+			description: 'Pelajari cara menggunakan RabbitMQ untuk komunikasi asinkron antar aplikasi.',
+			shortDescription: [
+				"Selamat datang di course Belajar RabbitMQ untuk Pemula. Di sini kita akan belajar RabbitMQ dari dasar hingga penerapan praktis, disertai dengan contoh studi kasus.",
+				"Pengenalan Message Broker: membahas konsep dasar message broker, fungsi queue dan exchange, serta keuntungan menggunakan RabbitMQ.",
+				"Queue, Exchange, dan Binding: membahas cara membuat queue dan exchange, cara binding antar queue dan exchange, serta konsep routing pesan.",
+				"Producer dan Consumer: membahas cara mengirim dan menerima pesan menggunakan producer dan consumer, serta praktik integrasi dalam aplikasi backend.",
+				"Project Akhir: Sistem Messaging Sederhana: membuat proyek akhir berupa sistem messaging sederhana untuk menerapkan seluruh materi yang telah dipelajari.",
+				"Materi akan selalu diperbarui secara berkala, dan ketika materi diupdate, pastikan untuk segera mengikuti course ini agar Anda bisa langsung mempraktikkan fitur-fitur terbaru RabbitMQ."
+				],
+				courseContent: [
+					{ title: 'Pengenalan RabbitMQ', lectures: 5, duration: '1 jam' },
+					{ title: 'Queue, Exchange, dan Binding', lectures: 7, duration: '2 jam' },
+					{ title: 'Producer dan Consumer', lectures: 6, duration: '2 jam' },
+					{ title: 'Project Akhir: Sistem Messaging Sederhana', lectures: 4, duration: '2 jam' }
+				],
+			forWho: ['Backend Developer', 'DevOps', 'Siapa saja yang ingin belajar message broker']
+		}
+
+
 	];
+
+	
 
 
 	// === SLUG DARI URL DAN KURSUS AKTIF ===
@@ -1005,9 +1414,7 @@
 		window.scrollTo({ top: 0 });
 	});
 
-      let openAll = false;
 
-    let carouselContainer: HTMLDivElement;
     let showMore = false;
 
     // Ambil slug saat ini
@@ -1025,8 +1432,15 @@
         window.location.href = `/kelas/${slug}`;
     }
 
-    $: reviews = Array.isArray(course?.reviews) ? course.reviews : [];
 
+	interface Course {
+    slug: string;
+    shortDescription?: string[];
+    forWho?: string[];
+  }
+
+  // Tipe yang benar untuk map boolean
+  let showMoreMap: Record<string, boolean> = {};
 </script>
 
 
@@ -1156,6 +1570,56 @@
         </div>
       </div>
 
+	<!-- Tentang Kelas -->
+	<div class="bg-gray-950 rounded-2xl p-6 border border-gray-700 mt-6 space-y-4">
+		<h2 class="text-2xl font-semibold">Deskripsi Kelas</h2>
+
+		{#if course?.shortDescription?.length}
+		<p class="text-gray-200 font-semibold text-base">
+			{course.shortDescription[0]}
+		</p>
+
+		{#if !!showMoreMap?.[course.slug]}
+			<div transition:slide={{ duration: 300 }}>
+			{#if course.shortDescription.length > 1}
+				<ul class="list-disc list-inside text-gray-300 space-y-2 pl-6 mt-2">
+				{#each course.shortDescription.slice(1) as point}
+					<li>{point}</li>
+				{/each}
+				</ul>
+			{/if}
+
+			{#if course?.forWho?.length}
+				<div class="mt-4">
+				<h3 class="text-lg font-semibold text-gray-200 mb-2">Untuk Siapa kursus ini?</h3>
+				<ul class="list-disc list-inside text-gray-300 space-y-1 pl-6">
+					{#each course.forWho as person}
+					<li>{person}</li>
+					{/each}
+				</ul>
+				</div>
+			{/if}
+			</div>
+		{/if}
+
+<!-- Tombol -->
+		{#if (course?.shortDescription?.length ?? 0) > 1 || (course?.forWho?.length ?? 0) > 0}
+			<button
+				on:click={() => {
+					const key = course?.slug ?? ''; // pastikan slug adalah string
+					if (!key) return; // kalau slug undefined, jangan lanjut
+					showMoreMap = { ...showMoreMap, [key]: !showMoreMap[key] };
+				}}
+				class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+			>
+				{showMoreMap[course?.slug ?? ''] ? 'Tutup' : 'Lihat Lebih Banyak'}
+			</button>
+		{/if}
+		{/if}
+	</div>
+	
+  
+
       <!-- Rekomendasi Kelas -->
         <div class="mt-16">
     <h2 class="text-2xl font-semibold mb-6 text-white">Rekomendasi Kelas Lainnya</h2>
@@ -1174,7 +1638,7 @@
                 <p class="text-gray-400 text-sm mt-1">Oleh {rec.instructor}</p>
                 <p class="text-blue-400 font-semibold mt-2">Rp {rec.price?.toLocaleString('id-ID')}</p>
                 <div class="mt-4">
-                    <a href={`/kelas/${rec.slug}`} 
+                    <a href="{base}/kelas/{rec.slug}"
                        class="block w-full mt-4 rounded-md bg-blue-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 text-center">
                        Lihat Detail
                     </a>
@@ -1199,7 +1663,7 @@
                     <p class="text-gray-400 text-sm mt-1">Oleh {rec.instructor}</p>
                     <p class="text-blue-400 font-semibold mt-2">Rp {rec.price?.toLocaleString('id-ID')}</p>
                     <div class="mt-4">
-                        <a href={`/kelas/${rec.slug}`} 
+                        <a href="{base}/kelas/{rec.slug}" 
                            class="block w-full mt-4 rounded-md bg-blue-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 text-center">
                            Lihat Detail
                         </a>
@@ -1208,29 +1672,43 @@
             </div>
         {/each}
     </div>
-{/if}
+	{/if}
 
-<!-- Tombol Lihat Lebih Banyak / Lihat Sedikit -->
-<div class="mt-6 text-center">
-    {#if !showMore && courses.length > 4}
-        <button on:click={() => showMore = true} 
-                class="w-full px-6 py-2 bg-black text-white rounded border border-gray-400 hover:border-blue-400">
-            Lihat Lebih Banyak
-        </button>
-    {/if}
+		<!-- Tombol Lihat Lebih Banyak / Lihat Sedikit -->
+		<div class="mt-6 text-center">
+			{#if !showMore && courses.length > 4}
+				<button on:click={() => showMore = true} 
+						class="w-full px-6 py-2 bg-black text-white rounded border border-gray-400 hover:border-blue-400">
+					Lihat Lebih Banyak
+				</button>
+			{/if}
 
-    {#if showMore}
-        <button on:click={() => showMore = false} 
-                class="w-full px-6 py-2 bg-black text-white rounded border border-gray-400 hover:border-blue-400">
-            Lihat Sedikit
-        </button>
-    {/if}
-</div>
+			{#if showMore}
+				<button on:click={() => showMore = false} 
+						class="w-full px-6 py-2 bg-black text-white rounded border border-gray-400 hover:border-blue-400">
+					Lihat Sedikit
+				</button>
+			{/if}
+		</div>
 
-    </div>
+    	</div>
         </div>
     </div>
   </div>
+  <!-- Tombol Beli Sekarang (Mobile Only) -->
+<div
+class="fixed bottom-0 left-0 right-0 bg-blue-600 text-white py-3 px-6 flex justify-between items-center lg:hidden z-50 shadow-lg"
+>
+<div class="flex flex-col">
+  <span class="text-sm text-gray-100">Beli Sekarang</span>
+  <span class="text-lg font-bold">Rp {course?.price?.toLocaleString('id-ID')}</span>
+</div>
+<button
+  class="bg-white text-blue-600 font-semibold px-4 py-2 rounded-lg text-sm hover:bg-gray-100 transition"
+>
+  Beli Sekarang
+</button>
+</div>
 </section>
 
  <!-- FOOTER -->
