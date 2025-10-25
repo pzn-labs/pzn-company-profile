@@ -38,6 +38,7 @@
 	import nestjs from "$lib/assets/nestjs.jpg";
 	import rabbit from "$lib/assets/rabbitmq.jpg";
 	import kafka from "$lib/assets/kafka.jpg";
+  import { get } from 'svelte/store';
 
 	// === SEMUA DATA KURSUS ===
 	const courses = [
@@ -227,7 +228,7 @@
 		},
 		{
 			slug: 'phyton',
-			name: 'Belajar phyton dari Dasar untuk pemula Hingga Mahir',
+			name: 'Belajar phyton untuk pemula Hingga Mahir',
 			image: python,
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
@@ -1402,58 +1403,92 @@
 	
 
 
-	// === SLUG DARI URL DAN KURSUS AKTIF ===
-	let course: typeof courses[number] | undefined;
+ // === SLUG DARI URL DAN KURSUS AKTIF ===
+  let course: typeof courses[number] | undefined;
 
-	$: {
-		const slug = $page.params.slug;
-		course = courses.find((c) => c.slug === slug);
-	}
-
-	onMount(() => {
-		window.scrollTo({ top: 0 });
-	});
-
-
-    let showMore = false;
-
-    // Ambil slug saat ini
-    let currentSlug = $page.params.slug;
-
-    // Reset showMore otomatis saat route berubah
-    $: if ($page.url) {
-        currentSlug = $page.params.slug;
-        showMore = false;
-    }
-
-
-    function lihatDetail(slug: string) {
-        // arahkan ke halaman detail kelas
-        window.location.href = `/kelas/${slug}`;
-    }
-
-
-	interface Course {
-    slug: string;
-    shortDescription?: string[];
-    forWho?: string[];
+  $: {
+    const slug = get(page).params.slug;
+    course = courses.find((c) => c.slug === slug);
   }
 
-  // Tipe yang benar untuk map boolean
-  let showMoreMap: Record<string, boolean> = {};
+  onMount(() => {
+    window.scrollTo({ top: 0 });
+  });
+
+  // ✅ Tambahkan ini
+  let showMore = false; // digunakan untuk tombol "Lihat Lebih Banyak" di bagian rekomendasi kelas
+
+  // 🔹 State terpisah untuk bagian lain (jika kamu sudah pakai sebelumnya)
+  let showAllSectionsMap: Record<string, boolean> = {}; // untuk Kurikulum
+  let showDescriptionMap: Record<string, boolean> = {}; // untuk Deskripsi Kelas
+
+  function toggleAll() {
+    const slug = course?.slug ?? "";
+    const newState = !showAllSectionsMap[slug];
+    showAllSectionsMap[slug] = newState;
+
+    const detailsElements = document.querySelectorAll("details");
+    detailsElements.forEach((el) => {
+      if (newState) el.setAttribute("open", "");
+      else el.removeAttribute("open");
+    });
+  }
+
+  function toggleDescription() {
+    const key = course?.slug ?? "";
+    if (!key) return;
+    showDescriptionMap = {
+      ...showDescriptionMap,
+      [key]: !showDescriptionMap[key],
+    };
+  }
+
 </script>
 
 
 {#if !course}
-  <p class="text-center text-gray-500 mt-20">Kelas tidak ditemukan.</p>
+<section
+  class="relative flex flex-col items-center justify-center min-h-screen text-center space-y-6 bg-gray-950 text-white px-6 animate-fadeIn"
+>
+  <!-- 🎨 Logo -->
+  <div class="relative flex justify-center">
+    <img
+      src="https://img-c.udemycdn.com/user/200_H/15481646_a97d_6.jpg"
+      alt="Logo Programmer Zaman Now"
+      class="w-28 h-28 object-contain rounded-full transition-transform duration-500 hover:scale-105 shadow-lg"
+    />
+  </div>
+
+  <!-- 🧭 Teks -->
+  <div>
+    <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3 tracking-tight">
+      Oops! Kelas Tidak Ditemukan 😢
+    </h2>
+    <p class="text-gray-400 max-w-md mx-auto leading-relaxed">
+      Sepertinya kelas yang kamu cari belum tersedia, sudah dihapus, atau sedang dalam perbaikan.
+      Coba temukan kursus menarik lainnya yang sedang trending di Programmer Zaman Now!
+    </p>
+  </div>
+
+  <!-- 🚀 Tombol -->
+  <div class="flex flex-col sm:flex-row gap-3 mt-2">
+    <a
+      href="{base}/kelas"
+      class="px-6 py-3 border border-gray-600 hover:border-blue-400 text-gray-300 hover:text-blue-400 rounded-lg font-medium transition duration-300"
+    >
+    Jelajahi Kelas Lain
+    </a>
+  </div>
+</section>
+
 {:else}
 
 <!-- HERO SECTION -->
-<section class="bg-black text-white px-6 py-12">
+<section class="bg-black text-white px-6 py-12 font-extralight">
   <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 relative">
 
-    <!-- SIDEBAR KANAN (muncul paling atas di mobile) -->
-    <aside class="order-1 lg:order-2 sticky lg:top-24 h-fit bg-white text-gray-900 rounded-xl shadow-2xl p-6 space-y-6 w-full lg:w-[380px]">
+    <!-- SIDEBAR KANAN -->
+    <aside class="order-1 lg:order-2 sticky lg:top-24 h-fit bg-white text-gray-900 rounded-xl shadow-2xl p-6 space-y-6 w-full lg:w-[380px] font-extralight">
       <!-- Gambar kursus -->
       <img src={course?.image} alt={course?.name ?? ''} class="w-full h-52 object-cover rounded-lg shadow-sm" />
 
@@ -1512,12 +1547,21 @@
       <div class="space-y-5">
         <h1 class="text-3xl lg:text-4xl font-bold leading-tight">{course?.name ?? ''}</h1>
         <p class="text-gray-300 text-base">{course?.description ?? ''}</p>
+
+        <!-- Info utama -->
         <div class="flex flex-wrap items-center gap-3 text-sm text-gray-400">
           <span>⭐ {course?.rating ?? '4.8'}</span>
           <span>·</span>
-          <span>{course?.students?.toLocaleString() ?? '12,345'} peserta</span>
+          <span>{course?.students?.toLocaleString('id-ID') ?? '12,345'} peserta</span>
           <span>·</span>
-          <span>Dibuat oleh <span class="text-blue-400">{course?.instructor ?? 'Nama Instructor'}</span></span>
+          <span>Dibuat oleh <span class="text-blue-400 font-normal">{course?.instructor ?? 'Nama Instructor'}</span></span>
+        </div>
+
+        <!-- Baris kedua: bahasa & update -->
+        <div class="flex flex-wrap items-center gap-3 text-sm text-gray-500">
+          <span class="flex items-center gap-1">🌐 {course?.language ?? 'Bahasa Indonesia'}</span>
+          <span>·</span>
+          <span class="flex items-center gap-1">🕒 Terakhir diperbarui: {course?.lastUpdated ? new Date(course.lastUpdated).toLocaleDateString('id-ID', { month: 'long', year: 'numeric' }) : 'Oktober 2025'}</span>
         </div>
       </div>
 
@@ -1531,266 +1575,297 @@
         </div>
       </div>
 
-      <!-- Kurikulum -->
-    <div class="bg-gray-900 rounded-2xl p-4 sm:p-6 border border-gray-700 space-y-4">
-    <div class="flex justify-between items-center mb-4">
-        <h2 class="text-2xl font-semibold text-white">Kurikulum Kursus</h2>
-    </div>
-    <div class="divide-y divide-gray-700">
-        {#each course?.courseContent ?? [] as section, i}
-        <details class="py-4 group w-full">
-            <summary class="flex flex-col sm:flex-row justify-between items-start sm:items-center cursor-pointer font-medium text-white hover:text-blue-400 transition-colors duration-200 px-2 py-2 sm:py-3 rounded-md">
-            <span class="flex items-center gap-2 w-full sm:w-auto">
-                {section.title}
-                <svg class="w-4 h-4 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-            </span>
-            <span class="text-gray-400 text-sm mt-1 sm:mt-0">{section.lectures} Lectures • {section.duration}</span>
-            </summary>
-            <ul class="mt-3 pl-5 list-disc text-white text-base space-y-2 transition-all duration-300 group-open:animate-fadeIn">
-            {#each Array(section.lectures) as _, index}
-                <li>Lecture {index + 1}</li>
-            {/each}
-            </ul>
-        </details>
-        {/each}
-    </div>
-    </div>
+		<!-- Kurikulum -->
+		<div class="bg-gray-950 rounded-2xl p-4 sm:p-6 border border-gray-700 space-y-4 shadow-lg shadow-blue-900/10 hover:shadow-blue-800/20 transition-all duration-500"
+		>
+		<!-- Header Kurikulum -->
+		<div class="flex justify-between items-center mb-4">
+			<h2 class="text-2xl font-semibold text-white">Kurikulum Kursus</h2>
 
+			<!-- Tombol Toggle -->
+			<button
+			on:click={toggleAll}
+			class="px-5 py-2 text-sm font-medium text-gray-200 border border-gray-400 hover:border-blue-400 rounded-lg hover:text-blue-400 transition-all duration-300 transform hover:scale-105"
+			>
+			{showAllSectionsMap[course?.slug ?? ''] ? 'Tutup Semua' : 'Lihat Semua'}
+			</button>
+		</div>
+
+		<!-- Daftar Section -->
+		<div class="divide-y divide-gray-700">
+			{#each course?.courseContent ?? [] as section, i}
+			<details
+				class="py-4 group w-full rounded-lg hover:bg-gray-900/40 transition-colors duration-300 
+					overflow-hidden animate-fadeInUp"
+			>
+				<summary
+				class="flex flex-col sm:flex-row justify-between items-start sm:items-center cursor-pointer 
+						font-medium text-white hover:text-blue-400 transition-colors duration-300 px-2 py-2 sm:py-3 rounded-md"
+				>
+				<span class="flex items-center gap-2 w-full sm:w-auto">
+					<span class="text-lg">{section.title}</span>
+					<svg
+					class="w-4 h-4 transition-transform duration-300 group-open:rotate-180 text-gray-400 group-hover:text-blue-400"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+					>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M19 9l-7 7-7-7"
+					/>
+					</svg>
+				</span>
+
+				<span class="text-gray-400 text-sm mt-1 sm:mt-0 italic">
+					{section.lectures} Lectures • {section.duration}
+				</span>
+				</summary>
+
+				<!--  Animasi daftar lecture -->
+				<ul
+				class="mt-3 pl-8 sm:pl-10 list-disc text-white text-base space-y-2 
+						transition-all duration-500 ease-in-out group-open:animate-fadeIn"
+				>
+				{#each Array(section.lectures) as _, index}
+					<li
+					class="text-gray-300 hover:text-blue-400 transition-colors duration-200 
+							transform hover:translate-x-2"
+					>
+					Lecture {index + 1}
+					</li>
+				{/each}
+				</ul>
+			</details>
+			{/each}
+		</div>
+		</div>
+
+		<!-- Tentang Kelas -->
+		<div class="bg-gray-950 rounded-2xl p-6 border border-gray-700 mt-6 space-y-4">
+		<h2 class="text-2xl font-semibold">Deskripsi Kelas</h2>
+		{#if course?.shortDescription?.length}
+			<p class="text-gray-200 text-base">{course.shortDescription[0]}</p>
+
+			{#if !!showDescriptionMap?.[course.slug]}
+			<div transition:slide={{ duration: 300 }}>
+				{#if course.shortDescription.length > 1}
+				<ul class="list-disc list-inside text-gray-400 space-y-2 pl-6 mt-2">
+					{#each course.shortDescription.slice(1) as point}
+					<li>{point}</li>
+					{/each}
+				</ul>
+				{/if}
+
+				{#if course?.forWho?.length}
+				<div class="mt-4">
+					<h3 class="text-lg font-semibold text-gray-200 mb-2">Untuk Siapa kursus ini?</h3>
+					<ul class="list-disc list-inside text-gray-400 space-y-1 pl-6">
+					{#each course.forWho as person}
+						<li>{person}</li>
+					{/each}
+					</ul>
+				</div>
+				{/if}
+			</div>
+			{/if}
+
+			<!-- Tombol Lihat Lebih Banyak -->
+			{#if (course?.shortDescription?.length ?? 0) > 1 || (course?.forWho?.length ?? 0) > 0}
+			<button
+				on:click={toggleDescription}
+				class="mt-4 w-full px-6 py-3 border border-gray-400 text-white hover:text-blue-400 rounded-lg hover:border-blue-400 transition font-semibold text-center"
+			>
+				{showDescriptionMap[course?.slug ?? ''] ? 'Tutup' : 'Lihat Lebih Banyak'}
+			</button>
+			{/if}
+		{/if}
+		</div>
 
       <!-- Instruktur -->
       <div class="space-y-4">
-        <h2 class="text-xl font-semibold">Instruktur</h2>
-        <div class="flex items-center gap-4">
-          <img src="https://images.icon-icons.com/1647/PNG/96/10147adultlightskintone_109937.png" alt="Instructor" class="w-16 h-16 rounded-full object-cover"/>
-          <div>
-            <h3 class="font-semibold text-lg">{course?.instructor ?? 'Nama Instructor'}</h3>
+        <h2 class="text-xl font-semibold text-white">Instruktur</h2>
+        <div class="flex flex-col sm:flex-row items-start gap-4">
+          <img src="https://img-c.udemycdn.com/user/200_H/15481646_a97d_6.jpg" alt="Instructor" class="w-20 h-20 rounded-full object-cover border border-gray-700 shadow-md flex-shrink-0" />
+          <div class="max-w-md">
+            <h3 class="font-semibold text-lg text-white mb-1">{course?.instructor ?? 'Nama Instructor'}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Programmer Zaman Now membuat berbagai kursus seputar pemrograman — mencakup Backend, Frontend, DevOps, dan Mobile.
+            </p>
+            <div class="flex flex-wrap gap-4 text-sm text-gray-400 mt-3">
+              <div class="flex items-center gap-1">⭐ <span>{course?.rating ?? '4.8'} rating instruktur</span></div>
+              <div class="flex items-center gap-1">👥 <span>{course?.students?.toLocaleString('id-ID') ?? '25,000+'} siswa</span></div>
+              <div class="flex items-center gap-1">🎓 <span>30 kursus</span></div>
+            </div>
           </div>
         </div>
       </div>
 
-	<!-- Tentang Kelas -->
-	<div class="bg-gray-950 rounded-2xl p-6 border border-gray-700 mt-6 space-y-4">
-		<h2 class="text-2xl font-semibold">Deskripsi Kelas</h2>
-
-		{#if course?.shortDescription?.length}
-		<p class="text-gray-200 font-semibold text-base">
-			{course.shortDescription[0]}
-		</p>
-
-		{#if !!showMoreMap?.[course.slug]}
-			<div transition:slide={{ duration: 300 }}>
-			{#if course.shortDescription.length > 1}
-				<ul class="list-disc list-inside text-gray-300 space-y-2 pl-6 mt-2">
-				{#each course.shortDescription.slice(1) as point}
-					<li>{point}</li>
-				{/each}
-				</ul>
-			{/if}
-
-			{#if course?.forWho?.length}
-				<div class="mt-4">
-				<h3 class="text-lg font-semibold text-gray-200 mb-2">Untuk Siapa kursus ini?</h3>
-				<ul class="list-disc list-inside text-gray-300 space-y-1 pl-6">
-					{#each course.forWho as person}
-					<li>{person}</li>
-					{/each}
-				</ul>
-				</div>
-			{/if}
-			</div>
-		{/if}
-
-<!-- Tombol -->
-		{#if (course?.shortDescription?.length ?? 0) > 1 || (course?.forWho?.length ?? 0) > 0}
-			<button
-				on:click={() => {
-					const key = course?.slug ?? ''; // pastikan slug adalah string
-					if (!key) return; // kalau slug undefined, jangan lanjut
-					showMoreMap = { ...showMoreMap, [key]: !showMoreMap[key] };
-				}}
-				class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
-			>
-				{showMoreMap[course?.slug ?? ''] ? 'Tutup' : 'Lihat Lebih Banyak'}
-			</button>
-		{/if}
-		{/if}
-	</div>
-	
-  
-
       <!-- Rekomendasi Kelas -->
-        <div class="mt-16">
-    <h2 class="text-2xl font-semibold mb-6 text-white">Rekomendasi Kelas Lainnya</h2>
-    <div class="relative">
+      <div class="mt-16">
+        <h2 class="text-2xl font-semibold mb-6 text-white">Rekomendasi Kelas Lainnya</h2>
 
-        <!-- Carousel 4 Kelas -->
-<!-- Carousel / Kelas Utama (sekarang gaya sama dengan tambahan) -->
-<div class="flex flex-col md:flex-row gap-4">
-    {#each courses.filter(c => c.slug !== currentSlug).slice(0, 4) as rec}
-        <div class="bg-gray-950 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition w-full md:flex-1">
-            <div class="w-full aspect-[4/3] relative">
+        <!-- Carousel -->
+        <div class="flex flex-col md:flex-row gap-4">
+			{#each courses.filter(c => c.slug !== $page.params.slug).slice(0, 4) as rec}
+            <div class="bg-gray-950 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition w-full md:flex-1">
+              <div class="w-full aspect-[4/3] relative">
                 <img src={rec.image} alt={rec.name} class="w-full h-full object-contain"/>
-            </div>
-            <div class="p-4">
+              </div>
+              <div class="p-4">
                 <h3 class="font-semibold text-lg text-white">{rec.name}</h3>
                 <p class="text-gray-400 text-sm mt-1">Oleh {rec.instructor}</p>
                 <p class="text-blue-400 font-semibold mt-2">Rp {rec.price?.toLocaleString('id-ID')}</p>
                 <div class="mt-4">
-                    <a href="{base}/kelas/{rec.slug}"
-                       class="block w-full mt-4 rounded-md bg-blue-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 text-center">
-                       Lihat Detail
-                    </a>
+                  <a href="{base}/kelas/{rec.slug.toLowerCase().replace(/\s+/g, '-')}" class="block w-full mt-4 rounded-md bg-blue-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 text-center">
+                    Lihat Detail
+                  </a>
                 </div>
+              </div>
             </div>
+          {/each}
         </div>
-    {/each}
-</div>
 
-    
-
-    <!-- Kelas Tambahan (Awalnya Tersembunyi) -->
-    {#if showMore}
-    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {#each courses.filter(c => c.slug !== currentSlug).slice(4, 8) as rec}
-            <div class="bg-gray-950 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
+        {#if showMore}
+          <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {#each courses.filter(c => c.slug !== $page.params.slug).slice(4, 8) as rec}
+              <div class="bg-gray-950 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
                 <div class="w-full aspect-[4/3] relative">
-                    <img src={rec.image} alt={rec.name} class="w-full h-full object-contain"/>
+                  <img src={rec.image} alt={rec.name} class="w-full h-full object-contain"/>
                 </div>
                 <div class="p-4">
-                    <h3 class="font-semibold text-lg text-white">{rec.name}</h3>
-                    <p class="text-gray-400 text-sm mt-1">Oleh {rec.instructor}</p>
-                    <p class="text-blue-400 font-semibold mt-2">Rp {rec.price?.toLocaleString('id-ID')}</p>
-                    <div class="mt-4">
-                        <a href="{base}/kelas/{rec.slug}" 
-                           class="block w-full mt-4 rounded-md bg-blue-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 text-center">
-                           Lihat Detail
-                        </a>
-                    </div>
+                  <h3 class="font-semibold text-lg text-white">{rec.name}</h3>
+                  <p class="text-gray-400 text-sm mt-1">Oleh {rec.instructor}</p>
+                  <p class="text-blue-400 font-semibold mt-2">Rp {rec.price?.toLocaleString('id-ID')}</p>
+                  <div class="mt-4">
+                    <a href="{base}/kelas/{rec.slug}" class="block w-full mt-4 rounded-md bg-blue-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 text-center">
+                      Lihat Detail
+                    </a>
+                  </div>
                 </div>
-            </div>
-        {/each}
-    </div>
-	{/if}
+              </div>
+            {/each}
+          </div>
+        {/if}
 
-		<!-- Tombol Lihat Lebih Banyak / Lihat Sedikit -->
-		<div class="mt-6 text-center">
-			{#if !showMore && courses.length > 4}
-				<button on:click={() => showMore = true} 
-						class="w-full px-6 py-2 bg-black text-white rounded border border-gray-400 hover:border-blue-400">
-					Lihat Lebih Banyak
-				</button>
-			{/if}
+        <div class="mt-6 text-center">
+          {#if !showMore && courses.length > 4}
+            <button on:click={() => showMore = true} class="w-full px-6 py-2 bg-black text-white rounded border border-gray-400 hover:border-blue-400 font-semibold">
+              Lihat Lebih Banyak
+            </button>
+          {/if}
 
-			{#if showMore}
-				<button on:click={() => showMore = false} 
-						class="w-full px-6 py-2 bg-black text-white rounded border border-gray-400 hover:border-blue-400">
-					Lihat Sedikit
-				</button>
-			{/if}
-		</div>
-
-    	</div>
+          {#if showMore}
+            <button on:click={() => showMore = false} class="w-full px-6 py-2 bg-black text-white rounded border border-gray-400 hover:border-blue-400 font-semibold">
+              Lihat Sedikit
+            </button>
+          {/if}
         </div>
+      </div>
+
     </div>
   </div>
+
   <!-- Tombol Beli Sekarang (Mobile Only) -->
-<div
-class="fixed bottom-0 left-0 right-0 bg-blue-600 text-white py-3 px-6 flex justify-between items-center lg:hidden z-50 shadow-lg"
->
-<div class="flex flex-col">
-  <span class="text-sm text-gray-100">Beli Sekarang</span>
-  <span class="text-lg font-bold">Rp {course?.price?.toLocaleString('id-ID')}</span>
-</div>
-<button
-  class="bg-white text-blue-600 font-semibold px-4 py-2 rounded-lg text-sm hover:bg-gray-100 transition"
->
-  Beli Sekarang
-</button>
-</div>
+  <div class="fixed bottom-0 left-0 right-0 bg-blue-600 text-white py-3 px-6 flex justify-between items-center lg:hidden z-50 shadow-lg font-normal">
+    <div class="flex flex-col">
+      <span class="text-sm text-gray-100">Beli Sekarang</span>
+      <span class="text-lg font-bold">Rp {course?.price?.toLocaleString('id-ID')}</span>
+    </div>
+    <button class="bg-white text-blue-600 font-semibold px-4 py-2 rounded-lg text-sm hover:bg-gray-100 transition">
+      Beli Sekarang
+    </button>
+  </div>
 </section>
 
- <!-- FOOTER -->
-  <footer class="bg-gray-950 text-gray-400 border-t border-gray-800">
-    <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8 grid gap-12 md:grid-cols-3 items-start">
-      <!-- Kolom 1 -->
-      <div class="space-y-5">
+
+<!-- FOOTER -->
+<footer class="bg-gray-950 text-gray-400 border-t border-gray-800">
+  <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8 grid gap-12 md:grid-cols-3 items-start">
+    <!-- Kolom 1 -->
+    <div class="space-y-5">
       <div class="flex items-center gap-3">
-        <img src="https://www.programmerzamannow.com/img/pzn.png" alt="PZN Logo"
-        class="h-10 w-auto transition-transform hover:scale-105 duration-300" />
+        <img src="https://www.programmerzamannow.com/img/pzn.png" alt="PZN Logo" class="h-10 w-auto transition-transform hover:scale-105 duration-300" />
         <span class="text-lg font-semibold text-white">Programmer Zaman Now</span>
       </div>
       <p class="text-sm leading-relaxed max-w-sm">
         Belajar programming dari dasar hingga mahir bersama mentor berpengalaman.
         Temukan cara modern untuk menguasai dunia teknologi dengan pembelajaran praktis dan relevan industri.
       </p>
-      </div>
-    
-      <!-- Kolom 2 -->
-      <div class="space-y-5">
+    </div>
+
+    <!-- Kolom 2 -->
+    <div class="space-y-5">
       <h4 class="text-base font-semibold text-white">Navigasi</h4>
       <ul class="grid grid-cols-2 sm:grid-cols-1 gap-2">
-        {#each [
-        { name: "Beranda", href: "/" },
-        { name: "Kelas", href: "/kelas" },
-        { name: "Promo", href: "/promo" },
-        { name: "Sosial Media", href: "/sosial-media" }
-        ] as link}
-        <li>
-          <a href={base + link.href} class="text-sm text-gray-400 hover:text-white transition-colors duration-200">
-          {link.name}
-          </a>
-        </li>
+        {#each [{ name: "Beranda", href: "/" }, { name: "Kelas", href: "/kelas" }, { name: "Promo", href: "/promo" }, { name: "Sosial Media", href: "/sosial-media" }] as link}
+          <li>
+            <a href={base + link.href} class="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+              {link.name}
+            </a>
+          </li>
         {/each}
       </ul>
-      </div>
-    
-      <!-- Kolom 3 -->
-      <div class="space-y-5">
+    </div>
+
+    <!-- Kolom 3 -->
+    <div class="space-y-5">
       <h4 class="text-base font-semibold text-white">Ikuti Kami</h4>
       <div class="flex gap-5">
         {#each [
-        { href: "https://youtube.com", icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png", label: "YouTube" },
-        { href: "https://instagram.com", icon: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png", label: "Instagram" },
-        { href: "https://www.tiktok.com/@programmerzamannow", icon: "https://cdn-icons-png.flaticon.com/512/3046/3046121.png", label: "TikTok" },
-        { href: "https://facebook.com", icon: "https://cdn-icons-png.flaticon.com/512/733/733547.png", label: "Facebook" }
+          { href: "https://youtube.com", icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png", label: "YouTube" },
+          { href: "https://instagram.com", icon: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png", label: "Instagram" },
+          { href: "https://www.tiktok.com/@programmerzamannow", icon: "https://cdn-icons-png.flaticon.com/512/3046/3046121.png", label: "TikTok" },
+          { href: "https://facebook.com", icon: "https://cdn-icons-png.flaticon.com/512/733/733547.png", label: "Facebook" }
         ] as social}
-        <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} class="group">
-          <img
-          src={social.icon}
-          alt={social.label}
-          class="h-6 w-6 opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300"
-          />
-        </a>
+          <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} class="group">
+            <img src={social.icon} alt={social.label} class="h-6 w-6 opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300"/>
+          </a>
         {/each}
       </div>
-      </div>
-      
     </div>
-    <div class="border-t border-gray-800 py-6 text-center">
-      <p class="text-sm text-gray-400">
-      © {new Date().getFullYear()} <span class="font-medium text-white">Programmer Zaman Now</span>.
-      </p>
-    </div>
-    </footer>
+  </div>
 
+  <div class="border-t border-gray-800 py-6 text-center">
+    <p class="text-sm text-gray-400">
+      © {new Date().getFullYear()} <span class="font-medium text-white">Programmer Zaman Now</span>.
+    </p>
+  </div>
+</footer>
 {/if}
 
 
 
+
 <style>
+  /* 🔹 Fade-in + slide-up animasi */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
-  .group-open\:animate-fadeIn {
-    animation: fadeIn 0.3s ease forwards;
+  .animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out both;
   }
 
-  /* rotate panah saat details terbuka */
-  details[open] summary svg {
-    transform: rotate(180deg);
+  .animate-fadeIn {
+    animation: fadeIn 0.4s ease-out both;
   }
 </style>
