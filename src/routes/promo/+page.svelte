@@ -84,7 +84,7 @@
 </svelte:head>
 
 
-<!-- 🔹 HERO PROMO SECTION -->
+<!-- HERO PROMO SECTION -->
 <section
   class="relative bg-cover bg-center bg-no-repeat text-white py-24 sm:py-24"
   style="background-image: url('https://i.pinimg.com/736x/83/5f/56/835f5645e50f7c8eaf41c7b31e5e3d3d.jpg');"
@@ -173,7 +173,7 @@
 			</ul>
   
 			<!-- Promo Code -->
-			<div class="bg-gray-800/70 border border-gray-700 rounded-lg px-4 py-3 text-center mb-6">
+			<div class="text-center mb-6">
 			  <p class="text-xs text-gray-400 mb-1">Gunakan Kode Promo:</p>
 			  <div class="flex justify-center items-center gap-2 bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 font-semibold text-sm">
 				<span>PZN2025</span>
@@ -181,11 +181,14 @@
 			</div>
   
 			<a
-			  href={`${base}/promo`}
-			  class="block w-full rounded-xl bg-white text-black text-center font-semibold py-3 hover:bg-gray-100 transition"
-			>
-			  Daftar Sekarang
-			</a>
+				href={`${base}/promo`}
+				class="block w-full rounded-xl bg-white 
+						text-gray-900 text-center font-medium hover:bg-transparent hover:text-blue-400 border py-3 shadow-lg transform transition-all duration-300 
+						hover:scale-105 active:scale-95"
+				>
+				Daftar Sekarang
+				</a>
+
 		  </div>
 		</div>
 	  {/each}

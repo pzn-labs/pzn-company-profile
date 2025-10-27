@@ -1403,7 +1403,7 @@
 	
 
 
- // === SLUG DARI URL DAN KURSUS AKTIF ===
+ // SLUG DARI URL DAN KURSUS AKTIF 
   let course: typeof courses[number] | undefined;
 
   $: {
@@ -1415,10 +1415,10 @@
     window.scrollTo({ top: 0 });
   });
 
-  // ✅ Tambahkan ini
+  //  Tambahkan ini
   let showMore = false; // digunakan untuk tombol "Lihat Lebih Banyak" di bagian rekomendasi kelas
 
-  // 🔹 State terpisah untuk bagian lain (jika kamu sudah pakai sebelumnya)
+  //  State terpisah untuk bagian lain (jika kamu sudah pakai sebelumnya)
   let showAllSectionsMap: Record<string, boolean> = {}; // untuk Kurikulum
   let showDescriptionMap: Record<string, boolean> = {}; // untuk Deskripsi Kelas
 
@@ -1450,7 +1450,7 @@
 <section
   class="relative flex flex-col items-center justify-center min-h-screen text-center space-y-6 bg-gray-950 text-white px-6 animate-fadeIn"
 >
-  <!-- 🎨 Logo -->
+  <!-- Logo -->
   <div class="relative flex justify-center">
     <img
       src="https://img-c.udemycdn.com/user/200_H/15481646_a97d_6.jpg"
@@ -1459,7 +1459,7 @@
     />
   </div>
 
-  <!-- 🧭 Teks -->
+  <!-- Teks -->
   <div>
     <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3 tracking-tight">
       Oops! Kelas Tidak Ditemukan 😢
@@ -1470,7 +1470,7 @@
     </p>
   </div>
 
-  <!-- 🚀 Tombol -->
+  <!-- Tombol -->
   <div class="flex flex-col sm:flex-row gap-3 mt-2">
     <a
       href="{base}/kelas"
@@ -1491,7 +1491,7 @@
     <aside
       class="order-1 lg:order-2 sticky lg:top-24 h-fit bg-white text-gray-900 rounded-xl shadow-xl p-5 sm:p-6 space-y-6 w-full font-extralight"
     >
-      <!-- 🔹 Gambar Kursus -->
+      <!-- Gambar Kursus -->
       <div class="w-full aspect-[16/9] overflow-hidden rounded-lg shadow-sm">
         <img
           src={course?.image}
@@ -1500,26 +1500,26 @@
         />
       </div>
 
-      <!-- 🔹 Harga -->
+      <!-- Harga -->
       <h3 class="text-xl sm:text-2xl font-bold">
         Rp {course?.price?.toLocaleString('id-ID')}
       </h3>
 
-      <!-- 🔹 Tombol Aksi -->
+      <!-- Tombol Aksi -->
       <div class="flex flex-col sm:flex-row lg:flex-col gap-3">
         <button
-          class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition w-full"
+          class="bg-gray-900 hover:bg-transparent hover:text-blue-400 border border-gray-200 hover:border-blue-400 text-white font-semibold py-3 rounded-lg transition w-full"
         >
           Tambahkan ke keranjang
         </button>
         <button
-          class="border border-blue-500 text-blue-500 font-semibold py-3 rounded-lg hover:bg-blue-50 transition w-full"
+          class="border border-gray-900 text-gray-900 font-semibold py-3 rounded-lg hover:border-blue-400 hover:text-blue-400 transition w-full"
         >
           Beli sekarang
         </button>
       </div>
 
-      <!-- 🔹 Input Kode Promo -->
+      <!-- Input Kode Promo -->
       <div class="space-y-2">
         <label for="promo" class="text-sm font-medium text-gray-700">
           Punya kode promo?
@@ -1532,7 +1532,7 @@
             class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
           <button
-            class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg text-sm transition w-full sm:w-auto"
+            class="bg-gray-900 hover:bg-transparent hover:text-blue-400 border border-gray-200 hover:border-blue-400 text-white font-semibold px-4 py-2 rounded-lg text-sm transition w-full sm:w-auto"
           >
             Terapkan
           </button>
@@ -1544,7 +1544,7 @@
         Jaminan uang kembali 30 hari
       </p>
 
-      <!-- 🔹 Fitur Kursus -->
+      <!-- Fitur Kursus -->
       <ul class="text-sm text-gray-700 space-y-3 mb-6">
         <li class="flex items-center gap-3">
           <img
@@ -1590,15 +1590,15 @@
 
       <hr class="border-gray-200" />
 
-      <!-- 🔹 Tombol Tambahan -->
+      <!-- Tombol Tambahan -->
       <div class="flex flex-col gap-3 text-sm">
         <button
-          class="border border-gray-900 rounded-lg py-2.5 flex items-center justify-center gap-2 text-gray-700 font-medium hover:shadow-md hover:bg-gray-50 transition"
+          class="border border-gray-900 hover:border-blue-400 hover:text-blue-400 rounded-lg py-2.5 flex items-center justify-center gap-2 text-gray-700 font-medium hover:shadow-md hover:bg-gray-50 transition"
         >
           Bagikan
         </button>
         <button
-          class="border border-gray-900 rounded-lg py-2.5 flex items-center justify-center gap-2 text-gray-700 font-medium hover:shadow-md hover:bg-gray-50 transition"
+          class="border border-gray-900 hover:border-blue-400 hover:text-blue-400 rounded-lg py-2.5 flex items-center justify-center gap-2 text-gray-700 font-medium hover:shadow-md hover:bg-gray-50 transition"
         >
           Hadiahkan
         </button>
@@ -1607,7 +1607,7 @@
 
     <!-- KONTEN UTAMA -->
     <div class="order-2 lg:order-1 lg:col-span-2 space-y-10">
-      <!-- 🔹 Hero & Info Kursus -->
+      <!-- Hero & Info Kursus -->
       <div class="space-y-5">
         <h1 class="text-2xl sm:text-3xl font-bold leading-tight">
           {course?.name ?? ''}
@@ -1632,7 +1632,7 @@
         </div>
       </div>
 
-      <!-- 🔹 Yang Akan Anda Pelajari -->
+      <!-- Yang Akan Anda Pelajari -->
       <div class="bg-gray-950 rounded-2xl p-5 sm:p-6 border border-gray-700">
         <h2 class="text-lg sm:text-xl font-semibold mb-3">
           Yang akan Anda pelajari
@@ -1647,7 +1647,7 @@
         </div>
       </div>
 
-      <!-- 🔹 Kurikulum -->
+      <!-- Kurikulum -->
       <div class="bg-gray-950 rounded-2xl p-5 border border-gray-700 space-y-4">
         <div class="flex justify-between items-center mb-3">
           <h2 class="text-lg sm:text-xl font-semibold">Kurikulum Kursus</h2>
@@ -1697,7 +1697,7 @@
         </div>
       </div>
 
-      <!-- 🔹 Deskripsi Kelas -->
+      <!-- Deskripsi Kelas -->
       <div class="bg-gray-950 rounded-2xl p-5 border border-gray-700 space-y-4">
         <h2 class="text-lg sm:text-xl font-semibold">Deskripsi Kelas</h2>
 
@@ -1746,7 +1746,7 @@
         {/if}
       </div>
 
-      <!-- 🔹 Instruktur -->
+      <!-- Instruktur -->
       <div class="space-y-4">
         <h2 class="text-lg sm:text-xl font-semibold text-white">Instruktur</h2>
         <div class="flex flex-col sm:flex-row items-start gap-4">
@@ -1760,13 +1760,13 @@
               {course?.instructor ?? 'Nama Instructor'}
             </h3>
             <p class="text-gray-400 text-sm leading-relaxed">
-              Programmer Zaman Now membuat berbagai kursus seputar pemrograman — mencakup Backend, Frontend, DevOps, dan Mobile.
+              Programmer Zaman Now membuat berbagai kursus seputar pemrograman mencakup Backend, Frontend, DevOps, dan Mobile.
             </p>
           </div>
         </div>
       </div>
 
-      <!-- 🔹 Rekomendasi Kelas -->
+      <!-- Rekomendasi Kelas -->
       <div class="mt-12">
         <h2 class="text-lg sm:text-2xl font-semibold mb-4 text-white">
           Rekomendasi Kelas Lainnya
@@ -1777,7 +1777,7 @@
             <div
               class="bg-gray-950 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300 hover:-translate-y-1"
             >
-              <!-- 🔹 Gambar -->
+              <!-- Gambar -->
               <div class="w-full">
                 <img
                   src={rec.image}
@@ -1786,7 +1786,7 @@
                 />
               </div>
 
-              <!-- 🔹 Konten -->
+              <!-- Konten -->
               <div class="p-4">
                 <h3 class="font-semibold text-base sm:text-lg text-white line-clamp-2">
                   {rec.name}
@@ -1801,7 +1801,7 @@
                 <a
                   href="{base}/kelas/{rec.slug.toLowerCase().replace(/\s+/g, '-')}"
                   rel="external"
-                  class="block w-full mt-3 rounded-md bg-blue-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 text-center transition"
+                  class="block w-full mt-3 rounded-md bg-white px-4 py-2 text-sm font-semibold text-gray-900 hover:text-blue-400 border border-gray-200 hover:border-blue-400 shadow-sm hover:bg-transparent text-center transition"
                 >
                   Lihat Detail
                 </a>
@@ -1813,7 +1813,7 @@
     </div>
   </div>
 
-  <!-- 🔹 Tombol Beli Sekarang (Mobile Sticky) -->
+  <!--  Tombol Beli Sekarang (Mobile Sticky) -->
 	<div
 	class="fixed bottom-0 left-0 right-0 bg-white text-gray-900 py-2 px-4 flex justify-between items-center lg:hidden z-50 shadow-lg"
 	>

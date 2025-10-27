@@ -97,34 +97,38 @@
   </section>
   
   
-  <!-- CTA Section -->
-  <section class="relative overflow-hidden py-16 bg-black">
+<!-- CTA Section -->
+<section class="relative bg-black overflow-hidden py-24">
+	<!-- Overlay pattern -->
 	<div class="absolute inset-0 opacity-10 bg-[url('https://www.toptal.com/designers/subtlepatterns/patterns/dots.png')]"></div>
-	<div class="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
-	  <div class="max-w-3xl mx-auto bg-black border border-gray-600 rounded-3xl p-8 shadow-2xl">
-		<div class="flex justify-center mb-3">
-		  <img src="{pznLogo}" alt="Logo Programmer Zaman Now" class="h-16 w-auto drop-shadow-xl" />
-		</div>
-		<h2 class="text-3xl font-bold tracking-tight text-white sm:text-3xl">
+  
+	<div class="relative max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+	  
+	  <!-- Teks CTA -->
+	  <div class="text-center lg:text-left">
+		<h2 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">
 		  Siap Tingkatkan Skill Anda?
 		</h2>
-		<p class="mt-3 text-lg leading-8 text-gray-300">
+		<p class="mt-4 text-lg leading-8 text-gray-300">
 		  Mulailah perjalanan belajar Anda hari ini dan kuasai teknologi terkini bersama mentor profesional dari
 		  <span class="font-semibold text-white">Programmer Zaman Now</span>.
 		</p>
-		<div class="mt-5">
+		<div class="mt-8">
 		  <a href="{base}/kelas"
-			class="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-100 text-gray-900 font-semibold px-8 py-4 shadow-lg hover:bg-gray-200 transition-all duration-300">
-			<svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24"
-			  stroke="currentColor">
-			  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-			</svg>
+			class="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-100 text-gray-900 font-semibold px-8 py-4 shadow-lg hover:bg-transparent hover:text-blue-400 border border-gray-100 hover:border-blue-400 transition-all duration-300">
 			Lihat Semua Kelas
 		  </a>
 		</div>
 	  </div>
+  
+	  <!-- Logo / Gambar -->
+	  <div class="flex justify-center lg:justify-end">
+		<img src="https://i.pinimg.com/736x/61/be/5f/61be5fe0c98a2852bfb50c0daaced2c6.jpg" alt="Logo Programmer Zaman Now" class="h-auto w-full drop-shadow-2xl rounded-3xl" />
+	  </div>
+  
 	</div>
   </section>
+  
   
   <!-- FOOTER -->
   <footer class="bg-gray-950 text-gray-400 border-t border-gray-800">

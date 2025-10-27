@@ -69,7 +69,7 @@
   { 
     name: "Laravel", 
     category: ["Backend", "PHP"],
-	image: laravel, 
+	  image: laravel, 
     description: "Framework PHP populer untuk membangun web aplikasi. Termasuk routing, middleware, dan integrasi database MySQL.",
     price: 159000,
     originalPrice: 699000,
@@ -397,7 +397,7 @@ let searchQuery = "";
 <section class="py-14 bg-black text-gray-100">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
-    <!-- 🔹 Deskripsi -->
+    <!-- Deskripsi -->
     <div class="mx-auto mb-20 grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-16">
       <!-- Gambar di sisi kiri -->
       <div class="flex justify-center">
@@ -423,7 +423,7 @@ let searchQuery = "";
       </div>
     </div>
 
-    <!-- 🔹 Menu Kategori -->
+    <!-- Menu Kategori -->
     <div class="text-center mb-10">
       <div
         class="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-5 mb-6 transition-all duration-500 overflow-hidden"
@@ -436,7 +436,7 @@ let searchQuery = "";
                      text-sm sm:text-base md:text-lg font-semibold border transition-all duration-300
                      {selectedCategory === category 
                        ? 'bg-white text-gray-900 border-white shadow-md' 
-                       : 'bg-black text-gray-200 border-gray-700 hover:bg-gray-700 hover:text-white'}"
+                       : 'bg-black text-gray-200 border-gray-700 hover:border-blue-400 hover:text-blue-400'}"
               on:click={() => selectedCategory = category}
             >
               {category}
@@ -445,7 +445,7 @@ let searchQuery = "";
         {/each}
       </div>
 
-      <!-- 🔹 Tombol Lihat Semua -->
+      <!-- Tombol Lihat Semua -->
       {#if categories.length > 8}
         <button
           in:fly={{ y: 15, duration: 300 }}
@@ -469,7 +469,7 @@ let searchQuery = "";
       {/if}
     </div>
 
-    <!-- 🔹 Search, Sort & Filter Bar -->
+    <!-- Search, Sort & Filter Bar -->
     <div class="flex flex-col sm:flex-row items-center justify-center gap-2 mb-12 w-full max-w-3xl mx-auto">
       <!-- Urutkan -->
       <div in:fly={{ y: 10, duration: 300, delay: 100 }} out:fade={{ duration: 150 }} class="w-full sm:w-1/4">
@@ -541,7 +541,7 @@ let searchQuery = "";
       </div>
     </div>
 
-    <!-- 🔹 Grid Kelas -->
+    <!-- Grid Kelas -->
     <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {#each filteredClasses as kelas, i}
         <div in:fly={{ y: 20, duration: 250 }} out:fade={{ duration: 150 }}
@@ -586,7 +586,7 @@ let searchQuery = "";
             <a
               href="{base}/kelas/{kelas.name.toLowerCase().replace(/\s+/g, '-')}"
               class="block w-full mt-4 rounded-md bg-gray-900 px-4 py-2 text-sm font-semibold text-white 
-                     shadow-sm hover:bg-gray-600 text-center"
+                     shadow-sm hover:bg-transparent hover:text-blue-400 border border-gray-200 hover:border-blue-400 text-center"
             >
               Lihat Detail
             </a>

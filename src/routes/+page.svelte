@@ -1,7 +1,6 @@
 <script lang="ts">
     import { onMount, onDestroy } from "svelte";
     import "../app.css";
-    import { writable } from 'svelte/store';
 
     
   
@@ -195,103 +194,128 @@
     }
   ];
 
+  const fiturList = [
+		{
+			src: "https://cdn-icons-png.flaticon.com/512/906/906175.png",
+			title: "Materi Kekinian",
+			desc: "Materi di sini selalu up to date sesuai dengan perkembangan teknologi saat ini. Sehingga peserta akan mendapatkan materi yang selalu terbaru. Semua materi diperbarui secara berkala."
+		},
+		{
+			src: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+			title: "Instruktur Berpengalaman",
+			desc: "Instruktur kami adalah praktisi industri berpengalaman. Peserta bisa belajar tidak hanya teori, tapi juga best practice dan pengalaman dunia nyata."
+		},
+		{
+			src: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png",
+			title: "Roadmap Jelas",
+			desc: "Setiap kelas disusun berdasarkan roadmap yang jelas — dari dasar hingga mahir. Peserta tinggal mengikuti alur pembelajaran yang sudah dirancang dengan sistematis."
+		}
+	];
+
   let selected = categories[0];
 </script>
 
-<!-- HERO SECTION -->
-<section class="relative bg-gray-950 overflow-hidden py-16 text-white">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
-    
-    <!--  KANAN: GAMBAR HERO -->
-    <div class="relative w-full aspect-video overflow-hidden rounded-3xl shadow-2xl">
+<!--  HERO SECTION MODERN -->
+<section
+  class="relative bg-gray-950 text-white overflow-hidden"
+>
+  <div
+    class="mx-auto max-w-7xl px-6 lg:px-8 py-16 grid grid-cols-1 lg:grid-cols-2 items-center gap-16"
+  >
+    <!--  KANAN: GAMBAR -->
+    <div
+      class="relative w-full overflow-hidden rounded-3xl shadow-2xl order-1 lg:order-2"
+    >
       <img
         src={currentImage}
-        alt="Hero Slideshow"
-        class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out"
+        alt="Programmer Zaman Now"
+        class="w-full h-full object-cover rounded-3xl transform hover:scale-105 transition-transform duration-700"
       />
     </div>
 
     <!--  KIRI: TEKS -->
-    <div class="space-y-6 text-center lg:text-left">
+    <div
+      class="space-y-4 text-center lg:text-left relative z-20"
+    >
       <!-- Tagline -->
-      <span class="inline-block text-sm font-semibold text-gray-900 bg-white px-4 py-2 rounded-full">
+      <span
+        class="inline-block text-sm font-semibold text-white bg-clip-text uppercase tracking-wide"
+      >
         Ngoding Dulu, Jadi Sultan Nanti!
       </span>
 
       <!-- Judul Hero -->
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl font-extrabold leading-tight tracking-tight">
-        Programmer Zaman Now
+      <h1
+        class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight"
+      >
+        <span class="text-white">
+          Programmer Zaman Now
+        </span>
       </h1>
 
       <!-- Deskripsi -->
-      <p class="text-lg sm:text-xl text-gray-200 max-w-xl mx-auto lg:mx-0">
-        Tempat Belajar untuk Menjadi Software Development Expert yang Zaman Now Banget!.
+      <p
+        class="text-base sm:text-lg text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+      >
+        Tingkatkan skill coding kamu dan jadilah bagian dari komunitas developer
+        terbaik di Indonesia! Belajar dengan mentor profesional dan kurikulum yang up-to-date.
       </p>
 
-      <!-- Tombol CTA -->
-      <div class="pt-4">
+      <!-- CTA Buttons -->
+      <div
+        class="pt-6 flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4"
+      >
         <a
           href="{base}/kelas"
-          class="inline-flex items-center gap-3 px-6 py-3 bg-white text-gray-900 font-semibold rounded-xl shadow-lg hover:bg-gray-200 transition-all"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white hover:bg-transparent text-gray-900 border border-gray-200 hover:border-blue-400 hover:text-blue-400 font-semibold rounded-full shadow-lg transition-transform duration-300 hover:scale-105 w-full sm:w-auto"
         >
           Mulai Sekarang
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-          </svg>
+        </a>
+
+        <a
+          href="{base}/promo"
+          class="inline-flex items-center justify-center gap-2 px-6 py-3 border border-gray-600 hover:border-blue-400 hover:text-blue-400 text-gray-300 font-semibold rounded-full transition-all duration-300 w-full sm:w-auto"
+        >
+          Lihat Promo
         </a>
       </div>
     </div>
   </div>
 </section>
 
+
 <!-- FITUR UTAMA -->
 <section class="py-20 sm:py-24 bg-black text-white">
-  <div class="mx-auto max-w-7xl px-6 lg:px-24">
-    
-    <!-- Judul Section -->
-    <div class="mx-auto max-w-2xl text-center">
-      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight">
-        Mengapa Pilih Programmer Zaman Now?
-      </h2>
-      <p class="mt-6 text-lg sm:text-xl text-gray-200">
-        Platform belajar programming terbaik dengan metode pembelajaran efektif dan mentor berpengalaman.
-      </p>
-    </div>
+	<div class="mx-auto max-w-7xl px-6 lg:px-24">
+		<!-- Judul -->
+		<div class="mx-auto max-w-2xl text-center">
+			<h2 class="text-3xl sm:text-4xl font-bold tracking-tight">
+				Mengapa Pilih Programmer Zaman Now?
+			</h2>
+			<p class="mt-6 text-lg sm:text-xl text-gray-200">
+				Platform belajar programming terbaik dengan metode pembelajaran efektif dan mentor berpengalaman.
+			</p>
+		</div>
 
-    <!-- GRID FITUR -->
-    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none grid gap-16 lg:grid-cols-3">
-      {#each [
-        {
-          src: "https://cdn-icons-png.flaticon.com/512/906/906175.png",
-          title: "Materi Kekinian",
-          desc: "Materi di sini selalu up to date sesuai dengan perkembangan teknologi saat ini. Sehingga peserta akan mendapatkan materi yang pasti selalu terbaru. Selain itu semua materi akan selalu di update secara berkala."
-        },
-        {
-          src: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-          title: "Instruktur Berpengalaman",
-          desc: "Di sini, instruktur belajar nya adalah praktisi yang sangat berpengalaman di dunia industri. Sehingga peserta tidak hanya bisa belajar teknologi saja, namun bisa belajar best practice dan pengalaman dari instrukturnya."
-        },
-        {
-          src: roadmap,
-          title: "Roadmap Jelas",
-          desc: "Di sini, semua diajarkan dari awal sampai akhir. Setiap kelas sudah di susun sesuai dengan Roadmap nya. Sehingga peserta tidak akan tersesat ketika belajar, cukup ikuti kelas yang diinginkan."
-        }
-      ] as fitur (fitur.title)}
-        <div class="flex flex-col items-center text-center">
-          <img
-            src={fitur.src}
-            alt={fitur.title}
-            class="h-32 w-32 sm:h-40 sm:w-40 lg:h-48 lg:w-48 mb-6 rounded-xl transition-transform duration-300 hover:scale-110 object-cover"
-          />
-          <h3 class="text-xl sm:text-2xl font-semibold">{fitur.title}</h3>
-          <p class="mt-4 text-base sm:text-lg text-gray-200 leading-relaxed">
-            {fitur.desc}
-          </p>
-        </div>
-      {/each}
-    </div>
-  </div>
+		<!-- Grid Fitur -->
+		<div class="mx-auto mt-16 grid gap-16 sm:gap-12 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl">
+			{#each fiturList as fitur}
+				<div class="flex flex-col items-center text-center group">
+					<img
+						src={fitur.src}
+						alt={fitur.title}
+						class="h-32 w-32 sm:h-40 sm:w-40 lg:h-44 lg:w-44 mb-4 rounded-2xl object-cover shadow-lg transition-transform duration-300 group-hover:scale-110"
+					/>
+					<h3 class="text-xl sm:text-2xl font-semibold mb-2">{fitur.title}</h3>
+					<p class="text-sm sm:text-base text-gray-300 mt-2 max-w-xs leading-relaxed">
+						{fitur.desc}
+					</p>
+				</div>
+			{/each}
+		</div>
+	</div>
 </section>
+
 
 
 <!--  OVERLAY LOGO -->
@@ -335,7 +359,7 @@
 <!-- ROADMAP SECTION -->
 <section class="relative bg-black text-white py-16 overflow-hidden">
   <div class="max-w-6xl mx-auto px-6 text-center mb-12">
-    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
+    <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
       Roadmap Belajar Programmer Zaman Now
     </h2>
     <p class="text-gray-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
@@ -388,7 +412,7 @@
     </a>
   </div>
 
-  <!-- Baris Atas ➡️ (dengan gradasi di sisi gambar saja) -->
+  <!-- Baris Atas -->
   <div class="relative overflow-hidden w-full mb-10 group">
     <!-- Gradien pinggir kiri & kanan -->
     <div class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10"></div>
@@ -408,7 +432,7 @@
     </div>
   </div>
 
-  <!-- Baris Bawah ⬅️ (juga dengan gradasi di sisi gambar saja) -->
+  <!-- Baris Bawah -->
   <div class="relative overflow-hidden w-full group">
     <!-- Gradien pinggir kiri & kanan -->
     <div class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10"></div>
@@ -432,14 +456,14 @@
 
 <!-- PILIHAN KATEGORI -->
 <section class="relative bg-gradient-to-b from-gray-950 to-black py-24 text-white overflow-hidden">
-  <!-- 🔹 Elemen Dekoratif -->
+  <!-- Elemen Dekoratif -->
   <div class="absolute inset-0">
     <div class="absolute top-0 left-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl"></div>
     <div class="absolute bottom-0 right-0 w-72 h-72 bg-purple-600/10 rounded-full blur-3xl"></div>
   </div>
 
   <div class="relative mx-auto max-w-6xl px-6 text-center">
-    <!-- 🔹 Judul -->
+    <!-- Judul -->
     <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6">
       Pilihan Program Belajar
     </h2>
@@ -448,7 +472,7 @@
       Belajar lebih cepat bersama mentor berpengalaman.
     </p>
 
-    <!-- 🔹 Tombol Kategori -->
+    <!-- Tombol Kategori -->
     <div
       class="flex flex-wrap justify-center gap-3 mb-10 sticky top-0 bg-black/60 backdrop-blur-md py-3 rounded-xl z-10 shadow-inner">
       {#each categories as cat}
@@ -464,7 +488,7 @@
       {/each}
     </div>
 
-    <!-- 🔹 Card Kategori Terpilih -->
+    <!-- Card Kategori Terpilih -->
     <div
       class="relative bg-gradient-to-br from-gray-900 via-gray-950 to-black border border-gray-800 rounded-3xl p-10 shadow-2xl backdrop-blur-lg transition-transform duration-500 hover:scale-[1.01]">
       
@@ -613,6 +637,20 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  @keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+	.animate-fadeIn {
+		animation: fadeIn 0.4s ease-out;
+	}
 </style>
 
 

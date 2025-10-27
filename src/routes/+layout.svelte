@@ -115,9 +115,10 @@
 </nav>
 
 <!--  MENU MOBILE -->
-<!-- svelte-ignore a11y_no_static_element_interactions -->
+
 {#if mobileMenuOpen}
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
+	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div class="fixed inset-0 z-30 bg-black/40 backdrop-blur-sm" on:click={closeMobileMenu}></div>
 
 	<div
@@ -156,7 +157,7 @@
 	<slot />
 </main>
 
-<!--  🔹 BANNER PROMO -->
+<!--  BANNER PROMO -->
 {#if showBanner}
   <div
     in:fade={{ duration: 400 }}
@@ -166,7 +167,7 @@
     <div
       class="relative w-full max-w-7xl flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 rounded-xl bg-white/95 px-4 sm:px-6 py-3 sm:py-4 shadow-lg ring-1 ring-gray-200 backdrop-blur-md transition-all text-center sm:text-left"
     >
-      <!-- 🟢 Isi Banner -->
+      <!-- Isi Banner -->
       <p class="text-xs sm:text-sm text-gray-900 leading-snug">
         <strong class="font-semibold text-blue-600">PROMO AKHIR OKTOBER</strong> — Gunakan kode
         <strong class="text-gray-800 bg-gray-100 px-1.5 py-0.5 rounded-md">
@@ -174,7 +175,7 @@
         </strong>
       </p>
 
-      <!-- ✖ Tombol Tutup -->
+      <!-- Tombol Tutup -->
       <button
         on:click={closeBanner}
         type="button"
