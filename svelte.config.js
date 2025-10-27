@@ -9,10 +9,10 @@ const config = {
 	kit: {
 		adapter: adapter({
 			// fallback untuk SPA
-			fallback: 'index.html'
+			fallback: '404.html'
 		}),
 		paths: {
-			base: dev ? '' : '/pzn-company-profile'
+			base: process.env.NODE_ENV === 'production' ? '/pzn-company-profile' : '',
 		},
 		prerender: {
 
