@@ -229,7 +229,7 @@
       </p>
 
       <!-- Tombol CTA -->
-      <div class="pt-6">
+      <div class="pt-4">
         <a
           href="{base}/kelas"
           class="inline-flex items-center gap-3 px-6 py-3 bg-white text-gray-900 font-semibold rounded-xl shadow-lg hover:bg-gray-200 transition-all"
@@ -431,51 +431,64 @@
 
 
 <!-- PILIHAN KATEGORI -->
-<section class="bg-black py-20 text-white">
-  <div class="mx-auto max-w-3xl px-6 text-center">
+<section class="relative bg-gradient-to-b from-gray-950 to-black py-24 text-white overflow-hidden">
+  <!-- 🔹 Elemen Dekoratif -->
+  <div class="absolute inset-0">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-72 h-72 bg-purple-600/10 rounded-full blur-3xl"></div>
+  </div>
 
-    <!-- Judul & Deskripsi -->
-    <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+  <div class="relative mx-auto max-w-6xl px-6 text-center">
+    <!-- 🔹 Judul -->
+    <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6">
       Pilihan Program Belajar
     </h2>
-    <p class="text-gray-300 text-base sm:text-lg mb-12 max-w-2xl mx-auto">
-      Dengan kurikulum terstruktur dan pengajar berpengalaman, kamu bisa belajar lebih fokus dan cepat mahir.
+    <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-16">
+      Pilih bidang yang ingin kamu kuasai — dari pemrograman, database, hingga cloud computing. 
+      Belajar lebih cepat bersama mentor berpengalaman.
     </p>
 
-    <!-- Tombol Kategori -->
+    <!-- 🔹 Tombol Kategori -->
     <div
-      class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-4 sticky top-0 bg-black py-2 z-10 backdrop-blur-md">
+      class="flex flex-wrap justify-center gap-3 mb-10 sticky top-0 bg-black/60 backdrop-blur-md py-3 rounded-xl z-10 shadow-inner">
       {#each categories as cat}
         <button
           on:click={() => (selected = cat)}
-          class={`px-3 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium shadow-md transition-all duration-300 ${
+          class={`px-5 py-2 sm:py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
             selected.name === cat.name
-              ? 'bg-white text-gray-900 hover:bg-gray-200'
-              : 'bg-black text-gray-200 hover:border-blue-600 border border-gray-600'
+              ? 'bg-white text-black shadow-lg scale-105'
+              : 'bg-black border border-gray-400 text-gray-300 hover:border-blue-400 hover:text-blue-400'
           }`}>
           {cat.name}
         </button>
       {/each}
     </div>
 
-    <!-- Card Kategori Terpilih -->
+    <!-- 🔹 Card Kategori Terpilih -->
     <div
-      class="bg-gray-black rounded-2xl p-2 sm:p-10 shadow-2xl border border-gray-700 backdrop-blur-md transition-all duration-500">
-      <div class="space-y-5">
-        <h3 class="text-2xl sm:text-3xl font-semibold text-white">
+      class="relative bg-gradient-to-br from-gray-900 via-gray-950 to-black border border-gray-800 rounded-3xl p-10 shadow-2xl backdrop-blur-lg transition-transform duration-500 hover:scale-[1.01]">
+      
+      <!-- Animasi Transisi -->
+      <div class="animate-fadeIn space-y-6">
+        <h3 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
           {selected.title}
         </h3>
-        <p class="text-gray-300 text-base sm:text-lg leading-relaxed">
+        <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
           {selected.description}
         </p>
-        <a
-          href={base + "/kelas"}
-          class="inline-block mt-4 px-6 py-3 bg-blue-500 hover:bg-blue-400 text-white font-semibold rounded-full shadow-lg transition-transform duration-300 hover:scale-105">
-          Daftar Sekarang →
-        </a>
+
+        <div class="mt-8">
+          <a
+            href={base + "/kelas"}
+            class="inline-flex items-center gap-2 px-6 py-3 bg-white hover:bg-transparent text-gray-900 hover:text-blue-400 border border-gray-200 hover:border-blue-400 font-semibold rounded-full shadow-lg transition-transform duration-300 hover:scale-105">
+            Daftar Sekarang
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
-
   </div>
 </section>
 

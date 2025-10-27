@@ -3,7 +3,6 @@
 	import "../../app.css";
 	import { onMount } from "svelte";
 
-	let openIndex = null;
 
 	const paketList = [
 		{
@@ -84,96 +83,57 @@
 	/>
 </svelte:head>
 
-<!-- HERO SECTION -->
-<section class="relative bg-gray-950 text-white overflow-hidden py-24">
-	<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-16 px-6 lg:px-12">
-  
-	  <!-- TEKS -->
-	  <div class="order-2 lg:order-1 text-center lg:text-left space-y-6">
-		<h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white bg-clip-text">
-		  Promo Spesial<br class="hidden sm:block" />Programmer Zaman Now
-		</h1>
-  
-		<p class="text-base sm:text-lg text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-		  Dapatkan diskon hingga <span class="font-semibold text-blue-400">70%</span> untuk semua kelas programming!
-		  Upgrade skill Anda dengan materi eksklusif dan update industri terkini.
-		</p>
-  
-		<!-- CTA BUTTONS -->
-		<div class="flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4 mt-6">
-		  <a
-			href="{base}/kelas"
-			class="inline-block px-8 py-3 rounded-xl text-base font-semibold bg-white text-gray-900 hover:text-white hover:bg-gray-950 transition-all duration-300 border border-gray-700 hover:border-blue-500"
-		  >
-			Daftar Sekarang →
-		  </a>
-		  <a
-			href="{base}/promo"
-			class="inline-block px-8 py-3 rounded-xl text-base font-semibold border border-gray-700 hover:border-blue-500 text-gray-300 hover:text-white transition-all duration-300"
-		  >
-			Lihat Promo Lain
-		  </a>
-		</div>
-	  </div>
-  
-	  <!-- GAMBAR -->
-	  <div class="order-1 lg:order-2 flex justify-center lg:justify-end relative">
-		<div class="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[28rem] lg:h-[28rem] rounded-3xl overflow-hidden border border-gray-800 transition-transform duration-700 hover:scale-105">
-		  <img
-			src="https://i.pinimg.com/736x/75/75/04/7575044bbe8c3b30ea177b4db889c7d6.jpg"
-			alt="Promo Programmer Zaman Now"
-			class="w-full h-full object-cover"
-		  />
-		  <!-- Glow efek -->
-		  <div class="absolute inset-0"></div>
-		</div>
-	  </div>
-  
-	</div>
-  </section>
-  
 
-<!-- Promo Section-->  
-  <section class="relative overflow-hidden text-white">
-	<div class="absolute inset-0 bg-black"></div>
+<!-- 🔹 HERO PROMO SECTION -->
+<section
+  class="relative bg-cover bg-center bg-no-repeat text-white py-24 sm:py-24"
+  style="background-image: url('https://i.pinimg.com/736x/83/5f/56/835f5645e50f7c8eaf41c7b31e5e3d3d.jpg');"
+>
+  <!-- Overlay Gelap -->
+  <div class="absolute inset-0 bg-black bg-opacity-70"></div>
 
-	<div class="relative max-w-7xl mx-auto px-6 py-16 text-center">
-		<h2 class="text-2xl sm:text-5xl font-bold mb-4 drop-shadow-xl">
-			Promo Spesial Oktober!
-		</h2>
-		<p class="text-lg text-gray-200 mb-10">
-			Dapatkan <span class="text-white font-semibold">diskon hingga 70%</span> sebelum waktu habis!
-		</p>
+  <!-- Konten -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+    <!-- Judul -->
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">
+      Promo Spesial Oktober!
+    </h1>
+    <p class="text-base sm:text-lg text-gray-200 mb-10 max-w-2xl mx-auto">
+      Dapatkan <span class="text-white font-semibold">diskon hingga 70%</span> sebelum waktu habis!
+    </p>
 
-		<!-- Countdown -->
-		<div class="flex justify-center gap-6 md:gap-12 font-mono text-center mb-10">
-			<div class="flex flex-col items-center">
-				<p class="text-5xl font-extrabold text-white">{days}</p>
-				<p class="text-xs uppercase tracking-wider text-gray-300">Hari</p>
-			</div>
-			<div class="flex flex-col items-center">
-				<p class="text-5xl font-extrabold text-white">{hours}</p>
-				<p class="text-xs uppercase tracking-wider text-gray-300">Jam</p>
-			</div>
-			<div class="flex flex-col items-center">
-				<p class="text-5xl font-extrabold text-white">{minutes}</p>
-				<p class="text-xs uppercase tracking-wider text-gray-300">Menit</p>
-			</div>
-			<div class="flex flex-col items-center">
-				<p class="text-5xl font-extrabold text-red-400 animate-bounce">{seconds}</p>
-				<p class="text-xs uppercase tracking-wider text-gray-300">Detik</p>
-			</div>
-		</div>
+    <!-- Countdown -->
+    <div class="flex justify-center gap-5 sm:gap-10 md:gap-14 font-mono text-center mb-10">
+      <div class="flex flex-col items-center">
+        <p class="text-4xl sm:text-5xl font-extrabold text-white">{days}</p>
+        <p class="text-xs uppercase tracking-wider text-gray-300">Hari</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <p class="text-4xl sm:text-5xl font-extrabold text-white">{hours}</p>
+        <p class="text-xs uppercase tracking-wider text-gray-300">Jam</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <p class="text-4xl sm:text-5xl font-extrabold text-white">{minutes}</p>
+        <p class="text-xs uppercase tracking-wider text-gray-300">Menit</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <p class="text-4xl sm:text-5xl font-extrabold text-red-400 animate-bounce">{seconds}</p>
+        <p class="text-xs uppercase tracking-wider text-gray-300">Detik</p>
+      </div>
+    </div>
 
-		<!--  Kode Promo -->
-		<div class="mb-0">
-			<p class="text-gray-300 text-sm mb-6">Gunakan kode promo di bawah ini:</p>
-			<div class="inline-block bg-white text-gray-900 font-semibold px-6 py-2 rounded-full tracking-widest shadow-md select-all">
-				KODE: <span class="text-black">PZN2025</span>
-			</div>
-		</div>
-	</div>
+    <!-- Kode Promo -->
+    <div class="mb-4">
+      <p class="text-gray-300 text-sm mb-3">Gunakan kode promo di bawah ini:</p>
+      <div
+        class="inline-block bg-white text-gray-900 font-semibold px-8 py-3 rounded-full tracking-widest shadow-lg select-all text-sm sm:text-base"
+      >
+        KODE: <span class="text-black">PZN2025</span>
+      </div>
+    </div>
+  </div>
 </section>
+
 
 <!-- Paket Belajar -->
 <section class="relative bg-black text-white py-16 px-6">
@@ -232,10 +192,6 @@
 	</div>
   </section>
   
-  
-  
-
-
   <!-- FOOTER -->
   <footer class="bg-gray-950 text-gray-400 border-t border-gray-800">
 	<div class="mx-auto max-w-7xl px-6 py-16 lg:px-8 grid gap-12 md:grid-cols-3 items-start">
