@@ -1582,7 +1582,7 @@
 <div class="space-y-2">
   <!-- Harga & Harga Asli -->
   <div class="flex flex-wrap items-baseline gap-2">
-    <h3 class="text-2xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
+    <h3 class="text-2xl sm:text-2xl font-semibold text-gray-900">
       Rp {course?.price?.toLocaleString('id-ID')}
     </h3>
 
