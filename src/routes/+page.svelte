@@ -56,7 +56,6 @@
     php,
     docker,
     spring,
-    react,
     mongo,
     kotlin,
     git,
@@ -84,13 +83,6 @@
 
   let scrollContainer: HTMLDivElement | null = null;
 
-  const scroll = (direction: 'left' | 'right') => {
-    const amount = 320;
-    scrollContainer?.scrollBy({
-      left: direction === 'left' ? -amount : amount,
-      behavior: 'smooth'
-    });
-  };
 
   const steps = [
     {
@@ -122,7 +114,7 @@
   let currentIndex = 0;
   let currentImage = images[currentIndex];
   let isFading = false;
-  let interval: NodeJS.Timer;
+  let interval: ReturnType<typeof setInterval>;
 
   // Ganti gambar dengan efek fade
   const showNext = () => {
@@ -143,32 +135,8 @@
   });
 
   // Fix for missing activeClass
-  let activeClass: string | null = null;
 
-  const classes = [
-    {
-      id: "golang",
-      name: "Kelas Golang",
-      img: golang,
-      desc: "Pelajari bahasa pemrograman Go dari dasar hingga mahir, dengan proyek nyata dan praktik industri."
-    },
-    {
-      id: "java",
-      name: "Kelas Java",
-      img: java,
-      desc: "Kuasai Java untuk pengembangan aplikasi modern, OOP, dan framework populer seperti Spring Boot."
-    },
-    {
-      id: "nodejs",
-      name: "Kelas Node.js",
-      img: nodejs,
-      desc: "Bangun aplikasi backend cepat dan scalable menggunakan Node.js dan Express dengan praktik terbaik."
-    }
-  ];
 
-  const toggleClass = (id: string) => {
-    activeClass = activeClass === id ? null : id;
-  };
 
   const categories = [
     {
@@ -206,7 +174,7 @@
 			desc: "Instruktur kami adalah praktisi industri berpengalaman. Peserta bisa belajar tidak hanya teori, tapi juga best practice dan pengalaman dunia nyata."
 		},
 		{
-			src: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png",
+			src: roadmap,
 			title: "Roadmap Jelas",
 			desc: "Setiap kelas disusun berdasarkan roadmap yang jelas — dari dasar hingga mahir. Peserta tinggal mengikuti alur pembelajaran yang sudah dirancang dengan sistematis."
 		}
@@ -406,7 +374,7 @@
     <!-- Tombol Lihat Kelas -->
     <a
       href="{base}/kelas"
-      class="inline-block bg-white text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+      class="inline-block bg-white text-gray-900 hover:text-blue-400 hover:bg-transparent border border-gray-200 hover:border-blue-400 font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
     >
       Lihat Kelas
     </a>
@@ -455,7 +423,7 @@
 
 
 <!-- PILIHAN KATEGORI -->
-<section class="relative bg-gradient-to-b from-gray-950 to-black py-24 text-white overflow-hidden">
+<section class="relative bg-black py-24 text-white overflow-hidden">
   <!-- Elemen Dekoratif -->
   <div class="absolute inset-0">
     <div class="absolute top-0 left-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl"></div>

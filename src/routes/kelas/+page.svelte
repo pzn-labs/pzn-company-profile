@@ -39,49 +39,55 @@
 
   
   const allClasses = [
+[
   { 
     name: "Golang", 
     category: ["Pemrogramman", "Go-Lang"],
     image: golang, 
     description: "Pelajari bahasa Go untuk membangun aplikasi backend yang cepat dan efisien. Cocok untuk microservices dan sistem berskala besar.",
     price: 129000,
-    originalPrice: 599000,
-    recommended: true
+    originalPrice: 149000,
+    recommended: true,
+    students: 872
   },
   { 
     name: "Java Dasar", 
     category: ["Pemrogramman", "Java"], 
     image: java, 
     description: "Dasar-dasar Java untuk pemula hingga menengah. Termasuk pemrograman berorientasi objek dan praktik membuat aplikasi sederhana.",
-    price: 149000,
-    originalPrice: 699000,
-    recommended: true
+    price: 129000,
+    originalPrice: 149000,
+    recommended: true,
+    students: 931
   },
   { 
     name: "Node.js", 
     category: ["Backend", "Node.js"], 
     image: nodejs, 
     description: "Bangun server dan API menggunakan Node.js. Pelajari juga ekosistem NPM dan praktik asynchronous programming.",
-    price: 139000,
-    originalPrice: 599000,
-    recommended: true
+    price: 129000,
+    originalPrice: 149000,
+    recommended: true,
+    students: 678
   },
   { 
     name: "Laravel", 
     category: ["Backend", "PHP"],
-	  image: laravel, 
+    image: laravel, 
     description: "Framework PHP populer untuk membangun web aplikasi. Termasuk routing, middleware, dan integrasi database MySQL.",
-    price: 159000,
-    originalPrice: 699000,
-    recommended: true
+    price: 129000,
+    originalPrice: 149000,
+    recommended: true,
+    students: 954
   },
   { 
     name: "MySQL", 
     category: ["Database", "MySQL", "SQL"],
     image: mysql, 
     description: "Pelajari database relasional MySQL dari dasar hingga mahir. Termasuk query, indexing, dan optimisasi performa database.",
-    price: 119000,
-    originalPrice: 499000
+    price: 129000,
+    originalPrice: 149000,
+    students: 823
   },
   { 
     name: "Docker Basics", 
@@ -89,48 +95,54 @@
     image: docker, 
     description: "Dasar-dasar Docker untuk containerization aplikasi. Pelajari pembuatan Dockerfile, image, dan deployment di container.",
     price: 129000,
-    originalPrice: 599000
+    originalPrice: 149000,
+    students: 714
   },
   { 
     name: "HTML, CSS dan JavaScript", 
     category: "Web", 
     image: html, 
     description: "Dasar-dasar web development front-end. Pelajari struktur HTML, styling dengan CSS, dan interaktivitas menggunakan JS.",
-    price: 109000,
-    originalPrice: 499000
+    price: 129000,
+    originalPrice: 149000,
+    students: 988
   },
   { 
     name: "VueJS", 
     category: "Framework", 
     image: vue, 
     description: "Framework JavaScript progresif untuk membangun UI interaktif. Termasuk komponen, directive, dan state management.",
-    price: 149000,
-    originalPrice: 599000,
-    recommended: true
+    price: 129000,
+    originalPrice: 149000,
+    recommended: true,
+    students: 792
   },
   { 
     name: "PHP", 
     category: "Pemrograman", 
     image: php, 
     description: "Bahasa server-side populer untuk web development. Pelajari sintaks dasar, form handling, dan integrasi database.",
-    price: 119000,
-    originalPrice: 499000
+    price: 129000,
+    originalPrice: 149000,
+    students: 889
   },
   { 
     name: "Spring Boot", 
     category: "Framework", 
     image: spring, 
     description: "Framework Java untuk membangun aplikasi backend enterprise. Termasuk REST API, dependency injection, dan keamanan aplikasi.",
-    price: 179000,
-    originalPrice: 699000
+    price: 129000,
+    originalPrice: 149000,
+    students: 734
   },
   { 
     name: "ReactJS", 
     category: "Framework", 
     image: react, 
     description: "Library JavaScript untuk membangun antarmuka pengguna interaktif. Pelajari JSX, state management, dan hooks.",
-    price: 149000,
-    originalPrice: 599000
+    price: 129000,
+    originalPrice: 149000,
+    students: 956
   },
   { 
     name: "MongoDB", 
@@ -138,7 +150,8 @@
     image: mongo, 
     description: "Database NoSQL populer untuk menyimpan data fleksibel. Termasuk CRUD operations, indexing, dan query aggregations.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 847
   },
   { 
     name: "Kotlin", 
@@ -146,7 +159,8 @@
     image: kotlin, 
     description: "Belajar pemrograman Kotlin dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 932
   },
   { 
     name: "Git", 
@@ -154,7 +168,8 @@
     image: git, 
     description: "Belajar Git mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 684
   },
   { 
     name: "Postgre", 
@@ -162,7 +177,8 @@
     image: postgre, 
     description: "Belajar database postgre dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 876
   },
   { 
     name: "Redis", 
@@ -170,7 +186,8 @@
     image: redis, 
     description: "Belajar database redis dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 734
   },
   { 
     name: "Dart", 
@@ -178,7 +195,8 @@
     image: dart, 
     description: "Belajar pemrogramman dart dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 668
   },
   { 
     name: "Typescript", 
@@ -186,7 +204,8 @@
     image: typescript, 
     description: "Belajar pemrogramman typescript dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 789
   },
   { 
     name: "Elasticsearch", 
@@ -194,7 +213,8 @@
     image: elastic, 
     description: "Belajar database elasticseacrh dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 812
   },
   { 
     name: "Jenkins", 
@@ -202,7 +222,8 @@
     image: jenkins, 
     description: "Belajar jenkins mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 765
   },
   { 
     name: "Android", 
@@ -210,7 +231,8 @@
     image: android, 
     description: "Belajar android mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 921
   },
   { 
     name: "OpenApi",
@@ -218,7 +240,8 @@
     image: openapi, 
     description: "Belajar OpenAPI mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 601
   },
   { 
     name: "RestFullAPI",
@@ -226,7 +249,8 @@
     image: restfull, 
     description: "Belajar RestFull API mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 972
   },
   { 
     name: "HTTP",
@@ -234,7 +258,8 @@
     image: http, 
     description: "Belajar http mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 741
   },
   { 
     name: "Phyton",
@@ -242,7 +267,8 @@
     image: phyton, 
     description: "Belajar pemrogramman phyton mulai dari pemula sampai mahir disertai studi kasus. Materi akan selalu di-update secara berkala.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 998
   },
   { 
     name: "Svelte",
@@ -250,7 +276,8 @@
     image: svelte, 
     description: "Belajar framework Svelte mulai dari pemula sampai mahir disertai studi kasus nyata. Materi akan selalu di-update secara berkala.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 886
   },
   { 
     name: "Bootstrap",
@@ -258,7 +285,8 @@
     image: bootstrap, 
     description: "Belajar framework Bootstrap mulai dari pemula sampai mahir dengan studi kasus nyata. Materi akan selalu di-update secara berkala.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 764
   },
   { 
     name: "Rust",
@@ -266,7 +294,8 @@
     image: rust, 
     description: "Belajar pemrograman Rust dari dasar hingga mahir. Cocok untuk sistem backend, CLI, dan performa tinggi.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 934
   },
   { 
     name: "Bun",
@@ -274,7 +303,8 @@
     image: bun, 
     description: "Pelajari Bun sebagai runtime modern yang cepat untuk JavaScript dan TypeScript. Disertai contoh proyek nyata.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 881
   },
   { 
     name: "K6 Performance Testing",
@@ -282,7 +312,8 @@
     image: k6, 
     description: "Belajar K6 untuk pengujian performa aplikasi web dengan simulasi beban dan analisis hasil. Dilengkapi studi kasus.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 719
   },
   { 
     name: "NestJS",
@@ -290,7 +321,8 @@
     image: nestjs, 
     description: "Belajar NestJS dari pemula sampai mahir untuk membangun backend API yang scalable dan maintainable menggunakan TypeScript.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 955
   },
   { 
     name: "RabbitMQ",
@@ -298,7 +330,8 @@
     image: rabbit, 
     description: "Pelajari RabbitMQ dari pemula sampai mahir sebagai message broker untuk komunikasi antar layanan secara asynchronous.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 879
   },
   { 
     name: "Apache Kafka",
@@ -306,8 +339,11 @@
     image: kafka, 
     description: "Belajar Apache Kafka dari pemula sampai mahir untuk pemrosesan data streaming dan integrasi antar sistem berskala besar.",
     price: 129000,
-    originalPrice: 499000
+    originalPrice: 149000,
+    students: 967
   }
+]
+
 ];
 
 const categories = [
@@ -364,8 +400,8 @@ let searchQuery = "";
   let filterRecommendation = "all";
 
   $: filteredClasses = allClasses
-
-  .filter((c) => {
+    .flat()
+    .filter((c) => {
       if (filterRecommendation === "recommended") return c.recommended === true;
       return true;
     })
@@ -375,11 +411,11 @@ let searchQuery = "";
         (Array.isArray(kelas.category)
           ? kelas.category.includes(selectedCategory)
           : kelas.category === selectedCategory);
-
+  
       const matchSearch = kelas.name
         .toLowerCase()
         .includes(searchQuery.toLowerCase());
-
+  
       return matchCategory && matchSearch;
     })
     .sort((a, b) =>
@@ -397,20 +433,9 @@ let searchQuery = "";
 <section class="py-14 bg-black text-gray-100">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
 
-    <!-- Deskripsi -->
     <div class="mx-auto mb-20 grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-16">
-      <!-- Gambar di sisi kiri -->
-      <div class="flex justify-center">
-        <img
-          src="https://i.pinimg.com/1200x/04/e9/64/04e9640e588d7ec3a84c16ee3eac9bf0.jpg"
-          alt="Ilustrasi Belajar Online"
-          class="rounded-2xl shadow-lg w-full max-w-md object-cover hover:scale-105 transition-transform duration-500"
-          loading="lazy"
-        />
-      </div>
-
-      <!-- Deskripsi di sisi kanan -->
-      <div class="text-left">
+      <!-- Deskripsi di sisi kiri -->
+      <div class="text-left order-2 md:order-1">
         <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white mb-4">
           Pilihan Kelas Terbaik
         </h2>
@@ -420,6 +445,16 @@ let searchQuery = "";
           Kami menyediakan berbagai pilihan kelas yang dirancang oleh para profesional industri
           agar Anda bisa belajar dengan cara yang efektif dan menyenangkan.
         </p>
+      </div>
+
+      <!-- Gambar di sisi kanan -->
+      <div class="flex justify-center order-1 md:order-2">
+        <img
+          src="https://i.pinimg.com/1200x/04/e9/64/04e9640e588d7ec3a84c16ee3eac9bf0.jpg"
+          alt="Ilustrasi Belajar Online"
+          class="rounded-2xl shadow-lg w-full max-w-md object-cover hover:scale-105 transition-transform duration-500"
+          loading="lazy"
+        />
       </div>
     </div>
 
@@ -568,7 +603,7 @@ let searchQuery = "";
                      fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v1.2h19.2v-1.2c0-3.2-6.4-4.8-9.6-4.8z"/>
                 </svg>
-                <span class="text-sm text-gray-600">1,234 siswa</span>
+                <span class="text-sm text-gray-600">{kelas.students?.toLocaleString('id-ID') ?? '0'} siswa</span>
               </div>
 
               <div class="text-right">

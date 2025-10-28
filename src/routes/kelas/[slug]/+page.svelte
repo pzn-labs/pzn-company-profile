@@ -4,6 +4,7 @@
 	import { onMount } from 'svelte';
     import { base } from '$app/paths';
 
+
 	// === IMPORT GAMBAR ===
 	import golang from "$lib/assets/golang.jpg";
 	import html from "$lib/assets/html.jpg";
@@ -38,7 +39,7 @@
 	import nestjs from "$lib/assets/nestjs.jpg";
 	import rabbit from "$lib/assets/rabbitmq.jpg";
 	import kafka from "$lib/assets/kafka.jpg";
-  import { get } from 'svelte/store';
+  	import { get } from 'svelte/store';
 
 	// === SEMUA DATA KURSUS ===
 	const courses = [
@@ -49,11 +50,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
 			reviews: 1200,
-			students: 5200,
+			students: 872,
 			lastUpdated: 'Oktober 2025',
 			language: 'Bahasa Indonesia',
-			price: 159000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar bahasa pemrograman Go',
 				'Membuat aplikasi backend dengan Go',
@@ -63,7 +64,7 @@
 			requirements: [
 				'Mengerti dasar pemrograman',
 				'Memiliki komputer/laptop dengan koneksi internet',
-				'Semangat belajar tinggi 😎'
+				'Semangat belajar tinggi '
 			],
 			description: `Belajar Go-lang dari dasar hingga mahir, dipandu oleh mentor profesional dengan studi kasus nyata.`,
 			shortDescription: [
@@ -89,6 +90,56 @@
 				'Pemula yang ingin belajar backend',
 				'Programmer yang ingin menambah skill Go',
 				'Mahasiswa atau profesional IT'
+			],
+			comments: [
+					{
+						name: "Andi Pratama",
+						date: "2025-10-10",
+						rating: 5,
+						comment: "Materinya sangat jelas dan mudah dipahami, cocok untuk pemula. Mentor responsif dan banyak studi kasus nyata!"
+					},
+					{
+						name: "Siti Nurhaliza",
+						date: "2025-10-15",
+						rating: 4,
+						comment: "Penjelasan tentang Goroutine sangat membantu. Saran: tambahkan lebih banyak latihan soal."
+					},
+					{
+						name: "Budi Santoso",
+						date: "2025-10-20",
+						rating: 5,
+						comment: "Setelah ikut kelas ini, saya jadi lebih percaya diri membangun backend dengan Go. Terima kasih PZN!"
+					},
+					{
+						name: "Rina Oktaviani",
+						date: "2025-10-22",
+						rating: 5,
+						comment: "Materi sangat lengkap, penjelasan mudah diikuti. Cocok untuk yang baru mulai belajar Go!"
+					},
+					{
+						name: "Dewi Lestari",
+						date: "2025-10-23",
+						rating: 4,
+						comment: "Kelasnya interaktif, banyak contoh real project. Terima kasih untuk tips deployment-nya!"
+					},
+					{
+						name: "Agus Saputra",
+						date: "2025-10-24",
+						rating: 5,
+						comment: "Sangat membantu untuk persiapan kerja sebagai backend developer. Penjelasan REST API sangat detail."
+					},
+					{
+						name: "Fajar Nugroho",
+						date: "2025-10-25",
+						rating: 4,
+						comment: "Mentor ramah dan responsif di forum diskusi. Saran: tambahkan quiz di setiap modul."
+					},
+					{
+						name: "Linda Permata",
+						date: "2025-10-26",
+						rating: 5,
+						comment: "Setelah ikut kelas ini, saya berhasil membuat project backend sendiri. Recommended banget!"
+					}
 			]
 		},
 		{
@@ -98,11 +149,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.7,
 			reviews: 980,
-			students: 4800,
+			students: 931,
 			lastUpdated: 'September 2025',
 			language: 'Bahasa Indonesia',
-			price: 149000,
-			originalPrice: 399000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar sintaks JavaScript',
 				'DOM Manipulation',
@@ -147,11 +198,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.9,
 			reviews: 860,
-			students: 3100,
+			students: 678,
 			lastUpdated: 'Agustus 2025',
 			language: 'Bahasa Indonesia',
-			price: 179000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Membuat aplikasi web dengan Laravel',
 				'Routing, Controller, dan Blade Template',
@@ -188,11 +239,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
 			reviews: 1100,
-			students: 4800,
+			students: 956,
 			lastUpdated: 'November 2025',
 			language: 'Bahasa Indonesia',
-			price: 169000,
-			originalPrice: 459000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar ReactJS (Hooks & State)',
 				'Komponen dan Props',
@@ -233,11 +284,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
 			reviews: 1450,
-			students: 6500,
+			students: 998,
 			lastUpdated: 'Juli 2025',
 			language: 'Bahasa Indonesia',
-			price: 149000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar sintaks Python',
 				'Pemrograman berorientasi objek',
@@ -274,11 +325,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.9,
 			reviews: 920,
-			students: 2900,
+			students: 886,
 			lastUpdated: 'Oktober 2025',
 			language: 'Bahasa Indonesia',
-			price: 179000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar framework Svelte',
 				'Membangun project dengan SvelteKit',
@@ -320,11 +371,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
 			reviews: 1050,
-			students: 4600,
+			students: 678,
 			lastUpdated: 'Oktober 2025',
 			language: 'Bahasa Indonesia',
-			price: 179000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar Node.js dan NPM',
 				'Membangun REST API dengan Express.js',
@@ -361,11 +412,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.7,
 			reviews: 870,
-			students: 3400,
+			students: 792,
 			lastUpdated: 'September 2025',
 			language: 'Bahasa Indonesia',
-			price: 159000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar framework Vue.js',
 				'Component & Props',
@@ -402,11 +453,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.6,
 			reviews: 930,
-			students: 3900,
+			students: 889,
 			lastUpdated: 'Juli 2025',
 			language: 'Bahasa Indonesia',
 			price: 139000,
-			originalPrice: 399000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar pemrograman PHP',
 				'Manipulasi database dengan MySQL',
@@ -443,11 +494,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.7,
 			reviews: 800,
-			students: 3200,
+			students: 823,
 			lastUpdated: 'Agustus 2025',
 			language: 'Bahasa Indonesia',
 			price: 129000,
-			originalPrice: 399000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar database MySQL',
 				'Membuat tabel dan relasi',
@@ -485,11 +536,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.9,
 			reviews: 780,
-			students: 2700,
+			students: 714,
 			lastUpdated: 'Oktober 2025',
 			language: 'Bahasa Indonesia',
-			price: 189000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Konsep containerization',
 				'Membuat dan mengelola container',
@@ -526,11 +577,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.9,
 			reviews: 860,
-			students: 3300,
+			students: 955,
 			lastUpdated: 'November 2025',
 			language: 'Bahasa Indonesia',
-			price: 189000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar framework NestJS',
 				'Membangun REST API modular',
@@ -567,11 +618,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
 			reviews: 720,
-			students: 2500,
+			students: 881,
 			lastUpdated: 'Oktober 2025',
 			language: 'Bahasa Indonesia',
-			price: 179000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar Bun runtime modern',
 				'Membuat REST API dengan Bun',
@@ -608,11 +659,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.9,
 			reviews: 640,
-			students: 1800,
+			students: 934,
 			lastUpdated: 'September 2025',
 			language: 'Bahasa Indonesia',
-			price: 199000,
-			originalPrice: 599000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar bahasa Rust',
 				'Mengelola memory secara aman',
@@ -650,11 +701,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
 			reviews: 620,
-			students: 2400,
+			students: 734,
 			lastUpdated: 'Oktober 2025',
 			language: 'Bahasa Indonesia',
-			price: 159000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar Redis dan konsep in-memory database',
 				'Key, Hash, List, Set, Sorted Set',
@@ -692,11 +743,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.9,
 			reviews: 580,
-			students: 2100,
+			students: 967,
 			lastUpdated: 'Oktober 2025',
 			language: 'Bahasa Indonesia',
-			price: 189000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Konsep event streaming dan pub-sub',
 				'Membuat producer dan consumer',
@@ -733,11 +784,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
 			reviews: 740,
-			students: 2800,
+			students: 876,
 			lastUpdated: 'Agustus 2025',
 			language: 'Bahasa Indonesia',
-			price: 149000,
-			originalPrice: 399000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar PostgreSQL dan query SQL',
 				'Membuat relasi tabel kompleks',
@@ -774,11 +825,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.9,
 			reviews: 540,
-			students: 2000,
+			students: 812,
 			lastUpdated: 'September 2025',
 			language: 'Bahasa Indonesia',
-			price: 199000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar Elasticsearch dan konsep indexing',
 				'Membuat search engine sederhana',
@@ -815,11 +866,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
 			reviews: 710,
-			students: 3000,
+			students: 932,
 			lastUpdated: 'Juli 2025',
 			language: 'Bahasa Indonesia',
-			price: 159000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar bahasa Kotlin',
 				'Fungsi dan class',
@@ -855,11 +906,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.7,
 			reviews: 760,
-			students: 3100,
+			students: 921,
 			lastUpdated: 'September 2025',
 			language: 'Bahasa Indonesia',
-			price: 169000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar Android Development',
 				'Menggunakan Activity & Fragment',
@@ -895,11 +946,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.9,
 			reviews: 1300,
-			students: 8200,
+			students: 684,
 			lastUpdated: 'Oktober 2025',
 			language: 'Bahasa Indonesia',
 			price: 129000,
-			originalPrice: 399000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar version control system',
 				'Perintah Git yang penting',
@@ -935,11 +986,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
 			reviews: 580,
-			students: 2100,
+			students: 765,
 			lastUpdated: 'September 2025',
 			language: 'Bahasa Indonesia',
-			price: 189000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Konsep CI/CD',
 				'Instalasi dan konfigurasi Jenkins',
@@ -975,10 +1026,10 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.9,
 			reviews: 870,
-			students: 4100,
+			students: 741,
 			lastUpdated: 'Oktober 2025',
 			language: 'Bahasa Indonesia',
-			price: 149000,
+			price: 129000,
 			originalPrice: 399000,
 			whatYouWillLearn: [
 				'Dasar protokol HTTP',
@@ -1015,11 +1066,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
 			reviews: 620,
-			students: 2300,
+			students: 601,
 			lastUpdated: 'September 2025',
 			language: 'Bahasa Indonesia',
-			price: 159000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar OpenAPI Specification',
 				'Membuat dokumentasi API otomatis',
@@ -1055,11 +1106,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.7,
 			reviews: 710,
-			students: 2900,
+			students: 668,
 			lastUpdated: 'Agustus 2025',
 			language: 'Bahasa Indonesia',
-			price: 149000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 129000,
 			whatYouWillLearn: [
 				'Dasar bahasa Dart',
 				'Fungsi dan class',
@@ -1095,7 +1146,7 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
 			reviews: 960,
-			students: 3500,
+			students: 764,
 			lastUpdated: 'Oktober 2025',
 			language: 'Bahasa Indonesia',
 			price: 129000,
@@ -1134,11 +1185,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.9,
 			reviews: 850,
-			students: 3200,
+			students: 789,
 			lastUpdated: 'November 2025',
 			language: 'Bahasa Indonesia',
-			price: 169000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar TypeScript dan tipe data',
 				'Interface & Generic',
@@ -1173,11 +1224,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
 			reviews: 540,
-			students: 1900,
+			students: 719,
 			lastUpdated: 'September 2025',
 			language: 'Bahasa Indonesia',
-			price: 179000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar load testing',
 				'Membuat skrip K6 dengan JavaScript',
@@ -1212,11 +1263,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
 			reviews: 540,
-			students: 1900,
+			students: 988,
 			lastUpdated: 'September 2025',
 			language: 'Bahasa Indonesia',
-			price: 179000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
 				'Dasar load Pengenalan dasar HTML dan struktur dokumen web',
 				'Membuat skrip K6 dengan Menggunakan tag, elemen, dan atribut HTML dengan benar',
@@ -1251,11 +1302,11 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
 			reviews: 540,
-			students: 1900,
+			students: 734,
 			lastUpdated: 'September 2025',
 			language: 'Bahasa Indonesia',
-			price: 179000,
-			originalPrice: 499000,
+			price: 129000,
+			originalPrice: 149000,
 			whatYouWillLearn: [
                 'Pengenalan dasar Spring Boot dan arsitektur aplikasi Java',
                 'Membuat REST API dengan Spring Boot menggunakan controller dan service',
@@ -1290,10 +1341,10 @@
             instructor: 'Eko Kurniawan Khannedy',
             rating: 4.7,
             reviews: 320,
-            students: 1500,
+            students: 847,
             lastUpdated: 'Oktober 2025',
             language: 'Bahasa Indonesia',
-            price: 149000,
+            price: 129000,
             originalPrice: 399000,
             whatYouWillLearn: [
                 'Pengenalan MongoDB dan konsep NoSQL',
@@ -1329,10 +1380,10 @@
             instructor: 'Eko Kurniawan Khannedy',
             rating: 4.8,
             reviews: 410,
-            students: 1800,
+            students: 972,
             lastUpdated: 'Oktober 2025',
             language: 'Bahasa Indonesia',
-            price: 159000,
+            price: 129000,
             originalPrice: 449000,
             whatYouWillLearn: [
                 'Pengenalan konsep RESTful API',
@@ -1367,10 +1418,10 @@
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.7,
 			reviews: 280,
-			students: 1300,
+			students: 879,
 			lastUpdated: 'Oktober 2025',
 			language: 'Bahasa Indonesia',
-			price: 169000,
+			price: 129000,
 			originalPrice: 429000,
 			whatYouWillLearn: [
 				'Pengenalan message broker dan RabbitMQ',
@@ -1443,6 +1494,33 @@
     };
   }
 
+  let timeLeft = 0;
+	let days = 0, hours = 0, minutes = 0, seconds = 0;
+
+	const endDate = new Date("2025-11-01T23:59:59").getTime();
+
+	onMount(() => {
+		const timer = setInterval(() => {
+			const now = new Date().getTime();
+			timeLeft = endDate - now;
+
+			if (timeLeft <= 0) {
+				clearInterval(timer);
+				timeLeft = 0;
+				days = hours = minutes = seconds = 0;
+			} else {
+				days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+				hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+				seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+			}
+		}, 1000);
+	});
+
+	const MAX_COMMENTS = 3;
+
+	let showAllComments = false;
+
 </script>
 
 
@@ -1487,156 +1565,191 @@
 <section class="bg-black text-white px-4 sm:px-6 py-10 font-extralight">
   <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
     
-    <!-- SIDEBAR -->
-    <aside
-      class="order-1 lg:order-2 sticky lg:top-24 h-fit bg-white text-gray-900 rounded-xl shadow-xl p-5 sm:p-6 space-y-6 w-full font-extralight"
-    >
-      <!-- Gambar Kursus -->
-      <div class="w-full aspect-[16/9] overflow-hidden rounded-lg shadow-sm">
-        <img
-          src={course?.image}
-          alt={course?.name ?? ''}
-          class="w-full h-full object-cover"
-        />
-      </div>
+<!-- SIDEBAR -->
+<aside
+  class="order-1 lg:order-2 sticky lg:top-24 h-fit bg-white text-gray-900 rounded-2xl shadow-2xl p-5 sm:p-6 space-y-6 w-full font-light transition-all duration-300"
+>
+  <!-- Gambar Kursus -->
+  <div class="w-full aspect-[16/9] overflow-hidden rounded-xl shadow-md">
+    <img
+      src={course?.image}
+      alt={course?.name ?? ''}
+      class="w-full h-full object-cover"
+    />
+  </div>
 
-      <!-- Harga -->
-      <h3 class="text-xl sm:text-2xl font-bold">
-        Rp {course?.price?.toLocaleString('id-ID')}
-      </h3>
+<!-- Harga -->
+<div class="space-y-2">
+  <!-- Harga & Harga Asli -->
+  <div class="flex flex-wrap items-baseline gap-2">
+    <h3 class="text-2xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
+      Rp {course?.price?.toLocaleString('id-ID')}
+    </h3>
 
-      <!-- Tombol Aksi -->
-      <div class="flex flex-col sm:flex-row lg:flex-col gap-3">
-        <button
-          class="bg-gray-900 hover:bg-transparent hover:text-blue-400 border border-gray-200 hover:border-blue-400 text-white font-semibold py-3 rounded-lg transition w-full"
-        >
-          Tambahkan ke keranjang
-        </button>
-        <button
-          class="border border-gray-900 text-gray-900 font-semibold py-3 rounded-lg hover:border-blue-400 hover:text-blue-400 transition w-full"
-        >
-          Beli sekarang
-        </button>
-      </div>
-
-      <!-- Input Kode Promo -->
-      <div class="space-y-2">
-        <label for="promo" class="text-sm font-medium text-gray-700">
-          Punya kode promo?
-        </label>
-        <div class="flex flex-col sm:flex-row gap-2">
-          <input
-            id="promo"
-            type="text"
-            placeholder="Masukkan kode"
-            class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
-          />
-          <button
-            class="bg-gray-900 hover:bg-transparent hover:text-blue-400 border border-gray-200 hover:border-blue-400 text-white font-semibold px-4 py-2 rounded-lg text-sm transition w-full sm:w-auto"
-          >
-            Terapkan
-          </button>
-        </div>
-      </div>
-
-      <hr class="border-gray-200" />
-      <p class="text-xs text-gray-500 text-center">
-        Jaminan uang kembali 30 hari
+    {#if course?.originalPrice}
+      <p class="text-sm sm:text-sm text-gray-500 line-through">
+        Rp {course?.originalPrice?.toLocaleString('id-ID')}
       </p>
+    {/if}
+  </div>
 
-      <!-- Fitur Kursus -->
-      <ul class="text-sm text-gray-700 space-y-3 mb-6">
-        <li class="flex items-center gap-3">
-          <img
-            src="https://images.icon-icons.com/934/PNG/512/movie-symbol-of-video-camera_icon-icons.com_72981.png"
-            class="w-5 h-5"
-            alt="Video"
-          />
-          43 jam video
-        </li>
-        <li class="flex items-center gap-3">
-          <img
-            src="https://images.icon-icons.com/2724/PNG/512/newspaper_news_daily_business_media_article_icon_175626.png"
-            class="w-5 h-5"
-            alt="Artikel"
-          />
-          10 artikel
-        </li>
-        <li class="flex items-center gap-3">
-          <img
-            src="https://images.icon-icons.com/1946/PNG/96/1904669-call-chat-device-message-mobile-phone-smartphone_122519.png"
-            class="w-5 h-5"
-            alt="Akses HP"
-          />
-          Akses di HP & TV
-        </li>
-        <li class="flex items-center gap-3">
-          <img
-            src="https://images.icon-icons.com/3832/PNG/96/infinite_icon_234518.png"
-            class="w-5 h-5"
-            alt="Seumur hidup"
-          />
-          Akses seumur hidup
-        </li>
-        <li class="flex items-center gap-3">
-          <img
-            src="https://images.icon-icons.com/1919/PNG/96/licensedocument_121962.png"
-            class="w-5 h-5"
-            alt="Sertifikat"
-          />
-          Sertifikat penyelesaian
-        </li>
-      </ul>
+  <!-- Keterangan Promo -->
+{#if timeLeft > 0}
+  <p class="text-sm text-red-400 flex items-center gap-1">
+    <!-- SVG Jam -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3 3"/>
+    </svg>
+    Promo berakhir dalam
+    <span class="text-red-400">
+      {days} hari
+    </span>
+  </p>
+{/if}
+</div>
 
-      <hr class="border-gray-200" />
 
-      <!-- Tombol Tambahan -->
-      <div class="flex flex-col gap-3 text-sm">
-        <button
-          class="border border-gray-900 hover:border-blue-400 hover:text-blue-400 rounded-lg py-2.5 flex items-center justify-center gap-2 text-gray-700 font-medium hover:shadow-md hover:bg-gray-50 transition"
-        >
-          Bagikan
-        </button>
-        <button
-          class="border border-gray-900 hover:border-blue-400 hover:text-blue-400 rounded-lg py-2.5 flex items-center justify-center gap-2 text-gray-700 font-medium hover:shadow-md hover:bg-gray-50 transition"
-        >
-          Hadiahkan
-        </button>
-      </div>
-    </aside>
+  <!-- Tombol Aksi -->
+  <div class="flex flex-col sm:flex-row lg:flex-col gap-3">
+    <button
+      class="bg-gray-900 hover:bg-transparent hover:text-blue-400 border border-gray-200 hover:border-blue-400 text-white font-semibold py-3 rounded-lg transition w-full"
+    >
+      Tambahkan ke keranjang
+    </button>
+    <button
+      class="border border-gray-900 text-gray-900 font-semibold py-3 rounded-lg hover:border-blue-400 hover:text-blue-400 transition w-full"
+    >
+      Beli sekarang
+    </button>
+  </div>
+
+  <!-- Input Kode Promo -->
+  <div class="space-y-2">
+    <label for="promo" class="text-sm font-medium text-gray-700">
+      Punya kode promo?
+    </label>
+    <div class="flex flex-col sm:flex-row gap-2">
+      <input
+        id="promo"
+        type="text"
+        placeholder="Masukkan kode"
+        class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+      <button
+        class="bg-gray-900 hover:bg-transparent hover:text-blue-400 border border-gray-200 hover:border-blue-400 text-white font-semibold px-4 py-2 rounded-lg text-sm transition w-full sm:w-auto"
+      >
+        Terapkan
+      </button>
+    </div>
+  </div>
+
+  <hr class="border-gray-200" />
+  <p class="text-xs text-gray-500 text-center">
+    Jaminan uang kembali 30 hari
+  </p>
+
+  <!-- Fitur Kursus -->
+  <ul class="text-sm text-gray-700 space-y-3 mb-6">
+    <li class="flex items-center gap-3">
+      <img
+        src="https://images.icon-icons.com/934/PNG/512/movie-symbol-of-video-camera_icon-icons.com_72981.png"
+        class="w-5 h-5"
+        alt="Video"
+      />
+      43 jam video
+    </li>
+    <li class="flex items-center gap-3">
+      <img
+        src="https://images.icon-icons.com/2724/PNG/512/newspaper_news_daily_business_media_article_icon_175626.png"
+        class="w-5 h-5"
+        alt="Artikel"
+      />
+      10 artikel
+    </li>
+    <li class="flex items-center gap-3">
+      <img
+        src="https://images.icon-icons.com/1946/PNG/96/1904669-call-chat-device-message-mobile-phone-smartphone_122519.png"
+        class="w-5 h-5"
+        alt="Akses HP"
+      />
+      Akses di HP & TV
+    </li>
+    <li class="flex items-center gap-3">
+      <img
+        src="https://images.icon-icons.com/3832/PNG/96/infinite_icon_234518.png"
+        class="w-5 h-5"
+        alt="Seumur hidup"
+      />
+      Akses seumur hidup
+    </li>
+    <li class="flex items-center gap-3">
+      <img
+        src="https://images.icon-icons.com/1919/PNG/96/licensedocument_121962.png"
+        class="w-5 h-5"
+        alt="Sertifikat"
+      />
+      Sertifikat penyelesaian
+    </li>
+  </ul>
+
+  <hr class="border-gray-200" />
+
+  <!-- Tombol Tambahan -->
+  <div class="flex flex-col gap-3 text-sm">
+    <button
+      class="border border-gray-900 hover:border-blue-400 hover:text-blue-400 rounded-lg py-2.5 flex items-center justify-center gap-2 text-gray-700 font-medium hover:shadow-md hover:bg-gray-50 transition"
+    >
+      Bagikan
+    </button>
+    <button
+      class="border border-gray-900 hover:border-blue-400 hover:text-blue-400 rounded-lg py-2.5 flex items-center justify-center gap-2 text-gray-700 font-medium hover:shadow-md hover:bg-gray-50 transition"
+    >
+      Hadiahkan
+    </button>
+  </div>
+</aside>
+
 
     <!-- KONTEN UTAMA -->
     <div class="order-2 lg:order-1 lg:col-span-2 space-y-10">
-      <!-- Hero & Info Kursus -->
-      <div class="space-y-5">
-        <h1 class="text-2xl sm:text-3xl font-bold leading-tight">
-          {course?.name ?? ''}
-        </h1>
-        <p class="text-gray-300 text-sm sm:text-base">
-          {course?.description ?? ''}
-        </p>
+      
+<!-- 🧭 Hero & Info Kursus -->
+<div class="space-y-5">
+  <!-- Judul & Deskripsi -->
+  <h1 class="text-2xl sm:text-3xl font-bold leading-tight text-white">
+    {course?.name ?? ''}
+  </h1>
+  <p class="text-gray-300 text-sm sm:text-base">
+    {course?.description ?? ''}
+  </p>
 
-        <div
-          class="flex flex-wrap items-center gap-2 sm:gap-3 text-sm text-gray-400"
-        >
-          <span>⭐ {course?.rating ?? '4.8'}</span>
-          <span>·</span>
-          <span>{course?.students?.toLocaleString('id-ID') ?? '12,345'} peserta</span>
-          <span>·</span>
-          <span>
-            Dibuat oleh
-            <span class="text-blue-400 font-normal">
-              {course?.instructor ?? 'Nama Instructor'}
-            </span>
-          </span>
-        </div>
-      </div>
+  <!-- Info Utama -->
+  <div class="flex flex-wrap items-center gap-2 sm:gap-3 text-sm text-gray-400">
+    <span>⭐ {course?.rating ?? '4.8'}</span>
+    <span>·</span>
+    <span>{course?.students?.toLocaleString('id-ID') ?? '12,345'} peserta</span>
+    <span>·</span>
+    <span>
+      Dibuat oleh
+      <span class="text-blue-400 font-normal">
+        {course?.instructor ?? 'Nama Instructor'}
+      </span>
+    </span>
+  </div>
+
+  <!-- Info Tambahan -->
+  <div class="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+    <span>Bahasa : <span class="text-gray-300 dark:text-gray-200">{course?.language ?? 'Indonesia'}</span></span>
+    <span>·</span>
+    <span>Terakhir diperbarui : <span class="text-gray-300 dark:text-gray-200">{course?.lastUpdated ?? 'Oktober 2025'}</span></span>
+  </div>
+</div>
+
 
       <!-- Yang Akan Anda Pelajari -->
       <div class="bg-gray-950 rounded-2xl p-5 sm:p-6 border border-gray-700">
-        <h2 class="text-lg sm:text-xl font-semibold mb-3">
-          Yang akan Anda pelajari
-        </h2>
+        <h2 class="text-lg sm:text-xl font-semibold mb-3">Yang akan Anda pelajari</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-gray-300 text-sm">
           {#each course?.whatYouWillLearn ?? [] as item}
             <div class="flex items-start gap-2">
@@ -1662,23 +1775,11 @@
         <div class="divide-y divide-gray-700">
           {#each course?.courseContent ?? [] as section, i}
             <details class="py-3 group rounded-lg hover:bg-gray-900/40 transition">
-              <summary
-                class="flex flex-col sm:flex-row justify-between items-start sm:items-center cursor-pointer text-white px-2"
-              >
+              <summary class="flex flex-col sm:flex-row justify-between items-start sm:items-center cursor-pointer text-white px-2">
                 <span class="flex items-center gap-2 w-full sm:w-auto">
                   <span class="text-base sm:text-lg">{section.title}</span>
-                  <svg
-                    class="w-4 h-4 transition-transform duration-300 group-open:rotate-180 text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 9l-7 7-7-7"
-                    />
+                  <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </span>
                 <span class="text-gray-400 text-xs sm:text-sm mt-1 sm:mt-0 italic">
@@ -1687,9 +1788,7 @@
               </summary>
               <ul class="mt-2 pl-6 list-disc text-gray-300 text-sm space-y-1">
                 {#each Array(section.lectures) as _, index}
-                  <li class="hover:text-blue-400 transition">
-                    {`Lecture ${index + 1}`}
-                  </li>
+                  <li class="hover:text-blue-400 transition">{`Lecture ${index + 1}`}</li>
                 {/each}
               </ul>
             </details>
@@ -1702,16 +1801,12 @@
         <h2 class="text-lg sm:text-xl font-semibold">Deskripsi Kelas</h2>
 
         {#if course?.shortDescription?.length}
-          <p class="text-gray-200 text-sm sm:text-base">
-            {course.shortDescription[0]}
-          </p>
+          <p class="text-gray-200 text-sm sm:text-base">{course.shortDescription[0]}</p>
 
           {#if !!showDescriptionMap?.[course.slug]}
             <div transition:slide={{ duration: 300 }}>
               {#if course.shortDescription.length > 1}
-                <ul
-                  class="list-disc list-inside text-gray-400 space-y-1 pl-5 mt-2 text-sm"
-                >
+                <ul class="list-disc list-inside text-gray-400 space-y-1 pl-5 mt-2 text-sm">
                   {#each course.shortDescription.slice(1) as point}
                     <li>{point}</li>
                   {/each}
@@ -1723,9 +1818,7 @@
                   <h3 class="text-base sm:text-lg font-semibold text-gray-200 mb-2">
                     Untuk siapa kursus ini?
                   </h3>
-                  <ul
-                    class="list-disc list-inside text-gray-400 space-y-1 pl-5 text-sm"
-                  >
+                  <ul class="list-disc list-inside text-gray-400 space-y-1 pl-5 text-sm">
                     {#each course.forWho as person}
                       <li>{person}</li>
                     {/each}
@@ -1749,13 +1842,13 @@
       <!-- Instruktur -->
       <div class="space-y-4">
         <h2 class="text-lg sm:text-xl font-semibold text-white">Instruktur</h2>
-        <div class="flex flex-col sm:flex-row items-start gap-4">
+        <div class="flex flex-row items-center gap-4">
           <img
             src="https://img-c.udemycdn.com/user/200_H/15481646_a97d_6.jpg"
             alt="Instructor"
-            class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border border-gray-700"
+            class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border border-gray-700 flex-shrink-0"
           />
-          <div>
+          <div class="flex-1">
             <h3 class="font-semibold text-base sm:text-lg text-white mb-1">
               {course?.instructor ?? 'Nama Instructor'}
             </h3>
@@ -1766,17 +1859,68 @@
         </div>
       </div>
 
+		<!-- Komentar / Ulasan -->
+				{#if course.comments && course.comments.length > 0}
+		<section class="mt-10 border-t border-gray-800 pt-6">
+			<h3 class="text-lg sm:text-xl font-bold mb-4 text-white">Ulasan Peserta</h3>
+			<div class="space-y-4">
+			{#each (showAllComments ? course.comments : course.comments.slice(0, MAX_COMMENTS)) as comment (comment.name + comment.date)}
+				<div
+				class="border border-gray-700 bg-gray-950 rounded-xl p-4 hover:bg-gray-850 transition"
+				transition:slide={{ duration: 300 }}
+				>
+				<div class="flex flex-wrap items-center justify-between mb-2">
+					<div class="flex items-center gap-2">
+					<span class="font-semibold text-white">{comment.name}</span>
+					<span class="text-xs text-gray-400">{comment.date}</span>
+					</div>
+					<div class="text-yellow-400 text-sm">
+					{Array(comment.rating).fill('★').join('')}
+					{Array(5 - comment.rating).fill('☆').join('')}
+					</div>
+				</div>
+				<p class="text-gray-300 text-sm leading-relaxed italic">"{comment.comment}"</p>
+				</div>
+			{/each}
+			</div>
+			{#if course.comments.length > MAX_COMMENTS}
+			<div class="mt-6 flex flex-col justify-center">
+				{#if !showAllComments}
+				<button
+					class="w-full sm:w-auto px-6 py-3 rounded-lg bg-transparent text-white font-semibold hover:text-blue-400 hover:border-blue-400 border border-gray-400 transition"
+					on:click={() => showAllComments = true}
+				>
+					Lihat Semua Ulasan
+				</button>
+				{:else}
+				<button
+					class="w-full sm:w-auto px-6 py-3 rounded-lg bg-transparent text-white font-semibold border hover:text-blue-400 hover:border-blue-400 border-gray-400 transition"
+					on:click={() => showAllComments = false}
+				>
+					Sembunyikan Ulasan
+				</button>
+				{/if}
+			</div>
+			{/if}
+		</section>
+		{:else}
+		<section class="mt-10 border-t border-gray-800 pt-6">
+			<h3 class="text-lg sm:text-xl font-bold mb-4 text-white">Ulasan Peserta</h3>
+			<div class="text-gray-400 italic text-sm text-center py-8" transition:slide={{ duration: 300 }}>
+			Belum ada ulasan untuk kelas ini.
+			</div>
+		</section>
+		{/if}
+
+
       <!-- Rekomendasi Kelas -->
       <div class="mt-12">
-        <h2 class="text-lg sm:text-2xl font-semibold mb-4 text-white">
-          Rekomendasi Kelas Lainnya
-        </h2>
+        <h2 class="text-lg sm:text-2xl font-semibold mb-4 text-white">Rekomendasi Kelas Lainnya</h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {#each courses.filter(c => c.slug !== $page.params.slug).slice(0, 4) as rec}
-            <div
-              class="bg-gray-950 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300 hover:-translate-y-1"
-            >
+            <div class="bg-gray-950 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition duration-300 hover:-translate-y-1 border border-gray-600">
+              
               <!-- Gambar -->
               <div class="w-full">
                 <img
@@ -1791,10 +1935,8 @@
                 <h3 class="font-semibold text-base sm:text-lg text-white line-clamp-2">
                   {rec.name}
                 </h3>
-                <p class="text-gray-400 text-xs sm:text-sm mt-1">
-                  Oleh {rec.instructor}
-                </p>
-                <p class="text-blue-400 font-semibold mt-2 text-sm sm:text-base">
+                <p class="text-gray-400 text-xs sm:text-sm mt-1">Oleh {rec.instructor}</p>
+                <p class="text-white font-semibold mt-2 text-sm sm:text-base">
                   Rp {rec.price?.toLocaleString('id-ID')}
                 </p>
 
@@ -1813,26 +1955,35 @@
     </div>
   </div>
 
-  <!--  Tombol Beli Sekarang (Mobile Sticky) -->
-	<div
-	class="fixed bottom-0 left-0 right-0 bg-white text-gray-900 py-2 px-4 flex justify-between items-center lg:hidden z-50 shadow-lg"
-	>
-	<!-- Harga -->
-	<div>
-		<p class="text-[10px] text-gray-600">Beli Sekarang</p>
-		<p class="text-sm font-bold">
-		Rp {course?.price?.toLocaleString('id-ID')}
-		</p>
-	</div>
+<!-- Tombol Beli Sekarang (Mobile Sticky) -->
+<div class="fixed bottom-0 left-0 right-0 bg-white text-gray-900 py-2 px-4 flex justify-between items-center lg:hidden z-50 shadow-lg border-t border-gray-200">
+  <!-- Harga -->
+  <div class="flex flex-col">
+    <p class="text-[10px] text-gray-600 font-medium">Beli Sekarang</p>
 
-	<!-- Tombol -->
-	<button
-		class="bg-gray-900 text-white font-medium px-3 py-1.5 rounded-md text-xs hover:bg-transparent border border-gray-900 hover:text-blue-400 hover:border-blue-400 transition"
-	>
-		Beli Sekarang
-	</button>
-	</div>
+    <div class="flex items-baseline gap-1">
+      <p class="text-sm font-bold text-gray-900">
+        Rp {course?.price?.toLocaleString('id-ID')}
+      </p>
+
+      {#if course?.originalPrice}
+        <p class="text-[10px] text-gray-500 line-through">
+          Rp {course?.originalPrice?.toLocaleString('id-ID')}
+        </p>
+      {/if}
+    </div>
+  </div>
+
+  <!-- Tombol -->
+  <button
+    class="bg-gray-900 text-white font-medium px-4 py-2 rounded-lg text-xs hover:bg-transparent border border-gray-900 hover:text-blue-400 hover:border-blue-400 transition"
+  >
+    Beli Sekarang
+  </button>
+</div>
+
 </section>
+
 
 
 
@@ -1919,4 +2070,5 @@
   .animate-fadeIn {
     animation: fadeIn 0.4s ease-out both;
   }
+
 </style>
