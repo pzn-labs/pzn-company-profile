@@ -1540,7 +1540,7 @@
   <!-- Teks -->
   <div>
     <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3 tracking-tight">
-      Oops! Kelas Tidak Ditemukan 😢
+      Oops! Kelas Tidak Ditemukan
     </h2>
     <p class="text-gray-400 max-w-md mx-auto leading-relaxed">
       Sepertinya kelas yang kamu cari belum tersedia, sudah dihapus, atau sedang dalam perbaikan.
