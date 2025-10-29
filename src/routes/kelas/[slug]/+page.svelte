@@ -1617,11 +1617,12 @@
     >
       Tambahkan ke keranjang
     </button>
-    <button
-      class="border border-gray-900 text-gray-900 font-semibold py-3 rounded-lg hover:border-blue-400 hover:text-blue-400 transition w-full"
-    >
-      Beli sekarang
-    </button>
+	<a
+		href="{base}/cara-pembayaran"
+		class="block border border-gray-900 text-gray-900 font-semibold py-3 rounded-lg hover:border-blue-400 hover:text-blue-400 transition w-full text-center"
+	>
+		Daftar sekarang
+	</a>
   </div>
 
   <!-- Input Kode Promo -->
