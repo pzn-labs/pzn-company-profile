@@ -126,7 +126,7 @@
 	<div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
 		<!-- Judul -->
 		<h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg leading-tight">
-			Promo Spesial Oktober — Diskon Hingga <span class="text-blue-400">70%</span>!
+			Promo Spesial Oktober Diskon Hingga <span class="text-blue-400">70%</span>!
 		</h1>
 
 		<p class="text-lg sm:text-xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -155,80 +155,34 @@
 			</div>
 		</div>
 
-		<!-- Kode Promo -->
+		<!-- Kode Promo + Tombol -->
 		<div class="mb-6">
-			<p class="text-gray-300 text-base mb-4">Gunakan kode promo di bawah ini:</p>
+			<p class="text-gray-300 text-base mb-4 text-center">
+				Gunakan kode promo di bawah ini:
+			</p>
+
 			<div
-				class="inline-block bg-white text-gray-900 font-bold px-10 py-4 rounded-full tracking-widest shadow-xl select-all text-base sm:text-lg"
+				class="flex flex-col sm:flex-row justify-center items-center gap-4"
 			>
+				<!-- Kode Promo -->
+				<div
+				class="bg-white text-gray-900 font-bold px-10 py-2 rounded-full tracking-widest shadow-xl select-all text-base sm:text-lg text-center w-full sm:w-auto"
+				>
 				KODE: <span class="text-black">PZN2025</span>
+				</div>
+
+				<!-- Tombol Lihat Kelas -->
+				<a
+				href="{base}/kelas"
+				class="bg-white hover:bg-transparent hover:text-blue-400 border hover:border-blue-400 text-black font-bold px-10 py-2 rounded-full shadow-xl text-base sm:text-lg transition duration-300 w-full sm:w-auto text-center"
+				>
+				LIHAT KELAS LAIN
+				</a>
 			</div>
 		</div>
+
 	</div>
 </section>
-
-
-<!-- 🟦 BERITA PROMO SECTION -->
-<section class="bg-black py-16 px-4">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-3xl sm:text-3xl font-extrabold text-center text-white mb-10 leading-tight">
-      KUOTA SANGAT TERBATAS — AMBIL KESEMPATAN EMAS INI SEBELUM TERLAMBAT!
-    </h2>
-
-    <!-- Kartu Promo -->
-    <div class="relative rounded-2xl overflow-hidden border border-gray-600 shadow-2xl">
-      <!-- Gambar Full -->
-      <div class="relative w-full h-[480px] sm:h-[520px]">
-        <img
-          src="https://i.pinimg.com/originals/30/5f/f8/305ff88e24f9460bb79644e197af92a9.gif"
-          alt="Promo Oktober"
-          class="absolute inset-0 w-full h-full object-cover"
-        />
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-black/40"></div>
-      </div>
-
-      <!-- Konten -->
-      <div
-        class="absolute inset-0 flex flex-col justify-center items-center text-center px-6 sm:px-10"
-      >
-        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">
-          Promo Spesial Oktober — Diskon Hingga <span class="text-blue-400">70%</span>
-        </h3>
-
-        <p class="text-gray-200 text-base sm:text-lg max-w-2xl mb-6">
-          Nikmati penawaran spesial bulan Oktober! Dapatkan diskon besar untuk pembelian kelas di
-          <span class="font-semibold text-white">Programmer Zaman Now</span>. Promo berlaku
-          terbatas — jangan lewatkan kesempatan ini untuk upgrade skill kamu!
-        </p>
-
-        <!-- Info Promo -->
-        <div class="flex flex-wrap justify-center gap-3 mb-6">
-          <span
-            class="text-sm sm:text-base bg-white text-red-700 font-semibold px-3 py-1 rounded-full"
-            >Kode Promo: PZN2025</span
-          >
-          <span
-            class="text-sm sm:text-base bg-white text-green-700 font-semibold px-3 py-1 rounded-full"
-            >Berlaku s/d 1 Nov 2025</span
-          >
-        </div>
-
-        <!-- Tombol CTA -->
-        <a
-          href="{base}/kelas"
-          class="inline-block bg-white hover:bg-black text-gray-900 hover:text-blue-400 border border-gray-100 hover:border-blue-400 font-semibold px-8 py-3 rounded-full transition text-sm sm:text-base"
-        >
-          Lihat Semua Promo Kelas
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
 
 <!-- Paket Belajar -->
 <section class="relative bg-black text-white py-16 px-6">
