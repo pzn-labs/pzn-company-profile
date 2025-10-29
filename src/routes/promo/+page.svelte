@@ -49,6 +49,39 @@
 			]
 		}
 	];
+
+	 const promoCourses = [
+    {
+      title: "Belajar JavaScript dari Nol",
+      category: "Programming",
+      description: "Pelajari dasar JavaScript modern hingga konsep lanjutan dengan studi kasus nyata.",
+      image: "https://i.pinimg.com/736x/1f/87/fc/1f87fcd6518fa2c7e7b6b78053c8d4a9.jpg",
+      originalPrice: 400000,
+      promoPrice: 120000,
+      discount: 70,
+      slug: "belajar-javascript"
+    },
+    {
+      title: "Kelas React.js untuk Pemula",
+      category: "Frontend Development",
+      description: "Bangun aplikasi interaktif menggunakan React.js dan ekosistem modern frontend.",
+      image: "https://i.pinimg.com/736x/9b/57/83/9b5783f61e9ec46e388a028b5c651f28.jpg",
+      originalPrice: 450000,
+      promoPrice: 150000,
+      discount: 67,
+      slug: "reactjs-pemula"
+    },
+    {
+      title: "Mastering Backend dengan Node.js",
+      category: "Backend Development",
+      description: "Kuasai cara membangun REST API, autentikasi JWT, dan integrasi database MySQL.",
+      image: "https://i.pinimg.com/736x/b2/2e/84/b22e84266e394a7ddcf991b7d1f6eb84.jpg",
+      originalPrice: 500000,
+      promoPrice: 175000,
+      discount: 65,
+      slug: "backend-nodejs"
+    }
+  ];
 	
 	let timeLeft = 0;
 	let days = 0, hours = 0, minutes = 0, seconds = 0;
@@ -84,55 +117,117 @@
 </svelte:head>
 
 
-<!-- HERO PROMO SECTION -->
+<!-- 🟦 HERO PROMO SECTION (Versi Lebih Besar & Rapi) -->
 <section
-  class="relative bg-cover bg-center bg-no-repeat text-white py-24 sm:py-24"
-  style="background-image: url('https://i.pinimg.com/736x/83/5f/56/835f5645e50f7c8eaf41c7b31e5e3d3d.jpg');"
+	class="relative bg-cover bg-center bg-black text-white py-16 sm:py-16"
 >
-  <!-- Overlay Gelap -->
-  <div class="absolute inset-0 bg-black bg-opacity-70"></div>
 
-  <!-- Konten -->
-  <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
-    <!-- Judul -->
-    <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">
-      Promo Spesial Oktober!
-    </h1>
-    <p class="text-base sm:text-lg text-gray-200 mb-10 max-w-2xl mx-auto">
-      Dapatkan <span class="text-white font-semibold">diskon hingga 70%</span> sebelum waktu habis!
-    </p>
+	<!-- Konten -->
+	<div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+		<!-- Judul -->
+		<h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg leading-tight">
+			Promo Spesial Oktober — Diskon Hingga <span class="text-blue-400">70%</span>!
+		</h1>
 
-    <!-- Countdown -->
-    <div class="flex justify-center gap-5 sm:gap-10 md:gap-14 font-mono text-center mb-10">
-      <div class="flex flex-col items-center">
-        <p class="text-4xl sm:text-5xl font-extrabold text-white">{days}</p>
-        <p class="text-xs uppercase tracking-wider text-gray-300">Hari</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <p class="text-4xl sm:text-5xl font-extrabold text-white">{hours}</p>
-        <p class="text-xs uppercase tracking-wider text-gray-300">Jam</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <p class="text-4xl sm:text-5xl font-extrabold text-white">{minutes}</p>
-        <p class="text-xs uppercase tracking-wider text-gray-300">Menit</p>
-      </div>
-      <div class="flex flex-col items-center">
-        <p class="text-4xl sm:text-5xl font-extrabold text-red-400 animate-bounce">{seconds}</p>
-        <p class="text-xs uppercase tracking-wider text-gray-300">Detik</p>
-      </div>
-    </div>
+		<p class="text-lg sm:text-xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
+			Jangan lewatkan kesempatan langka ini untuk meningkatkan skill kamu bersama 
+			<span class="font-semibold text-white">Programmer Zaman Now</span>! 
+			Penawaran berakhir sebentar lagi
+		</p>
 
-    <!-- Kode Promo -->
-    <div class="mb-4">
-      <p class="text-gray-300 text-sm mb-3">Gunakan kode promo di bawah ini:</p>
+		<!-- Countdown -->
+		<div class="flex justify-center gap-6 sm:gap-10 md:gap-14 font-mono text-center mb-12">
+			<div class="flex flex-col items-center">
+				<p class="text-5xl sm:text-6xl font-extrabold text-white">{days}</p>
+				<p class="text-sm uppercase tracking-wider text-gray-300">Hari</p>
+			</div>
+			<div class="flex flex-col items-center">
+				<p class="text-5xl sm:text-6xl font-extrabold text-white">{hours}</p>
+				<p class="text-sm uppercase tracking-wider text-gray-300">Jam</p>
+			</div>
+			<div class="flex flex-col items-center">
+				<p class="text-5xl sm:text-6xl font-extrabold text-white">{minutes}</p>
+				<p class="text-sm uppercase tracking-wider text-gray-300">Menit</p>
+			</div>
+			<div class="flex flex-col items-center">
+				<p class="text-5xl sm:text-6xl font-extrabold text-red-400 animate-bounce">{seconds}</p>
+				<p class="text-sm uppercase tracking-wider text-gray-300">Detik</p>
+			</div>
+		</div>
+
+		<!-- Kode Promo -->
+		<div class="mb-6">
+			<p class="text-gray-300 text-base mb-4">Gunakan kode promo di bawah ini:</p>
+			<div
+				class="inline-block bg-white text-gray-900 font-bold px-10 py-4 rounded-full tracking-widest shadow-xl select-all text-base sm:text-lg"
+			>
+				KODE: <span class="text-black">PZN2025</span>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- 🟦 BERITA PROMO SECTION -->
+<section class="bg-black py-16 px-4">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl sm:text-3xl font-extrabold text-center text-white mb-10 leading-tight">
+      KUOTA SANGAT TERBATAS — AMBIL KESEMPATAN EMAS INI SEBELUM TERLAMBAT!
+    </h2>
+
+    <!-- Kartu Promo -->
+    <div class="relative rounded-2xl overflow-hidden border border-gray-600 shadow-2xl">
+      <!-- Gambar Full -->
+      <div class="relative w-full h-[480px] sm:h-[520px]">
+        <img
+          src="https://i.pinimg.com/originals/30/5f/f8/305ff88e24f9460bb79644e197af92a9.gif"
+          alt="Promo Oktober"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+
+      <!-- Konten -->
       <div
-        class="inline-block bg-white text-gray-900 font-semibold px-8 py-3 rounded-full tracking-widest shadow-lg select-all text-sm sm:text-base"
+        class="absolute inset-0 flex flex-col justify-center items-center text-center px-6 sm:px-10"
       >
-        KODE: <span class="text-black">PZN2025</span>
+        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+          Promo Spesial Oktober — Diskon Hingga <span class="text-blue-400">70%</span>
+        </h3>
+
+        <p class="text-gray-200 text-base sm:text-lg max-w-2xl mb-6">
+          Nikmati penawaran spesial bulan Oktober! Dapatkan diskon besar untuk pembelian kelas di
+          <span class="font-semibold text-white">Programmer Zaman Now</span>. Promo berlaku
+          terbatas — jangan lewatkan kesempatan ini untuk upgrade skill kamu!
+        </p>
+
+        <!-- Info Promo -->
+        <div class="flex flex-wrap justify-center gap-3 mb-6">
+          <span
+            class="text-sm sm:text-base bg-white text-red-700 font-semibold px-3 py-1 rounded-full"
+            >Kode Promo: PZN2025</span
+          >
+          <span
+            class="text-sm sm:text-base bg-white text-green-700 font-semibold px-3 py-1 rounded-full"
+            >Berlaku s/d 1 Nov 2025</span
+          >
+        </div>
+
+        <!-- Tombol CTA -->
+        <a
+          href="{base}/kelas"
+          class="inline-block bg-white hover:bg-black text-gray-900 hover:text-blue-400 border border-gray-100 hover:border-blue-400 font-semibold px-8 py-3 rounded-full transition text-sm sm:text-base"
+        >
+          Lihat Semua Promo Kelas
+        </a>
       </div>
     </div>
   </div>
 </section>
+
+
+
 
 
 <!-- Paket Belajar -->

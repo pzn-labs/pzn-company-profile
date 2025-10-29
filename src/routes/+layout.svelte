@@ -8,21 +8,21 @@
 	let scrolled = false;
 	let showBanner = false;
 
-	// 🔹 Tutup banner (tidak tampil lagi selama sesi browser)
+	//  Tutup banner (tidak tampil lagi selama sesi browser)
 	function closeBanner() {
 		showBanner = false;
 		sessionStorage.setItem("bannerShown", "true");
 	}
 
 	onMount(() => {
-		// 🔹 Hanya tampil sekali saat pertama kali user buka website
+		//  Hanya tampil sekali saat pertama kali user buka website
 		const bannerShown = sessionStorage.getItem("bannerShown");
 		if (!bannerShown) {
 			showBanner = true;
 			sessionStorage.setItem("bannerShown", "true");
 		}
 
-		// 🔹 Deteksi scroll untuk ubah gaya navbar
+		// Deteksi scroll untuk ubah gaya navbar
 		const handleScroll = () => {
 			scrolled = window.scrollY > 20;
 		};
@@ -33,7 +33,7 @@
 		};
 	});
 
-	// 🔹 Toggle menu mobile
+	// Toggle menu mobile
 	function toggleMobileMenu() {
 		mobileMenuOpen = !mobileMenuOpen;
 		document.body.style.overflow = mobileMenuOpen ? "hidden" : "auto";
