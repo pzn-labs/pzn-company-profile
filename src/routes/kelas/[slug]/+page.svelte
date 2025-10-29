@@ -1520,9 +1520,21 @@
 	const MAX_COMMENTS = 3;
 
 	let showAllComments = false;
+	
 
 </script>
 
+
+<svelte:head>
+  <title>{course ? `${course.name} - Programmer Zaman Now` : 'Kelas - Programmer Zaman Now'}</title>
+  <meta
+    name="description"
+	content={course
+	  ? `Pelajari ${course.name} di Programmer Zaman Now. ${course.description?.slice(0, 150)}...`
+	  : 'Panduan lengkap kelas di Programmer Zaman Now.'}
+  />
+
+</svelte:head>
 
 {#if !course}
 <section

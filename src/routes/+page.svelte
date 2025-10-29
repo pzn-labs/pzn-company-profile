@@ -181,7 +181,16 @@
 	];
 
   let selected = categories[0];
+
 </script>
+
+<svelte:head>
+  <title>Programmer Zaman Now – Belajar Pemrograman dari Dasar hingga Mahir</title>
+  <meta
+    name="description"
+    content="Temukan berbagai kelas pemrograman terbaik di Programmer Zaman Now. Belajar JavaScript, Python, Database, API, dan banyak lagi bersama instruktur berpengalaman."
+  />
+</svelte:head>
 
 <!--  HERO SECTION MODERN -->
 <section

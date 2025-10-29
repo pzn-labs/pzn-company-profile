@@ -170,7 +170,7 @@
 
 							<p class="mt-3 text-gray-300 text-sm sm:text-base">
 								Jam kerja :
-								<span class="font-semibold text-blue-400">Senin – Sabtu, 09:00 – 18:00 WIB</span>.
+								<span class="font-semibold text-blue-400">Senin – Sabtu, 09:00 – 18:00 WIB</span>. Konfirmasi pembayaran diluar jam kerja akan diproses pada hari kerja berikutnya.
 							</p>
 						</div>
 					{/if}
