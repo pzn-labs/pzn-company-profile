@@ -7,11 +7,11 @@
 	let kelasList = [
 		{ nama: "Golang", harga: "Rp 129.000", slug: "golang" },
 		{ nama: "Java Dasar", harga: "Rp 129.000", slug: "java-dasar" },
-		{ nama: "Node.js", harga: "Rp 129.000", slug: "nodejs" },
+		{ nama: "Node.js", harga: "Rp 129.000", slug: "node.js" },
 		{ nama: "Laravel", harga: "Rp 129.000", slug: "laravel" },
 		{ nama: "MySQL", harga: "Rp 129.000", slug: "mysql" },
 		{ nama: "Docker Basics", harga: "Rp 129.000", slug: "docker-basics" },
-		{ nama: "HTML, CSS dan JavaScript", harga: "Rp 129.000", slug: "html-css-javascript" },
+		{ nama: "HTML, CSS dan JavaScript", harga: "Rp 129.000", slug: "html,-css-dan-javascript" },
 		{ nama: "VueJS", harga: "Rp 129.000", slug: "vuejs" },
 		{ nama: "PHP", harga: "Rp 129.000", slug: "php" },
 		{ nama: "Spring Boot", harga: "Rp 129.000", slug: "spring-boot" },
@@ -29,7 +29,7 @@
 		{ nama: "OpenApi", harga: "Rp 129.000", slug: "openapi" },
 		{ nama: "RestFullAPI", harga: "Rp 129.000", slug: "restfullapi" },
 		{ nama: "HTTP", harga: "Rp 129.000", slug: "http" },
-		{ nama: "Python", harga: "Rp 129.000", slug: "python" },
+		{ nama: "Python", harga: "Rp 129.000", slug: "phyton" },
 		{ nama: "Svelte", harga: "Rp 129.000", slug: "svelte" },
 		{ nama: "Bootstrap", harga: "Rp 129.000", slug: "bootstrap" },
 		{ nama: "Rust", harga: "Rp 129.000", slug: "rust" },
@@ -95,21 +95,16 @@
 				},
 				{
 					no: 2,
-					title: 'Isi Data & Konfirmasi',
-					desc: 'Isikan data diri Anda dengan benar dan pastikan email aktif agar dapat menerima konfirmasi pembayaran dan akses kelas.'
+					title: 'Lakukan Pembayaran',
+					desc: 'Silahkan kirim sejumlah uang yang sesuai dengan harga kelas yang akan diikuti ke rekening berikut :'
 				},
 				{
 					no: 3,
-					title: 'Lakukan Pembayaran',
-					desc: 'Transfer sesuai harga kelas ke rekening berikut:'
-				},
-				{
-					no: 4,
 					title: 'Konfirmasi Pembayaran',
 					desc: 'Setelah melakukan transfer, kirim bukti pembayaran dan sebutkan kelas yang ingin dibeli ke nomor WhatsApp berikut:'
 				},
 				{
-					no: 5,
+					no: 4,
 					title: 'Akses Kelas Anda',
 					desc: 'Setelah pembayaran dikonfirmasi, Anda akan mendapatkan akses ke kelas yang telah dibeli melalui chat WhatsApp. Link yang akan diberi berupa link yang berisi kode kupon untuk mengakses kelas tersebut. Jika kode kupon sudah tidak berlaku, silahkan konfirmasi kembali ke nomor WhatsApp yang telah disebutkan di atas, sehingga dapat diberikan kode kupon yang baru.'
 				}
@@ -132,8 +127,8 @@
 						{@html step.desc}
 					</p>
 
-					<!-- Tambahan untuk langkah 3 -->
-					{#if step.no === 3}
+					<!-- Tambahan untuk langkah 2 -->
+					{#if step.no === 2}
 						<div class="rounded-xl p-4 border border-gray-700 bg-gray-900/40 mb-2 ml-14 sm:ml-14">
 							<div class="space-y-2 text-sm sm:text-base text-gray-300">
 								<div class="flex flex-wrap sm:flex-nowrap gap-2">
@@ -152,8 +147,8 @@
 						</div>
 					{/if}
 
-					<!-- Tambahan untuk langkah 4 -->
-					{#if step.no === 4}
+					<!-- Tambahan untuk langkah 3 -->
+					{#if step.no === 3}
 						<div class="ml-14 sm:ml-14">
 							<a
 								href="https://wa.me/6285161745660"
@@ -174,7 +169,7 @@
 							</a>
 
 							<p class="mt-3 text-gray-300 text-sm sm:text-base">
-								Jam kerja:
+								Jam kerja :
 								<span class="font-semibold text-blue-400">Senin – Sabtu, 09:00 – 18:00 WIB</span>.
 							</p>
 						</div>
@@ -184,6 +179,7 @@
 		</ol>
 	</div>
 </section>
+
 
 
 <!-- SECTION: Daftar Harga -->
@@ -204,7 +200,7 @@
 
 				<tbody class="bg-gray-950">
 					{#each kelasList as kelas}
-						<tr class="border-t border-gray-700 hover:bg-gray-800 transition">
+						<tr class="border-t border-gray-700 hover:bg-gray-900 transition">
 							<td class="py-4 px-6">{kelas.nama}</td>
 							<td class="py-4 px-6">{kelas.harga}</td>
 
@@ -219,7 +215,7 @@
 							<td class="py-4 px-6 text-center">
 								<a
 									href={`${base}/kelas/${kelas.slug}`}
-									class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2.5 px-5 rounded-lg transition"
+									class="inline-block bg-blue-600 hover:bg-gray-950 hover:text-blue-400 border border-blue-600 hover:border:blue-400 text-white font-medium py-2.5 px-5 rounded-lg transition"
 								>
 									Lihat Detail
 								</a>

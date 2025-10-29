@@ -1958,9 +1958,14 @@
 
 <!-- Tombol Beli Sekarang (Mobile Sticky) -->
 <div class="fixed bottom-0 left-0 right-0 bg-white text-gray-900 py-2 px-4 flex justify-between items-center lg:hidden z-50 shadow-lg border-t border-gray-200">
-  <!-- Harga -->
+  <!-- Harga + Link -->
   <div class="flex flex-col">
-    <p class="text-[10px] text-gray-600 font-medium">Beli Sekarang</p>
+    <a
+      href="{base}/cara-pembayaran"
+      class="text-[10px] text-blue-600 font-semibold hover:text-blue-500 transition"
+    >
+      Daftar Sekarang
+    </a>
 
     <div class="flex items-baseline gap-1">
       <p class="text-sm font-bold text-gray-900">
@@ -1975,13 +1980,15 @@
     </div>
   </div>
 
-  <!-- Tombol -->
-  <button
+  <!-- Tombol Beli Sekarang -->
+  <a
+    href="{base}/cara-pembayaran"
     class="bg-gray-900 text-white font-medium px-4 py-2 rounded-lg text-xs hover:bg-transparent border border-gray-900 hover:text-blue-400 hover:border-blue-400 transition"
   >
-    Beli Sekarang
-  </button>
+    Daftar Sekarang
+  </a>
 </div>
+
 
 </section>
 
