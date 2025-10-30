@@ -28,3 +28,10 @@
     white-space: nowrap;
   }
   
+  /* Add to marquee animations */
+.animate-marquee {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 25s linear infinite;
+  will-change: transform; /* Add this for smoother rendering */
+}

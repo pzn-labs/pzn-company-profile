@@ -1,4 +1,5 @@
 <script lang="ts">
+	import "../../../app.css";
 	import { page } from '$app/stores';
 	import { slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
@@ -278,8 +279,8 @@
 			]
 		},
 		{
-			slug: 'phyton',
-			name: 'Belajar phyton untuk pemula Hingga Mahir',
+			slug: 'Python',
+			name: 'Belajar Python untuk pemula Hingga Mahir',
 			image: python,
 			instructor: 'Eko Kurniawan Khannedy',
 			rating: 4.8,
@@ -1773,41 +1774,59 @@
         </div>
       </div>
 
-      <!-- Kurikulum -->
-      <div class="bg-gray-950 rounded-2xl p-5 border border-gray-700 space-y-4">
-        <div class="flex justify-between items-center mb-3">
-          <h2 class="text-lg sm:text-xl font-semibold">Kurikulum Kursus</h2>
-          <button
-            on:click={toggleAll}
-            class="px-4 py-2 text-xs sm:text-sm font-medium text-gray-200 border border-gray-400 hover:border-blue-400 rounded-lg hover:text-blue-400 transition-all"
-          >
-            {showAllSectionsMap[course?.slug ?? ''] ? 'Tutup Semua' : 'Lihat Semua'}
-          </button>
-        </div>
+<!-- Kurikulum -->
+<div class="bg-gray-950 rounded-2xl p-5 border border-gray-700 space-y-4">
+  <div class="flex justify-between items-center mb-3">
+    <h2 class="text-lg sm:text-xl font-semibold">Kurikulum Kursus</h2>
+    <button
+      on:click={toggleAll}
+      class="px-4 py-2 text-xs sm:text-sm font-medium text-gray-200 border border-gray-400 hover:border-blue-400 rounded-lg hover:text-blue-400 transition-all"
+    >
+      {showAllSectionsMap[course?.slug ?? ''] ? 'Tutup Semua' : 'Lihat Semua'}
+    </button>
+  </div>
 
-        <div class="divide-y divide-gray-700">
-          {#each course?.courseContent ?? [] as section, i}
-            <details class="py-3 group rounded-lg hover:bg-gray-900/40 transition">
-              <summary class="flex flex-col sm:flex-row justify-between items-start sm:items-center cursor-pointer text-white px-2">
-                <span class="flex items-center gap-2 w-full sm:w-auto">
-                  <span class="text-base sm:text-lg">{section.title}</span>
-                  <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                  </svg>
-                </span>
-                <span class="text-gray-400 text-xs sm:text-sm mt-1 sm:mt-0 italic">
-                  {section.lectures} Lectures • {section.duration}
-                </span>
-              </summary>
-              <ul class="mt-2 pl-6 list-disc text-gray-300 text-sm space-y-1">
-                {#each Array(section.lectures) as _, index}
-                  <li class="hover:text-blue-400 transition">{`Lecture ${index + 1}`}</li>
-                {/each}
-              </ul>
-            </details>
+  <div class="divide-y divide-gray-700">
+    {#each course?.courseContent ?? [] as section, i}
+      <details class="py-3 group rounded-lg hover:bg-gray-900/40 transition">
+        <summary class="flex flex-col sm:flex-row justify-between items-start sm:items-center cursor-pointer text-white px-2">
+          <span class="flex items-center gap-2 w-full sm:w-auto">
+            <span class="text-base sm:text-lg">{section.title}</span>
+            <svg
+              class="w-4 h-4 transition-transform duration-300 group-open:rotate-180 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+          <span class="text-gray-400 text-xs sm:text-sm mt-1 sm:mt-0 italic">
+            {section.lectures} Lectures • {section.duration}
+          </span>
+        </summary>
+        <ul class="mt-2 pl-6 list-disc text-gray-300 text-sm space-y-1">
+          {#each Array(section.lectures) as _, index}
+            <li class="hover:text-blue-400 transition">{`Lecture ${index + 1}`}</li>
           {/each}
-        </div>
-      </div>
+        </ul>
+      </details>
+    {/each}
+  </div>
+
+  <!-- Tombol Lihat Kursus (Ukuran & gaya disamakan) -->
+	<div class="pt-0 text-right">
+	<a
+		href={`${base}/kelas/${course?.slug ?? ''}/lesson/1`}
+		class="inline-block px-4 py-2 text-xs sm:text-sm font-medium text-gray-200 border border-gray-400 hover:border-blue-400 rounded-lg hover:text-blue-400 transition-all"
+	>
+		Lihat Kursus
+	</a>
+
+	</div>
+	</div>
+
+
 
       <!-- Deskripsi Kelas -->
       <div class="bg-gray-950 rounded-2xl p-5 border border-gray-700 space-y-4">
@@ -2004,62 +2023,6 @@
 
 </section>
 
-
-
-
-<!-- FOOTER -->
-<footer class="bg-gray-950 text-gray-400 border-t border-gray-800">
-  <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8 grid gap-12 md:grid-cols-3 items-start">
-    <!-- Kolom 1 -->
-    <div class="space-y-5">
-      <div class="flex items-center gap-3">
-        <img src="https://www.programmerzamannow.com/img/pzn.png" alt="PZN Logo" class="h-10 w-auto transition-transform hover:scale-105 duration-300" />
-        <span class="text-lg font-semibold text-white">Programmer Zaman Now</span>
-      </div>
-      <p class="text-sm leading-relaxed max-w-sm">
-        Belajar programming dari dasar hingga mahir bersama mentor berpengalaman.
-        Temukan cara modern untuk menguasai dunia teknologi dengan pembelajaran praktis dan relevan industri.
-      </p>
-    </div>
-
-    <!-- Kolom 2 -->
-    <div class="space-y-5">
-      <h4 class="text-base font-semibold text-white">Navigasi</h4>
-      <ul class="grid grid-cols-2 sm:grid-cols-1 gap-2">
-        {#each [{ name: "Beranda", href: "/" }, { name: "Kelas", href: "/kelas" }, { name: "Promo", href: "/promo" }, { name: "Sosial Media", href: "/sosial-media" }] as link}
-          <li>
-            <a href={base + link.href} class="text-sm text-gray-400 hover:text-white transition-colors duration-200">
-              {link.name}
-            </a>
-          </li>
-        {/each}
-      </ul>
-    </div>
-
-    <!-- Kolom 3 -->
-    <div class="space-y-5">
-      <h4 class="text-base font-semibold text-white">Ikuti Kami</h4>
-      <div class="flex gap-5">
-        {#each [
-          { href: "https://youtube.com", icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png", label: "YouTube" },
-          { href: "https://instagram.com", icon: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png", label: "Instagram" },
-          { href: "https://www.tiktok.com/@programmerzamannow", icon: "https://cdn-icons-png.flaticon.com/512/3046/3046121.png", label: "TikTok" },
-          { href: "https://facebook.com", icon: "https://cdn-icons-png.flaticon.com/512/733/733547.png", label: "Facebook" }
-        ] as social}
-          <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} class="group">
-            <img src={social.icon} alt={social.label} class="h-6 w-6 opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300"/>
-          </a>
-        {/each}
-      </div>
-    </div>
-  </div>
-
-  <div class="border-t border-gray-800 py-6 text-center">
-    <p class="text-sm text-gray-400">
-      © {new Date().getFullYear()} <span class="font-medium text-white">Programmer Zaman Now</span>.
-    </p>
-  </div>
-</footer>
 {/if}
 
 

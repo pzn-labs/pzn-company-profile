@@ -1,196 +1,127 @@
 <script lang="ts">
-	import { base } from "$app/paths";
-	import "../../app.css";
-	import pznLogo from "$lib/assets/logo-pzn.png"
-  </script>
-  
-  <svelte:head>
-	  <title>Sosial Media - Programmer Zaman Now</title>
-	  <meta name="description" content="Ikuti Programmer Zaman Now di berbagai platform sosial media untuk update terbaru, tips programming, dan konten edukatif." />
-  </svelte:head>
+  import { base } from "$app/paths";
+  import "../../app.css";
+  import logoWebp from "$lib/assets/logo-pzn.webp";
+  import logoPng from "$lib/assets/logo-pzn.png";
 
-  
-<!-- PLATFORM SOSIAL MEDIA (ELEGAN + INTERAKTIF + GLOW EFFECT) -->
+  const socialMedia = [
+    {
+      name: "YouTube",
+      icon: `<path d='M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4L15.8 12l-6.3 3.6z'/>`,
+      bg: "bg-red-600",
+      subs: "500K+ Subscribers",
+      url: "https://youtube.com/@programmerzamannow",
+      desc: "Tutorial programming lengkap, tips karir, dan review teknologi terbaru. Subscribe untuk tidak ketinggalan video baru setiap minggu!"
+    },
+    {
+      name: "Instagram",
+      icon: `<path d='M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zM12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6a3 3 0 0 1 0-6zm5.5-2.5a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3z'/>`,
+      bg: "bg-pink-600",
+      subs: "200K+ Followers",
+      url: "https://instagram.com/programmerzamannow",
+      desc: "Tips coding harian, behind the scenes, dan konten visual menarik tentang dunia programming. Follow untuk daily inspiration!"
+    },
+    {
+      name: "TikTok",
+      icon: `<path d='M12.5 2h2.9a5.7 5.7 0 0 0 4.2 4v2.7a8.4 8.4 0 0 1-4.2-1.2v7a6.3 6.3 0 1 1-6.3-6.3 5.9 5.9 0 0 1 1 .1v2.9a2.9 2.9 0 1 0 2.4 2.8z'/>`,
+      bg: "bg-gray-950",
+      subs: "300K+ Followers",
+      url: "https://tiktok.com/@programmerzamannow",
+      desc: "Konten programming singkat dan engaging! Tips coding, life hacks developer, dan trend teknologi dalam format video pendek."
+    },
+    {
+      name: "Facebook",
+      icon: `<path d='M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24h-1.918c-1.505 0-1.797.716-1.797 1.767v2.318h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z'/>`,
+      bg: "bg-blue-600",
+      subs: "120K+ Followers",
+      url: "https://facebook.com/programmerzamannow",
+      desc: "Ikuti update terbaru, live event, dan konten edukatif setiap hari di halaman Facebook Programmer Zaman Now."
+    }
+  ];
+</script>
+
+<svelte:head>
+  <title>Sosial Media - Programmer Zaman Now</title>
+  <meta name="description" content="Ikuti Programmer Zaman Now di berbagai platform sosial media untuk update terbaru, tips programming, dan konten edukatif." />
+</svelte:head>
+
+<!-- Sosial Media Section -->
 <section class="py-24 bg-black text-white overflow-hidden">
-	<div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-	  
-	  <!-- JUDUL -->
-	  <div class="max-w-2xl mx-auto mb-16">
-		<h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight bg-clip-text text-white">
-		  Temukan Kami di Platform Favorit Anda
-		</h2>
-		<p class="mt-6 text-lg leading-relaxed text-gray-300">
-		  Bergabunglah dengan komunitas developer terbesar di Indonesia dan dapatkan insight berharga setiap hari.
-		</p>
-	  </div>
-  
-	  <!-- GRID SOSIAL MEDIA -->
-	  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
-		{#each [
-		  {
-			name: "YouTube",
-			icon: `<path d='M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4L15.8 12l-6.3 3.6z'/>`,
-			bg: "bg-red-600",
-			subs: "500K+ Subscribers",
-			url: "https://youtube.com/@programmerzamannow",
-			desc: "Tutorial programming lengkap, tips karir, dan review teknologi terbaru. Subscribe untuk tidak ketinggalan video baru setiap minggu!"
-		  },
-		  {
-			name: "Instagram",
-			icon: `<path d='M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zM12 7a5 5 0 1 0 0 10a5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6a3 3 0 0 1 0-6zm5.5-2.5a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3z'/>`,
-			bg: "bg-pink-600",
-			subs: "200K+ Followers",
-			url: "https://instagram.com/programmerzamannow",
-			desc: "Tips coding harian, behind the scenes, dan konten visual menarik tentang dunia programming. Follow untuk daily inspiration!"
-		  },
-		  {
-			name: "TikTok",
-			icon: `<path d='M12.5 2h2.9a5.7 5.7 0 0 0 4.2 4v2.7a8.4 8.4 0 0 1-4.2-1.2v7a6.3 6.3 0 1 1-6.3-6.3 5.9 5.9 0 0 1 1 .1v2.9a2.9 2.9 0 1 0 2.4 2.8z'/>`,
-			bg: "bg-gray-950",
-			subs: "300K+ Followers",
-			url: "https://tiktok.com/@programmerzamannow",
-			desc: "Konten programming singkat dan engaging! Tips coding, life hacks developer, dan trend teknologi dalam format video pendek."
-		  },
-		  {
-			name: "Facebook",
-			icon: `<path d='M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24h-1.918c-1.505 0-1.797.716-1.797 1.767v2.318h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z'/>`,
-			bg: "bg-blue-600",
-			subs: "120K+ Followers",
-			url: "https://facebook.com/programmerzamannow",
-			desc: "Ikuti update terbaru, live event, dan konten edukatif setiap hari di halaman Facebook Programmer Zaman Now."
-		  }
-		] as socmed}
-		
-		<!-- CARD -->
-		<div class="group relative bg-gray-900/60 backdrop-blur-sm rounded-3xl p-8 border border-gray-700 hover:border-gray-500 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl">
-		  
-		  <!-- Ikon + Nama -->
-		  <div class="flex items-center gap-4 mb-6">
-			<div class="relative flex h-16 w-16 items-center justify-center rounded-full {socmed.bg} transition-transform duration-500 group-hover:scale-110">
-			  <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-				{@html socmed.icon}
-			  </svg>
-			</div>
-			<div class="text-left">
-			  <h3 class="text-xl font-semibold">{socmed.name}</h3>
-			  <p class="text-sm text-gray-400">{socmed.subs}</p>
-			</div>
-		  </div>
-  
-		  <!-- Deskripsi -->
-		  <p class="text-gray-300 mb-6 leading-relaxed">
-			{socmed.desc}
-		  </p>
-  
-		  <!-- Tombol -->
-		  <a
-			href={socmed.url}
-			target="_blank"
-			class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border-1 border-gray-600 font-semibold text-white transition-all  duration-300 {socmed.bg} hover:opacity-90"
-		  >
-			Kunjungi {socmed.name} →
-		  </a>
-		</div>
-		{/each}
-	  </div>
-	</div>
-  </section>
-  
-  
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+    
+    <!-- Judul -->
+    <div class="max-w-2xl mx-auto mb-16">
+      <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+        Temukan Kami di Platform Favorit Anda
+      </h2>
+      <p class="mt-6 text-lg leading-relaxed text-gray-300">
+        Bergabunglah dengan komunitas developer terbesar di Indonesia dan dapatkan insight berharga setiap hari.
+      </p>
+    </div>
+
+    <!-- Grid Sosial Media -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
+      {#each socialMedia as socmed}
+        <div class="group relative bg-gray-900/60 backdrop-blur-sm rounded-3xl p-8 border border-gray-700 hover:border-gray-500 transition-all duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl">
+          
+          <!-- Ikon + Nama -->
+          <div class="flex items-center gap-4 mb-6">
+            <div class={`relative flex h-16 w-16 items-center justify-center rounded-full ${socmed.bg} transition-transform duration-500 group-hover:scale-110`}>
+              <svg class="h-8 w-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                {@html socmed.icon}
+              </svg>
+            </div>
+            <div class="text-left">
+              <h3 class="text-xl font-semibold">{socmed.name}</h3>
+              <p class="text-sm text-gray-400">{socmed.subs}</p>
+            </div>
+          </div>
+
+          <!-- Deskripsi -->
+          <p class="text-gray-300 mb-6 leading-relaxed">{socmed.desc}</p>
+
+          <!-- Tombol -->
+          <a
+            href={socmed.url}
+            target="_blank"
+            class={`inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border font-semibold text-white transition-all duration-300 ${socmed.bg} hover:opacity-90`}
+          >
+            Kunjungi {socmed.name} →
+          </a>
+        </div>
+      {/each}
+    </div>
+  </div>
+</section>
+
 <!-- CTA Section -->
 <section class="relative bg-black overflow-hidden py-24">
-	<!-- Overlay pattern -->
-	<div class="absolute inset-0 opacity-10 bg-[url('https://www.toptal.com/designers/subtlepatterns/patterns/dots.png')]"></div>
-  
-	<div class="relative max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
-	  
-	  <!-- Teks CTA -->
-	  <div class="text-center lg:text-left">
-		<h2 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-		  Siap Tingkatkan Skill Anda?
-		</h2>
-		<p class="mt-4 text-lg leading-8 text-gray-300">
-		  Mulailah perjalanan belajar Anda hari ini dan kuasai teknologi terkini bersama mentor profesional dari
-		  <span class="font-semibold text-white">Programmer Zaman Now</span>.
-		</p>
-		<div class="mt-8">
-		  <a href="{base}/kelas"
-			class="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-100 text-gray-900 font-semibold px-8 py-4 shadow-lg hover:bg-transparent hover:text-blue-400 border border-gray-100 hover:border-blue-400 transition-all duration-300">
-			Lihat Semua Kelas
-		  </a>
-		</div>
-	  </div>
-  
-	  <!-- Logo / Gambar -->
-	  <div class="flex justify-center lg:justify-end">
-		<img src="https://i.pinimg.com/736x/61/be/5f/61be5fe0c98a2852bfb50c0daaced2c6.jpg" alt="Logo Programmer Zaman Now" class="h-auto w-full drop-shadow-2xl rounded-3xl" />
-	  </div>
-  
-	</div>
-  </section>
-  
-  
-  <!-- FOOTER -->
-  <footer class="bg-gray-950 text-gray-400 border-t border-gray-800">
-	<div class="mx-auto max-w-7xl px-6 py-16 lg:px-8 grid gap-12 md:grid-cols-3 items-start">
-	  <!-- Kolom 1 -->
-	  <div class="space-y-5">
-		<div class="flex items-center gap-3">
-		  <img src="https://www.programmerzamannow.com/img/pzn.png" alt="PZN Logo"
-			class="h-10 w-auto transition-transform hover:scale-105 duration-300" />
-		  <span class="text-lg font-semibold text-white">Programmer Zaman Now</span>
-		</div>
-		<p class="text-sm leading-relaxed max-w-sm">
-		  Belajar programming dari dasar hingga mahir bersama mentor berpengalaman.
-		  Temukan cara modern untuk menguasai dunia teknologi dengan pembelajaran praktis dan relevan industri.
-		</p>
-	  </div>
-  
-	  <!-- Kolom 2 -->
-	  <div class="space-y-5">
-		<h4 class="text-base font-semibold text-white">Navigasi</h4>
-		<ul class="grid grid-cols-2 sm:grid-cols-1 gap-2">
-		  {#each [
-			{ name: "Beranda", href: "/" },
-			{ name: "Kelas", href: "/kelas" },
-			{ name: "Promo", href: "/promo" },
-			{ name: "Sosial Media", href: "/sosial-media" }
-		  ] as link}
-			<li>
-			  <a href={base + link.href} class="text-sm text-gray-400 hover:text-white transition-colors duration-200">
-				{link.name}
-			  </a>
-			</li>
-		  {/each}
-		</ul>
-	  </div>
-  
-	  <!-- Kolom 3 -->
-	  <div class="space-y-5">
-		<h4 class="text-base font-semibold text-white">Ikuti Kami</h4>
-		<div class="flex gap-5">
-		  {#each [
-			{ href: "https://youtube.com", icon: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png", label: "YouTube" },
-			{ href: "https://instagram.com", icon: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png", label: "Instagram" },
-			{ href: "https://www.tiktok.com/@programmerzamannow", icon: "https://cdn-icons-png.flaticon.com/512/3046/3046121.png", label: "TikTok" },
-			{ href: "https://facebook.com", icon: "https://cdn-icons-png.flaticon.com/512/733/733547.png", label: "Facebook" }
-		  ] as social}
-			<a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} class="group">
-			  <img
-				src={social.icon}
-				alt={social.label}
-				class="h-6 w-6 opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300"
-			  />
-			</a>
-		  {/each}
-		</div>
-	  </div>
-	  
-	</div>
-	<div class="border-t border-gray-800 py-6 text-center">
-	  <p class="text-sm text-gray-400">
-		© {new Date().getFullYear()} <span class="font-medium text-white">Programmer Zaman Now</span>.
-	  </p>
-	</div>
-  </footer>
-  
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+    
+    <!-- Teks CTA -->
+    <div class="text-center lg:text-left">
+      <h2 class="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+        Siap Tingkatkan Skill Anda?
+      </h2>
+      <p class="mt-4 text-lg leading-8 text-gray-300">
+        Mulailah perjalanan belajar Anda hari ini dan kuasai teknologi terkini bersama mentor profesional dari
+        <span class="font-semibold text-white">Programmer Zaman Now</span>.
+      </p>
+      <div class="mt-8">
+        <a href={base + "/kelas"}
+          class="inline-flex items-center justify-center gap-2 rounded-xl bg-gray-100 text-gray-900 font-semibold px-8 py-4 shadow-lg hover:bg-transparent hover:text-blue-400 border border-gray-100 hover:border-blue-400 transition-all duration-300">
+          Lihat Semua Kelas
+        </a>
+      </div>
+    </div>
+
+    <!-- Logo / Gambar Lazy + WebP -->
+    <div class="flex justify-center lg:justify-end">
+      <picture>
+        <source srcset={logoWebp} type="image/webp" />
+        <img src={logoPng} alt="Logo Programmer Zaman Now" class="h-auto w-full drop-shadow-2xl rounded-3xl" loading="lazy" />
+      </picture>
+    </div>
+
+  </div>
+</section>
