@@ -41,9 +41,27 @@
 </script>
 
 <svelte:head>
-  <title>Sosial Media - Programmer Zaman Now</title>
+  <!-- Title & Meta Description -->
+  <title>Sosial Media – Programmer Zaman Now</title>
   <meta name="description" content="Ikuti Programmer Zaman Now di berbagai platform sosial media untuk update terbaru, tips programming, dan konten edukatif." />
+
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:title" content="Sosial Media – Programmer Zaman Now" />
+  <meta property="og:description" content="Ikuti Programmer Zaman Now di berbagai platform sosial media untuk update terbaru, tips programming, dan konten edukatif." />
+  <meta property="og:image" content="https://www.programmerzamannow.com/img/pzn-social.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pzn-labs.github.io/pzn-company-profile/sosial-media" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sosial Media – Programmer Zaman Now" />
+  <meta name="twitter:description" content="Ikuti Programmer Zaman Now di berbagai platform sosial media untuk update terbaru, tips programming, dan konten edukatif." />
+  <meta name="twitter:image" content="https://www.programmerzamannow.com/img/pzn-social.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://pzn-labs.github.io/pzn-company-profile/sosial-media" />
 </svelte:head>
+
 
 <!-- Sosial Media Section -->
 <section class="py-24 bg-black text-white overflow-hidden">

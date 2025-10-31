@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
 	import { slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
-    import { base } from '$app/paths';
+  import { base } from '$app/paths';
 
 
 	// === IMPORT GAMBAR ===
@@ -279,7 +279,7 @@
 			]
 		},
 		{
-			slug: 'Python',
+			slug: 'python',
 			name: 'Belajar Python untuk pemula Hingga Mahir',
 			image: python,
 			instructor: 'Eko Kurniawan Khannedy',
@@ -366,7 +366,7 @@
 			]
 		},
         		{
-			slug: 'node.js',
+			slug: 'nodejs',
 			name: 'Belajar Backend Node.js dari Nol sampai Mahir',
 			image: nodejs,
 			instructor: 'Eko Kurniawan Khannedy',
@@ -531,7 +531,7 @@
 			forWho: ['Backend Developer', 'Mahasiswa IT', 'Data Analyst pemula']
 		},
 		{
-			slug: 'docker-basics',
+			slug: 'docker',
 			name: 'Belajar Docker untuk Developer',
 			image: docker,
 			instructor: 'Eko Kurniawan Khannedy',
@@ -1258,7 +1258,7 @@
 			forWho: ['QA Engineer', 'Backend Developer', 'DevOps']
 		},
         {
-			slug: 'html,-css-dan-javascript',
+			slug: 'html-css-js',
 			name: 'Belajar HTML, CSS, dan JavaScript Dasar',
 			image: html,
 			instructor: 'Eko Kurniawan Khannedy',
@@ -1530,12 +1530,28 @@
   <title>{course ? `${course.name} - Programmer Zaman Now` : 'Kelas - Programmer Zaman Now'}</title>
   <meta
     name="description"
-	content={course
-	  ? `Pelajari ${course.name} di Programmer Zaman Now. ${course.description?.slice(0, 150)}...`
-	  : 'Panduan lengkap kelas di Programmer Zaman Now.'}
+    content={course
+      ? `Pelajari ${course.name} di Programmer Zaman Now. ${course.description?.slice(0, 150)}...`
+      : 'Panduan lengkap kelas di Programmer Zaman Now.'}
   />
 
+  <!-- Open Graph -->
+  <meta property="og:title" content={course ? `${course.name} - Programmer Zaman Now` : 'Kelas - Programmer Zaman Now'} />
+  <meta property="og:description" content={course ? `Pelajari ${course.name} di Programmer Zaman Now. ${course.description?.slice(0, 150)}...` : 'Panduan lengkap kelas di Programmer Zaman Now.'} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={course ? `https://pzn-labs.github.io/pzn-company-profile/kelas/${course.slug}` : 'https://pzn-labs.github.io/pzn-company-profile/kelas'} />
+  <meta property="og:image" content={course?.image || 'https://www.programmerzamannow.com/img/pzn-classes.png'} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={course ? `${course.name} - Programmer Zaman Now` : 'Kelas - Programmer Zaman Now'} />
+  <meta name="twitter:description" content={course ? `Pelajari ${course.name} di Programmer Zaman Now. ${course.description?.slice(0, 150)}...` : 'Panduan lengkap kelas di Programmer Zaman Now.'} />
+  <meta name="twitter:image" content={course?.image || 'https://www.programmerzamannow.com/img/pzn-classes.png'} />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href={course ? `https://pzn-labs.github.io/pzn-company-profile/kelas/${course.slug}` : 'https://pzn-labs.github.io/pzn-company-profile/kelas'} />
 </svelte:head>
+
 
 {#if !course}
 <section
@@ -1547,6 +1563,7 @@
       src="https://img-c.udemycdn.com/user/200_H/15481646_a97d_6.jpg"
       alt="Logo Programmer Zaman Now"
       class="w-28 h-28 object-contain rounded-full transition-transform duration-500 hover:scale-105 shadow-lg"
+      loading="lazy"
     />
   </div>
 
@@ -1670,6 +1687,7 @@
         src="https://images.icon-icons.com/934/PNG/512/movie-symbol-of-video-camera_icon-icons.com_72981.png"
         class="w-5 h-5"
         alt="Video"
+        loading="lazy"
       />
       43 jam video
     </li>
@@ -1678,6 +1696,7 @@
         src="https://images.icon-icons.com/2724/PNG/512/newspaper_news_daily_business_media_article_icon_175626.png"
         class="w-5 h-5"
         alt="Artikel"
+        loading="lazy"
       />
       10 artikel
     </li>
@@ -1686,6 +1705,7 @@
         src="https://images.icon-icons.com/1946/PNG/96/1904669-call-chat-device-message-mobile-phone-smartphone_122519.png"
         class="w-5 h-5"
         alt="Akses HP"
+        loading="lazy"
       />
       Akses di HP & TV
     </li>
@@ -1694,6 +1714,7 @@
         src="https://images.icon-icons.com/3832/PNG/96/infinite_icon_234518.png"
         class="w-5 h-5"
         alt="Seumur hidup"
+        loading="lazy"
       />
       Akses seumur hidup
     </li>
@@ -1702,6 +1723,7 @@
         src="https://images.icon-icons.com/1919/PNG/96/licensedocument_121962.png"
         class="w-5 h-5"
         alt="Sertifikat"
+        loading="lazy"
       />
       Sertifikat penyelesaian
     </li>
@@ -1879,6 +1901,7 @@
             src="https://img-c.udemycdn.com/user/200_H/15481646_a97d_6.jpg"
             alt="Instructor"
             class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border border-gray-700 flex-shrink-0"
+            loading="lazy"
           />
           <div class="flex-1">
             <h3 class="font-semibold text-base sm:text-lg text-white mb-1">
@@ -1959,6 +1982,7 @@
                   src={rec.image}
                   alt={rec.name}
                   class="w-full h-auto rounded-t-xl transition-transform duration-500 hover:scale-105 object-contain"
+                  loading="lazy"
                 />
               </div>
 

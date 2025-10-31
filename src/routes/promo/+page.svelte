@@ -109,15 +109,29 @@
 </script>
 
 <svelte:head>
-	<title>Promo & Penawaran Khusus - Programmer Zaman Now</title>
-	<meta
-		name="description"
-		content="Dapatkan diskon menarik untuk kelas programming di PZN. Promo terbatas dengan harga terbaik!"
-	/>
+  <!-- Title & Meta Description -->
+  <title>Promo & Penawaran Khusus - Programmer Zaman Now</title>
+  <meta name="description" content="Dapatkan diskon menarik untuk kelas programming di PZN. Promo terbatas dengan harga terbaik!" />
+
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:title" content="Promo & Penawaran Khusus - Programmer Zaman Now" />
+  <meta property="og:description" content="Dapatkan diskon menarik untuk kelas programming di PZN. Promo terbatas dengan harga terbaik!" />
+  <meta property="og:image" content="https://www.programmerzamannow.com/img/pzn-promo.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pzn-labs.github.io/pzn-company-profile/promo" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Promo & Penawaran Khusus - Programmer Zaman Now" />
+  <meta name="twitter:description" content="Dapatkan diskon menarik untuk kelas programming di PZN. Promo terbatas dengan harga terbaik!" />
+  <meta name="twitter:image" content="https://www.programmerzamannow.com/img/pzn-promo.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://pzn-labs.github.io/pzn-company-profile/promo" />
 </svelte:head>
 
 
-<!-- 🟦 HERO PROMO SECTION (Versi Lebih Besar & Rapi) -->
+<!-- HERO PROMO SECTION (Versi Lebih Besar & Rapi) -->
 <section
 	class="relative bg-cover bg-center bg-black text-white py-16 sm:py-16"
 >

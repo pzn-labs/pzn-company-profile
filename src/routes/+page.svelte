@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount, onDestroy } from "svelte";
+  import { onMount } from "svelte";
   import "../app.css";
   import { base } from "$app/paths";
 
@@ -28,7 +28,7 @@
   import openapi from "$lib/assets/openapi.jpg";
   import restfull from "$lib/assets/restfulapi.jpg";
   import http from "$lib/assets/http.jpg";
-  import phyton from "$lib/assets/python.jpg";
+  import python from "$lib/assets/python.jpg";
   import svelte from "$lib/assets/svelte.jpg";
   import bootstrap from "$lib/assets/bootstrap.jpg";
   import rust from "$lib/assets/rust.png";
@@ -46,7 +46,7 @@
   const images = [
     html, laravel, mysql, golang, java, nodejs, vue, php, docker, spring,
     mongo, kotlin, git, postgre, react, redis, dart, typescript, elastic,
-    jenkins, android, openapi, restfull, http, phyton, svelte, bootstrap,
+    jenkins, android, openapi, restfull, http, python, svelte, bootstrap,
     rust, bun, k6, nestjs, rabbit, kafka
   ];
 
@@ -66,10 +66,6 @@
 
   onMount(() => {
     interval = setInterval(showNext, 1500);
-  });
-
-  onDestroy(() => {
-    clearInterval(interval);
   });
 
   const steps = [
@@ -114,9 +110,27 @@ const categories = [
 </script>
 
 <svelte:head>
+  <!-- Title & Meta Description -->
   <title>Programmer Zaman Now – Belajar Pemrograman dari Dasar hingga Mahir</title>
-  <meta name="description" content="Temukan berbagai kelas pemrograman terbaik di Programmer Zaman Now. Belajar JavaScript, Python, Database, API, dan banyak lagi bersama instruktur berpengalaman."/>
+  <meta name="description" content="Temukan berbagai kelas pemrograman terbaik di Programmer Zaman Now. Belajar JavaScript, Python, Database, API, dan banyak lagi bersama instruktur berpengalaman." />
+
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:title" content="Programmer Zaman Now – Belajar Pemrograman dari Dasar hingga Mahir" />
+  <meta property="og:description" content="Temukan berbagai kelas pemrograman terbaik di Programmer Zaman Now. Belajar JavaScript, Python, Database, API, dan banyak lagi bersama instruktur berpengalaman." />
+  <meta property="og:image" content="https://www.programmerzamannow.com/img/pzn.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pzn-labs.github.io/pzn-company-profile/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Programmer Zaman Now – Belajar Pemrograman dari Dasar hingga Mahir" />
+  <meta name="twitter:description" content="Temukan berbagai kelas pemrograman terbaik di Programmer Zaman Now. Belajar JavaScript, Python, Database, API, dan banyak lagi bersama instruktur berpengalaman." />
+  <meta name="twitter:image" content="https://www.programmerzamannow.com/img/pzn.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://pzn-labs.github.io/pzn-company-profile/" />
 </svelte:head>
+
 
 <style>
   .scroll-right { animation: marquee 30s linear infinite; }
@@ -132,7 +146,11 @@ const categories = [
 <section class="relative bg-gray-950 text-white overflow-hidden">
   <div class="mx-auto max-w-7xl px-6 lg:px-8 py-16 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
     <div class="relative w-full overflow-hidden rounded-3xl shadow-2xl order-1 lg:order-2">
-      <img src={currentImage} alt="Programmer Zaman Now" class="w-full h-full object-cover rounded-3xl transform hover:scale-105 transition-transform duration-700"/>
+      <img 
+        src={currentImage} 
+        alt="Programmer Zaman Now" 
+        class="w-full h-full object-cover rounded-3xl transform hover:scale-105 transition-transform duration-700"
+      />
     </div>
 
     <div class="space-y-4 text-center lg:text-left relative z-20">
@@ -157,7 +175,7 @@ const categories = [
     <div class="mx-auto mt-16 grid gap-16 sm:gap-12 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl">
       {#each fiturList as fitur}
         <div class="flex flex-col items-center text-center group">
-          <img src={fitur.src} alt={fitur.title} class="h-32 w-32 sm:h-40 sm:w-40 lg:h-44 lg:w-44 mb-4 rounded-2xl object-cover shadow-lg transition-transform duration-300 group-hover:scale-110"/>
+          <img src={fitur.src} alt={fitur.title} loading="lazy" class="h-32 w-32 sm:h-40 sm:w-40 lg:h-44 lg:w-44 mb-4 rounded-2xl object-cover shadow-lg transition-transform duration-300 group-hover:scale-110"/>
           <h3 class="text-xl sm:text-2xl font-semibold mb-2">{fitur.title}</h3>
           <p class="text-sm sm:text-base text-gray-300 mt-2 max-w-xs leading-relaxed">{fitur.desc}</p>
         </div>
@@ -178,7 +196,7 @@ const categories = [
       {#each steps as step}
         <div class="flex-shrink-0 md:flex-shrink md:w-auto snap-center md:snap-none w-72 sm:w-80 bg-gradient-to-b from-gray-900 to-gray-950 border border-gray-800 rounded-2xl p-5 sm:p-6 transition-transform duration-300 hover:-translate-y-1 shadow-lg">
           <div class="overflow-hidden rounded-xl mb-4">
-            <img src={step.img} alt={step.title} class="w-full h-40 sm:h-48 object-cover rounded-lg transition-transform duration-500 hover:scale-105"/>
+            <img src={step.img} alt={step.title} loading="lazy" class="w-full h-40 sm:h-48 object-cover rounded-lg transition-transform duration-500 hover:scale-105"/>
           </div>
           <h3 class="text-lg sm:text-xl font-semibold mb-2">{step.id}. {step.title}</h3>
           <p class="text-gray-300 text-sm sm:text-sm leading-relaxed">{step.desc}</p>
@@ -197,21 +215,17 @@ const categories = [
   </div>
 
   <div class="relative overflow-hidden w-full mb-10 group">
-    <div class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10"></div>
-    <div class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10"></div>
     <div class="scroll-right flex items-center gap-6 sm:gap-10 lg:gap-14 px-4 sm:px-6 lg:px-10 group-hover:[animation-play-state:paused]">
       {#each [...images, ...images] as img, i (i)}
-        <img src={img} alt="logo" class="h-20 sm:h-24 md:h-32 lg:h-44 w-auto object-contain hover:scale-110 transition-transform duration-300 cursor-pointer"/>
+        <img src={img} loading="lazy" alt="logo" class="h-20 sm:h-24 md:h-32 lg:h-44 w-auto object-contain hover:scale-110 transition-transform duration-300 cursor-pointer"/>
       {/each}
     </div>
   </div>
 
   <div class="relative overflow-hidden w-full group">
-    <div class="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black to-transparent z-10"></div>
-    <div class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black to-transparent z-10"></div>
     <div class="scroll-left flex items-center gap-6 sm:gap-10 lg:gap-14 px-4 sm:px-6 lg:px-10 group-hover:[animation-play-state:paused]">
       {#each [...images, ...images] as img, i (i)}
-        <img src={img} alt="logo" class="h-20 sm:h-24 md:h-32 lg:h-44 w-auto object-contain hover:scale-110 transition-transform duration-300 cursor-pointer"/>
+        <img src={img} alt="logo" loading="lazy" class="h-20 sm:h-24 md:h-32 lg:h-44 w-auto object-contain hover:scale-110 transition-transform duration-300 cursor-pointer"/>
       {/each}
     </div>
   </div>

@@ -11,6 +11,7 @@
           src="https://www.programmerzamannow.com/img/pzn.png"
           alt="PZN Logo"
           class="h-10 w-auto transition-transform hover:scale-105 duration-300"
+          loading="lazy"
         />
         <span class="text-lg font-semibold text-white">Programmer Zaman Now</span>
       </div>
@@ -54,6 +55,7 @@
               src={social.icon}
               alt={social.label}
               class="h-6 w-6 opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-all duration-300"
+              loading="lazy"
             />
           </a>
         {/each}

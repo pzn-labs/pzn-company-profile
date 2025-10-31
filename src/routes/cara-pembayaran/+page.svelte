@@ -44,7 +44,7 @@
 	let days = 0, hours = 0, minutes = 0, seconds = 0;
 	let promoBerakhir = false;
 
-	// ⏰ Update waktu promo
+	// Update waktu promo
 	onMount(() => {
 		const timer = setInterval(() => {
 			const now = new Date().getTime();
@@ -66,12 +66,27 @@
 </script>
 
 <svelte:head>
-	<title>Cara Pembayaran - Programmer Zaman Now</title>
-	<meta
-		name="description"
-		content="Panduan lengkap cara pembayaran kelas di Programmer Zaman Now. Mudah, cepat, dan aman."
-	/>
+  <!-- Title & Meta Description -->
+  <title>Cara Pembayaran - Programmer Zaman Now</title>
+  <meta name="description" content="Panduan lengkap cara pembayaran kelas di Programmer Zaman Now. Mudah, cepat, dan aman." />
+
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:title" content="Cara Pembayaran - Programmer Zaman Now" />
+  <meta property="og:description" content="Panduan lengkap cara pembayaran kelas di Programmer Zaman Now. Mudah, cepat, dan aman." />
+  <meta property="og:image" content="https://www.programmerzamannow.com/img/pzn-payment.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://pzn-labs.github.io/pzn-company-profile/payment" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cara Pembayaran - Programmer Zaman Now" />
+  <meta name="twitter:description" content="Panduan lengkap cara pembayaran kelas di Programmer Zaman Now. Mudah, cepat, dan aman." />
+  <meta name="twitter:image" content="https://www.programmerzamannow.com/img/pzn-payment.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://pzn-labs.github.io/pzn-company-profile/payment" />
 </svelte:head>
+
 
 <!-- SECTION: Cara Pembayaran -->
 <section class="bg-black text-white py-12 px-4 sm:px-8">
