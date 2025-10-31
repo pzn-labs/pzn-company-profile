@@ -150,6 +150,8 @@ const categories = [
         src={currentImage} 
         alt="Programmer Zaman Now" 
         class="w-full h-full object-cover rounded-3xl transform hover:scale-105 transition-transform duration-700"
+        width="600"
+        height="400"
       />
     </div>
 
