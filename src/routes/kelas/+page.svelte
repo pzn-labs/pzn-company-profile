@@ -3,17 +3,18 @@
   import { base } from "$app/paths";
   import { fade, fly } from "svelte/transition";
   import { allClasses } from "$lib/data/classes";
+  import { categories as baseCategories } from "$lib/data/categories";
 
-  // State utama
-  let searchQuery = "";
+ // State utama
+ let searchQuery = "";
   let sortOrder: "asc" | "desc" = "asc";
   let selectedCategory = "Semua";
   let showAll = false;
   let filterRecommendation = "all";
 
-  // Ambil kategori
-  const categories = ["Semua", ...Array.from(new Set(allClasses.flatMap(k => k.category || [])))];
-
+  // Ambil kategori dari file categories.ts
+  const categories = baseCategories;
+  
   // Filter
   $: filteredClasses = allClasses
     .filter(k => filterRecommendation === "recommended" ? k.recommended : true)

@@ -2,71 +2,25 @@
   import { onMount } from "svelte";
   import "../app.css";
   import { base } from "$app/paths";
+  import Hero from "$lib/components/Hero.svelte";
+  import Marquee from "$lib/components/Marquee.svelte"
 
-  // Import semua gambar
-  import golang from "$lib/assets/golang.jpg";
-  import html from "$lib/assets/html.jpg";
-  import java from "$lib/assets/java.jpg";
-  import laravel from "$lib/assets/laravel.jpg";
-  import nodejs from "$lib/assets/nodejs.jpg";
-  import mysql from "$lib/assets/mysql.jpg";
-  import vue from "$lib/assets/vuejs.jpg";
-  import php from "$lib/assets/php.jpg";
-  import docker from "$lib/assets/docker.jpg";
-  import spring from "$lib/assets/spring.jpg";
-  import react from "$lib/assets/reactjs.jpg";
-  import mongo from "$lib/assets/mongodb.jpg";
-  import kotlin from "$lib/assets/kotlin.jpg";
-  import git from "$lib/assets/git.jpg";
-  import postgre from "$lib/assets/postgre.jpg";
-  import redis from "$lib/assets/redis.jpg";
-  import dart from "$lib/assets/dart.jpg";
-  import typescript from "$lib/assets/typescript.jpg";
-  import elastic from "$lib/assets/elasticsearch.jpg";
-  import jenkins from "$lib/assets/jenkins.jpg";
-  import android from "$lib/assets/android.jpg";
-  import openapi from "$lib/assets/openapi.jpg";
-  import restfull from "$lib/assets/restfulapi.jpg";
-  import http from "$lib/assets/http.jpg";
-  import python from "$lib/assets/python.jpg";
-  import svelte from "$lib/assets/svelte.jpg";
-  import bootstrap from "$lib/assets/bootstrap.jpg";
-  import rust from "$lib/assets/rust.png";
-  import bun from "$lib/assets/bun.png";
-  import k6 from "$lib/assets/k6.jpg";
-  import nestjs from "$lib/assets/nestjs.jpg";
-  import rabbit from "$lib/assets/rabbitmq.jpg";
-  import kafka from "$lib/assets/kafka.jpg";
   import roadmap from "$lib/assets/road-map.png";
   import app from "$lib/assets/application.png";
   import mobile from "$lib/assets/mobile.png";
   import uiux from "$lib/assets/uiux.png";
   
-  // Array gambar slideshow
-  const images = [
-    html, laravel, mysql, golang, java, nodejs, vue, php, docker, spring,
-    mongo, kotlin, git, postgre, react, redis, dart, typescript, elastic,
-    jenkins, android, openapi, restfull, http, python, svelte, bootstrap,
-    rust, bun, k6, nestjs, rabbit, kafka
-  ];
+  import html from "$lib/assets/html.jpg";
+  import laravel from "$lib/assets/laravel.jpg";
+  import mysql from "$lib/assets/mysql.jpg";
+  import golang from "$lib/assets/golang.jpg";
+  import java from "$lib/assets/java.jpg";
+  import nodejs from "$lib/assets/nodejs.jpg";
+  import vue from "$lib/assets/vuejs.jpg";
+  import php from "$lib/assets/php.jpg";
+  import docker from "$lib/assets/docker.jpg";
 
-  let currentIndex = 0;
-  let currentImage = images[currentIndex];
-  let isFading = false;
-  let interval: ReturnType<typeof setInterval>;
-
-  const showNext = () => {
-    isFading = true;
-    setTimeout(() => {
-      currentIndex = (currentIndex + 1) % images.length;
-      currentImage = images[currentIndex];
-      isFading = false;
-    }, 300);
-  };
-
-  onMount(() => {
-    interval = setInterval(showNext, 1500);
-  });
+  const images = [html, laravel, mysql, golang, java, nodejs, vue, php, docker];
 
   const steps = [
     { id: 1, title: 'Dasar Pemrograman', desc: 'Kuasai logika, algoritma, dan dasar bahasa pemrograman seperti JavaScript atau Python sebelum masuk ke tahap lanjut.', img: 'https://i.pinimg.com/736x/97/f3/2d/97f32dd3dec3221cca5a193bc352c8f3.jpg' },
@@ -109,6 +63,8 @@ const categories = [
   let selected = categories[0];
 </script>
 
+<!-- svelte-ignore css_unused_selector -->
+<!-- svelte-ignore css_unused_selector -->
 <svelte:head>
   <!-- Title & Meta Description -->
   <title>Programmer Zaman Now – Belajar Pemrograman dari Dasar hingga Mahir</title>
@@ -133,8 +89,6 @@ const categories = [
 
 
 <style>
-  .scroll-right { animation: marquee 30s linear infinite; }
-  .scroll-left { animation: marquee 30s linear infinite reverse; }
   @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
   .scrollbar-hide::-webkit-scrollbar { display: none; }
   .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
@@ -143,29 +97,7 @@ const categories = [
 </style>
 
 <!-- HERO SECTION -->
-<section class="relative bg-gray-950 text-white overflow-hidden">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8 py-16 grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
-    <div class="relative w-full overflow-hidden rounded-3xl shadow-2xl order-1 lg:order-2">
-      <img 
-        src={currentImage} 
-        alt="Programmer Zaman Now" 
-        class="w-full h-full object-cover rounded-3xl transform hover:scale-105 transition-transform duration-700"
-        width="600"
-        height="400"
-      />
-    </div>
-
-    <div class="space-y-4 text-center lg:text-left relative z-20">
-      <span class="inline-block text-sm font-semibold text-white bg-clip-text uppercase tracking-wide">Ngoding Dulu, Jadi Sultan Nanti!</span>
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight"><span class="text-white">Programmer Zaman Now</span></h1>
-      <p class="text-base sm:text-lg text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed">Tingkatkan skill coding kamu dan jadilah bagian dari komunitas developer terbaik di Indonesia! Belajar dengan mentor profesional dan kurikulum yang up-to-date.</p>
-      <div class="pt-6 flex flex-col sm:flex-row justify-center lg:justify-start items-center gap-4">
-        <a href={base + "/kelas"} class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white hover:bg-transparent text-gray-900 border border-gray-200 hover:border-blue-400 hover:text-blue-400 font-semibold rounded-full shadow-lg transition-transform duration-300 hover:scale-105 w-full sm:w-auto">Mulai Sekarang</a>
-        <a href={base + "/promo"} class="inline-flex items-center justify-center gap-2 px-6 py-3 border border-gray-600 hover:border-blue-400 hover:text-blue-400 text-gray-300 font-semibold rounded-full transition-all duration-300 w-full sm:w-auto">Lihat Promo</a>
-      </div>
-    </div>
-  </div>
-</section>
+<Hero />
 
 <!-- FITUR UTAMA -->
 <section class="py-20 sm:py-24 bg-black text-white">
@@ -208,31 +140,6 @@ const categories = [
   </div>
 </section>
 
-<!-- MARQUEE SECTION -->
-<section class="relative bg-black py-16 text-center text-white overflow-hidden">
-  <div class="mb-12 px-6 relative z-10">
-    <h2 class="text-3xl sm:text-4xl font-bold mb-3">Kelas Programmer Zaman Now</h2>
-    <p class="text-gray-200 max-w-2xl mx-auto text-base sm:text-lg mb-6">Tingkatkan skill coding kamu bersama Programmer Zaman Now! Belajar pemrograman modern dari dasar hingga mahir dengan mentor berpengalaman dan materi yang selalu up-to-date.</p>
-    <a href={base + "/kelas"} class="inline-block bg-white text-gray-900 hover:text-blue-400 hover:bg-transparent border border-gray-200 hover:border-blue-400 font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">Lihat Kelas</a>
-  </div>
-
-  <div class="relative overflow-hidden w-full mb-10 group">
-    <div class="scroll-right flex items-center gap-6 sm:gap-10 lg:gap-14 px-4 sm:px-6 lg:px-10 group-hover:[animation-play-state:paused]">
-      {#each [...images, ...images] as img, i (i)}
-        <img src={img} loading="lazy" alt="logo" class="h-20 sm:h-24 md:h-32 lg:h-44 w-auto object-contain hover:scale-110 transition-transform duration-300 cursor-pointer"/>
-      {/each}
-    </div>
-  </div>
-
-  <div class="relative overflow-hidden w-full group">
-    <div class="scroll-left flex items-center gap-6 sm:gap-10 lg:gap-14 px-4 sm:px-6 lg:px-10 group-hover:[animation-play-state:paused]">
-      {#each [...images, ...images] as img, i (i)}
-        <img src={img} alt="logo" loading="lazy" class="h-20 sm:h-24 md:h-32 lg:h-44 w-auto object-contain hover:scale-110 transition-transform duration-300 cursor-pointer"/>
-      {/each}
-    </div>
-  </div>
-</section>
-
 <!-- PILIHAN KATEGORI TANPA GAMBAR -->
 <section class="bg-black py-20 text-white">
   <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
@@ -265,6 +172,29 @@ const categories = [
     </div>
   </div>
 </section>
+
+<!-- MARQUEE SECTION -->
+<section class="relative bg-black py-16 text-center text-white overflow-hidden">
+  <div class="mb-12 px-6 relative z-10">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-3">Kelas Programmer Zaman Now</h2>
+    <p class="text-gray-200 max-w-2xl mx-auto text-base sm:text-lg mb-6">
+      Tingkatkan skill coding kamu bersama Programmer Zaman Now! Belajar pemrograman modern dari dasar hingga mahir dengan mentor berpengalaman dan materi yang selalu up-to-date.
+    </p>
+    <a
+      href={base + "/kelas"}
+      class="inline-block bg-white text-gray-900 hover:text-blue-400 hover:bg-transparent border border-gray-200 hover:border-blue-400 font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+    >
+      Lihat Kelas
+    </a>
+  </div>
+
+  <!-- Marquee kanan -->
+  <Marquee {images} direction="right" speed={30} />
+
+  <!-- Marquee kiri -->
+  <Marquee {images} direction="left" speed={30} />
+</section>
+
 
 
 

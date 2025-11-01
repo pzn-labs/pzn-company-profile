@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { base } from "$app/paths";
 	import "../../app.css";
-	import { onMount } from "svelte";
+	import PromoCountdown from "$lib/components/PromoCountdown.svelte";
+
+	const endDate = "2025-11-01T23:59:59";
 
 
 	const paketList = [
@@ -82,30 +84,7 @@
       slug: "backend-nodejs"
     }
   ];
-	
-	let timeLeft = 0;
-	let days = 0, hours = 0, minutes = 0, seconds = 0;
 
-	//  Tentukan tanggal berakhir promo
-	const endDate = new Date("2025-11-01T23:59:59").getTime();
-
-	onMount(() => {
-		const timer = setInterval(() => {
-			const now = new Date().getTime();
-			timeLeft = endDate - now;
-
-			if (timeLeft <= 0) {
-				clearInterval(timer);
-				timeLeft = 0;
-				days = hours = minutes = seconds = 0;
-			} else {
-				days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-				hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-				minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-				seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-			}
-		}, 1000);
-	});
 </script>
 
 <svelte:head>
@@ -132,70 +111,41 @@
 
 
 <!-- HERO PROMO SECTION (Versi Lebih Besar & Rapi) -->
-<section
-	class="relative bg-cover bg-center bg-black text-white py-16 sm:py-16"
->
+<section class="relative bg-cover bg-center bg-black text-white py-16 sm:py-16">
+  <div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg leading-tight">
+      Promo Spesial Oktober Diskon Hingga <span class="text-blue-400">70%</span>!
+    </h1>
 
-	<!-- Konten -->
-	<div class="relative z-10 max-w-6xl mx-auto px-6 text-center">
-		<!-- Judul -->
-		<h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg leading-tight">
-			Promo Spesial Oktober Diskon Hingga <span class="text-blue-400">70%</span>!
-		</h1>
+    <p class="text-lg sm:text-xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
+      Jangan lewatkan kesempatan langka ini untuk meningkatkan skill kamu bersama 
+      <span class="font-semibold text-white">Programmer Zaman Now</span>! 
+      Penawaran berakhir sebentar lagi
+    </p>
 
-		<p class="text-lg sm:text-xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
-			Jangan lewatkan kesempatan langka ini untuk meningkatkan skill kamu bersama 
-			<span class="font-semibold text-white">Programmer Zaman Now</span>! 
-			Penawaran berakhir sebentar lagi
-		</p>
+    <!-- Countdown jadi komponen -->
+	<PromoCountdown endDate="2025-11-10T23:59:59" mode="full" />
 
-		<!-- Countdown -->
-		<div class="flex justify-center gap-6 sm:gap-10 md:gap-14 font-mono text-center mb-12">
-			<div class="flex flex-col items-center">
-				<p class="text-5xl sm:text-6xl font-extrabold text-white">{days}</p>
-				<p class="text-sm uppercase tracking-wider text-gray-300">Hari</p>
-			</div>
-			<div class="flex flex-col items-center">
-				<p class="text-5xl sm:text-6xl font-extrabold text-white">{hours}</p>
-				<p class="text-sm uppercase tracking-wider text-gray-300">Jam</p>
-			</div>
-			<div class="flex flex-col items-center">
-				<p class="text-5xl sm:text-6xl font-extrabold text-white">{minutes}</p>
-				<p class="text-sm uppercase tracking-wider text-gray-300">Menit</p>
-			</div>
-			<div class="flex flex-col items-center">
-				<p class="text-5xl sm:text-6xl font-extrabold text-red-400 animate-bounce">{seconds}</p>
-				<p class="text-sm uppercase tracking-wider text-gray-300">Detik</p>
-			</div>
-		</div>
+    <!-- Kode Promo + Tombol -->
+    <div class="mb-6">
+      <p class="text-gray-300 text-base mb-4 text-center">
+        Gunakan kode promo di bawah ini:
+      </p>
 
-		<!-- Kode Promo + Tombol -->
-		<div class="mb-6">
-			<p class="text-gray-300 text-base mb-4 text-center">
-				Gunakan kode promo di bawah ini:
-			</p>
+      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <div class="bg-white text-gray-900 font-bold px-10 py-2 rounded-full tracking-widest shadow-xl select-all text-base sm:text-lg text-center w-full sm:w-auto">
+          KODE: <span class="text-black">PZN2025</span>
+        </div>
 
-			<div
-				class="flex flex-col sm:flex-row justify-center items-center gap-4"
-			>
-				<!-- Kode Promo -->
-				<div
-				class="bg-white text-gray-900 font-bold px-10 py-2 rounded-full tracking-widest shadow-xl select-all text-base sm:text-lg text-center w-full sm:w-auto"
-				>
-				KODE: <span class="text-black">PZN2025</span>
-				</div>
-
-				<!-- Tombol Lihat Kelas -->
-				<a
-				href="{base}/kelas"
-				class="bg-white hover:bg-transparent hover:text-blue-400 border hover:border-blue-400 text-black font-bold px-10 py-2 rounded-full shadow-xl text-base sm:text-lg transition duration-300 w-full sm:w-auto text-center"
-				>
-				LIHAT KELAS LAIN
-				</a>
-			</div>
-		</div>
-
-	</div>
+        <a
+          href="{base}/kelas"
+          class="bg-white hover:bg-transparent hover:text-blue-400 border hover:border-blue-400 text-black font-bold px-10 py-2 rounded-full shadow-xl text-base sm:text-lg transition duration-300 w-full sm:w-auto text-center"
+        >
+          LIHAT KELAS LAIN
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Paket Belajar -->

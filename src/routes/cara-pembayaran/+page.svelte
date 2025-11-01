@@ -2,49 +2,12 @@
 	import { base } from "$app/paths";
 	import { onMount } from "svelte";
 	import "../../app.css";
-
-	// Array daftar kelas
-	let kelasList = [
-		{ nama: "Golang", harga: "Rp 129.000", slug: "golang" },
-		{ nama: "Java Dasar", harga: "Rp 129.000", slug: "java-dasar" },
-		{ nama: "Node.js", harga: "Rp 129.000", slug: "node.js" },
-		{ nama: "Laravel", harga: "Rp 129.000", slug: "laravel" },
-		{ nama: "MySQL", harga: "Rp 129.000", slug: "mysql" },
-		{ nama: "Docker Basics", harga: "Rp 129.000", slug: "docker-basics" },
-		{ nama: "HTML, CSS dan JavaScript", harga: "Rp 129.000", slug: "html,-css-dan-javascript" },
-		{ nama: "VueJS", harga: "Rp 129.000", slug: "vuejs" },
-		{ nama: "PHP", harga: "Rp 129.000", slug: "php" },
-		{ nama: "Spring Boot", harga: "Rp 129.000", slug: "spring-boot" },
-		{ nama: "ReactJS", harga: "Rp 129.000", slug: "reactjs" },
-		{ nama: "MongoDB", harga: "Rp 129.000", slug: "mongodb" },
-		{ nama: "Kotlin", harga: "Rp 129.000", slug: "kotlin" },
-		{ nama: "Git", harga: "Rp 129.000", slug: "git" },
-		{ nama: "Postgre", harga: "Rp 129.000", slug: "postgre" },
-		{ nama: "Redis", harga: "Rp 129.000", slug: "redis" },
-		{ nama: "Dart", harga: "Rp 129.000", slug: "dart" },
-		{ nama: "Typescript", harga: "Rp 129.000", slug: "typescript" },
-		{ nama: "Elasticsearch", harga: "Rp 129.000", slug: "elasticsearch" },
-		{ nama: "Jenkins", harga: "Rp 129.000", slug: "jenkins" },
-		{ nama: "Android", harga: "Rp 129.000", slug: "android" },
-		{ nama: "OpenApi", harga: "Rp 129.000", slug: "openapi" },
-		{ nama: "RestFullAPI", harga: "Rp 129.000", slug: "restfullapi" },
-		{ nama: "HTTP", harga: "Rp 129.000", slug: "http" },
-		{ nama: "Python", harga: "Rp 129.000", slug: "phyton" },
-		{ nama: "Svelte", harga: "Rp 129.000", slug: "svelte" },
-		{ nama: "Bootstrap", harga: "Rp 129.000", slug: "bootstrap" },
-		{ nama: "Rust", harga: "Rp 129.000", slug: "rust" },
-		{ nama: "Bun", harga: "Rp 129.000", slug: "bun" },
-		{ nama: "K6 Performance Testing", harga: "Rp 129.000", slug: "k6-performance-testing" },
-		{ nama: "NestJS", harga: "Rp 129.000", slug: "nestjs" },
-		{ nama: "RabbitMQ", harga: "Rp 129.000", slug: "rabbitmq" },
-		{ nama: "Apache Kafka", harga: "Rp 129.000", slug: "apache-kafka" }
-	];
+	import { allClasses } from "$lib/data/classes";
 
 	let endDate = new Date("2025-11-01T23:59:59").getTime();
 	let days = 0, hours = 0, minutes = 0, seconds = 0;
 	let promoBerakhir = false;
 
-	// Update waktu promo
 	onMount(() => {
 		const timer = setInterval(() => {
 			const now = new Date().getTime();
@@ -66,146 +29,142 @@
 </script>
 
 <svelte:head>
-  <!-- Title & Meta Description -->
-  <title>Cara Pembayaran - Programmer Zaman Now</title>
-  <meta name="description" content="Panduan lengkap cara pembayaran kelas di Programmer Zaman Now. Mudah, cepat, dan aman." />
-
-  <!-- Open Graph (Facebook, LinkedIn) -->
-  <meta property="og:title" content="Cara Pembayaran - Programmer Zaman Now" />
-  <meta property="og:description" content="Panduan lengkap cara pembayaran kelas di Programmer Zaman Now. Mudah, cepat, dan aman." />
-  <meta property="og:image" content="https://www.programmerzamannow.com/img/pzn-payment.png" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://pzn-labs.github.io/pzn-company-profile/payment" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Cara Pembayaran - Programmer Zaman Now" />
-  <meta name="twitter:description" content="Panduan lengkap cara pembayaran kelas di Programmer Zaman Now. Mudah, cepat, dan aman." />
-  <meta name="twitter:image" content="https://www.programmerzamannow.com/img/pzn-payment.png" />
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://pzn-labs.github.io/pzn-company-profile/payment" />
+	<title>Cara Pembayaran - Programmer Zaman Now</title>
+	<meta
+		name="description"
+		content="Panduan lengkap cara pembayaran kelas di Programmer Zaman Now. Mudah, cepat, dan aman."
+	/>
+	<meta property="og:title" content="Cara Pembayaran - Programmer Zaman Now" />
+	<meta
+		property="og:description"
+		content="Panduan lengkap cara pembayaran kelas di Programmer Zaman Now. Mudah, cepat, dan aman."
+	/>
+	<meta property="og:image" content="https://www.programmerzamannow.com/img/pzn-payment.png" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://pzn-labs.github.io/pzn-company-profile/payment" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Cara Pembayaran - Programmer Zaman Now" />
+	<meta
+		name="twitter:description"
+		content="Panduan lengkap cara pembayaran kelas di Programmer Zaman Now. Mudah, cepat, dan aman."
+	/>
+	<meta name="twitter:image" content="https://www.programmerzamannow.com/img/pzn-payment.png" />
+	<link rel="canonical" href="https://pzn-labs.github.io/pzn-company-profile/payment" />
 </svelte:head>
 
-
-<!-- SECTION: Cara Pembayaran -->
+<!-- ========================== -->
+<!-- 💳 SECTION: Cara Pembayaran -->
+<!-- ========================== -->
 <section class="bg-black text-white py-12 px-4 sm:px-8">
-  <div class="max-w-4xl mx-auto">
-    <!-- Judul -->
-    <div class="text-center mb-10">
-      <h1 class="text-3xl sm:text-5xl font-extrabold mb-3 tracking-tight">
-        Cara Pembayaran
-      </h1>
-      <p class="text-gray-400 max-w-2xl mx-auto text-sm sm:text-lg leading-relaxed">
-        Panduan langkah demi langkah untuk menyelesaikan pembayaran dan mengakses kelas di
-        <span class="font-semibold text-blue-400">Programmer Zaman Now</span>.
-      </p>
-    </div>
+	<div class="max-w-4xl mx-auto">
+		<!-- Judul -->
+		<div class="text-center mb-10">
+			<h1 class="text-3xl sm:text-5xl font-extrabold mb-3 tracking-tight">Cara Pembayaran</h1>
+			<p class="text-gray-400 max-w-2xl mx-auto text-sm sm:text-lg leading-relaxed">
+				Panduan langkah demi langkah untuk menyelesaikan pembayaran dan mengakses kelas di
+				<span class="font-semibold text-blue-400">Programmer Zaman Now</span>.
+			</p>
+		</div>
 
-    <!-- Langkah-langkah -->
-    <ol class="space-y-10 sm:space-y-12">
-      {#each [
-        {
-          no: 1,
-          title: 'Pilih Kelas & Daftar',
-          desc: 'Pilih kelas yang ingin Anda ikuti, lalu klik tombol <span class="font-semibold text-blue-400">Daftar Sekarang</span> pada halaman kelas.'
-        },
-        {
-          no: 2,
-          title: 'Lakukan Pembayaran',
-          desc: 'Silahkan kirim sejumlah uang yang sesuai dengan harga kelas yang akan diikuti ke rekening berikut:'
-        },
-        {
-          no: 3,
-          title: 'Konfirmasi Pembayaran',
-          desc: 'Setelah melakukan transfer, kirim bukti pembayaran dan sebutkan kelas yang ingin dibeli ke nomor WhatsApp berikut:'
-        },
-        {
-          no: 4,
-          title: 'Akses Kelas Anda',
-          desc: 'Setelah pembayaran dikonfirmasi, Anda akan mendapatkan akses ke kelas yang telah dibeli melalui chat WhatsApp. Link tersebut berisi kode kupon untuk mengakses kelas. Jika kode kupon sudah tidak berlaku, silakan konfirmasi kembali untuk mendapatkan kode baru.'
-        }
-      ] as step}
+		<!-- Langkah-langkah -->
+		<ol class="space-y-10 sm:space-y-12">
+			{#each [
+				{
+					no: 1,
+					title: "Pilih Kelas & Daftar",
+					desc: 'Pilih kelas yang ingin Anda ikuti, lalu klik tombol <span class="font-semibold text-blue-400">Daftar Sekarang</span> pada halaman kelas.'
+				},
+				{
+					no: 2,
+					title: "Lakukan Pembayaran",
+					desc: "Silahkan kirim sejumlah uang yang sesuai dengan harga kelas yang akan diikuti ke rekening berikut:"
+				},
+				{
+					no: 3,
+					title: "Konfirmasi Pembayaran",
+					desc: "Setelah melakukan transfer, kirim bukti pembayaran dan sebutkan kelas yang ingin dibeli ke nomor WhatsApp berikut:"
+				},
+				{
+					no: 4,
+					title: "Akses Kelas Anda",
+					desc: "Setelah pembayaran dikonfirmasi, Anda akan mendapatkan akses ke kelas yang telah dibeli melalui chat WhatsApp. Link tersebut berisi kode kupon untuk mengakses kelas. Jika kode kupon sudah tidak berlaku, silakan konfirmasi kembali untuk mendapatkan kode baru."
+				}
+			] as step}
+				<li class="group">
+					<!-- Nomor & Judul -->
+					<div class="flex items-center sm:items-start gap-4 mb-3">
+						<div
+							class="flex-shrink-0 w-10 h-10 rounded-full bg-white text-gray-900 font-bold flex items-center justify-center text-lg shadow transition-transform group-hover:scale-110"
+						>
+							{step.no}
+						</div>
+						<h2
+							class="font-semibold text-lg sm:text-xl leading-snug group-hover:text-blue-400 transition"
+						>
+							{step.title}
+						</h2>
+					</div>
 
-        <li class="group">
-          <!-- Nomor & Judul -->
-          <div class="flex items-center sm:items-start gap-4 mb-3">
-            <div
-              class="flex-shrink-0 w-10 h-10 rounded-full bg-white text-gray-900 font-bold flex items-center justify-center text-lg shadow transition-transform group-hover:scale-110"
-            >
-              {step.no}
-            </div>
-            <h2 class="font-semibold text-lg sm:text-xl leading-snug group-hover:text-blue-400 transition">
-              {step.title}
-            </h2>
-          </div>
+					<!-- Deskripsi -->
+					<p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-3 pl-14">
+						{@html step.desc}
+					</p>
 
-          <!-- Deskripsi -->
-          <p class="text-gray-300 text-sm sm:text-base leading-relaxed mb-3 pl-14 sm:pl-14">
-            {@html step.desc}
-          </p>
+					<!-- Langkah 2: Info Rekening -->
+					{#if step.no === 2}
+						<div class="rounded-xl p-4 border border-gray-700 bg-gray-900/40 mb-2 ml-14">
+							<div class="space-y-2 text-sm sm:text-base text-gray-300">
+								<div class="flex flex-wrap gap-2">
+									<div class="w-32 font-semibold text-white">Bank</div>
+									<div class="flex-1">: JAGO</div>
+								</div>
+								<div class="flex flex-wrap gap-2">
+									<div class="w-32 font-semibold text-white">No. Rekening</div>
+									<div class="flex-1">: 1057-3122-2434</div>
+								</div>
+								<div class="flex flex-wrap gap-2">
+									<div class="w-32 font-semibold text-white">Nama</div>
+									<div class="flex-1">: Yanti</div>
+								</div>
+							</div>
+						</div>
+					{/if}
 
-          <!-- Langkah 2: Info Rekening -->
-          {#if step.no === 2}
-            <div class="rounded-xl p-4 border border-gray-700 bg-gray-900/40 mb-2 ml-14 sm:ml-14">
-              <div class="space-y-2 text-sm sm:text-base text-gray-300">
-                <div class="flex flex-wrap gap-2">
-                  <div class="w-32 font-semibold text-white">Bank</div>
-                  <div class="flex-1">: JAGO</div>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                  <div class="w-32 font-semibold text-white">No. Rekening</div>
-                  <div class="flex-1">: 1057-3122-2434</div>
-                </div>
-                <div class="flex flex-wrap gap-2">
-                  <div class="w-32 font-semibold text-white">Nama</div>
-                  <div class="flex-1">: Yanti</div>
-                </div>
-              </div>
-            </div>
-          {/if}
+					<!-- Langkah 3: WhatsApp -->
+					{#if step.no === 3}
+						<div class="ml-14">
+							<a
+								href="https://wa.me/6285161745660"
+								target="_blank"
+								class="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-full bg-green-500 hover:bg-green-600 text-white font-medium shadow-md transition-all duration-300"
+							>
+								<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-5 h-5">
+									<path
+										d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.198.297-.767.967-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.298-.496.099-.198.05-.372-.025-.52-.075-.148-.67-1.611-.916-2.206-.242-.579-.487-.501-.67-.51-.173-.007-.372-.009-.57-.009-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.626.712.227 1.36.195 1.872.118.571-.085 1.758-.718 2.006-1.413.248-.695.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347z"
+									/>
+									<path
+										fill-rule="evenodd"
+										d="M12 2C6.477 2 2 6.274 2 11.667c0 2.07.738 3.984 1.972 5.497L2 22l4.997-1.926A10.6 10.6 0 0 0 12 21.333c5.523 0 10-4.274 10-9.666C22 6.274 17.523 2 12 2z"
+										clip-rule="evenodd"
+									/>
+								</svg>
+								Hubungi via WhatsApp
+							</a>
 
-          <!-- Langkah 3: WhatsApp Konfirmasi -->
-          {#if step.no === 3}
-            <div class="ml-14 sm:ml-14">
-              <a
-                href="https://wa.me/6285161745660"
-                target="_blank"
-                class="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-full bg-green-500 hover:bg-green-600 text-white font-medium shadow-md transition-all duration-300"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                  class="w-5 h-5"
-                >
-                  <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.198.297-.767.967-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.298-.496.099-.198.05-.372-.025-.52-.075-.148-.67-1.611-.916-2.206-.242-.579-.487-.501-.67-.51-.173-.007-.372-.009-.57-.009-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.693.626.712.227 1.36.195 1.872.118.571-.085 1.758-.718 2.006-1.413.248-.695.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347z"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    d="M12 2C6.477 2 2 6.274 2 11.667c0 2.07.738 3.984 1.972 5.497L2 22l4.997-1.926A10.6 10.6 0 0 0 12 21.333c5.523 0 10-4.274 10-9.666C22 6.274 17.523 2 12 2z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                Hubungi via WhatsApp
-              </a>
-
-              <p class="mt-3 text-gray-300 text-sm sm:text-base leading-relaxed">
-                Jam kerja:
-                <span class="font-semibold text-blue-400">
-                  Senin – Sabtu, 09:00 – 18:00 WIB
-                </span>.
-                Konfirmasi pembayaran di luar jam kerja akan diproses pada hari berikutnya.
-              </p>
-            </div>
-          {/if}
-        </li>
-      {/each}
-    </ol>
-  </div>
+							<p class="mt-3 text-gray-300 text-sm sm:text-base leading-relaxed">
+								Jam kerja:
+								<span class="font-semibold text-blue-400">
+									Senin – Sabtu, 09:00 – 18:00 WIB
+								</span>.
+								Konfirmasi pembayaran di luar jam kerja akan diproses pada hari berikutnya.
+							</p>
+						</div>
+					{/if}
+				</li>
+			{/each}
+		</ol>
+	</div>
 </section>
-
 
 <!-- SECTION: Daftar Harga -->
 <section class="bg-black text-white py-10 px-4 sm:px-8">
@@ -222,32 +181,45 @@
 						<th class="py-4 px-6 text-center font-bold">Aksi</th>
 					</tr>
 				</thead>
-
-				<tbody class="bg-gray-950">
-					{#each kelasList as kelas}
-						<tr class="border-t border-gray-700 hover:bg-gray-900 transition">
-							<td class="py-4 px-6">{kelas.nama}</td>
-							<td class="py-4 px-6">{kelas.harga}</td>
-
-							<td class="py-4 px-6 font-semibold">
-								{#if promoBerakhir}
-									<span class="text-red-400">Promo Berakhir</span>
-								{:else}
-									Promo berakhir dalam <span class="text-red-400">{days} Hari</span>
-								{/if}
-							</td>
-
-							<td class="py-4 px-6 text-center">
-								<a
-									href={`${base}/kelas/${kelas.slug}`}
-									class="inline-block bg-blue-600 hover:bg-gray-950 hover:text-blue-400 border border-blue-600 hover:border:blue-400 text-white font-medium py-2.5 px-5 rounded-lg transition"
-								>
-									Lihat Detail
-								</a>
-							</td>
-						</tr>
-					{/each}
-				</tbody>
+        <tbody class="bg-gray-950">
+          {#each allClasses as kelas}
+            <tr class="border-t border-gray-700 hover:bg-gray-900 transition">
+              <td class="py-4 px-6 font-medium text-white">
+                {kelas.name
+                  ?.replace(/\b(Kelas|Belajar|Dasar|Untuk|Pemula|Lanjutan|Mahir|Mastering|Sampai\s*Mahir)\b/gi, '')
+                  ?.trim()}
+              </td>
+        
+              <!-- Harga -->
+              <td class="py-4 px-6 text-gray-300">
+                {kelas.price?.toLocaleString('id-ID') ?? '-'}
+              </td>
+        
+              <!-- Status promo -->
+              <td class="py-4 px-6 font-semibold">
+                {#if promoBerakhir}
+                  <span class="text-red-400">Promo Berakhir</span>
+                {:else}
+                  Promo berakhir dalam <span class="text-red-400">{days} Hari</span>
+                {/if}
+              </td>
+        
+              <!-- Tombol aksi -->
+              <td class="py-4 px-6 text-center">
+                <a
+                  href={`${base}/kelas/${kelas.slug}`}
+                  class="inline-block bg-blue-600 hover:bg-gray-950 hover:text-blue-400 border border-blue-600 text-white font-medium py-2.5 px-5 rounded-lg transition"
+                >
+                  Lihat Detail
+                </a>
+              </td>
+            </tr>
+          {/each}
+        </tbody>
+        
+        
+        
+        
 			</table>
 		</div>
 
@@ -257,9 +229,7 @@
 	</div>
 </section>
 
-
 <style>
-	/* Scrollbar minimalis */
 	section::-webkit-scrollbar {
 		width: 8px;
 		background: #111;
